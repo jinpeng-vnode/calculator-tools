@@ -41,6 +41,7 @@ def build_calculator(calc_dir, lang, base_template):
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
     }, ensure_ascii=False)
     
+    slug = calc_dir.name
     ctx = {
         "title": meta["title"],
         "description": meta["description"],
@@ -51,8 +52,10 @@ def build_calculator(calc_dir, lang, base_template):
         "intro": meta.get("intro", ""),
         "calculator_body": logic,
         "schema_json": schema,
-        "slug": calc_dir.name,
+        "slug": slug,
         "faq_html": build_faq(meta.get("faq", [])),
+        "alternate_en": f"https://calc.tools/en/{slug}/",
+        "alternate_zh": f"https://calc.tools/zh/{slug}/",
     }
     return render(base_template, ctx)
 
@@ -88,6 +91,8 @@ def build_index(lang, base_template, calculators_meta):
         "schema_json": "{}",
         "slug": "index",
         "faq_html": "",
+        "alternate_en": "https://calc.tools/en/",
+        "alternate_zh": "https://calc.tools/zh/",
     }
     return render(base_template, ctx)
 
