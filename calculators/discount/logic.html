@@ -1,0 +1,24 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="origPrice">Original Price ($)</label>
+        <input type="number" id="origPrice" placeholder="100" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="discPct">Discount (%)</label>
+        <input type="number" id="discPct" placeholder="30" min="0" max="100">
+    </div>
+</div>
+<button class="btn" onclick="calcDiscount()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcDiscount() {
+    const price = parseFloat(document.getElementById('origPrice').value);
+    const disc = parseFloat(document.getElementById('discPct').value);
+    if (isNaN(price) || isNaN(disc)) return;
+    const savings = price * disc / 100;
+    const final_price = price - savings;
+    const el = document.getElementById('result');
+    el.innerHTML = `You save: <strong>$${savings.toFixed(2)}</strong><br>Final price: <strong>$${final_price.toFixed(2)}</strong>`;
+    el.classList.add('show');
+}
+</script>

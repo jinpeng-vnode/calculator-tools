@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折扣计算器 - 计算打折后价格</title>
+    <meta name="description" content="免费折扣计算器。计算打折后价格、节省金额。">
+    <meta name="keywords" content="折扣计算器, 打折计算, 优惠计算, 省钱计算器">
+    <link rel="canonical" href="https://calc.tools/zh/discount/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="折扣计算器 - 计算打折后价格">
+    <meta property="og:description" content="免费折扣计算器。计算打折后价格、节省金额。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "折扣计算器 - 计算打折后价格", "description": "免费折扣计算器。计算打折后价格、节省金额。", "url": "https://calc.tools/zh/discount/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>折扣计算器</h1>
+        <p class="intro">计算打折后您能省多少钱。输入原价和折扣比例即可。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="origPrice">Original Price ($)</label>
+        <input type="number" id="origPrice" placeholder="100" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="discPct">Discount (%)</label>
+        <input type="number" id="discPct" placeholder="30" min="0" max="100">
+    </div>
+</div>
+<button class="btn" onclick="calcDiscount()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcDiscount() {
+    const price = parseFloat(document.getElementById('origPrice').value);
+    const disc = parseFloat(document.getElementById('discPct').value);
+    if (isNaN(price) || isNaN(disc)) return;
+    const savings = price * disc / 100;
+    const final_price = price - savings;
+    const el = document.getElementById('result');
+    el.innerHTML = `You save: <strong>$${savings.toFixed(2)}</strong><br>Final price: <strong>$${final_price.toFixed(2)}</strong>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>如何计算折扣？</summary><p>折后价 = 原价 × (1 - 折扣%/100)。例如100元打7折：100 × 0.70 = 70元。</p></details>
+<details><summary>如何从折后价反推原价？</summary><p>原价 = 折后价 / (1 - 折扣%/100)。70元是打7折后的价格：70 / 0.70 = 100元。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

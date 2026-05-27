@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator - Monthly Payment & Interest</title>
+    <meta name="description" content="Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan amount.">
+    <meta name="keywords" content="loan calculator, mortgage calculator, monthly payment, interest calculator">
+    <link rel="canonical" href="https://calc.tools/en/loan/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Loan Calculator - Monthly Payment & Interest">
+    <meta property="og:description" content="Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan amount.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Loan Calculator - Monthly Payment & Interest", "description": "Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan amount.", "url": "https://calc.tools/en/loan/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Loan Calculator</h1>
+        <p class="intro">Calculate your monthly loan payment, total interest paid, and see the full amortization breakdown.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+    <label for="principal">Loan Amount ($)</label>
+    <input type="number" id="principal" placeholder="200000" min="1">
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="rate">Annual Interest Rate (%)</label>
+        <input type="number" id="rate" placeholder="5.5" min="0" step="0.1">
+    </div>
+    <div class="form-group">
+        <label for="years">Loan Term (years)</label>
+        <input type="number" id="years" placeholder="30" min="1" max="50">
+    </div>
+</div>
+<button class="btn" onclick="calcLoan()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcLoan() {
+    const P = parseFloat(document.getElementById('principal').value);
+    const annualRate = parseFloat(document.getElementById('rate').value);
+    const years = parseFloat(document.getElementById('years').value);
+    if (!P || !annualRate || !years) return;
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    const monthly = P * (r * Math.pow(1+r, n)) / (Math.pow(1+r, n) - 1);
+    const total = monthly * n;
+    const interest = total - P;
+    const el = document.getElementById('result');
+    el.innerHTML = `Monthly Payment: <strong>$${monthly.toFixed(2)}</strong><br>
+        Total Interest: $${interest.toFixed(2)}<br>
+        Total Payment: $${total.toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How is monthly payment calculated?</summary><p>Monthly payment = P × [r(1+r)^n] / [(1+r)^n – 1], where P is principal, r is monthly rate, n is number of payments.</p></details>
+<details><summary>What's the difference between APR and interest rate?</summary><p>APR includes fees and other costs, making it higher than the base interest rate. It represents the true annual cost of borrowing.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年龄计算器 - 精确计算年龄</title>
+    <meta name="description" content="免费年龄计算器。根据出生日期精确计算年龄（年、月、日）。">
+    <meta name="keywords" content="年龄计算器, 出生日期计算, 周岁计算, 天数计算">
+    <link rel="canonical" href="https://calc.tools/zh/age/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="年龄计算器 - 精确计算年龄">
+    <meta property="og:description" content="免费年龄计算器。根据出生日期精确计算年龄（年、月、日）。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "年龄计算器 - 精确计算年龄", "description": "免费年龄计算器。根据出生日期精确计算年龄（年、月、日）。", "url": "https://calc.tools/zh/age/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>年龄计算器</h1>
+        <p class="intro">精确计算您的年龄（年、月、日），了解您已经活了多少天。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob">
+</div>
+<button class="btn" onclick="calcAge()">Calculate Age</button>
+<div class="result" id="result"></div>
+<script>
+function calcAge() {
+    const dob = new Date(document.getElementById('dob').value);
+    if (isNaN(dob)) return;
+    const now = new Date();
+    let years = now.getFullYear() - dob.getFullYear();
+    let months = now.getMonth() - dob.getMonth();
+    let days = now.getDate() - dob.getDate();
+    if (days < 0) { months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+    if (months < 0) { years--; months += 12; }
+    const totalDays = Math.floor((now - dob) / (1000*60*60*24));
+    const el = document.getElementById('result');
+    el.innerHTML = `Your age: <strong>${years} years, ${months} months, ${days} days</strong><br>
+        Total: ${totalDays.toLocaleString()} days`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>年龄是如何计算的？</summary><p>通过计算出生日期与今天日期之间的差值，分解为年、月、日。</p></details>
+<details><summary>可以计算两个日期之间的差吗？</summary><p>可以，输入任意两个日期即可计算它们之间的精确时间差。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "title": "Length Unit Converter - Meters, Feet, Inches & More",
+    "description": "Free length unit converter. Convert between meters, feet, inches, centimeters, kilometers, miles, and more.",
+    "keywords": "length converter, unit converter, meters to feet, cm to inches, km to miles",
+    "canonical": "https://calc.tools/en/unit-length/",
+    "h1": "Length Unit Converter",
+    "intro": "Convert between all common length units: meters, feet, inches, centimeters, kilometers, miles, yards.",
+    "faq": [
+        {"q": "How many feet in a meter?", "a": "1 meter = 3.28084 feet. To convert meters to feet, multiply by 3.28084."},
+        {"q": "How many cm in an inch?", "a": "1 inch = 2.54 centimeters. To convert inches to cm, multiply by 2.54."}
+    ]
+}

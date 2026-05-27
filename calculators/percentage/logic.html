@@ -1,0 +1,35 @@
+<div class="form-group">
+    <label>What is <input type="number" id="pct" style="width:80px;display:inline" placeholder="15">% of <input type="number" id="num" style="width:120px;display:inline" placeholder="200">?</label>
+</div>
+<button class="btn" onclick="calcPct()">Calculate</button>
+<div class="result" id="result1"></div>
+
+<hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--border)">
+
+<div class="form-group">
+    <label>Percentage change from <input type="number" id="oldVal" style="width:100px;display:inline" placeholder="80"> to <input type="number" id="newVal" style="width:100px;display:inline" placeholder="100"></label>
+</div>
+<button class="btn" onclick="calcChange()">Calculate Change</button>
+<div class="result" id="result2"></div>
+
+<script>
+function calcPct() {
+    const p = parseFloat(document.getElementById('pct').value);
+    const n = parseFloat(document.getElementById('num').value);
+    if (isNaN(p) || isNaN(n)) return;
+    const r = (n * p / 100).toFixed(4).replace(/\.?0+$/, '');
+    const el = document.getElementById('result1');
+    el.innerHTML = `${p}% of ${n} = <strong>${r}</strong>`;
+    el.classList.add('show');
+}
+function calcChange() {
+    const o = parseFloat(document.getElementById('oldVal').value);
+    const n = parseFloat(document.getElementById('newVal').value);
+    if (isNaN(o) || isNaN(n) || o === 0) return;
+    const change = ((n - o) / Math.abs(o) * 100).toFixed(2);
+    const dir = change >= 0 ? 'increase' : 'decrease';
+    const el = document.getElementById('result2');
+    el.innerHTML = `Change: <strong>${change}%</strong> (${dir})`;
+    el.classList.add('show');
+}
+</script>

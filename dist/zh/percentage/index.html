@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百分比计算器 - 轻松计算百分比</title>
+    <meta name="description" content="免费百分比计算器。计算百分比、百分比变化、百分比差异等。">
+    <meta name="keywords" content="百分比计算器, 百分比计算, 百分比变化, 折扣计算">
+    <link rel="canonical" href="https://calc.tools/zh/percentage/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="百分比计算器 - 轻松计算百分比">
+    <meta property="og:description" content="免费百分比计算器。计算百分比、百分比变化、百分比差异等。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "百分比计算器 - 轻松计算百分比", "description": "免费百分比计算器。计算百分比、百分比变化、百分比差异等。", "url": "https://calc.tools/zh/percentage/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>百分比计算器</h1>
+        <p class="intro">快速计算百分比：X的Y%是多少、百分比增减、折扣计算等。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+    <label>What is <input type="number" id="pct" style="width:80px;display:inline" placeholder="15">% of <input type="number" id="num" style="width:120px;display:inline" placeholder="200">?</label>
+</div>
+<button class="btn" onclick="calcPct()">Calculate</button>
+<div class="result" id="result1"></div>
+
+<hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--border)">
+
+<div class="form-group">
+    <label>Percentage change from <input type="number" id="oldVal" style="width:100px;display:inline" placeholder="80"> to <input type="number" id="newVal" style="width:100px;display:inline" placeholder="100"></label>
+</div>
+<button class="btn" onclick="calcChange()">Calculate Change</button>
+<div class="result" id="result2"></div>
+
+<script>
+function calcPct() {
+    const p = parseFloat(document.getElementById('pct').value);
+    const n = parseFloat(document.getElementById('num').value);
+    if (isNaN(p) || isNaN(n)) return;
+    const r = (n * p / 100).toFixed(4).replace(/\.?0+$/, '');
+    const el = document.getElementById('result1');
+    el.innerHTML = `${p}% of ${n} = <strong>${r}</strong>`;
+    el.classList.add('show');
+}
+function calcChange() {
+    const o = parseFloat(document.getElementById('oldVal').value);
+    const n = parseFloat(document.getElementById('newVal').value);
+    if (isNaN(o) || isNaN(n) || o === 0) return;
+    const change = ((n - o) / Math.abs(o) * 100).toFixed(2);
+    const dir = change >= 0 ? 'increase' : 'decrease';
+    const el = document.getElementById('result2');
+    el.innerHTML = `Change: <strong>${change}%</strong> (${dir})`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>如何计算百分比？</summary><p>求Y的X%：Y × X ÷ 100。例如：200的15% = 200 × 15 ÷ 100 = 30。</p></details>
+<details><summary>如何计算百分比变化？</summary><p>百分比变化 = ((新值 - 旧值) / 旧值) × 100。正数表示增长，负数表示下降。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

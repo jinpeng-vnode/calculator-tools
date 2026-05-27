@@ -1,0 +1,12 @@
+{
+    "title": "Loan Calculator - Monthly Payment & Interest",
+    "description": "Free loan calculator. Calculate monthly payments, total interest, and amortization schedule for any loan amount.",
+    "keywords": "loan calculator, mortgage calculator, monthly payment, interest calculator",
+    "canonical": "https://calc.tools/en/loan/",
+    "h1": "Loan Calculator",
+    "intro": "Calculate your monthly loan payment, total interest paid, and see the full amortization breakdown.",
+    "faq": [
+        {"q": "How is monthly payment calculated?", "a": "Monthly payment = P × [r(1+r)^n] / [(1+r)^n – 1], where P is principal, r is monthly rate, n is number of payments."},
+        {"q": "What's the difference between APR and interest rate?", "a": "APR includes fees and other costs, making it higher than the base interest rate. It represents the true annual cost of borrowing."}
+    ]
+}

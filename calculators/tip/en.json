@@ -1,0 +1,12 @@
+{
+    "title": "Tip Calculator - Calculate Tips & Split Bills",
+    "description": "Free tip calculator. Calculate tips for restaurants, split bills between friends, and find the right tip amount.",
+    "keywords": "tip calculator, restaurant tip, bill splitter, gratuity calculator",
+    "canonical": "https://calc.tools/en/tip/",
+    "h1": "Tip Calculator",
+    "intro": "Calculate the tip amount and split the bill between multiple people.",
+    "faq": [
+        {"q": "How much should I tip?", "a": "In the US, 15-20% is standard for restaurants. 15% for adequate service, 18% for good, 20%+ for excellent."},
+        {"q": "Is tip calculated before or after tax?", "a": "Traditionally, tips are calculated on the pre-tax amount, though many people tip on the total bill."}
+    ]
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重量单位换算器 - 千克、磅、盎司等</title>
+    <meta name="description" content="免费重量单位换算器。在千克、磅、盎司、克之间即时转换。">
+    <meta name="keywords" content="重量换算, 千克转磅, 磅转千克, 盎司转克">
+    <link rel="canonical" href="https://calc.tools/zh/unit-weight/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="重量单位换算器 - 千克、磅、盎司等">
+    <meta property="og:description" content="免费重量单位换算器。在千克、磅、盎司、克之间即时转换。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "重量单位换算器 - 千克、磅、盎司等", "description": "免费重量单位换算器。在千克、磅、盎司、克之间即时转换。", "url": "https://calc.tools/zh/unit-weight/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>重量单位换算器</h1>
+        <p class="intro">在所有常用重量单位之间转换：千克、磅、盎司、克、吨。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="wVal">Value</label>
+        <input type="number" id="wVal" placeholder="1" step="any">
+    </div>
+    <div class="form-group">
+        <label for="wFrom">From</label>
+        <select id="wFrom">
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+            <option value="mg">Milligram (mg)</option>
+            <option value="lb">Pound (lb)</option>
+            <option value="oz">Ounce (oz)</option>
+            <option value="st">Stone (st)</option>
+            <option value="t">Metric Ton (t)</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="wTo">To</label>
+    <select id="wTo">
+        <option value="lb">Pound (lb)</option>
+        <option value="kg">Kilogram (kg)</option>
+        <option value="g">Gram (g)</option>
+        <option value="mg">Milligram (mg)</option>
+        <option value="oz">Ounce (oz)</option>
+        <option value="st">Stone (st)</option>
+        <option value="t">Metric Ton (t)</option>
+    </select>
+</div>
+<button class="btn" onclick="convertWeight()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+const toKg = {kg:1, g:0.001, mg:0.000001, lb:0.453592, oz:0.0283495, st:6.35029, t:1000};
+function convertWeight() {
+    const val = parseFloat(document.getElementById('wVal').value);
+    const from = document.getElementById('wFrom').value;
+    const to = document.getElementById('wTo').value;
+    if (isNaN(val)) return;
+    const result = val * toKg[from] / toKg[to];
+    const formatted = result < 0.01 ? result.toExponential(4) : result.toFixed(6).replace(/\.?0+$/, '');
+    const el = document.getElementById('result');
+    el.innerHTML = `${val} ${from} = <strong>${formatted} ${to}</strong>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>1千克等于多少磅？</summary><p>1千克 = 2.20462磅。将千克转换为磅，乘以2.20462。</p></details>
+<details><summary>1磅等于多少克？</summary><p>1磅 = 453.592克。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

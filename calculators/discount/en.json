@@ -1,0 +1,12 @@
+{
+    "title": "Discount Calculator - Calculate Sale Price",
+    "description": "Free discount calculator. Calculate the sale price after discount, savings amount, and final price with tax.",
+    "keywords": "discount calculator, sale price calculator, percent off calculator, savings calculator",
+    "canonical": "https://calc.tools/en/discount/",
+    "h1": "Discount Calculator",
+    "intro": "Calculate how much you save with a discount. Enter the original price and discount percentage.",
+    "faq": [
+        {"q": "How to calculate discount?", "a": "Sale Price = Original Price × (1 - Discount%/100). For 30% off $100: $100 × 0.70 = $70."},
+        {"q": "How to calculate original price from sale price?", "a": "Original Price = Sale Price / (1 - Discount%/100). If sale price is $70 at 30% off: $70 / 0.70 = $100."}
+    ]
+}

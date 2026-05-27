@@ -1,0 +1,30 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="tempVal">Temperature</label>
+        <input type="number" id="tempVal" placeholder="100" step="any">
+    </div>
+    <div class="form-group">
+        <label for="tempUnit">Unit</label>
+        <select id="tempUnit">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="convertTemp()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+function convertTemp() {
+    const val = parseFloat(document.getElementById('tempVal').value);
+    const unit = document.getElementById('tempUnit').value;
+    if (isNaN(val)) return;
+    let c, f, k;
+    if (unit === 'C') { c = val; f = val*9/5+32; k = val+273.15; }
+    else if (unit === 'F') { c = (val-32)*5/9; f = val; k = (val-32)*5/9+273.15; }
+    else { c = val-273.15; f = (val-273.15)*9/5+32; k = val; }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${c.toFixed(2)} °C</strong> = <strong>${f.toFixed(2)} °F</strong> = <strong>${k.toFixed(2)} K</strong>`;
+    el.classList.add('show');
+}
+</script>

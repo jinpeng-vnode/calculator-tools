@@ -1,0 +1,12 @@
+{
+    "title": "Percentage Calculator - Calculate Percentages Easily",
+    "description": "Free percentage calculator. Calculate percentage of a number, percentage change, percentage difference, and more.",
+    "keywords": "percentage calculator, percent calculator, percentage change, percentage difference",
+    "canonical": "https://calc.tools/en/percentage/",
+    "h1": "Percentage Calculator",
+    "intro": "Calculate percentages quickly: what is X% of Y, percentage increase/decrease, and more.",
+    "faq": [
+        {"q": "How to calculate percentage?", "a": "To find X% of Y: multiply Y by X and divide by 100. Example: 15% of 200 = 200 × 15 / 100 = 30."},
+        {"q": "How to calculate percentage change?", "a": "Percentage change = ((New - Old) / Old) × 100. A positive result means increase, negative means decrease."}
+    ]
+}

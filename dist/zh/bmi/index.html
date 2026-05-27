@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI计算器 - 身体质量指数</title>
+    <meta name="description" content="免费在线BMI计算器。即时计算您的身体质量指数，了解体重是否健康。">
+    <meta name="keywords" content="BMI计算器, 身体质量指数, 体重计算, 健康计算器">
+    <link rel="canonical" href="https://calc.tools/zh/bmi/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="BMI计算器 - 身体质量指数">
+    <meta property="og:description" content="免费在线BMI计算器。即时计算您的身体质量指数，了解体重是否健康。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "BMI计算器 - 身体质量指数", "description": "免费在线BMI计算器。即时计算您的身体质量指数，了解体重是否健康。", "url": "https://calc.tools/zh/bmi/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>BMI计算器</h1>
+        <p class="intro">计算您的身体质量指数（BMI），检查您的体重对于身高是否健康。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="170" min="50" max="300">
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="70" min="10" max="500">
+    </div>
+</div>
+<button class="btn" onclick="calcBMI()">Calculate BMI</button>
+<div class="result" id="result"></div>
+<script>
+function calcBMI() {
+    const h = parseFloat(document.getElementById('height').value);
+    const w = parseFloat(document.getElementById('weight').value);
+    if (!h || !w) return;
+    const bmi = (w / ((h/100) ** 2)).toFixed(1);
+    let cat = '';
+    if (bmi < 18.5) cat = 'Underweight';
+    else if (bmi < 25) cat = 'Normal weight ✓';
+    else if (bmi < 30) cat = 'Overweight';
+    else cat = 'Obese';
+    const el = document.getElementById('result');
+    el.innerHTML = `Your BMI: <strong>${bmi}</strong><br><span>${cat}</span>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>什么是BMI？</summary><p>BMI（身体质量指数）是基于身高和体重的体脂测量指标，适用于成年男性和女性。</p></details>
+<details><summary>健康的BMI范围是多少？</summary><p>BMI在18.5到24.9之间被认为是健康的。低于18.5为偏瘦，25-29.9为超重，30以上为肥胖。</p></details>
+<details><summary>BMI准确吗？</summary><p>BMI是有用的筛查工具，但不直接测量体脂。运动员可能因肌肉量大而BMI偏高。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

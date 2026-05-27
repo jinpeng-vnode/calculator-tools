@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Body Mass Index</title>
+    <meta name="description" content="Free online BMI calculator. Calculate your Body Mass Index instantly. Find out if you're underweight, normal, overweight, or obese.">
+    <meta name="keywords" content="BMI calculator, body mass index, weight calculator, health calculator">
+    <link rel="canonical" href="https://calc.tools/en/bmi/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="BMI Calculator - Body Mass Index">
+    <meta property="og:description" content="Free online BMI calculator. Calculate your Body Mass Index instantly. Find out if you're underweight, normal, overweight, or obese.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "BMI Calculator - Body Mass Index", "description": "Free online BMI calculator. Calculate your Body Mass Index instantly. Find out if you're underweight, normal, overweight, or obese.", "url": "https://calc.tools/en/bmi/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>BMI Calculator</h1>
+        <p class="intro">Calculate your Body Mass Index (BMI) to check if your weight is healthy for your height.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="170" min="50" max="300">
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="70" min="10" max="500">
+    </div>
+</div>
+<button class="btn" onclick="calcBMI()">Calculate BMI</button>
+<div class="result" id="result"></div>
+<script>
+function calcBMI() {
+    const h = parseFloat(document.getElementById('height').value);
+    const w = parseFloat(document.getElementById('weight').value);
+    if (!h || !w) return;
+    const bmi = (w / ((h/100) ** 2)).toFixed(1);
+    let cat = '';
+    if (bmi < 18.5) cat = 'Underweight';
+    else if (bmi < 25) cat = 'Normal weight ✓';
+    else if (bmi < 30) cat = 'Overweight';
+    else cat = 'Obese';
+    const el = document.getElementById('result');
+    el.innerHTML = `Your BMI: <strong>${bmi}</strong><br><span>${cat}</span>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is BMI?</summary><p>BMI (Body Mass Index) is a measure of body fat based on height and weight. It applies to adult men and women.</p></details>
+<details><summary>What is a healthy BMI range?</summary><p>A BMI between 18.5 and 24.9 is considered healthy. Below 18.5 is underweight, 25-29.9 is overweight, and 30+ is obese.</p></details>
+<details><summary>Is BMI accurate?</summary><p>BMI is a useful screening tool but doesn't directly measure body fat. Athletes may have high BMI due to muscle mass.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

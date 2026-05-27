@@ -1,0 +1,12 @@
+{
+    "title": "Weight Converter - kg, lbs, oz, stones & More",
+    "description": "Free weight unit converter. Convert between kilograms, pounds, ounces, stones, and grams instantly.",
+    "keywords": "weight converter, kg to lbs, pounds to kg, ounces to grams, stone converter",
+    "canonical": "https://calc.tools/en/unit-weight/",
+    "h1": "Weight Converter",
+    "intro": "Convert between all common weight units: kilograms, pounds, ounces, stones, grams, metric tons.",
+    "faq": [
+        {"q": "How many pounds in a kilogram?", "a": "1 kilogram = 2.20462 pounds. To convert kg to lbs, multiply by 2.20462."},
+        {"q": "How many kg in a stone?", "a": "1 stone = 6.35029 kilograms. Stones are commonly used in the UK for body weight."}
+    ]
+}

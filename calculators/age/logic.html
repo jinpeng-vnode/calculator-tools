@@ -1,0 +1,23 @@
+<div class="form-group">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob">
+</div>
+<button class="btn" onclick="calcAge()">Calculate Age</button>
+<div class="result" id="result"></div>
+<script>
+function calcAge() {
+    const dob = new Date(document.getElementById('dob').value);
+    if (isNaN(dob)) return;
+    const now = new Date();
+    let years = now.getFullYear() - dob.getFullYear();
+    let months = now.getMonth() - dob.getMonth();
+    let days = now.getDate() - dob.getDate();
+    if (days < 0) { months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+    if (months < 0) { years--; months += 12; }
+    const totalDays = Math.floor((now - dob) / (1000*60*60*24));
+    const el = document.getElementById('result');
+    el.innerHTML = `Your age: <strong>${years} years, ${months} months, ${days} days</strong><br>
+        Total: ${totalDays.toLocaleString()} days`;
+    el.classList.add('show');
+}
+</script>

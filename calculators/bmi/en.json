@@ -1,0 +1,13 @@
+{
+    "title": "BMI Calculator - Body Mass Index",
+    "description": "Free online BMI calculator. Calculate your Body Mass Index instantly. Find out if you're underweight, normal, overweight, or obese.",
+    "keywords": "BMI calculator, body mass index, weight calculator, health calculator",
+    "canonical": "https://calc.tools/en/bmi/",
+    "h1": "BMI Calculator",
+    "intro": "Calculate your Body Mass Index (BMI) to check if your weight is healthy for your height.",
+    "faq": [
+        {"q": "What is BMI?", "a": "BMI (Body Mass Index) is a measure of body fat based on height and weight. It applies to adult men and women."},
+        {"q": "What is a healthy BMI range?", "a": "A BMI between 18.5 and 24.9 is considered healthy. Below 18.5 is underweight, 25-29.9 is overweight, and 30+ is obese."},
+        {"q": "Is BMI accurate?", "a": "BMI is a useful screening tool but doesn't directly measure body fat. Athletes may have high BMI due to muscle mass."}
+    ]
+}

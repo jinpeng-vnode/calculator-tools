@@ -1,0 +1,12 @@
+{
+    "title": "Temperature Converter - Celsius, Fahrenheit, Kelvin",
+    "description": "Free temperature converter. Convert between Celsius, Fahrenheit, and Kelvin instantly.",
+    "keywords": "temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin converter",
+    "canonical": "https://calc.tools/en/temperature/",
+    "h1": "Temperature Converter",
+    "intro": "Convert temperatures between Celsius (°C), Fahrenheit (°F), and Kelvin (K).",
+    "faq": [
+        {"q": "How to convert Celsius to Fahrenheit?", "a": "°F = (°C × 9/5) + 32. For example, 100°C = 212°F."},
+        {"q": "What is absolute zero?", "a": "Absolute zero is 0 Kelvin (-273.15°C or -459.67°F). It's the lowest possible temperature."}
+    ]
+}

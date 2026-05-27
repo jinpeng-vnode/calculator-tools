@@ -1,0 +1,12 @@
+{
+    "title": "Age Calculator - Calculate Exact Age",
+    "description": "Free age calculator. Calculate your exact age in years, months, and days from your date of birth.",
+    "keywords": "age calculator, date of birth calculator, how old am I, age in days",
+    "canonical": "https://calc.tools/en/age/",
+    "h1": "Age Calculator",
+    "intro": "Calculate your exact age in years, months, and days. Find out how many days you've been alive.",
+    "faq": [
+        {"q": "How is age calculated?", "a": "Age is calculated by finding the difference between your birth date and today's date, broken down into years, months, and days."},
+        {"q": "Can I calculate age between two dates?", "a": "Yes, enter any two dates to find the exact time difference between them."}
+    ]
+}
