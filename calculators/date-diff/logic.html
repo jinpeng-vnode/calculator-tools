@@ -1,0 +1,31 @@
+<div class="form-group">
+    <label for="startDate">Start Date</label>
+    <input type="date" id="startDate">
+</div>
+<div class="form-group">
+    <label for="endDate">End Date</label>
+    <input type="date" id="endDate">
+</div>
+<button class="btn" onclick="calcDateDiff()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcDateDiff() {
+    const s = new Date(document.getElementById('startDate').value);
+    const e = new Date(document.getElementById('endDate').value);
+    if (isNaN(s) || isNaN(e)) return;
+    const diffMs = Math.abs(e - s);
+    const totalDays = Math.floor(diffMs / (1000*60*60*24));
+    let years = e.getFullYear() - s.getFullYear();
+    let months = e.getMonth() - s.getMonth();
+    let days = e.getDate() - s.getDate();
+    if (days < 0) { months--; days += new Date(e.getFullYear(), e.getMonth(), 0).getDate(); }
+    if (months < 0) { years--; months += 12; }
+    if (e < s) { years = Math.abs(years); months = Math.abs(months); days = Math.abs(days); }
+    const weeks = Math.floor(totalDays / 7);
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${years} years, ${months} months, ${days} days</strong><br>
+        Or ${weeks} weeks and ${totalDays % 7} days<br>
+        Total: ${totalDays.toLocaleString()} days`;
+    el.classList.add('show');
+}
+</script>
