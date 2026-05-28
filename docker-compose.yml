@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    container_name: calculator-tools
+    restart: unless-stopped
+    ports:
+      - "8234:80"
