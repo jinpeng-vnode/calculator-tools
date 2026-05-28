@@ -142,8 +142,13 @@ def main():
     # 生成 SEO 长尾关键词落地页
     seo_urls = build_seo_pages(base_template)
     
+    # 生成博客页面
+    blog_template = load_template("blog.html")
+    blog_index_template = load_template("blog-index.html")
+    blog_urls = build_blog(blog_template, blog_index_template)
+    
     # 生成 sitemap
-    build_sitemap(calc_dirs, langs, seo_urls)
+    build_sitemap(calc_dirs, langs, seo_urls, blog_urls)
     
     # 生成 robots.txt
     (DIST / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://calc.tools/sitemap.xml\n", encoding="utf-8")
@@ -205,7 +210,63 @@ def build_seo_pages(base_template):
     return seo_urls
 
 
-def build_sitemap(calc_dirs, langs, seo_urls=None):
+def build_blog(blog_template, blog_index_template):
+    """构建博客页面"""
+    blog_file = ROOT / "blog" / "articles.json"
+    if not blog_file.exists():
+        return []
+    
+    articles = json.loads(blog_file.read_text(encoding="utf-8"))
+    blog_dir = DIST / "en" / "blog"
+    blog_dir.mkdir(parents=True, exist_ok=True)
+    
+    blog_urls = []
+    cards = ""
+    
+    for article in articles:
+        slug = article["slug"]
+        schema = json.dumps({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article["title"],
+            "description": article["description"],
+            "datePublished": article["date"],
+            "author": {"@type": "Organization", "name": "CalcTools"},
+            "publisher": {"@type": "Organization", "name": "CalcTools"},
+            "mainEntityOfPage": f"https://calc.tools/en/blog/{slug}/"
+        }, ensure_ascii=False)
+        
+        ctx = {
+            "title": article["title"],
+            "description": article["description"],
+            "keywords": article["keywords"],
+            "canonical": f"https://calc.tools/en/blog/{slug}/",
+            "h1": article["h1"],
+            "date": article["date"],
+            "date_display": article["date_display"],
+            "read_time": article["read_time"],
+            "calculator_url": article["calculator_url"],
+            "calculator_name": article["calculator_name"],
+            "content": article["content"],
+            "schema_json": schema,
+        }
+        html = render(blog_template, ctx)
+        out_dir = blog_dir / slug
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "index.html").write_text(html, encoding="utf-8")
+        blog_urls.append(f"https://calc.tools/en/blog/{slug}/")
+        
+        cards += f'<a href="/en/blog/{slug}/" class="blog-card"><h3>{article["title"]}</h3><p>{article["description"][:120]}</p><div class="blog-card-meta">{article["date_display"]} · {article["read_time"]} min read</div></a>\n'
+    
+    # 生成博客首页
+    index_html = blog_index_template.replace("{{blog_cards}}", cards)
+    (blog_dir / "index.html").write_text(index_html, encoding="utf-8")
+    blog_urls.append("https://calc.tools/en/blog/")
+    
+    return blog_urls
+
+
+def build_sitemap(calc_dirs, langs, seo_urls=None, blog_urls=None):
     urls = []
     base = "https://calc.tools"
     for lang in langs:
@@ -215,6 +276,8 @@ def build_sitemap(calc_dirs, langs, seo_urls=None):
                 urls.append(f"{base}/{lang}/{calc_dir.name}/")
     if seo_urls:
         urls.extend(seo_urls)
+    if blog_urls:
+        urls.extend(blog_urls)
     
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for url in urls:

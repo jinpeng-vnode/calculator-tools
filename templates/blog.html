@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keywords}}">
+    <link rel="canonical" href="{{canonical}}">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{{schema_json}}</script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo">🧮 CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/blog/">Blog</a>
+                <a href="/en/">Calculators</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="blog-post">
+            <h1>{{h1}}</h1>
+            <div class="blog-meta">
+                <time datetime="{{date}}">{{date_display}}</time> · {{read_time}} min read
+            </div>
+            <div class="blog-content">
+                {{content}}
+            </div>
+            <div class="blog-cta">
+                <p>Ready to try it yourself? Use our free <a href="{{calculator_url}}">{{calculator_name}}</a> now!</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/blog/">Blog</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
