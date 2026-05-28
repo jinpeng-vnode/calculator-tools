@@ -1,0 +1,47 @@
+<div class="form-group">
+    <label for="value">Value</label>
+    <input type="number" id="value" placeholder="1" step="any">
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="fromUnit">From</label>
+        <select id="fromUnit">
+            <option value="W">Watt (W)</option>
+            <option value="kW">Kilowatt (kW)</option>
+            <option value="MW">Megawatt (MW)</option>
+            <option value="hp">Horsepower (hp)</option>
+            <option value="BTU">BTU/hour</option>
+            <option value="ftlb">Foot-pound/min</option>
+            <option value="cal">Calorie/sec</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="toUnit">To</label>
+        <select id="toUnit">
+            <option value="W">Watt (W)</option>
+            <option value="kW" selected>Kilowatt (kW)</option>
+            <option value="MW">Megawatt (MW)</option>
+            <option value="hp">Horsepower (hp)</option>
+            <option value="BTU">BTU/hour</option>
+            <option value="ftlb">Foot-pound/min</option>
+            <option value="cal">Calorie/sec</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="convertPower()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+function convertPower() {
+    const val = parseFloat(document.getElementById('value').value);
+    if (isNaN(val)) return;
+    const from = document.getElementById('fromUnit').value;
+    const to = document.getElementById('toUnit').value;
+    // 转换为瓦特
+    const toWatts = {W:1, kW:1000, MW:1e6, hp:745.7, BTU:0.29307107, ftlb:0.0225969658, cal:4.184};
+    const watts = val * toWatts[from];
+    const result = watts / toWatts[to];
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${val} ${from} = ${result.toFixed(6)} ${to}</strong>`;
+    el.classList.add('show');
+}
+</script>
