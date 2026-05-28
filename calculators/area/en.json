@@ -1,0 +1,12 @@
+{
+    "title": "Area Calculator - Calculate Area of Shapes",
+    "description": "Free area calculator. Calculate the area of rectangles, triangles, circles, trapezoids, ellipses, parallelograms, and sectors.",
+    "keywords": "area calculator, rectangle area, circle area, triangle area, shape calculator",
+    "canonical": "https://calc.tools/en/area/",
+    "h1": "Area Calculator",
+    "intro": "Calculate the area of common shapes including rectangles, triangles, circles, trapezoids, ellipses, parallelograms, and sectors.",
+    "faq": [
+        {"q": "What shapes are supported?", "a": "Rectangle, triangle, circle, trapezoid, ellipse, parallelogram, and sector."},
+        {"q": "What formulas are used?", "a": "Rectangle: l×w. Triangle: ½×b×h. Circle: πr². Trapezoid: (b1+b2)/2×h. Ellipse: π×a×b. Parallelogram: b×h. Sector: (θ/360)×πr²."}
+    ]
+}
