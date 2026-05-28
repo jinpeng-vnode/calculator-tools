@@ -1,0 +1,12 @@
+{
+    "title": "Date Difference Calculator - Days Between Dates",
+    "description": "Free date difference calculator. Find the number of days, weeks, months, and years between two dates.",
+    "keywords": "date difference calculator, days between dates, date calculator, time between dates",
+    "canonical": "https://calc.tools/en/date-diff/",
+    "h1": "Date Difference Calculator",
+    "intro": "Calculate the exact difference between two dates in years, months, weeks, and days.",
+    "faq": [
+        {"q": "How is the date difference calculated?", "a": "The calculator computes the exact number of days between two dates, then breaks it down into years, months, weeks, and remaining days."},
+        {"q": "Does it account for leap years?", "a": "Yes, the calculation uses JavaScript's built-in Date object which correctly handles leap years and varying month lengths."}
+    ]
+}
