@@ -1,0 +1,1104 @@
+{
+  "pages": [
+    {
+      "slug": "bmi-calculator-for-women",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator for Women - Check Your Body Mass Index",
+      "description": "Free BMI calculator designed for women. Calculate your Body Mass Index and find healthy weight ranges specific to female body composition.",
+      "keywords": "bmi calculator for women, female bmi, women body mass index",
+      "h1": "BMI Calculator for Women",
+      "intro": "Calculate your BMI with ranges optimized for women's body composition.",
+      "faq": [
+        {
+          "q": "What is a healthy BMI for women?",
+          "a": "A healthy BMI for women is between 18.5 and 24.9. Women naturally have more body fat than men."
+        },
+        {
+          "q": "Does BMI differ for women and men?",
+          "a": "The formula is the same, but interpretation may vary due to body composition differences."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator-for-men",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator for Men - Male Body Mass Index",
+      "description": "Free BMI calculator for men. Calculate your Body Mass Index and check healthy weight ranges for adult males.",
+      "keywords": "bmi calculator for men, male bmi, men body mass index",
+      "h1": "BMI Calculator for Men",
+      "intro": "Calculate your BMI with interpretation specific to men's body composition.",
+      "faq": [
+        {
+          "q": "What is a good BMI for men?",
+          "a": "A healthy BMI for men is between 18.5 and 24.9. Muscular men may have elevated BMI without excess fat."
+        },
+        {
+          "q": "Is BMI accurate for muscular men?",
+          "a": "BMI may overestimate body fat in muscular men. Consider waist circumference as additional measure."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator-for-kids",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator for Kids & Children - Pediatric BMI",
+      "description": "Free BMI calculator for children and teens. Calculate pediatric BMI percentile based on age and gender.",
+      "keywords": "bmi calculator for kids, children bmi, pediatric bmi",
+      "h1": "BMI Calculator for Kids & Children",
+      "intro": "Calculate BMI for children aged 2-19 with age-gender specific percentiles.",
+      "faq": [
+        {
+          "q": "How is BMI calculated for children?",
+          "a": "Children's BMI uses the same formula but results are plotted on age-gender specific growth charts."
+        },
+        {
+          "q": "What BMI percentile is healthy for kids?",
+          "a": "Between the 5th and 85th percentile is considered healthy weight."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator-with-age",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator with Age - Age-Adjusted BMI",
+      "description": "Calculate your BMI with age adjustment. See how your Body Mass Index compares to healthy ranges for your age group.",
+      "keywords": "bmi calculator with age, age adjusted bmi, bmi by age",
+      "h1": "BMI Calculator with Age",
+      "intro": "Calculate your age-adjusted BMI. Healthy weight ranges vary by age group.",
+      "faq": [
+        {
+          "q": "Does BMI change with age?",
+          "a": "BMI interpretation varies with age. Older adults may benefit from slightly higher BMI (23-27)."
+        },
+        {
+          "q": "What is a healthy BMI for seniors?",
+          "a": "Research suggests BMI of 23-27 may be optimal for adults over 65."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator-for-athletes",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator for Athletes - Sports Body Composition",
+      "description": "BMI calculator for athletes and active individuals. Understand BMI limitations for muscular body types.",
+      "keywords": "bmi calculator athletes, sports bmi, athlete body mass index",
+      "h1": "BMI Calculator for Athletes",
+      "intro": "Calculate your BMI with context for athletic body types.",
+      "faq": [
+        {
+          "q": "Why is BMI inaccurate for athletes?",
+          "a": "BMI doesn't distinguish between muscle and fat. Athletes often have high BMI due to muscle."
+        },
+        {
+          "q": "What should athletes use instead?",
+          "a": "Consider body fat percentage, waist-to-hip ratio, or DEXA scans."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator-metric",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator Metric (kg/cm) - Metric Units",
+      "description": "Calculate your BMI using metric units (kilograms and centimeters). Free online metric BMI calculator.",
+      "keywords": "bmi calculator metric, bmi kg cm, metric body mass index",
+      "h1": "BMI Calculator - Metric Units",
+      "intro": "Calculate your Body Mass Index using kilograms and centimeters.",
+      "faq": [
+        {
+          "q": "What is the BMI formula in metric?",
+          "a": "BMI = weight(kg) ÷ height(m)². Example: 70kg, 1.75m → 70÷3.0625 = 22.9"
+        },
+        {
+          "q": "How to convert imperial to metric?",
+          "a": "Multiply pounds by 0.453 for kg. Multiply inches by 2.54 for cm."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator-pregnancy",
+      "parent": "bmi",
+      "lang": "en",
+      "title": "BMI Calculator for Pregnancy - Pre-Pregnancy BMI",
+      "description": "Calculate pre-pregnancy BMI to determine healthy weight gain during pregnancy. Essential for prenatal planning.",
+      "keywords": "bmi calculator pregnancy, pre pregnancy bmi, pregnant weight gain",
+      "h1": "BMI Calculator for Pregnancy",
+      "intro": "Calculate your pre-pregnancy BMI to determine recommended weight gain.",
+      "faq": [
+        {
+          "q": "Why is pre-pregnancy BMI important?",
+          "a": "It determines recommended weight gain: normal BMI = 25-35 lbs gain recommended."
+        },
+        {
+          "q": "Should I calculate BMI during pregnancy?",
+          "a": "Use pre-pregnancy weight. During pregnancy, focus on recommended weight gain ranges."
+        }
+      ]
+    },
+    {
+      "slug": "mortgage-calculator-monthly-payment",
+      "parent": "loan",
+      "lang": "en",
+      "title": "Mortgage Calculator - Monthly Payment Calculator",
+      "description": "Free mortgage calculator. Calculate your monthly mortgage payment including principal, interest, taxes and insurance.",
+      "keywords": "mortgage calculator, monthly mortgage payment, home loan calculator",
+      "h1": "Mortgage Calculator - Monthly Payment",
+      "intro": "Calculate your monthly mortgage payment based on loan amount, interest rate, and term.",
+      "faq": [
+        {
+          "q": "How is monthly mortgage payment calculated?",
+          "a": "Monthly payment = P[r(1+r)^n]/[(1+r)^n-1], where P=principal, r=monthly rate, n=number of payments."
+        },
+        {
+          "q": "What is included in a mortgage payment?",
+          "a": "Typically includes principal, interest, property taxes, and homeowner's insurance (PITI)."
+        }
+      ]
+    },
+    {
+      "slug": "mortgage-calculator-30-year",
+      "parent": "loan",
+      "lang": "en",
+      "title": "30-Year Mortgage Calculator - Fixed Rate Home Loan",
+      "description": "Calculate monthly payments for a 30-year fixed-rate mortgage. Compare rates and see total interest paid.",
+      "keywords": "30 year mortgage calculator, 30 year fixed rate, home loan 30 years",
+      "h1": "30-Year Mortgage Calculator",
+      "intro": "Calculate payments for a 30-year fixed-rate mortgage, the most popular home loan term.",
+      "faq": [
+        {
+          "q": "What is the current 30-year mortgage rate?",
+          "a": "Rates vary by lender and credit score. Check current rates with multiple lenders for best comparison."
+        },
+        {
+          "q": "Is a 30-year mortgage better than 15-year?",
+          "a": "30-year has lower monthly payments but more total interest. 15-year saves interest but has higher payments."
+        }
+      ]
+    },
+    {
+      "slug": "mortgage-calculator-15-year",
+      "parent": "loan",
+      "lang": "en",
+      "title": "15-Year Mortgage Calculator - Short Term Home Loan",
+      "description": "Calculate monthly payments for a 15-year mortgage. See how much interest you save vs a 30-year loan.",
+      "keywords": "15 year mortgage calculator, 15 year fixed rate, short term mortgage",
+      "h1": "15-Year Mortgage Calculator",
+      "intro": "Calculate payments for a 15-year mortgage and see total interest savings.",
+      "faq": [
+        {
+          "q": "How much do you save with a 15-year mortgage?",
+          "a": "You typically save 50-60% in total interest compared to a 30-year mortgage."
+        },
+        {
+          "q": "What are 15-year mortgage rates?",
+          "a": "15-year rates are typically 0.5-0.75% lower than 30-year rates."
+        }
+      ]
+    },
+    {
+      "slug": "auto-loan-calculator",
+      "parent": "loan",
+      "lang": "en",
+      "title": "Auto Loan Calculator - Car Payment Calculator",
+      "description": "Free auto loan calculator. Calculate monthly car payments based on price, down payment, interest rate and loan term.",
+      "keywords": "auto loan calculator, car payment calculator, car loan monthly payment",
+      "h1": "Auto Loan Calculator",
+      "intro": "Calculate your monthly car payment and total cost of your auto loan.",
+      "faq": [
+        {
+          "q": "What is a good interest rate for a car loan?",
+          "a": "Good rates range from 3-6% for new cars with good credit. Used cars typically have higher rates."
+        },
+        {
+          "q": "How long should a car loan be?",
+          "a": "3-5 years is recommended. Longer terms mean more interest paid overall."
+        }
+      ]
+    },
+    {
+      "slug": "student-loan-calculator",
+      "parent": "loan",
+      "lang": "en",
+      "title": "Student Loan Calculator - Education Loan Payment",
+      "description": "Calculate student loan monthly payments and total repayment cost. Compare repayment plans and see payoff timeline.",
+      "keywords": "student loan calculator, education loan payment, student debt calculator",
+      "h1": "Student Loan Calculator",
+      "intro": "Calculate your student loan payments and explore repayment options.",
+      "faq": [
+        {
+          "q": "What are student loan repayment options?",
+          "a": "Standard (10yr), Graduated, Extended, and Income-Driven plans are available for federal loans."
+        },
+        {
+          "q": "How much student loan can I afford?",
+          "a": "A common rule: total student debt should not exceed your expected first-year salary."
+        }
+      ]
+    },
+    {
+      "slug": "personal-loan-calculator",
+      "parent": "loan",
+      "lang": "en",
+      "title": "Personal Loan Calculator - Unsecured Loan Payment",
+      "description": "Calculate monthly payments for personal loans. Compare rates and terms for unsecured personal loans.",
+      "keywords": "personal loan calculator, unsecured loan payment, personal loan monthly payment",
+      "h1": "Personal Loan Calculator",
+      "intro": "Calculate monthly payments and total cost for personal loans.",
+      "faq": [
+        {
+          "q": "What is a personal loan?",
+          "a": "An unsecured loan not backed by collateral, typically used for debt consolidation, home improvement, or major purchases."
+        },
+        {
+          "q": "What credit score do I need?",
+          "a": "Most lenders require 600+ for approval. Best rates typically require 720+."
+        }
+      ]
+    },
+    {
+      "slug": "loan-amortization-calculator",
+      "parent": "loan",
+      "lang": "en",
+      "title": "Loan Amortization Calculator - Payment Schedule",
+      "description": "Generate a complete loan amortization schedule. See how each payment splits between principal and interest.",
+      "keywords": "loan amortization calculator, amortization schedule, payment breakdown",
+      "h1": "Loan Amortization Calculator",
+      "intro": "Generate a detailed amortization schedule showing principal and interest breakdown for each payment.",
+      "faq": [
+        {
+          "q": "What is loan amortization?",
+          "a": "Amortization is the process of paying off debt through regular payments that cover both principal and interest."
+        },
+        {
+          "q": "Why do early payments go mostly to interest?",
+          "a": "Interest is calculated on remaining balance. Early on, the balance is highest so interest portion is largest."
+        }
+      ]
+    },
+    {
+      "slug": "percentage-increase-calculator",
+      "parent": "percentage",
+      "lang": "en",
+      "title": "Percentage Increase Calculator - Calculate % Increase",
+      "description": "Calculate percentage increase between two numbers. Free online tool to find percent growth or rise.",
+      "keywords": "percentage increase calculator, percent increase, calculate percentage growth",
+      "h1": "Percentage Increase Calculator",
+      "intro": "Calculate the percentage increase from one value to another instantly.",
+      "faq": [
+        {
+          "q": "How to calculate percentage increase?",
+          "a": "Percentage increase = ((New - Old) / Old) × 100. Example: 50 to 75 = ((75-50)/50)×100 = 50%"
+        },
+        {
+          "q": "What is the difference between increase and growth?",
+          "a": "They are the same calculation. Both measure the relative change from an original value."
+        }
+      ]
+    },
+    {
+      "slug": "percentage-decrease-calculator",
+      "parent": "percentage",
+      "lang": "en",
+      "title": "Percentage Decrease Calculator - Calculate % Decrease",
+      "description": "Calculate percentage decrease between two numbers. Find percent reduction, decline or drop instantly.",
+      "keywords": "percentage decrease calculator, percent decrease, calculate percentage drop",
+      "h1": "Percentage Decrease Calculator",
+      "intro": "Calculate the percentage decrease from one value to another.",
+      "faq": [
+        {
+          "q": "How to calculate percentage decrease?",
+          "a": "Percentage decrease = ((Old - New) / Old) × 100. Example: 80 to 60 = ((80-60)/80)×100 = 25%"
+        },
+        {
+          "q": "Can percentage decrease be over 100%?",
+          "a": "No. A 100% decrease means the value went to zero. Decreases are capped at 100%."
+        }
+      ]
+    },
+    {
+      "slug": "percentage-change-calculator",
+      "parent": "percentage",
+      "lang": "en",
+      "title": "Percentage Change Calculator - Find % Difference",
+      "description": "Calculate percentage change between any two values. Determine if it's an increase or decrease automatically.",
+      "keywords": "percentage change calculator, percent change, percentage difference calculator",
+      "h1": "Percentage Change Calculator",
+      "intro": "Calculate the percentage change between two values. Works for both increases and decreases.",
+      "faq": [
+        {
+          "q": "What is percentage change?",
+          "a": "Percentage change measures the relative difference between an old and new value, expressed as a percent."
+        },
+        {
+          "q": "How is percentage change different from percentage difference?",
+          "a": "Change has direction (increase/decrease) relative to original. Difference is the absolute gap between two values."
+        }
+      ]
+    },
+    {
+      "slug": "percentage-off-calculator",
+      "parent": "percentage",
+      "lang": "en",
+      "title": "Percentage Off Calculator - Discount Calculator",
+      "description": "Calculate sale price after percentage off. Find how much you save with any percent discount.",
+      "keywords": "percentage off calculator, discount calculator, percent off sale price",
+      "h1": "Percentage Off Calculator",
+      "intro": "Calculate the final price after applying a percentage discount.",
+      "faq": [
+        {
+          "q": "How to calculate 20% off?",
+          "a": "Multiply the price by 0.80 (or subtract 20% of the price). Example: $50 × 0.80 = $40"
+        },
+        {
+          "q": "How to calculate percentage off?",
+          "a": "Discount amount = Original price × (Percentage off / 100). Final price = Original - Discount."
+        }
+      ]
+    },
+    {
+      "slug": "what-is-percentage-of-number",
+      "parent": "percentage",
+      "lang": "en",
+      "title": "What is X% of Y? - Percentage of Number Calculator",
+      "description": "Calculate what percentage of a number is. Find X% of any number instantly with this free calculator.",
+      "keywords": "what is percentage of number, calculate percent of number, x percent of y",
+      "h1": "What is X% of Y? Calculator",
+      "intro": "Quickly calculate what any percentage of any number equals.",
+      "faq": [
+        {
+          "q": "How to find a percentage of a number?",
+          "a": "Multiply the number by the percentage divided by 100. Example: 15% of 200 = 200 × 0.15 = 30"
+        },
+        {
+          "q": "What is 20% of 100?",
+          "a": "20% of 100 = 20. Simply multiply 100 × 0.20 = 20."
+        }
+      ]
+    },
+    {
+      "slug": "fraction-to-percentage-calculator",
+      "parent": "percentage",
+      "lang": "en",
+      "title": "Fraction to Percentage Calculator - Convert Fractions",
+      "description": "Convert any fraction to a percentage. Free calculator to turn fractions into percent values instantly.",
+      "keywords": "fraction to percentage, convert fraction to percent, fraction percentage calculator",
+      "h1": "Fraction to Percentage Calculator",
+      "intro": "Convert any fraction to its percentage equivalent instantly.",
+      "faq": [
+        {
+          "q": "How to convert fraction to percentage?",
+          "a": "Divide the numerator by denominator, then multiply by 100. Example: 3/4 = 0.75 × 100 = 75%"
+        },
+        {
+          "q": "What is 1/3 as a percentage?",
+          "a": "1/3 = 33.33% (repeating decimal)."
+        }
+      ]
+    },
+    {
+      "slug": "tip-calculator-restaurant",
+      "parent": "tip",
+      "lang": "en",
+      "title": "Restaurant Tip Calculator - How Much to Tip",
+      "description": "Calculate the right tip amount at restaurants. Standard tipping guide with 15%, 18%, and 20% options.",
+      "keywords": "restaurant tip calculator, how much to tip, dining tip calculator",
+      "h1": "Restaurant Tip Calculator",
+      "intro": "Calculate the appropriate tip for your restaurant meal with standard percentage options.",
+      "faq": [
+        {
+          "q": "How much should you tip at a restaurant?",
+          "a": "Standard tipping: 15% for adequate service, 18% for good service, 20%+ for excellent service."
+        },
+        {
+          "q": "Do you tip on tax?",
+          "a": "Traditionally, tip is calculated on the pre-tax subtotal, though tipping on the total is also common."
+        }
+      ]
+    },
+    {
+      "slug": "tip-calculator-split-bill",
+      "parent": "tip",
+      "lang": "en",
+      "title": "Split Bill Tip Calculator - Divide Check Evenly",
+      "description": "Calculate tip and split the bill evenly among friends. Easy bill splitting with customizable tip percentage.",
+      "keywords": "split bill calculator, split tip calculator, divide check evenly",
+      "h1": "Split Bill Tip Calculator",
+      "intro": "Calculate the tip and split the total bill evenly among your group.",
+      "faq": [
+        {
+          "q": "How to split a bill with tip?",
+          "a": "Add tip to subtotal, then divide by number of people. Example: $100 meal + 20% tip = $120 ÷ 4 people = $30 each."
+        },
+        {
+          "q": "Should you split tip evenly?",
+          "a": "Splitting evenly is simplest. For unequal orders, calculate each person's share proportionally."
+        }
+      ]
+    },
+    {
+      "slug": "tip-calculator-delivery",
+      "parent": "tip",
+      "lang": "en",
+      "title": "Delivery Tip Calculator - Food Delivery Tipping Guide",
+      "description": "Calculate how much to tip delivery drivers. Tipping guide for food delivery, pizza, and grocery delivery.",
+      "keywords": "delivery tip calculator, food delivery tip, how much to tip delivery",
+      "h1": "Delivery Tip Calculator",
+      "intro": "Calculate the appropriate tip for food and grocery delivery drivers.",
+      "faq": [
+        {
+          "q": "How much to tip delivery drivers?",
+          "a": "Standard: $3-5 for small orders, 15-20% for larger orders, more for bad weather or long distances."
+        },
+        {
+          "q": "Do you tip on delivery apps?",
+          "a": "Yes, delivery app drivers rely on tips. Tip 15-20% or at least $3-5 per delivery."
+        }
+      ]
+    },
+    {
+      "slug": "tip-calculator-hair-salon",
+      "parent": "tip",
+      "lang": "en",
+      "title": "Hair Salon Tip Calculator - Hairdresser Tipping Guide",
+      "description": "Calculate how much to tip at hair salons. Tipping guide for haircuts, coloring, and styling services.",
+      "keywords": "hair salon tip calculator, hairdresser tip, how much to tip stylist",
+      "h1": "Hair Salon Tip Calculator",
+      "intro": "Calculate the right tip for your hairdresser or stylist.",
+      "faq": [
+        {
+          "q": "How much to tip hairdresser?",
+          "a": "Standard is 15-20% of the total service cost. For exceptional service, 25% or more."
+        },
+        {
+          "q": "Do you tip salon owner?",
+          "a": "Traditionally owners weren't tipped, but modern etiquette says tipping the owner is appreciated."
+        }
+      ]
+    },
+    {
+      "slug": "tip-calculator-15-18-20-percent",
+      "parent": "tip",
+      "lang": "en",
+      "title": "15% 18% 20% Tip Calculator - Quick Tip Guide",
+      "description": "Instantly calculate 15%, 18%, or 20% tip on any bill amount. The quickest way to figure out your tip.",
+      "keywords": "15 percent tip, 18 percent tip, 20 percent tip calculator",
+      "h1": "15% / 18% / 20% Tip Calculator",
+      "intro": "Quickly calculate common tip percentages on any bill amount.",
+      "faq": [
+        {
+          "q": "When to tip 15% vs 20%?",
+          "a": "15% for adequate service, 18% for good service, 20% for great service. Adjust based on experience."
+        },
+        {
+          "q": "How to calculate 20% tip quickly?",
+          "a": "Move the decimal one place left (10%), then double it. Example: $45 → $4.50 → $9.00 tip."
+        }
+      ]
+    },
+    {
+      "slug": "age-calculator-birthday",
+      "parent": "age",
+      "lang": "en",
+      "title": "Age Calculator by Birthday - How Old Am I?",
+      "description": "Calculate your exact age from your birthday. Find out how old you are in years, months, and days.",
+      "keywords": "age calculator birthday, how old am i, calculate age from birthday",
+      "h1": "Age Calculator - How Old Am I?",
+      "intro": "Enter your birthday to calculate your exact age in years, months, and days.",
+      "faq": [
+        {
+          "q": "How to calculate age from birthday?",
+          "a": "Subtract your birth date from today's date to get your exact age in years, months, and days."
+        },
+        {
+          "q": "Does the calculator account for leap years?",
+          "a": "Yes, our calculator correctly handles leap years in age calculations."
+        }
+      ]
+    },
+    {
+      "slug": "age-calculator-in-days",
+      "parent": "age",
+      "lang": "en",
+      "title": "Age in Days Calculator - How Many Days Old Am I?",
+      "description": "Find out exactly how many days old you are. Calculate your age in days from your date of birth.",
+      "keywords": "age in days calculator, how many days old, days since birth",
+      "h1": "Age in Days Calculator",
+      "intro": "Calculate exactly how many days you have been alive since birth.",
+      "faq": [
+        {
+          "q": "How many days old is a 30 year old?",
+          "a": "Approximately 10,957 days (30 × 365.25 accounting for leap years)."
+        },
+        {
+          "q": "How to calculate days between dates?",
+          "a": "Count all days between two dates including leap year adjustments."
+        }
+      ]
+    },
+    {
+      "slug": "age-calculator-in-months",
+      "parent": "age",
+      "lang": "en",
+      "title": "Age in Months Calculator - How Many Months Old",
+      "description": "Calculate your age in months. Find the exact number of months between your birthday and today.",
+      "keywords": "age in months calculator, how many months old, months since birth",
+      "h1": "Age in Months Calculator",
+      "intro": "Calculate your exact age in months from your date of birth.",
+      "faq": [
+        {
+          "q": "How many months in a year?",
+          "a": "12 months. Your age in months = years × 12 + remaining months."
+        },
+        {
+          "q": "Why calculate age in months?",
+          "a": "Useful for baby milestones, medical records, and precise age tracking."
+        }
+      ]
+    },
+    {
+      "slug": "retirement-age-calculator",
+      "parent": "age",
+      "lang": "en",
+      "title": "Retirement Age Calculator - When Can I Retire?",
+      "description": "Calculate your retirement age and countdown. Find out how many years until you reach retirement age.",
+      "keywords": "retirement age calculator, when can i retire, years until retirement",
+      "h1": "Retirement Age Calculator",
+      "intro": "Calculate how many years until you reach retirement age based on your birth date.",
+      "faq": [
+        {
+          "q": "What is the retirement age?",
+          "a": "In the US, full Social Security retirement age is 66-67 depending on birth year. Many countries have similar ranges."
+        },
+        {
+          "q": "Can I retire early?",
+          "a": "Early retirement is possible at 62 in the US with reduced benefits. Financial planning determines feasibility."
+        }
+      ]
+    },
+    {
+      "slug": "age-difference-calculator",
+      "parent": "age",
+      "lang": "en",
+      "title": "Age Difference Calculator - Compare Two Ages",
+      "description": "Calculate the age difference between two people. Find the exact gap in years, months, and days.",
+      "keywords": "age difference calculator, age gap calculator, compare two ages",
+      "h1": "Age Difference Calculator",
+      "intro": "Calculate the exact age difference between two people.",
+      "faq": [
+        {
+          "q": "How to calculate age difference?",
+          "a": "Subtract the younger person's birth date from the older person's birth date."
+        },
+        {
+          "q": "What is a normal age difference in couples?",
+          "a": "Average age difference in couples is 2-3 years, but varies widely by culture and preference."
+        }
+      ]
+    },
+    {
+      "slug": "celsius-to-fahrenheit-converter",
+      "parent": "temperature",
+      "lang": "en",
+      "title": "Celsius to Fahrenheit Converter - °C to °F Calculator",
+      "description": "Convert Celsius to Fahrenheit instantly. Free temperature converter with formula and common conversions.",
+      "keywords": "celsius to fahrenheit, c to f converter, temperature converter celsius",
+      "h1": "Celsius to Fahrenheit Converter",
+      "intro": "Convert any temperature from Celsius to Fahrenheit instantly.",
+      "faq": [
+        {
+          "q": "What is the formula for C to F?",
+          "a": "°F = (°C × 9/5) + 32. Example: 100°C = (100 × 1.8) + 32 = 212°F"
+        },
+        {
+          "q": "What is 0°C in Fahrenheit?",
+          "a": "0°C = 32°F (the freezing point of water)."
+        }
+      ]
+    },
+    {
+      "slug": "fahrenheit-to-celsius-converter",
+      "parent": "temperature",
+      "lang": "en",
+      "title": "Fahrenheit to Celsius Converter - °F to °C Calculator",
+      "description": "Convert Fahrenheit to Celsius instantly. Free temperature converter with formula and reference chart.",
+      "keywords": "fahrenheit to celsius, f to c converter, temperature converter fahrenheit",
+      "h1": "Fahrenheit to Celsius Converter",
+      "intro": "Convert any temperature from Fahrenheit to Celsius instantly.",
+      "faq": [
+        {
+          "q": "What is the formula for F to C?",
+          "a": "°C = (°F - 32) × 5/9. Example: 98.6°F = (98.6 - 32) × 5/9 = 37°C"
+        },
+        {
+          "q": "What is 72°F in Celsius?",
+          "a": "72°F = 22.2°C (a comfortable room temperature)."
+        }
+      ]
+    },
+    {
+      "slug": "body-temperature-converter",
+      "parent": "temperature",
+      "lang": "en",
+      "title": "Body Temperature Converter - Fever Check Calculator",
+      "description": "Convert body temperature between Celsius and Fahrenheit. Check if you have a fever with normal range reference.",
+      "keywords": "body temperature converter, fever calculator, normal body temperature",
+      "h1": "Body Temperature Converter",
+      "intro": "Convert body temperature and check if readings indicate a fever.",
+      "faq": [
+        {
+          "q": "What is normal body temperature?",
+          "a": "Normal is 98.6°F (37°C), but ranges from 97-99°F (36.1-37.2°C) throughout the day."
+        },
+        {
+          "q": "What temperature is a fever?",
+          "a": "Generally, 100.4°F (38°C) or higher is considered a fever."
+        }
+      ]
+    },
+    {
+      "slug": "kg-to-lbs-converter",
+      "parent": "unit-weight",
+      "lang": "en",
+      "title": "Kg to Lbs Converter - Kilograms to Pounds Calculator",
+      "description": "Convert kilograms to pounds instantly. Free kg to lbs converter with formula and conversion table.",
+      "keywords": "kg to lbs, kilograms to pounds, kg to pounds converter",
+      "h1": "Kilograms to Pounds Converter",
+      "intro": "Convert weight from kilograms to pounds instantly.",
+      "faq": [
+        {
+          "q": "How many pounds in a kilogram?",
+          "a": "1 kilogram = 2.20462 pounds."
+        },
+        {
+          "q": "How to convert kg to lbs?",
+          "a": "Multiply kilograms by 2.20462. Example: 70 kg × 2.20462 = 154.3 lbs"
+        }
+      ]
+    },
+    {
+      "slug": "lbs-to-kg-converter",
+      "parent": "unit-weight",
+      "lang": "en",
+      "title": "Lbs to Kg Converter - Pounds to Kilograms Calculator",
+      "description": "Convert pounds to kilograms instantly. Free lbs to kg converter with formula and common conversions.",
+      "keywords": "lbs to kg, pounds to kilograms, lbs to kg converter",
+      "h1": "Pounds to Kilograms Converter",
+      "intro": "Convert weight from pounds to kilograms instantly.",
+      "faq": [
+        {
+          "q": "How many kg in a pound?",
+          "a": "1 pound = 0.453592 kilograms."
+        },
+        {
+          "q": "How to convert lbs to kg?",
+          "a": "Multiply pounds by 0.453592. Example: 150 lbs × 0.453592 = 68.04 kg"
+        }
+      ]
+    },
+    {
+      "slug": "cm-to-inches-converter",
+      "parent": "unit-length",
+      "lang": "en",
+      "title": "CM to Inches Converter - Centimeters to Inches",
+      "description": "Convert centimeters to inches instantly. Free cm to inches calculator with formula and conversion chart.",
+      "keywords": "cm to inches, centimeters to inches, cm to inch converter",
+      "h1": "Centimeters to Inches Converter",
+      "intro": "Convert length from centimeters to inches instantly.",
+      "faq": [
+        {
+          "q": "How many inches in a centimeter?",
+          "a": "1 centimeter = 0.393701 inches."
+        },
+        {
+          "q": "How to convert cm to inches?",
+          "a": "Divide centimeters by 2.54. Example: 30 cm ÷ 2.54 = 11.81 inches"
+        }
+      ]
+    },
+    {
+      "slug": "inches-to-cm-converter",
+      "parent": "unit-length",
+      "lang": "en",
+      "title": "Inches to CM Converter - Inches to Centimeters",
+      "description": "Convert inches to centimeters instantly. Free inches to cm calculator with formula and reference table.",
+      "keywords": "inches to cm, inches to centimeters, inch to cm converter",
+      "h1": "Inches to Centimeters Converter",
+      "intro": "Convert length from inches to centimeters instantly.",
+      "faq": [
+        {
+          "q": "How many cm in an inch?",
+          "a": "1 inch = 2.54 centimeters."
+        },
+        {
+          "q": "How to convert inches to cm?",
+          "a": "Multiply inches by 2.54. Example: 12 inches × 2.54 = 30.48 cm"
+        }
+      ]
+    },
+    {
+      "slug": "sale-price-calculator",
+      "parent": "discount",
+      "lang": "en",
+      "title": "Sale Price Calculator - Calculate Discounted Price",
+      "description": "Calculate the final sale price after discount. Find out how much you save and pay with any percentage off.",
+      "keywords": "sale price calculator, discounted price, calculate sale price",
+      "h1": "Sale Price Calculator",
+      "intro": "Calculate the final price after applying any discount percentage.",
+      "faq": [
+        {
+          "q": "How to calculate sale price?",
+          "a": "Sale price = Original price × (1 - discount/100). Example: $80 with 25% off = $80 × 0.75 = $60"
+        },
+        {
+          "q": "How to find original price from sale price?",
+          "a": "Original = Sale price ÷ (1 - discount/100). Example: $60 at 25% off → $60 ÷ 0.75 = $80"
+        }
+      ]
+    },
+    {
+      "slug": "double-discount-calculator",
+      "parent": "discount",
+      "lang": "en",
+      "title": "Double Discount Calculator - Stacking Discounts",
+      "description": "Calculate the final price with two stacked discounts. Find the combined discount percentage.",
+      "keywords": "double discount calculator, stacking discounts, two discounts calculator",
+      "h1": "Double Discount Calculator",
+      "intro": "Calculate the final price when two discounts are applied one after another.",
+      "faq": [
+        {
+          "q": "How do stacked discounts work?",
+          "a": "Apply first discount, then apply second discount to the reduced price. 20% + 10% ≠ 30%."
+        },
+        {
+          "q": "What is 20% off then 10% off?",
+          "a": "$100 → 20% off = $80 → 10% off = $72. Combined discount is 28%, not 30%."
+        }
+      ]
+    },
+    {
+      "slug": "markup-calculator",
+      "parent": "discount",
+      "lang": "en",
+      "title": "Markup Calculator - Calculate Selling Price",
+      "description": "Calculate selling price from cost and markup percentage. Find profit margin and markup for any product.",
+      "keywords": "markup calculator, calculate selling price, markup percentage",
+      "h1": "Markup Calculator",
+      "intro": "Calculate the selling price based on cost and desired markup percentage.",
+      "faq": [
+        {
+          "q": "What is markup?",
+          "a": "Markup is the percentage added to cost to determine selling price. Markup = (Price - Cost) / Cost × 100"
+        },
+        {
+          "q": "What is the difference between markup and margin?",
+          "a": "Markup is based on cost, margin is based on selling price. 50% markup = 33.3% margin."
+        }
+      ]
+    },
+    {
+      "slug": "gpa-calculator-college",
+      "parent": "gpa",
+      "lang": "en",
+      "title": "College GPA Calculator - Calculate Your Grade Point Average",
+      "description": "Calculate your college GPA. Enter your courses and grades to find your cumulative grade point average.",
+      "keywords": "college gpa calculator, university gpa, cumulative gpa calculator",
+      "h1": "College GPA Calculator",
+      "intro": "Calculate your cumulative college GPA from your course grades.",
+      "faq": [
+        {
+          "q": "How is college GPA calculated?",
+          "a": "GPA = Total grade points ÷ Total credit hours. A=4.0, B=3.0, C=2.0, D=1.0, F=0."
+        },
+        {
+          "q": "What is a good college GPA?",
+          "a": "3.0+ is generally good. 3.5+ is very good. 3.7+ is excellent for graduate school applications."
+        }
+      ]
+    },
+    {
+      "slug": "high-school-gpa-calculator",
+      "parent": "gpa",
+      "lang": "en",
+      "title": "High School GPA Calculator - Calculate Your GPA",
+      "description": "Calculate your high school GPA for college applications. Supports weighted and unweighted GPA scales.",
+      "keywords": "high school gpa calculator, weighted gpa, unweighted gpa calculator",
+      "h1": "High School GPA Calculator",
+      "intro": "Calculate your high school GPA on both weighted and unweighted scales.",
+      "faq": [
+        {
+          "q": "What is weighted vs unweighted GPA?",
+          "a": "Unweighted is on 4.0 scale. Weighted gives extra points for AP/Honors (up to 5.0 scale)."
+        },
+        {
+          "q": "What GPA do colleges look for?",
+          "a": "Top colleges typically want 3.7+ unweighted. State schools often accept 3.0+."
+        }
+      ]
+    },
+    {
+      "slug": "days-between-dates-calculator",
+      "parent": "date-diff",
+      "lang": "en",
+      "title": "Days Between Dates Calculator - Count Days",
+      "description": "Calculate the number of days between two dates. Find exact days, weeks, and months between any two dates.",
+      "keywords": "days between dates, count days between dates, date difference calculator",
+      "h1": "Days Between Dates Calculator",
+      "intro": "Calculate the exact number of days between any two dates.",
+      "faq": [
+        {
+          "q": "How to count days between dates?",
+          "a": "Enter start and end dates. The calculator counts all days between them, accounting for leap years."
+        },
+        {
+          "q": "Does it include the end date?",
+          "a": "By default, it counts days between (exclusive of end date). Add 1 if you want to include both dates."
+        }
+      ]
+    },
+    {
+      "slug": "weeks-between-dates-calculator",
+      "parent": "date-diff",
+      "lang": "en",
+      "title": "Weeks Between Dates Calculator - Count Weeks",
+      "description": "Calculate the number of weeks between two dates. Find exact weeks and remaining days between any dates.",
+      "keywords": "weeks between dates, count weeks, weeks calculator between dates",
+      "h1": "Weeks Between Dates Calculator",
+      "intro": "Calculate the exact number of weeks between any two dates.",
+      "faq": [
+        {
+          "q": "How to calculate weeks between dates?",
+          "a": "Divide the number of days between dates by 7 to get weeks."
+        },
+        {
+          "q": "How many weeks in a year?",
+          "a": "52 weeks and 1 day (or 2 days in a leap year)."
+        }
+      ]
+    },
+    {
+      "slug": "gas-cost-calculator-road-trip",
+      "parent": "fuel-cost",
+      "lang": "en",
+      "title": "Gas Cost Calculator for Road Trips - Trip Fuel Cost",
+      "description": "Calculate gas cost for your road trip. Enter distance, fuel efficiency, and gas price to estimate trip fuel expenses.",
+      "keywords": "gas cost calculator road trip, trip fuel cost, road trip gas calculator",
+      "h1": "Road Trip Gas Cost Calculator",
+      "intro": "Estimate your fuel cost for any road trip based on distance and your vehicle's fuel efficiency.",
+      "faq": [
+        {
+          "q": "How to calculate gas cost for a trip?",
+          "a": "Gas cost = (Distance ÷ MPG) × Gas price. Example: 300 miles ÷ 25 MPG × $3.50 = $42"
+        },
+        {
+          "q": "How to improve fuel efficiency?",
+          "a": "Maintain steady speed, proper tire pressure, reduce weight, and avoid aggressive driving."
+        }
+      ]
+    },
+    {
+      "slug": "bmi-ji-suan-qi-nv-xing",
+      "parent": "bmi",
+      "lang": "zh",
+      "title": "女性BMI计算器 - 女生体重指数计算",
+      "description": "专为女性设计的BMI计算器。计算女性身体质量指数，了解健康体重范围。",
+      "keywords": "女性BMI计算器, 女生体重指数, 女性健康体重",
+      "h1": "女性BMI计算器",
+      "intro": "计算适合女性体质的BMI指数，了解您的健康体重范围。",
+      "faq": [
+        {
+          "q": "女性健康BMI是多少？",
+          "a": "女性健康BMI范围为18.5-24.9。女性天然体脂率高于男性。"
+        },
+        {
+          "q": "BMI对女性准确吗？",
+          "a": "BMI是筛查工具，不直接测量体脂。建议结合腰围等指标综合评估。"
+        }
+      ]
+    },
+    {
+      "slug": "fang-dai-ji-suan-qi-deng-e-ben-xi",
+      "parent": "loan",
+      "lang": "zh",
+      "title": "房贷计算器等额本息 - 月供计算器",
+      "description": "等额本息房贷计算器，计算每月还款额、总利息和还款明细。支持商业贷款和公积金贷款。",
+      "keywords": "房贷计算器等额本息, 月供计算器, 等额本息还款",
+      "h1": "房贷计算器 - 等额本息",
+      "intro": "计算等额本息还款方式下的每月月供、总利息和还款计划。",
+      "faq": [
+        {
+          "q": "什么是等额本息？",
+          "a": "每月还款金额固定，前期利息占比大，后期本金占比大。适合收入稳定的借款人。"
+        },
+        {
+          "q": "等额本息和等额本金哪个划算？",
+          "a": "等额本金总利息更少，但前期月供更高。等额本息月供固定，还款压力均匀。"
+        }
+      ]
+    },
+    {
+      "slug": "fang-dai-ji-suan-qi-deng-e-ben-jin",
+      "parent": "loan",
+      "lang": "zh",
+      "title": "房贷计算器等额本金 - 递减还款计算",
+      "description": "等额本金房贷计算器，计算递减月供、总利息节省和还款明细表。",
+      "keywords": "房贷计算器等额本金, 递减还款, 等额本金月供",
+      "h1": "房贷计算器 - 等额本金",
+      "intro": "计算等额本金还款方式下的递减月供和总利息。",
+      "faq": [
+        {
+          "q": "什么是等额本金？",
+          "a": "每月偿还相同本金，利息逐月递减，月供逐月减少。总利息比等额本息少。"
+        },
+        {
+          "q": "等额本金适合什么人？",
+          "a": "适合前期还款能力强、希望减少总利息支出的借款人。"
+        }
+      ]
+    },
+    {
+      "slug": "bai-fen-bi-ji-suan-qi-zhang-fu",
+      "parent": "percentage",
+      "lang": "zh",
+      "title": "百分比涨幅计算器 - 计算增长率",
+      "description": "在线计算百分比涨幅和增长率。输入原始值和新值，自动计算增长百分比。",
+      "keywords": "百分比涨幅计算器, 增长率计算, 涨幅百分比",
+      "h1": "百分比涨幅计算器",
+      "intro": "快速计算两个数值之间的百分比涨幅。",
+      "faq": [
+        {
+          "q": "涨幅怎么算？",
+          "a": "涨幅 = (新值 - 原值) / 原值 × 100%。例：从50涨到75，涨幅=(75-50)/50×100%=50%"
+        },
+        {
+          "q": "涨幅和增长率一样吗？",
+          "a": "是的，涨幅和增长率是同一个计算方法。"
+        }
+      ]
+    },
+    {
+      "slug": "nian-ling-ji-suan-qi-xu-sui",
+      "parent": "age",
+      "lang": "zh",
+      "title": "虚岁计算器 - 周岁虚岁换算",
+      "description": "在线虚岁计算器，输入出生日期自动计算周岁和虚岁。了解虚岁的计算方法。",
+      "keywords": "虚岁计算器, 周岁虚岁换算, 虚岁怎么算",
+      "h1": "虚岁计算器",
+      "intro": "输入出生日期，自动计算您的周岁和虚岁。",
+      "faq": [
+        {
+          "q": "虚岁怎么算？",
+          "a": "虚岁 = 周岁 + 1（过了生日）或 周岁 + 2（未过生日）。出生即为1岁，每过一个春节加1岁。"
+        },
+        {
+          "q": "为什么有虚岁？",
+          "a": "虚岁是中国传统计龄方式，将在母体中的时间也计入年龄。"
+        }
+      ]
+    },
+    {
+      "slug": "xiao-fei-ji-suan-qi-aa-zhi",
+      "parent": "tip",
+      "lang": "zh",
+      "title": "AA制计算器 - 聚餐分摊费用",
+      "description": "AA制聚餐费用分摊计算器。输入总金额和人数，自动计算每人应付金额。",
+      "keywords": "AA制计算器, 聚餐分摊, 费用平摊计算器",
+      "h1": "AA制分摊计算器",
+      "intro": "快速计算聚餐或活动费用的人均分摊金额。",
+      "faq": [
+        {
+          "q": "AA制怎么算？",
+          "a": "总费用 ÷ 人数 = 每人应付。例：餐费500元，5人AA，每人100元。"
+        },
+        {
+          "q": "有人没喝酒怎么分？",
+          "a": "可以先扣除酒水费用由喝酒的人分摊，剩余餐费再平均分。"
+        }
+      ]
+    },
+    {
+      "slug": "wen-du-zhuan-huan-she-shi-hua-shi",
+      "parent": "temperature",
+      "lang": "zh",
+      "title": "摄氏度华氏度转换器 - 温度换算",
+      "description": "在线摄氏度华氏度互转工具。支持摄氏度转华氏度、华氏度转摄氏度，附转换公式。",
+      "keywords": "摄氏度华氏度转换, 温度换算, 摄氏转华氏",
+      "h1": "摄氏度华氏度转换器",
+      "intro": "快速进行摄氏度和华氏度之间的温度转换。",
+      "faq": [
+        {
+          "q": "摄氏度转华氏度公式？",
+          "a": "°F = °C × 9/5 + 32。例：37°C = 37×1.8+32 = 98.6°F"
+        },
+        {
+          "q": "华氏度转摄氏度公式？",
+          "a": "°C = (°F - 32) × 5/9。例：100°F = (100-32)×5/9 = 37.8°C"
+        }
+      ]
+    },
+    {
+      "slug": "zhe-kou-ji-suan-qi-shuang-zhong",
+      "parent": "discount",
+      "lang": "zh",
+      "title": "双重折扣计算器 - 折上折计算",
+      "description": "计算双重折扣（折上折）后的最终价格。了解两次打折的实际优惠力度。",
+      "keywords": "双重折扣计算器, 折上折计算, 叠加折扣",
+      "h1": "双重折扣计算器",
+      "intro": "计算两次折扣叠加后的最终价格和实际折扣率。",
+      "faq": [
+        {
+          "q": "折上折怎么算？",
+          "a": "先算第一次折扣价，再对折后价格打第二次折。8折再7折 = 0.8×0.7 = 0.56，即5.6折。"
+        },
+        {
+          "q": "两个折扣能直接相加吗？",
+          "a": "不能。8折+7折≠5折。正确算法是两个折扣相乘：0.8×0.7=0.56折。"
+        }
+      ]
+    },
+    {
+      "slug": "you-fei-ji-suan-qi-gong-lu",
+      "parent": "fuel-cost",
+      "lang": "zh",
+      "title": "高速油费计算器 - 自驾出行油费",
+      "description": "计算自驾出行的油费开支。输入里程、油耗和油价，估算高速公路行程油费。",
+      "keywords": "高速油费计算器, 自驾油费, 公路旅行油费计算",
+      "h1": "高速油费计算器",
+      "intro": "估算自驾出行的燃油费用，帮助规划旅行预算。",
+      "faq": [
+        {
+          "q": "油费怎么算？",
+          "a": "油费 = 里程(km) ÷ 100 × 百公里油耗(L) × 油价(元/L)。例：500km，8L/100km，7.5元/L = 300元"
+        },
+        {
+          "q": "怎么降低油耗？",
+          "a": "保持匀速行驶、正确胎压、减少负重、避免急加速急刹车。"
+        }
+      ]
+    },
+    {
+      "slug": "sui-ji-shu-sheng-cheng-qi-chou-jiang",
+      "parent": "random-number",
+      "lang": "zh",
+      "title": "抽奖随机数生成器 - 在线抽奖工具",
+      "description": "在线随机数抽奖工具。设置范围自动生成随机数，适用于抽奖、摇号、随机分组。",
+      "keywords": "抽奖随机数生成器, 在线抽奖, 随机数生成",
+      "h1": "抽奖随机数生成器",
+      "intro": "生成指定范围内的随机数，适用于抽奖和随机选择。",
+      "faq": [
+        {
+          "q": "随机数是真随机吗？",
+          "a": "计算机生成的是伪随机数，但对于抽奖等日常用途完全足够公平。"
+        },
+        {
+          "q": "可以生成不重复的随机数吗？",
+          "a": "可以设置不重复模式，适合抽奖时确保每个号码只出现一次。"
+        }
+      ]
+    }
+  ]
+}

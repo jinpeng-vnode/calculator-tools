@@ -139,15 +139,73 @@ def main():
     # 根目录 index.html 重定向到英文
     (DIST / "index.html").write_text('<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="/en/"></head></html>', encoding="utf-8")
     
+    # 生成 SEO 长尾关键词落地页
+    seo_urls = build_seo_pages(base_template)
+    
     # 生成 sitemap
-    build_sitemap(calc_dirs, langs)
+    build_sitemap(calc_dirs, langs, seo_urls)
     
     # 生成 robots.txt
     (DIST / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://calc.tools/sitemap.xml\n", encoding="utf-8")
     
     print(f"✓ Built {sum(1 for _ in DIST.rglob('index.html'))} pages")
 
-def build_sitemap(calc_dirs, langs):
+def build_seo_pages(base_template):
+    """从 seo-pages.json 生成长尾关键词落地页，复用父计算器的 logic.html"""
+    seo_file = ROOT / "seo-pages.json"
+    if not seo_file.exists():
+        return []
+    
+    seo_data = json.loads(seo_file.read_text(encoding="utf-8"))
+    seo_urls = []
+    
+    for page in seo_data.get("pages", []):
+        slug = page["slug"]
+        parent = page["parent"]
+        lang = page["lang"]
+        
+        # 读取父计算器的 logic.html
+        logic_file = CALCULATORS / parent / "logic.html"
+        logic = logic_file.read_text(encoding="utf-8") if logic_file.exists() else ""
+        
+        # Schema.org 结构化数据
+        schema = json.dumps({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": page["title"],
+            "description": page["description"],
+            "url": f"https://calc.tools/{lang}/{slug}/",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Any",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        }, ensure_ascii=False)
+        
+        ctx = {
+            "title": page["title"],
+            "description": page["description"],
+            "keywords": page.get("keywords", ""),
+            "canonical": f"https://calc.tools/{lang}/{slug}/",
+            "lang": lang,
+            "h1": page.get("h1", page["title"]),
+            "intro": page.get("intro", ""),
+            "calculator_body": logic,
+            "schema_json": schema,
+            "slug": slug,
+            "faq_html": build_faq(page.get("faq", [])),
+            "alternate_en": f"https://calc.tools/en/{slug}/",
+            "alternate_zh": f"https://calc.tools/zh/{slug}/",
+        }
+        
+        html = render(base_template, ctx)
+        out_dir = DIST / lang / slug
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "index.html").write_text(html, encoding="utf-8")
+        seo_urls.append(f"https://calc.tools/{lang}/{slug}/")
+    
+    return seo_urls
+
+
+def build_sitemap(calc_dirs, langs, seo_urls=None):
     urls = []
     base = "https://calc.tools"
     for lang in langs:
@@ -155,6 +213,8 @@ def build_sitemap(calc_dirs, langs):
         for calc_dir in calc_dirs:
             if (calc_dir / f"{lang}.json").exists():
                 urls.append(f"{base}/{lang}/{calc_dir.name}/")
+    if seo_urls:
+        urls.extend(seo_urls)
     
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for url in urls:
