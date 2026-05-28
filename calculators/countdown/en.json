@@ -1,0 +1,12 @@
+{
+    "title": "Countdown Calculator - Days Until Date",
+    "description": "Free countdown calculator. Find out how many days, hours, minutes, and seconds until a specific date.",
+    "keywords": "countdown calculator, days until, countdown timer, date countdown",
+    "canonical": "https://calc.tools/en/countdown/",
+    "h1": "Countdown Calculator",
+    "intro": "Calculate the time remaining until a specific date and time.",
+    "faq": [
+        {"q": "How does the countdown work?", "a": "The calculator computes the difference between now and your target date, displaying the result in days, hours, minutes, and seconds."},
+        {"q": "Does it update in real time?", "a": "Yes, once calculated the countdown updates every second automatically."}
+    ]
+}

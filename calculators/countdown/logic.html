@@ -1,0 +1,42 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="targetDate">Target Date</label>
+        <input type="date" id="targetDate">
+    </div>
+    <div class="form-group">
+        <label for="targetTime">Target Time (optional)</label>
+        <input type="time" id="targetTime" value="00:00">
+    </div>
+</div>
+<button class="btn" onclick="startCountdown()">Start Countdown</button>
+<div class="result" id="result"></div>
+<script>
+let countdownInterval = null;
+function startCountdown() {
+    if (countdownInterval) clearInterval(countdownInterval);
+    const date = document.getElementById('targetDate').value;
+    const time = document.getElementById('targetTime').value || '00:00';
+    if (!date) return;
+    const target = new Date(date + 'T' + time);
+    function update() {
+        const now = new Date();
+        const diff = target - now;
+        const el = document.getElementById('result');
+        if (diff <= 0) {
+            el.innerHTML = '<strong>The target date has passed!</strong>';
+            el.classList.add('show');
+            clearInterval(countdownInterval);
+            return;
+        }
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+        const secs = Math.floor((diff % (1000*60)) / 1000);
+        el.innerHTML = `<strong>${days}d ${hours}h ${mins}m ${secs}s</strong><br>
+            Total: ${Math.ceil(diff / (1000*60*60*24))} days remaining`;
+        el.classList.add('show');
+    }
+    update();
+    countdownInterval = setInterval(update, 1000);
+}
+</script>
