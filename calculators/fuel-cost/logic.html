@@ -1,0 +1,59 @@
+<div class="form-group">
+    <label for="distance">Trip Distance</label>
+    <div class="form-row">
+        <input type="number" id="distance" placeholder="500" min="0">
+        <select id="distUnit">
+            <option value="miles">miles</option>
+            <option value="km">kilometers</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="efficiency">Fuel Efficiency</label>
+    <div class="form-row">
+        <input type="number" id="efficiency" placeholder="25" min="0" step="0.1">
+        <select id="effUnit">
+            <option value="mpg">mpg</option>
+            <option value="lper100">L/100km</option>
+            <option value="kpl">km/L</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="price">Fuel Price</label>
+    <div class="form-row">
+        <input type="number" id="price" placeholder="3" min="0" step="0.01">
+        <select id="priceUnit">
+            <option value="gallon">per gallon</option>
+            <option value="liter">per liter</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcFuel()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcFuel() {
+    const dist = parseFloat(document.getElementById('distance').value);
+    const eff = parseFloat(document.getElementById('efficiency').value);
+    const price = parseFloat(document.getElementById('price').value);
+    if (!dist || !eff || !price) return;
+    const distUnit = document.getElementById('distUnit').value;
+    const effUnit = document.getElementById('effUnit').value;
+    const priceUnit = document.getElementById('priceUnit').value;
+    // 转换为公里
+    let distKm = distUnit === 'miles' ? dist * 1.60934 : dist;
+    // 计算总升数
+    let liters;
+    if (effUnit === 'mpg') { liters = distKm / (eff * 1.60934 / 3.78541); }
+    else if (effUnit === 'lper100') { liters = distKm * eff / 100; }
+    else { liters = distKm / eff; }
+    // 计算费用
+    let cost;
+    if (priceUnit === 'gallon') { cost = (liters / 3.78541) * price; }
+    else { cost = liters * price; }
+    const el = document.getElementById('result');
+    el.innerHTML = `Fuel Cost: <strong>$${cost.toFixed(2)}</strong><br>
+        Fuel Needed: ${liters.toFixed(2)} liters (${(liters/3.78541).toFixed(2)} gallons)`;
+    el.classList.add('show');
+}
+</script>

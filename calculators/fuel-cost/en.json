@@ -1,0 +1,12 @@
+{
+    "title": "Fuel Cost Calculator - Trip Gas Cost Estimator",
+    "description": "Free fuel cost calculator. Estimate the fuel cost of a trip based on distance, fuel efficiency, and gas price.",
+    "keywords": "fuel cost calculator, gas cost calculator, trip fuel cost, fuel efficiency",
+    "canonical": "https://calc.tools/en/fuel-cost/",
+    "h1": "Fuel Cost Calculator",
+    "intro": "Estimate the fuel cost of a trip based on distance, fuel efficiency, and gas price.",
+    "faq": [
+        {"q": "How is fuel cost calculated?", "a": "Fuel cost = (distance / fuel efficiency) × price per unit. For example, a 500-mile trip at 25 mpg with gas at $3/gallon costs $60."},
+        {"q": "What units are supported?", "a": "Distance in miles or kilometers, efficiency in mpg, L/100km, or km/L, and price per gallon or per liter."}
+    ]
+}
