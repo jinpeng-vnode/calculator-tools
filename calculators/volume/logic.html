@@ -1,0 +1,54 @@
+<div class="form-group">
+    <label for="shape">Shape</label>
+    <select id="shape" onchange="showFields()">
+        <option value="sphere">Sphere</option>
+        <option value="cone">Cone</option>
+        <option value="cube">Cube</option>
+        <option value="cylinder">Cylinder</option>
+        <option value="rectangular">Rectangular Tank</option>
+        <option value="capsule">Capsule</option>
+        <option value="ellipsoid">Ellipsoid</option>
+        <option value="pyramid">Square Pyramid</option>
+    </select>
+</div>
+<div id="fields"></div>
+<button class="btn" onclick="calcVolume()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+const shapes = {
+    sphere: [{id:'r',label:'Radius'}],
+    cone: [{id:'r',label:'Base Radius'},{id:'h',label:'Height'}],
+    cube: [{id:'a',label:'Edge Length'}],
+    cylinder: [{id:'r',label:'Base Radius'},{id:'h',label:'Height'}],
+    rectangular: [{id:'l',label:'Length'},{id:'w',label:'Width'},{id:'h',label:'Height'}],
+    capsule: [{id:'r',label:'Radius'},{id:'h',label:'Cylinder Height'}],
+    ellipsoid: [{id:'a',label:'Axis a'},{id:'b',label:'Axis b'},{id:'c',label:'Axis c'}],
+    pyramid: [{id:'a',label:'Base Edge'},{id:'h',label:'Height'}]
+};
+function showFields() {
+    const s = document.getElementById('shape').value;
+    document.getElementById('fields').innerHTML = shapes[s].map(f =>
+        `<div class="form-group"><label for="${f.id}">${f.label}</label><input type="number" id="${f.id}" min="0" step="any"></div>`
+    ).join('');
+}
+showFields();
+function calcVolume() {
+    const s = document.getElementById('shape').value;
+    const v = id => parseFloat(document.getElementById(id).value);
+    let vol;
+    switch(s) {
+        case 'sphere': vol = (4/3)*Math.PI*v('r')**3; break;
+        case 'cone': vol = (1/3)*Math.PI*v('r')**2*v('h'); break;
+        case 'cube': vol = v('a')**3; break;
+        case 'cylinder': vol = Math.PI*v('r')**2*v('h'); break;
+        case 'rectangular': vol = v('l')*v('w')*v('h'); break;
+        case 'capsule': vol = Math.PI*v('r')**2*v('h') + (4/3)*Math.PI*v('r')**3; break;
+        case 'ellipsoid': vol = (4/3)*Math.PI*v('a')*v('b')*v('c'); break;
+        case 'pyramid': vol = (1/3)*v('a')**2*v('h'); break;
+    }
+    if (isNaN(vol) || vol < 0) return;
+    const el = document.getElementById('result');
+    el.innerHTML = `Volume: <strong>${vol.toFixed(4)}</strong> cubic units`;
+    el.classList.add('show');
+}
+</script>
