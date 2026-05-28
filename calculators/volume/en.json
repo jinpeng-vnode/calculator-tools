@@ -1,0 +1,12 @@
+{
+    "title": "Volume Calculator - Calculate Volume of 3D Shapes",
+    "description": "Free volume calculator. Calculate the volume of spheres, cones, cubes, cylinders, rectangular tanks, capsules, ellipsoids, and pyramids.",
+    "keywords": "volume calculator, sphere volume, cylinder volume, cone volume, cube volume",
+    "canonical": "https://calc.tools/en/volume/",
+    "h1": "Volume Calculator",
+    "intro": "Calculate the volume of common 3D shapes including spheres, cones, cubes, cylinders, and more.",
+    "faq": [
+        {"q": "What shapes are supported?", "a": "Sphere, cone, cube, cylinder, rectangular tank, capsule, ellipsoid, and square pyramid."},
+        {"q": "What formulas are used?", "a": "Sphere: 4/3πr³. Cone: 1/3πr²h. Cube: a³. Cylinder: πr²h. Rectangular: l×w×h. Capsule: πr²h+4/3πr³. Ellipsoid: 4/3πabc. Pyramid: 1/3a²h."}
+    ]
+}
