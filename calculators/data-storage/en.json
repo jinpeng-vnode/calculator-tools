@@ -1,0 +1,12 @@
+{
+    "title": "Data Storage Converter - Convert Digital Storage Units",
+    "description": "Free data storage converter. Convert between bits, bytes, KB, MB, GB, TB, PB and their binary equivalents.",
+    "keywords": "data storage converter, byte converter, MB to GB, storage unit calculator, digital storage",
+    "canonical": "https://calc.tools/en/data-storage/",
+    "h1": "Data Storage Converter",
+    "intro": "Convert between digital storage units including bits, bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes.",
+    "faq": [
+        {"q": "What is the difference between KB and KiB?", "a": "KB (kilobyte) = 1000 bytes (decimal), while KiB (kibibyte) = 1024 bytes (binary). This converter uses the decimal (SI) standard where 1 KB = 1000 bytes."},
+        {"q": "How many GB in a TB?", "a": "1 terabyte (TB) = 1000 gigabytes (GB) in decimal, or 1024 GB in binary."}
+    ]
+}
