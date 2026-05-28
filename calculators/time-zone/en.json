@@ -1,0 +1,12 @@
+{
+    "title": "Time Zone Converter - Convert Time Between Zones",
+    "description": "Free time zone converter. Convert time between different time zones worldwide instantly.",
+    "keywords": "time zone converter, time zone calculator, world clock, time conversion",
+    "canonical": "https://calc.tools/en/time-zone/",
+    "h1": "Time Zone Converter",
+    "intro": "Convert time between different time zones around the world.",
+    "faq": [
+        {"q": "How does time zone conversion work?", "a": "Each time zone has an offset from UTC (Coordinated Universal Time). The converter calculates the difference between source and target zone offsets to determine the converted time."},
+        {"q": "Does it handle daylight saving time?", "a": "This converter uses fixed UTC offsets. For DST-aware conversion, note that some zones shift by 1 hour during summer months."}
+    ]
+}
