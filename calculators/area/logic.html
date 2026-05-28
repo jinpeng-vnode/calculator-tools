@@ -1,0 +1,52 @@
+<div class="form-group">
+    <label for="shape">Shape</label>
+    <select id="shape" onchange="showFields()">
+        <option value="rectangle">Rectangle</option>
+        <option value="triangle">Triangle</option>
+        <option value="circle">Circle</option>
+        <option value="trapezoid">Trapezoid</option>
+        <option value="ellipse">Ellipse</option>
+        <option value="parallelogram">Parallelogram</option>
+        <option value="sector">Sector</option>
+    </select>
+</div>
+<div id="fields"></div>
+<button class="btn" onclick="calcArea()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+const shapes = {
+    rectangle: [{id:'length',label:'Length'},{id:'width',label:'Width'}],
+    triangle: [{id:'base',label:'Base'},{id:'height',label:'Height'}],
+    circle: [{id:'radius',label:'Radius'}],
+    trapezoid: [{id:'base1',label:'Base 1'},{id:'base2',label:'Base 2'},{id:'height',label:'Height'}],
+    ellipse: [{id:'a',label:'Semi-major axis (a)'},{id:'b',label:'Semi-minor axis (b)'}],
+    parallelogram: [{id:'base',label:'Base'},{id:'height',label:'Height'}],
+    sector: [{id:'radius',label:'Radius'},{id:'angle',label:'Angle (degrees)'}]
+};
+function showFields() {
+    const s = document.getElementById('shape').value;
+    const fields = shapes[s];
+    document.getElementById('fields').innerHTML = fields.map(f =>
+        `<div class="form-group"><label for="${f.id}">${f.label}</label><input type="number" id="${f.id}" min="0" step="any"></div>`
+    ).join('');
+}
+showFields();
+function calcArea() {
+    const s = document.getElementById('shape').value;
+    const v = id => parseFloat(document.getElementById(id).value);
+    let area;
+    switch(s) {
+        case 'rectangle': area = v('length') * v('width'); break;
+        case 'triangle': area = 0.5 * v('base') * v('height'); break;
+        case 'circle': area = Math.PI * v('radius') ** 2; break;
+        case 'trapezoid': area = (v('base1') + v('base2')) / 2 * v('height'); break;
+        case 'ellipse': area = Math.PI * v('a') * v('b'); break;
+        case 'parallelogram': area = v('base') * v('height'); break;
+        case 'sector': area = (v('angle') / 360) * Math.PI * v('radius') ** 2; break;
+    }
+    if (isNaN(area) || area < 0) return;
+    const el = document.getElementById('result');
+    el.innerHTML = `Area: <strong>${area.toFixed(4)}</strong> square units`;
+    el.classList.add('show');
+}
+</script>
