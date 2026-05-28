@@ -1,0 +1,12 @@
+{
+    "title": "Speed Calculator - Speed Distance Time",
+    "description": "Free speed calculator. Calculate speed, distance, or time given any two of the three values.",
+    "keywords": "speed calculator, distance calculator, time calculator, speed distance time",
+    "canonical": "https://calc.tools/en/speed/",
+    "h1": "Speed Calculator",
+    "intro": "Calculate speed, distance, or time by providing any two values. Speed = Distance ÷ Time.",
+    "faq": [
+        {"q": "What is the formula?", "a": "Speed = Distance / Time. Rearranged: Distance = Speed × Time, and Time = Distance / Speed."},
+        {"q": "What units are supported?", "a": "Speed in m/s, km/h, or mph. Distance in meters, kilometers, or miles. Time in hours, minutes, and seconds."}
+    ]
+}
