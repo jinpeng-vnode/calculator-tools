@@ -1,0 +1,73 @@
+<p>Provide any two values to calculate the third:</p>
+<div class="form-group">
+    <label for="speed">Speed</label>
+    <div class="form-row">
+        <input type="number" id="speed" placeholder="Leave blank to calculate" min="0" step="any">
+        <select id="speedUnit">
+            <option value="ms">m/s</option>
+            <option value="kmh">km/h</option>
+            <option value="mph">mph</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="dist">Distance</label>
+    <div class="form-row">
+        <input type="number" id="dist" placeholder="Leave blank to calculate" min="0" step="any">
+        <select id="distUnit">
+            <option value="m">meters</option>
+            <option value="km">kilometers</option>
+            <option value="mi">miles</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label>Time</label>
+    <div class="form-row">
+        <input type="number" id="hours" placeholder="h" min="0" style="width:30%">
+        <input type="number" id="mins" placeholder="m" min="0" style="width:30%">
+        <input type="number" id="secs" placeholder="s" min="0" style="width:30%">
+    </div>
+</div>
+<button class="btn" onclick="calcSpeed()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcSpeed() {
+    const speedVal = document.getElementById('speed').value;
+    const distVal = document.getElementById('dist').value;
+    const h = parseFloat(document.getElementById('hours').value) || 0;
+    const m = parseFloat(document.getElementById('mins').value) || 0;
+    const s = parseFloat(document.getElementById('secs').value) || 0;
+    const totalSec = h * 3600 + m * 60 + s;
+    const sUnit = document.getElementById('speedUnit').value;
+    const dUnit = document.getElementById('distUnit').value;
+    // 转换速度为m/s
+    const speedToMs = {ms:1, kmh:1/3.6, mph:0.44704};
+    // 转换距离为米
+    const distToM = {m:1, km:1000, mi:1609.34};
+    const el = document.getElementById('result');
+    if (speedVal && distVal && !totalSec) {
+        // 计算时间
+        const sp = parseFloat(speedVal) * speedToMs[sUnit];
+        const d = parseFloat(distVal) * distToM[dUnit];
+        const t = d / sp;
+        const th = Math.floor(t/3600); const tm = Math.floor((t%3600)/60); const ts = (t%60).toFixed(1);
+        el.innerHTML = `Time: <strong>${th}h ${tm}m ${ts}s</strong>`;
+    } else if (speedVal && totalSec && !distVal) {
+        // 计算距离
+        const sp = parseFloat(speedVal) * speedToMs[sUnit];
+        const d = sp * totalSec;
+        const dDisplay = (d / distToM[dUnit]).toFixed(2);
+        el.innerHTML = `Distance: <strong>${dDisplay} ${dUnit}</strong>`;
+    } else if (distVal && totalSec && !speedVal) {
+        // 计算速度
+        const d = parseFloat(distVal) * distToM[dUnit];
+        const sp = d / totalSec;
+        const sDisplay = (sp / speedToMs[sUnit]).toFixed(2);
+        el.innerHTML = `Speed: <strong>${sDisplay} ${sUnit}</strong>`;
+    } else {
+        el.innerHTML = 'Please provide exactly two values.';
+    }
+    el.classList.add('show');
+}
+</script>
