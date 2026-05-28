@@ -1,0 +1,31 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="minVal">Lower Limit</label>
+        <input type="number" id="minVal" value="1">
+    </div>
+    <div class="form-group">
+        <label for="maxVal">Upper Limit</label>
+        <input type="number" id="maxVal" value="100">
+    </div>
+</div>
+<div class="form-group">
+    <label for="count">How many numbers?</label>
+    <input type="number" id="count" value="1" min="1" max="100">
+</div>
+<button class="btn" onclick="genRandom()">Generate</button>
+<div class="result" id="result"></div>
+<script>
+function genRandom() {
+    const min = parseInt(document.getElementById('minVal').value);
+    const max = parseInt(document.getElementById('maxVal').value);
+    const count = parseInt(document.getElementById('count').value) || 1;
+    if (isNaN(min) || isNaN(max) || min > max) return;
+    const nums = [];
+    for (let i = 0; i < Math.min(count, 100); i++) {
+        nums.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${nums.join(', ')}</strong>`;
+    el.classList.add('show');
+}
+</script>

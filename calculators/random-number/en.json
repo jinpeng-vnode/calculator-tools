@@ -1,0 +1,12 @@
+{
+    "title": "Random Number Generator - Generate Random Integers",
+    "description": "Free random number generator. Generate random integers within a specified range instantly.",
+    "keywords": "random number generator, random integer, number generator, random picker",
+    "canonical": "https://calc.tools/en/random-number/",
+    "h1": "Random Number Generator",
+    "intro": "Generate one or more random integers within a specified range.",
+    "faq": [
+        {"q": "Are the numbers truly random?", "a": "The generator uses JavaScript's Math.random(), which is a pseudo-random number generator. It's suitable for most purposes but not for cryptographic use."},
+        {"q": "Can I generate multiple numbers at once?", "a": "Yes, specify how many random numbers you want to generate and they will all appear in the result."}
+    ]
+}
