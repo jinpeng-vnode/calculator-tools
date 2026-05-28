@@ -1,0 +1,12 @@
+{
+    "title": "GPA Calculator - Calculate Grade Point Average",
+    "description": "Free GPA calculator. Calculate your grade point average by entering courses, credits, and grades.",
+    "keywords": "GPA calculator, grade point average, college GPA, cumulative GPA",
+    "canonical": "https://calc.tools/en/gpa/",
+    "h1": "GPA Calculator",
+    "intro": "Calculate your grade point average (GPA) by entering your courses, credit hours, and letter grades.",
+    "faq": [
+        {"q": "How is GPA calculated?", "a": "GPA = sum of (credits × grade points) / total credits. For example, an A (4.0) in a 3-credit course contributes 12 grade points."},
+        {"q": "What grade scale is used?", "a": "A+=4.3, A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, C-=1.7, D+=1.3, D=1.0, D-=0.7, F=0."}
+    ]
+}
