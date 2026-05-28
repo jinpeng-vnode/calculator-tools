@@ -1,0 +1,12 @@
+{
+    "title": "Power Converter - Convert Power Units",
+    "description": "Free power unit converter. Convert between watts, kilowatts, horsepower, BTU/h, and other power units.",
+    "keywords": "power converter, watt converter, horsepower to watts, kW to hp, power unit conversion",
+    "canonical": "https://calc.tools/en/power-converter/",
+    "h1": "Power Converter",
+    "intro": "Convert between different units of power including watts, kilowatts, horsepower, and BTU/hour.",
+    "faq": [
+        {"q": "How do I convert horsepower to watts?", "a": "1 mechanical horsepower = 745.7 watts. Multiply hp by 745.7 to get watts."},
+        {"q": "What power units are supported?", "a": "Watts (W), kilowatts (kW), megawatts (MW), horsepower (hp), BTU/hour, foot-pounds/minute, and calories/second."}
+    ]
+}
