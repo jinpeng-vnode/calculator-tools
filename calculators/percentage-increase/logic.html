@@ -1,0 +1,44 @@
+<div class="form-group">
+    <label for="oldVal">Original Value</label>
+    <input type="number" id="oldVal" placeholder="50">
+</div>
+<div class="form-group">
+    <label for="newVal">New Value</label>
+    <input type="number" id="newVal" placeholder="75">
+</div>
+<button class="btn" onclick="calcIncrease()">Calculate Increase</button>
+<div class="result" id="result1"></div>
+
+<hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--border)">
+
+<div class="form-group">
+    <label for="baseVal">Value</label>
+    <input type="number" id="baseVal" placeholder="200">
+</div>
+<div class="form-group">
+    <label for="pctInc">Increase by (%)</label>
+    <input type="number" id="pctInc" placeholder="25">
+</div>
+<button class="btn" onclick="calcNewVal()">Calculate New Value</button>
+<div class="result" id="result2"></div>
+
+<script>
+function calcIncrease(){
+    const o=parseFloat(document.getElementById('oldVal').value);
+    const n=parseFloat(document.getElementById('newVal').value);
+    if(isNaN(o)||isNaN(n)||o===0)return;
+    const pct=((n-o)/Math.abs(o)*100).toFixed(2);
+    const el=document.getElementById('result1');
+    el.innerHTML=`Percentage increase: <strong>${pct}%</strong>`;
+    el.classList.add('show');
+}
+function calcNewVal(){
+    const b=parseFloat(document.getElementById('baseVal').value);
+    const p=parseFloat(document.getElementById('pctInc').value);
+    if(isNaN(b)||isNaN(p))return;
+    const nv=(b*(1+p/100)).toFixed(2).replace(/\.?0+$/,'');
+    const el=document.getElementById('result2');
+    el.innerHTML=`New value: <strong>${nv}</strong> (increased by ${(b*p/100).toFixed(2).replace(/\.?0+$/,'')})`;
+    el.classList.add('show');
+}
+</script>

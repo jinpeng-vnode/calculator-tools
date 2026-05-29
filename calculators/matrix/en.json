@@ -1,0 +1,12 @@
+{
+    "title": "Matrix Calculator - Matrix Operations Online",
+    "description": "Free matrix calculator. Perform matrix addition, subtraction, multiplication, determinant, and transpose operations.",
+    "keywords": "matrix calculator, matrix multiplication, determinant calculator, matrix operations, transpose",
+    "canonical": "https://calc.tools/en/matrix/",
+    "h1": "Matrix Calculator",
+    "intro": "Perform matrix operations: addition, subtraction, multiplication, determinant (2×2, 3×3), and transpose.",
+    "faq": [
+        {"q": "How to multiply matrices?", "a": "Multiply each row element of the first matrix by each column element of the second matrix and sum them. The result matrix has rows from the first and columns from the second."},
+        {"q": "What is a matrix determinant?", "a": "The determinant is a scalar value computed from a square matrix. For 2×2 matrix [[a,b],[c,d]], det = ad - bc."}
+    ]
+}

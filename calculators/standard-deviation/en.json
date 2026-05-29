@@ -1,0 +1,12 @@
+{
+    "title": "Standard Deviation Calculator - Calculate SD & Variance",
+    "description": "Free standard deviation calculator. Calculate standard deviation, variance, mean, and other statistics for a data set.",
+    "keywords": "standard deviation calculator, variance calculator, statistics calculator, SD calculator, mean calculator",
+    "canonical": "https://calc.tools/en/standard-deviation/",
+    "h1": "Standard Deviation Calculator",
+    "intro": "Enter your data set (comma-separated) to calculate standard deviation, variance, mean, and other descriptive statistics.",
+    "faq": [
+        {"q": "What is standard deviation?", "a": "Standard deviation measures how spread out numbers are from the mean. A low SD means data points are close to the mean; a high SD means they are spread out."},
+        {"q": "What is the difference between population and sample SD?", "a": "Population SD divides by N (total count). Sample SD divides by N-1 (Bessel's correction) to account for estimating from a sample."}
+    ]
+}

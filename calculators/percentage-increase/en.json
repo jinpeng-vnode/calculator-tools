@@ -1,0 +1,12 @@
+{
+    "title": "Percentage Increase Calculator - Calculate % Increase",
+    "description": "Free percentage increase calculator. Calculate the percentage increase between two values or find the new value after a percentage increase.",
+    "keywords": "percentage increase calculator, percent increase, percentage growth, calculate increase",
+    "canonical": "https://calc.tools/en/percentage-increase/",
+    "h1": "Percentage Increase Calculator",
+    "intro": "Calculate percentage increase between two numbers, or find the result after applying a percentage increase to a value.",
+    "faq": [
+        {"q": "How to calculate percentage increase?", "a": "Percentage increase = ((New Value - Old Value) / Old Value) × 100. Example: from 50 to 75 = ((75-50)/50) × 100 = 50% increase."},
+        {"q": "How to find a value after percentage increase?", "a": "New Value = Original × (1 + Percentage/100). Example: 200 increased by 25% = 200 × 1.25 = 250."}
+    ]
+}

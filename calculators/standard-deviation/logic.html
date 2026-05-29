@@ -1,0 +1,33 @@
+<div class="form-group">
+    <label for="data">Data (comma-separated)</label>
+    <input type="text" id="data" placeholder="10, 12, 23, 23, 16, 23, 21, 16">
+</div>
+<button class="btn" onclick="calcSD()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcSD(){
+    const raw=document.getElementById('data').value;
+    const nums=raw.split(/[,\s]+/).map(Number).filter(n=>!isNaN(n));
+    if(nums.length<2)return;
+    const n=nums.length;
+    const mean=nums.reduce((a,b)=>a+b,0)/n;
+    const sqDiffs=nums.map(x=>(x-mean)**2);
+    const popVar=sqDiffs.reduce((a,b)=>a+b,0)/n;
+    const samVar=sqDiffs.reduce((a,b)=>a+b,0)/(n-1);
+    const popSD=Math.sqrt(popVar);
+    const samSD=Math.sqrt(samVar);
+    const min=Math.min(...nums);
+    const max=Math.max(...nums);
+    const el=document.getElementById('result');
+    el.innerHTML=`
+        <p>Count: <strong>${n}</strong></p>
+        <p>Mean: <strong>${mean.toFixed(4)}</strong></p>
+        <p>Population SD (σ): <strong>${popSD.toFixed(4)}</strong></p>
+        <p>Sample SD (s): <strong>${samSD.toFixed(4)}</strong></p>
+        <p>Population Variance: <strong>${popVar.toFixed(4)}</strong></p>
+        <p>Sample Variance: <strong>${samVar.toFixed(4)}</strong></p>
+        <p>Min: <strong>${min}</strong> | Max: <strong>${max}</strong></p>`;
+    el.classList.add('show');
+}
+</script>

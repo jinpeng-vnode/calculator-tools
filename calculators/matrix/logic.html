@@ -1,0 +1,55 @@
+<div class="form-group">
+    <label>Matrix Size</label>
+    <select id="size" onchange="buildInputs()"><option value="2">2×2</option><option value="3">3×3</option></select>
+</div>
+<div class="form-group"><label>Matrix A</label><div id="matA"></div></div>
+<div class="form-group"><label>Matrix B</label><div id="matB"></div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" onclick="calc('add')">A + B</button>
+    <button class="btn" onclick="calc('sub')">A − B</button>
+    <button class="btn" onclick="calc('mul')">A × B</button>
+    <button class="btn" onclick="calcDet()">det(A)</button>
+</div>
+<div class="result" id="result"></div>
+
+<script>
+function buildInputs(){
+    const s=parseInt(document.getElementById('size').value);
+    ['matA','matB'].forEach(id=>{
+        let h='';
+        for(let i=0;i<s;i++){
+            h+='<div style="display:flex;gap:4px;margin:4px 0">';
+            for(let j=0;j<s;j++)h+=`<input type="number" id="${id}_${i}_${j}" style="width:60px" value="0">`;
+            h+='</div>';
+        }
+        document.getElementById(id).innerHTML=h;
+    });
+}
+function getMat(id){
+    const s=parseInt(document.getElementById('size').value);
+    const m=[];
+    for(let i=0;i<s;i++){m[i]=[];for(let j=0;j<s;j++)m[i][j]=parseFloat(document.getElementById(`${id}_${i}_${j}`).value)||0;}
+    return m;
+}
+function showMat(m){
+    return m.map(r=>'[ '+r.map(v=>v.toFixed(2).replace(/\.?0+$/,'')).join(', ')+' ]').join('<br>');
+}
+function calc(op){
+    const a=getMat('matA'),b=getMat('matB');const s=a.length;const r=[];
+    for(let i=0;i<s;i++){r[i]=[];for(let j=0;j<s;j++){
+        if(op==='add')r[i][j]=a[i][j]+b[i][j];
+        else if(op==='sub')r[i][j]=a[i][j]-b[i][j];
+        else{r[i][j]=0;for(let k=0;k<s;k++)r[i][j]+=a[i][k]*b[k][j];}
+    }}
+    const el=document.getElementById('result');
+    el.innerHTML=`Result:<br>${showMat(r)}`;el.classList.add('show');
+}
+function calcDet(){
+    const a=getMat('matA');const s=a.length;let d;
+    if(s===2)d=a[0][0]*a[1][1]-a[0][1]*a[1][0];
+    else d=a[0][0]*(a[1][1]*a[2][2]-a[1][2]*a[2][1])-a[0][1]*(a[1][0]*a[2][2]-a[1][2]*a[2][0])+a[0][2]*(a[1][0]*a[2][1]-a[1][1]*a[2][0]);
+    const el=document.getElementById('result');
+    el.innerHTML=`det(A) = <strong>${d}</strong>`;el.classList.add('show');
+}
+buildInputs();
+</script>

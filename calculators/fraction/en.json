@@ -1,0 +1,12 @@
+{
+    "title": "Fraction Calculator - Add, Subtract, Multiply, Divide Fractions",
+    "description": "Free fraction calculator. Add, subtract, multiply, and divide fractions. Simplify fractions and convert between mixed numbers and improper fractions.",
+    "keywords": "fraction calculator, add fractions, subtract fractions, multiply fractions, divide fractions, simplify fractions",
+    "canonical": "https://calc.tools/en/fraction/",
+    "h1": "Fraction Calculator",
+    "intro": "Perform arithmetic operations on fractions: addition, subtraction, multiplication, and division. Results are automatically simplified.",
+    "faq": [
+        {"q": "How do you add fractions?", "a": "To add fractions, find a common denominator, add the numerators, then simplify. Example: 1/3 + 1/4 = 4/12 + 3/12 = 7/12."},
+        {"q": "How do you simplify a fraction?", "a": "Divide both the numerator and denominator by their greatest common divisor (GCD). Example: 8/12 → divide both by 4 → 2/3."}
+    ]
+}

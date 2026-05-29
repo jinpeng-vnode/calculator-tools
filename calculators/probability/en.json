@@ -1,0 +1,12 @@
+{
+    "title": "Probability Calculator - Calculate Event Probability",
+    "description": "Free probability calculator. Calculate single event probability, combined probability, conditional probability, and permutations/combinations.",
+    "keywords": "probability calculator, event probability, combinations calculator, permutations calculator",
+    "canonical": "https://calc.tools/en/probability/",
+    "h1": "Probability Calculator",
+    "intro": "Calculate the probability of events, combinations, and permutations. Enter favorable outcomes and total outcomes.",
+    "faq": [
+        {"q": "How to calculate probability?", "a": "Probability = Number of favorable outcomes / Total number of outcomes. Example: rolling a 6 on a die = 1/6 ≈ 0.167 or 16.7%."},
+        {"q": "What is the difference between permutation and combination?", "a": "Permutation considers order (nPr = n!/(n-r)!). Combination does not consider order (nCr = n!/(r!(n-r)!))."}
+    ]
+}
