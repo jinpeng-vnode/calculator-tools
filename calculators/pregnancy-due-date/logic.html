@@ -1,0 +1,35 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="method">Calculation Method</label>
+        <select id="method">
+            <option value="lmp">Last Menstrual Period</option>
+            <option value="conception">Conception Date</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="dateInput">Date</label>
+        <input type="date" id="dateInput">
+    </div>
+</div>
+<button class="btn" onclick="calcDueDate()">Calculate Due Date</button>
+<div class="result" id="result"></div>
+<script>
+function calcDueDate() {
+    const method = document.getElementById('method').value;
+    const dateStr = document.getElementById('dateInput').value;
+    if (!dateStr) return;
+    const date = new Date(dateStr);
+    let dueDate;
+    if (method === 'lmp') {
+        dueDate = new Date(date.getTime() + 280 * 24 * 60 * 60 * 1000);
+    } else {
+        dueDate = new Date(date.getTime() + 266 * 24 * 60 * 60 * 1000);
+    }
+    const today = new Date();
+    const daysLeft = Math.ceil((dueDate - today) / (24 * 60 * 60 * 1000));
+    const weeksPregnant = Math.floor((today - date) / (7 * 24 * 60 * 60 * 1000));
+    const el = document.getElementById('result');
+    el.innerHTML = `Estimated Due Date: <strong>${dueDate.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})}</strong><br>Days Remaining: ${daysLeft > 0 ? daysLeft : 0}<br>Weeks Pregnant: ~${weeksPregnant > 0 ? weeksPregnant : 0}`;
+    el.classList.add('show');
+}
+</script>

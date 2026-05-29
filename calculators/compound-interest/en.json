@@ -1,0 +1,13 @@
+{
+    "title": "Compound Interest Calculator Daily - Free Tool",
+    "description": "Free compound interest calculator with daily compounding. See how your savings grow over time with the power of compound interest. Includes charts and breakdowns.",
+    "keywords": "compound interest calculator daily, compound interest formula, savings growth calculator, investment calculator, daily compounding",
+    "canonical": "https://calc.tools/en/compound-interest/",
+    "h1": "Daily Compound Interest Calculator",
+    "intro": "Calculate how your investment grows with daily compound interest. Enter principal, rate, and time to see your future balance.",
+    "faq": [
+        {"q": "What is compound interest?", "a": "Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods."},
+        {"q": "How does daily compounding work?", "a": "With daily compounding, interest is calculated and added to your balance every day (365 times per year), resulting in slightly higher returns than monthly or annual compounding."},
+        {"q": "What is the compound interest formula?", "a": "A = P(1 + r/n)^(nt), where A is final amount, P is principal, r is annual rate, n is compounding frequency, and t is time in years."}
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Pregnancy Due Date Calculator - Free Estimate",
+    "description": "Free pregnancy due date calculator. Estimate your baby's due date based on last menstrual period or conception date. Track your pregnancy timeline.",
+    "keywords": "pregnancy due date calculator, due date calculator, pregnancy calculator, baby due date, expected delivery date",
+    "canonical": "https://calc.tools/en/pregnancy-due-date/",
+    "h1": "Pregnancy Due Date Calculator",
+    "intro": "Estimate your baby's due date based on your last menstrual period (LMP) or conception date. A typical pregnancy lasts 40 weeks from LMP.",
+    "faq": [
+        {"q": "How is the due date calculated?", "a": "The due date is calculated by adding 280 days (40 weeks) to the first day of your last menstrual period (Naegele's rule)."},
+        {"q": "How accurate is the due date?", "a": "Only about 5% of babies are born on their exact due date. Most are born within 1-2 weeks before or after."},
+        {"q": "Can I calculate from conception date?", "a": "Yes. If you know your conception date, the due date is approximately 266 days (38 weeks) from conception."}
+    ]
+}

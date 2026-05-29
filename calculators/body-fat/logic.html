@@ -1,0 +1,65 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="175" min="100" max="250">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="neck">Neck (cm)</label>
+        <input type="number" id="neck" placeholder="38" step="0.1" min="20">
+    </div>
+    <div class="form-group">
+        <label for="waist">Waist (cm)</label>
+        <input type="number" id="waist" placeholder="85" step="0.1" min="40">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group" id="hipGroup">
+        <label for="hip">Hip (cm) - Women only</label>
+        <input type="number" id="hip" placeholder="95" step="0.1" min="50">
+    </div>
+</div>
+<button class="btn" onclick="calcBodyFat()">Calculate Body Fat</button>
+<div class="result" id="result"></div>
+<script>
+function calcBodyFat() {
+    const gender = document.getElementById('gender').value;
+    const height = parseFloat(document.getElementById('height').value);
+    const neck = parseFloat(document.getElementById('neck').value);
+    const waist = parseFloat(document.getElementById('waist').value);
+    const hip = parseFloat(document.getElementById('hip').value);
+    if (!height || !neck || !waist) return;
+    let bf;
+    if (gender === 'male') {
+        bf = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+    } else {
+        if (!hip) return;
+        bf = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+    }
+    let cat = '';
+    if (gender === 'male') {
+        if (bf < 6) cat = 'Essential fat';
+        else if (bf < 14) cat = 'Athletic';
+        else if (bf < 18) cat = 'Fit';
+        else if (bf < 25) cat = 'Average';
+        else cat = 'Above average';
+    } else {
+        if (bf < 14) cat = 'Essential fat';
+        else if (bf < 21) cat = 'Athletic';
+        else if (bf < 25) cat = 'Fit';
+        else if (bf < 32) cat = 'Average';
+        else cat = 'Above average';
+    }
+    const el = document.getElementById('result');
+    el.innerHTML = `Body Fat: <strong>${bf.toFixed(1)}%</strong><br>Category: ${cat}`;
+    el.classList.add('show');
+}
+</script>

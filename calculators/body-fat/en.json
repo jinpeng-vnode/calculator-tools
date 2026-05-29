@@ -1,0 +1,13 @@
+{
+    "title": "Body Fat Percentage Calculator - Free Estimate",
+    "description": "Free body fat percentage calculator using the U.S. Navy method. Estimate your body fat based on measurements. Track your fitness progress accurately.",
+    "keywords": "body fat percentage calculator, body fat calculator, body composition, navy method body fat, fitness calculator",
+    "canonical": "https://calc.tools/en/body-fat/",
+    "h1": "Body Fat Percentage Calculator",
+    "intro": "Estimate your body fat percentage using the U.S. Navy method. Enter your measurements below for an accurate estimate.",
+    "faq": [
+        {"q": "How is body fat percentage calculated?", "a": "This calculator uses the U.S. Navy method which estimates body fat from neck, waist, and hip (for women) circumference measurements along with height."},
+        {"q": "What is a healthy body fat percentage?", "a": "For men: 10-20% is considered fit, 20-25% average. For women: 18-28% is fit, 28-32% average."},
+        {"q": "How accurate is this method?", "a": "The Navy method is accurate within 3-4% of more precise methods like DEXA scans for most people."}
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Mortgage Payment Calculator Monthly - Free Estimate",
+    "description": "Free monthly mortgage payment calculator. Estimate your home loan payment including principal, interest, taxes, and insurance. Plan your home purchase today.",
+    "keywords": "mortgage payment calculator monthly, home loan calculator, mortgage estimate, house payment calculator, monthly mortgage payment",
+    "canonical": "https://calc.tools/en/mortgage/",
+    "h1": "Monthly Mortgage Payment Calculator",
+    "intro": "Calculate your estimated monthly mortgage payment based on loan amount, interest rate, and term. Includes breakdown of principal and interest.",
+    "faq": [
+        {"q": "How is monthly mortgage payment calculated?", "a": "Monthly payment = P[r(1+r)^n]/[(1+r)^n-1], where P is principal, r is monthly interest rate, and n is number of payments."},
+        {"q": "What is included in a mortgage payment?", "a": "A typical mortgage payment includes principal, interest, property taxes, and homeowner's insurance (PITI)."},
+        {"q": "How much house can I afford?", "a": "A common rule is that your monthly mortgage payment should not exceed 28% of your gross monthly income."}
+    ]
+}

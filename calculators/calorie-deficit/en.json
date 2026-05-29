@@ -1,0 +1,13 @@
+{
+    "title": "Calorie Deficit Calculator - Weight Loss Planner",
+    "description": "Free calorie deficit calculator for weight loss. Calculate your TDEE and daily calorie target to lose weight safely. Science-based approach to fat loss.",
+    "keywords": "calorie deficit calculator, weight loss calculator, TDEE calculator, calorie calculator, fat loss calculator",
+    "canonical": "https://calc.tools/en/calorie-deficit/",
+    "h1": "Calorie Deficit Calculator",
+    "intro": "Calculate your Total Daily Energy Expenditure (TDEE) and the calorie deficit needed to reach your weight loss goal safely.",
+    "faq": [
+        {"q": "What is a calorie deficit?", "a": "A calorie deficit occurs when you consume fewer calories than your body burns. A deficit of 500 calories/day leads to approximately 1 pound of fat loss per week."},
+        {"q": "How much calorie deficit is safe?", "a": "A deficit of 500-1000 calories per day (1-2 lbs/week loss) is generally considered safe. Never go below 1200 calories/day for women or 1500 for men."},
+        {"q": "What is TDEE?", "a": "TDEE (Total Daily Energy Expenditure) is the total number of calories you burn per day including exercise and daily activities."}
+    ]
+}
