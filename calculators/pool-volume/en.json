@@ -1,0 +1,12 @@
+{
+    "title": "Pool Volume Calculator - Calculate Swimming Pool Gallons",
+    "description": "Free pool volume calculator. Calculate the water volume of rectangular, circular, and oval swimming pools in gallons and liters.",
+    "keywords": "pool volume calculator, swimming pool gallons, pool water calculator, pool capacity",
+    "canonical": "https://calc.tools/en/pool-volume/",
+    "h1": "Pool Volume Calculator",
+    "intro": "Calculate the water volume of your swimming pool. Supports rectangular, circular, and oval pool shapes.",
+    "faq": [
+        {"q": "How to calculate pool volume?", "a": "Rectangular: Length × Width × Average Depth × 7.48 (for gallons). Circular: π × radius² × depth × 7.48. Use average depth for sloped bottoms."},
+        {"q": "How many gallons in a typical pool?", "a": "A 12×24 ft pool with 5 ft average depth holds about 10,800 gallons. An 18×36 ft pool holds about 24,300 gallons."}
+    ]
+}

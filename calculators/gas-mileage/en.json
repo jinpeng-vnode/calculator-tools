@@ -1,0 +1,12 @@
+{
+    "title": "Gas Mileage Calculator - Calculate MPG & Fuel Efficiency",
+    "description": "Free gas mileage calculator. Calculate miles per gallon (MPG), fuel cost per mile, and trip fuel costs based on distance and fuel used.",
+    "keywords": "gas mileage calculator, MPG calculator, fuel efficiency, miles per gallon, fuel cost calculator",
+    "canonical": "https://calc.tools/en/gas-mileage/",
+    "h1": "Gas Mileage Calculator",
+    "intro": "Calculate your vehicle's fuel efficiency (MPG or L/100km). Enter distance traveled and fuel used to find your gas mileage and cost per mile.",
+    "faq": [
+        {"q": "How to calculate MPG?", "a": "MPG = Miles Driven / Gallons Used. Example: 300 miles on 10 gallons = 30 MPG. Fill up, reset trip meter, fill up again and divide."},
+        {"q": "What is good gas mileage?", "a": "Average new car gets about 25-30 MPG. Hybrids get 40-60 MPG. EVs equivalent is 100+ MPGe. Trucks/SUVs average 20-25 MPG."}
+    ]
+}

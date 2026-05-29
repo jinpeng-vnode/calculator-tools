@@ -1,0 +1,12 @@
+{
+    "title": "Gravel Calculator - Estimate Gravel Needed",
+    "description": "Free gravel calculator. Calculate how much gravel you need in tons and cubic yards for driveways, paths, and landscaping projects.",
+    "keywords": "gravel calculator, how much gravel do I need, gravel estimator, cubic yards gravel, gravel cost",
+    "canonical": "https://calc.tools/en/gravel/",
+    "h1": "Gravel Calculator",
+    "intro": "Calculate how much gravel you need. Enter the area dimensions and desired depth to get volume in cubic yards and weight in tons.",
+    "faq": [
+        {"q": "How much gravel do I need?", "a": "Calculate: Length × Width × Depth (all in feet) / 27 = cubic yards. Multiply by 1.4 for approximate tons. A 10×20 ft area at 2\" deep needs about 1.04 cubic yards (1.45 tons)."},
+        {"q": "How much does a cubic yard of gravel weigh?", "a": "Approximately 2,800 lbs (1.4 tons). This varies by gravel type: pea gravel ≈ 1.4 tons/yd³, crushed stone ≈ 1.5 tons/yd³."}
+    ]
+}

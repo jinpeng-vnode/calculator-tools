@@ -1,0 +1,39 @@
+<div class="form-group">
+    <label for="length">Area Length (ft)</label>
+    <input type="number" id="length" placeholder="20" step="any">
+</div>
+<div class="form-group">
+    <label for="width">Area Width (ft)</label>
+    <input type="number" id="width" placeholder="10" step="any">
+</div>
+<div class="form-group">
+    <label for="depth">Depth (inches)</label>
+    <input type="number" id="depth" placeholder="3" step="any">
+</div>
+<div class="form-group">
+    <label for="bagSize">Bag Size (cu ft)</label>
+    <input type="number" id="bagSize" placeholder="2" value="2" step="any">
+</div>
+<div class="form-group">
+    <label for="price">Price per bag ($)</label>
+    <input type="number" id="price" placeholder="4.50" step="any">
+</div>
+<button class="btn" onclick="calcMulch()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcMulch(){
+    const l=parseFloat(document.getElementById('length').value);
+    const w=parseFloat(document.getElementById('width').value);
+    const d=parseFloat(document.getElementById('depth').value)/12;
+    const bagSz=parseFloat(document.getElementById('bagSize').value)||2;
+    const price=parseFloat(document.getElementById('price').value)||0;
+    if(isNaN(l)||isNaN(w)||isNaN(d))return;
+    const cuFt=l*w*d;
+    const cuYd=cuFt/27;
+    const bags=Math.ceil(cuFt/bagSz);
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>Area: <strong>${(l*w).toFixed(1)} sq ft</strong></p><p>Volume: <strong>${cuFt.toFixed(1)} cu ft</strong> (${cuYd.toFixed(2)} cu yd)</p><p>Bags needed: <strong>${bags} bags</strong> (${bagSz} cu ft each)</p>${price?`<p>Estimated cost: <strong>$${(bags*price).toFixed(2)}</strong></p>`:''}`;
+    el.classList.add('show');
+}
+</script>

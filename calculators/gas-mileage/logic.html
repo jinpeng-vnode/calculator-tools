@@ -1,0 +1,42 @@
+<div class="form-group">
+    <label for="distance">Distance Driven</label>
+    <div style="display:flex;gap:8px">
+        <input type="number" id="distance" placeholder="300" step="any">
+        <select id="distUnit"><option value="mi">miles</option><option value="km">km</option></select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="fuel">Fuel Used</label>
+    <div style="display:flex;gap:8px">
+        <input type="number" id="fuel" placeholder="10" step="any">
+        <select id="fuelUnit"><option value="gal">gallons</option><option value="L">liters</option></select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="price">Fuel Price (per unit)</label>
+    <input type="number" id="price" placeholder="3.50" step="any">
+</div>
+<button class="btn" onclick="calcMPG()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcMPG(){
+    let dist=parseFloat(document.getElementById('distance').value);
+    let fuel=parseFloat(document.getElementById('fuel').value);
+    const price=parseFloat(document.getElementById('price').value)||0;
+    const du=document.getElementById('distUnit').value;
+    const fu=document.getElementById('fuelUnit').value;
+    if(isNaN(dist)||isNaN(fuel)||fuel===0)return;
+    const distMi=du==='km'?dist*0.621371:dist;
+    const distKm=du==='mi'?dist*1.60934:dist;
+    const fuelGal=fu==='L'?fuel*0.264172:fuel;
+    const fuelL=fu==='gal'?fuel*3.78541:fuel;
+    const mpg=distMi/fuelGal;
+    const lper100=fuelL/(distKm/100);
+    const costPerMi=price/mpg;
+    const totalCost=fuel*price;
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>Fuel efficiency: <strong>${mpg.toFixed(1)} MPG</strong></p><p>Fuel efficiency: <strong>${lper100.toFixed(2)} L/100km</strong></p>${price?`<p>Cost per mile: <strong>$${costPerMi.toFixed(3)}</strong></p><p>Total fuel cost: <strong>$${totalCost.toFixed(2)}</strong></p>`:''}`;
+    el.classList.add('show');
+}
+</script>

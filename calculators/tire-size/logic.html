@@ -1,0 +1,34 @@
+<div class="form-group">
+    <label for="tireSize">Current Tire Size (e.g., 225/45R17)</label>
+    <input type="text" id="tireSize" placeholder="225/45R17">
+</div>
+<div class="form-group">
+    <label for="newSize">New Tire Size (optional, for comparison)</label>
+    <input type="text" id="newSize" placeholder="235/40R18">
+</div>
+<button class="btn" onclick="calcTire()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function parseTire(s){
+    const m=s.match(/(\d+)\/(\d+)[Rr](\d+)/);
+    if(!m)return null;
+    const w=parseInt(m[1]),ar=parseInt(m[2]),rim=parseInt(m[3]);
+    const sh=w*ar/100;
+    const diam=sh*2+rim*25.4;
+    const circ=Math.PI*diam;
+    return{w,ar,rim,sh,diam,circ};
+}
+function calcTire(){
+    const t1=parseTire(document.getElementById('tireSize').value);
+    if(!t1){document.getElementById('result').innerHTML='Invalid format. Use: 225/45R17';return;}
+    let html=`<p><strong>Tire: ${t1.w}/${t1.ar}R${t1.rim}</strong></p><p>Section width: ${t1.w} mm</p><p>Sidewall height: ${t1.sh.toFixed(1)} mm</p><p>Overall diameter: <strong>${t1.diam.toFixed(1)} mm</strong> (${(t1.diam/25.4).toFixed(2)}")</p><p>Circumference: ${t1.circ.toFixed(1)} mm</p><p>Revs/km: ${Math.round(1000000/t1.circ)}</p>`;
+    const t2=parseTire(document.getElementById('newSize').value||'');
+    if(t2){
+        const diff=((t2.diam-t1.diam)/t1.diam*100).toFixed(1);
+        const speedErr=((t2.circ-t1.circ)/t1.circ*100).toFixed(1);
+        html+=`<hr style="margin:1rem 0;border:none;border-top:1px solid var(--border)"><p><strong>New: ${t2.w}/${t2.ar}R${t2.rim}</strong></p><p>Diameter: ${t2.diam.toFixed(1)} mm (${diff}% ${diff>0?'taller':'shorter'})</p><p>Speedometer error: ${speedErr}% (actual speed is ${speedErr>0?'higher':'lower'})</p>`;
+    }
+    const el=document.getElementById('result');el.innerHTML=html;el.classList.add('show');
+}
+</script>

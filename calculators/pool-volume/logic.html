@@ -1,0 +1,49 @@
+<div class="form-group">
+    <label for="shape">Pool Shape</label>
+    <select id="shape" onchange="toggleShape()">
+        <option value="rect">Rectangular</option>
+        <option value="circle">Circular</option>
+    </select>
+</div>
+<div id="rectInputs">
+    <div class="form-group"><label for="length">Length (ft)</label><input type="number" id="length" placeholder="24" step="any"></div>
+    <div class="form-group"><label for="width">Width (ft)</label><input type="number" id="width" placeholder="12" step="any"></div>
+</div>
+<div id="circInputs" style="display:none">
+    <div class="form-group"><label for="diam">Diameter (ft)</label><input type="number" id="diam" placeholder="18" step="any"></div>
+</div>
+<div class="form-group"><label for="depthS">Shallow End Depth (ft)</label><input type="number" id="depthS" placeholder="3" step="any"></div>
+<div class="form-group"><label for="depthD">Deep End Depth (ft)</label><input type="number" id="depthD" placeholder="6" step="any"></div>
+<button class="btn" onclick="calcPool()">Calculate Volume</button>
+<div class="result" id="result"></div>
+
+<script>
+function toggleShape(){
+    const s=document.getElementById('shape').value;
+    document.getElementById('rectInputs').style.display=s==='rect'?'':'none';
+    document.getElementById('circInputs').style.display=s==='circle'?'':'none';
+}
+function calcPool(){
+    const shape=document.getElementById('shape').value;
+    const ds=parseFloat(document.getElementById('depthS').value);
+    const dd=parseFloat(document.getElementById('depthD').value);
+    if(isNaN(ds)||isNaN(dd))return;
+    const avgD=(ds+dd)/2;
+    let vol;
+    if(shape==='rect'){
+        const l=parseFloat(document.getElementById('length').value);
+        const w=parseFloat(document.getElementById('width').value);
+        if(isNaN(l)||isNaN(w))return;
+        vol=l*w*avgD;
+    }else{
+        const d=parseFloat(document.getElementById('diam').value);
+        if(isNaN(d))return;
+        vol=Math.PI*(d/2)**2*avgD;
+    }
+    const gal=vol*7.48052;
+    const liters=gal*3.78541;
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>Average depth: <strong>${avgD.toFixed(1)} ft</strong></p><p>Volume: <strong>${vol.toFixed(1)} ft³</strong></p><p>Water: <strong>${Math.round(gal).toLocaleString()} gallons</strong></p><p>Water: <strong>${Math.round(liters).toLocaleString()} liters</strong></p>`;
+    el.classList.add('show');
+}
+</script>

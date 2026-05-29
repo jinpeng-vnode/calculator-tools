@@ -1,0 +1,12 @@
+{
+    "title": "Tire Size Calculator - Compare Tire Dimensions",
+    "description": "Free tire size calculator. Calculate tire diameter, sidewall height, circumference, and compare two tire sizes for speedometer difference.",
+    "keywords": "tire size calculator, tire comparison, tire diameter, tire circumference, speedometer error",
+    "canonical": "https://calc.tools/en/tire-size/",
+    "h1": "Tire Size Calculator",
+    "intro": "Calculate tire dimensions from size notation (e.g., 225/45R17). Compare two sizes to see diameter difference and speedometer error.",
+    "faq": [
+        {"q": "How to read tire size?", "a": "Format: Width/AspectRatio R RimDiameter. Example: 225/45R17 means 225mm wide, sidewall is 45% of width, fits 17-inch rim."},
+        {"q": "How much tire size difference is acceptable?", "a": "Generally stay within 3% of original diameter. Larger differences affect speedometer accuracy, ABS, and may cause rubbing."}
+    ]
+}

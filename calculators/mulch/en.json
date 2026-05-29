@@ -1,0 +1,12 @@
+{
+    "title": "Mulch Calculator - Estimate Mulch Needed",
+    "description": "Free mulch calculator. Calculate how many bags or cubic yards of mulch you need for garden beds, landscaping, and tree rings.",
+    "keywords": "mulch calculator, how much mulch do I need, mulch estimator, cubic yards mulch, mulch bags",
+    "canonical": "https://calc.tools/en/mulch/",
+    "h1": "Mulch Calculator",
+    "intro": "Calculate how much mulch you need. Enter the area dimensions and desired depth to get volume in cubic yards and number of bags.",
+    "faq": [
+        {"q": "How much mulch do I need?", "a": "Calculate: Length × Width × Depth (in feet) / 27 = cubic yards. One cubic yard covers about 162 sq ft at 2 inches deep. Standard bags are 2 cu ft each."},
+        {"q": "How deep should mulch be?", "a": "2-4 inches is ideal for most applications. 2\" for flower beds, 3-4\" for weed suppression and tree rings. Don't exceed 4\" as it can suffocate roots."}
+    ]
+}
