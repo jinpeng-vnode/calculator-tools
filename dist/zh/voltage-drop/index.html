@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电压降计算器 - 计算线路压降</title>
+    <meta name="description" content="免费电压降计算器。根据线径、长度和电流计算电线中的电压降。">
+    <meta name="keywords" content="电压降计算器, 压降计算, 线路压降, 电缆压降计算">
+    <link rel="canonical" href="https://calc.tools/zh/voltage-drop/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="电压降计算器 - 计算线路压降">
+    <meta property="og:description" content="免费电压降计算器。根据线径、长度和电流计算电线中的电压降。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <style>/* CalcTools - 全局样式 */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+
+/* 导航 */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; }
+.nav-links a:hover { color: var(--primary); }
+
+/* 主内容 */
+main { padding: 2rem 1rem; }
+h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.intro { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* 计算器卡片 */
+.calculator-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* 表单元素 */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+.btn:hover { background: var(--primary-dark); }
+
+.result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+    font-size: 1.125rem;
+    text-align: center;
+    display: none;
+}
+.result.show { display: block; }
+.result strong { color: var(--primary); font-size: 1.5rem; }
+
+/* 首页网格 */
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.calc-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.calc-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.calc-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.faq details { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; padding: 0.75rem 1rem; }
+.faq summary { cursor: pointer; font-weight: 500; }
+.faq details p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+
+/* 广告位 */
+.ad-slot { margin: 1.5rem auto; min-height: 90px; text-align: center; }
+
+/* Footer */
+footer { margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); text-align: center; }
+footer p { color: var(--text-muted); font-size: 0.8rem; }
+footer nav { margin-top: 0.5rem; }
+footer nav a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; margin: 0 0.5rem; }
+footer nav a:hover { color: var(--primary); }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.4rem; }
+    .calc-grid { grid-template-columns: 1fr; }
+}
+</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "电压降计算器 - 计算线路压降", "description": "免费电压降计算器。根据线径、长度和电流计算电线中的电压降。", "url": "https://calc.tools/zh/voltage-drop/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>电压降计算器</h1>
+        <p class="intro">计算电线中的电压降。输入线径、长度、电流和电压，判断布线是否合适。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+    <label for="voltage">System Voltage (V)</label>
+    <input type="number" id="voltage" placeholder="120" step="any">
+</div>
+<div class="form-group">
+    <label for="current">Current (Amps)</label>
+    <input type="number" id="current" placeholder="20" step="any">
+</div>
+<div class="form-group">
+    <label for="length">One-way Wire Length (m)</label>
+    <input type="number" id="length" placeholder="30" step="any">
+</div>
+<div class="form-group">
+    <label for="gauge">Wire Gauge (AWG)</label>
+    <select id="gauge">
+        <option value="2">2</option><option value="4">4</option><option value="6">6</option>
+        <option value="8">8</option><option value="10">10</option><option value="12" selected>12</option>
+        <option value="14">14</option><option value="16">16</option>
+    </select>
+</div>
+<button class="btn" onclick="calcVD()">Calculate Voltage Drop</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcVD(){
+    const V=parseFloat(document.getElementById('voltage').value);
+    const I=parseFloat(document.getElementById('current').value);
+    const L=parseFloat(document.getElementById('length').value);
+    const g=document.getElementById('gauge').value;
+    if(isNaN(V)||isNaN(I)||isNaN(L))return;
+    const awgArea={'2':33.63,'4':21.15,'6':13.30,'8':8.37,'10':5.26,'12':3.31,'14':2.08,'16':1.31};
+    const area=awgArea[g];
+    const resistivity=0.01724;
+    const R=resistivity*L*2/area;
+    const vd=I*R;
+    const pct=(vd/V*100).toFixed(2);
+    const el=document.getElementById('result');
+    const status=pct<=3?'✅ Acceptable':'⚠️ Exceeds 3% recommendation';
+    el.innerHTML=`<p>Wire resistance: <strong>${R.toFixed(4)} Ω</strong></p><p>Voltage drop: <strong>${vd.toFixed(2)} V</strong></p><p>Percentage: <strong>${pct}%</strong> ${status}</p><p>Voltage at load: <strong>${(V-vd).toFixed(2)} V</strong></p>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>可接受的电压降是多少？</summary><p>NEC建议支路电压降不超过3%，总压降（馈线+支路）不超过5%。对于220V电路，支路最大压降为6.6V。</p></details>
+<details><summary>如何减少电压降？</summary><p>使用更粗的线（更小的AWG号）、缩短线路长度或减少电流负载。线径加倍可将压降减半。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

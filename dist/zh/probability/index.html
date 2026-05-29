@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概率计算器 - 计算事件概率</title>
+    <meta name="description" content="免费概率计算器。计算单事件概率、组合概率、排列组合数。">
+    <meta name="keywords" content="概率计算器, 排列组合计算器, 事件概率, 组合数计算">
+    <link rel="canonical" href="https://calc.tools/zh/probability/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="概率计算器 - 计算事件概率">
+    <meta property="og:description" content="免费概率计算器。计算单事件概率、组合概率、排列组合数。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <style>/* CalcTools - 全局样式 */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+
+/* 导航 */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; }
+.nav-links a:hover { color: var(--primary); }
+
+/* 主内容 */
+main { padding: 2rem 1rem; }
+h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.intro { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* 计算器卡片 */
+.calculator-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* 表单元素 */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+.btn:hover { background: var(--primary-dark); }
+
+.result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+    font-size: 1.125rem;
+    text-align: center;
+    display: none;
+}
+.result.show { display: block; }
+.result strong { color: var(--primary); font-size: 1.5rem; }
+
+/* 首页网格 */
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.calc-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.calc-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.calc-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.faq details { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; padding: 0.75rem 1rem; }
+.faq summary { cursor: pointer; font-weight: 500; }
+.faq details p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+
+/* 广告位 */
+.ad-slot { margin: 1.5rem auto; min-height: 90px; text-align: center; }
+
+/* Footer */
+footer { margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); text-align: center; }
+footer p { color: var(--text-muted); font-size: 0.8rem; }
+footer nav { margin-top: 0.5rem; }
+footer nav a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; margin: 0 0.5rem; }
+footer nav a:hover { color: var(--primary); }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.4rem; }
+    .calc-grid { grid-template-columns: 1fr; }
+}
+</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "概率计算器 - 计算事件概率", "description": "免费概率计算器。计算单事件概率、组合概率、排列组合数。", "url": "https://calc.tools/zh/probability/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>概率计算器</h1>
+        <p class="intro">计算事件发生的概率，以及排列数和组合数。输入有利结果数和总结果数。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-group">
+    <label for="favorable">Favorable Outcomes</label>
+    <input type="number" id="favorable" placeholder="1">
+</div>
+<div class="form-group">
+    <label for="total">Total Outcomes</label>
+    <input type="number" id="total" placeholder="6">
+</div>
+<button class="btn" onclick="calcProb()">Calculate Probability</button>
+<div class="result" id="result1"></div>
+
+<hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--border)">
+
+<div class="form-group">
+    <label for="nVal">n (total items)</label>
+    <input type="number" id="nVal" placeholder="10">
+</div>
+<div class="form-group">
+    <label for="rVal">r (chosen items)</label>
+    <input type="number" id="rVal" placeholder="3">
+</div>
+<button class="btn" onclick="calcPerm()">Permutations & Combinations</button>
+<div class="result" id="result2"></div>
+
+<script>
+function fact(n){let r=1;for(let i=2;i<=n;i++)r*=i;return r}
+function calcProb(){
+    const f=parseFloat(document.getElementById('favorable').value);
+    const t=parseFloat(document.getElementById('total').value);
+    if(isNaN(f)||isNaN(t)||t===0)return;
+    const p=f/t;
+    const el=document.getElementById('result1');
+    el.innerHTML=`Probability: <strong>${p.toFixed(6)}</strong> (${(p*100).toFixed(2)}%)<br>Odds: ${f} in ${t}`;
+    el.classList.add('show');
+}
+function calcPerm(){
+    const n=parseInt(document.getElementById('nVal').value);
+    const r=parseInt(document.getElementById('rVal').value);
+    if(isNaN(n)||isNaN(r)||n<0||r<0||r>n)return;
+    const perm=fact(n)/fact(n-r);
+    const comb=fact(n)/(fact(r)*fact(n-r));
+    const el=document.getElementById('result2');
+    el.innerHTML=`<p>Permutations (nPr): <strong>${perm.toLocaleString()}</strong></p><p>Combinations (nCr): <strong>${comb.toLocaleString()}</strong></p>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>如何计算概率？</summary><p>概率 = 有利结果数 / 总结果数。例如：掷骰子得到6 = 1/6 ≈ 0.167 即 16.7%。</p></details>
+<details><summary>排列和组合有什么区别？</summary><p>排列考虑顺序（nPr = n!/(n-r)!），组合不考虑顺序（nCr = n!/(r!(n-r)!)）。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

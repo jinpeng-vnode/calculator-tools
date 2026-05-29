@@ -19,7 +19,7 @@ def render(template, ctx):
         result = result.replace(f"{{{{{k}}}}}", str(v))
     return result
 
-def build_calculator(calc_dir, lang, base_template):
+def build_calculator(calc_dir, lang, base_template, inline_css):
     """构建单个计算器页面"""
     meta_file = calc_dir / f"{lang}.json"
     if not meta_file.exists():
@@ -53,6 +53,7 @@ def build_calculator(calc_dir, lang, base_template):
         "schema_json": schema,
         "slug": calc_dir.name,
         "faq_html": build_faq(meta.get("faq", [])),
+        "inline_css": inline_css,
     }
     return render(base_template, ctx)
 
@@ -64,7 +65,7 @@ def build_faq(faq_list):
         items += f'<details><summary>{item["q"]}</summary><p>{item["a"]}</p></details>\n'
     return f'<section class="faq"><h2>FAQ</h2>\n{items}</section>'
 
-def build_index(lang, base_template, calculators_meta):
+def build_index(lang, base_template, calculators_meta, inline_css):
     """构建首页"""
     cards = ""
     for m in calculators_meta:
@@ -88,6 +89,7 @@ def build_index(lang, base_template, calculators_meta):
         "schema_json": "{}",
         "slug": "index",
         "faq_html": "",
+        "inline_css": inline_css,
     }
     return render(base_template, ctx)
 
@@ -101,7 +103,15 @@ def main():
     if STATIC.exists():
         shutil.copytree(STATIC, DIST / "static")
     
+    # 复制 public/ 目录下的文件到 dist 根目录
+    public_dir = ROOT / "public"
+    if public_dir.exists():
+        for f in public_dir.iterdir():
+            if f.is_file():
+                shutil.copy2(f, DIST / f.name)
+    
     base_template = load_template("base.html")
+    inline_css = (STATIC / "style.css").read_text(encoding="utf-8")
     langs = ["en", "zh"]
     
     # 遍历计算器目录
@@ -120,7 +130,7 @@ def main():
             meta = json.loads(meta_file.read_text(encoding="utf-8"))
             
             # 生成页面
-            html = build_calculator(calc_dir, lang, base_template)
+            html = build_calculator(calc_dir, lang, base_template, inline_css)
             if html:
                 out_dir = lang_dir / calc_dir.name
                 out_dir.mkdir(parents=True, exist_ok=True)
@@ -128,7 +138,7 @@ def main():
                 calculators_meta.append({"slug": calc_dir.name, "title": meta["title"], "desc": meta["description"][:60]})
         
         # 生成首页
-        index_html = build_index(lang, base_template, calculators_meta)
+        index_html = build_index(lang, base_template, calculators_meta, inline_css)
         (lang_dir / "index.html").write_text(index_html, encoding="utf-8")
     
     # 根目录 index.html 重定向到英文

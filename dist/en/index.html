@@ -12,7 +12,144 @@
     <meta property="og:description" content="Free online calculators for math, finance, health, and everyday use.">
     <meta property="og:type" content="website">
     <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/static/style.css">
+    <style>/* CalcTools - 全局样式 */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+
+/* 导航 */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; }
+.nav-links a:hover { color: var(--primary); }
+
+/* 主内容 */
+main { padding: 2rem 1rem; }
+h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.intro { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* 计算器卡片 */
+.calculator-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* 表单元素 */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+.btn:hover { background: var(--primary-dark); }
+
+.result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+    font-size: 1.125rem;
+    text-align: center;
+    display: none;
+}
+.result.show { display: block; }
+.result strong { color: var(--primary); font-size: 1.5rem; }
+
+/* 首页网格 */
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.calc-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.calc-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.calc-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.faq details { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; padding: 0.75rem 1rem; }
+.faq summary { cursor: pointer; font-weight: 500; }
+.faq details p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+
+/* 广告位 */
+.ad-slot { margin: 1.5rem auto; min-height: 90px; text-align: center; }
+
+/* Footer */
+footer { margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); text-align: center; }
+footer p { color: var(--text-muted); font-size: 0.8rem; }
+footer nav { margin-top: 0.5rem; }
+footer nav a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; margin: 0 0.5rem; }
+footer nav a:hover { color: var(--primary); }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.4rem; }
+    .calc-grid { grid-template-columns: 1fr; }
+}
+</style>
     <script type="application/ld+json">{}</script>
     <!-- Google AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
@@ -40,53 +177,93 @@
         <div class="calculator-wrapper">
             <div class="calc-grid"><a href="/en/age/" class="calc-card"><h3>Age Calculator - Calculate Exact Age</h3><p>Free age calculator. Calculate your exact age in years, mont</p></a>
 <a href="/en/area-circle/" class="calc-card"><h3>Area of Circle Calculator - Free & Instant</h3><p>Free area of circle calculator. Calculate circle area, circu</p></a>
+<a href="/en/aspect-ratio/" class="calc-card"><h3>Aspect Ratio Calculator - Screen & Image Dimensions</h3><p>Free aspect ratio calculator. Calculate missing dimensions, </p></a>
 <a href="/en/baby-cost/" class="calc-card"><h3>Baby Cost Calculator - First Year Expenses</h3><p>Free baby cost calculator. Estimate the cost of having a bab</p></a>
+<a href="/en/binary-to-decimal/" class="calc-card"><h3>Binary to Decimal Converter - Number Base Conversion</h3><p>Free binary to decimal converter. Convert between binary, de</p></a>
+<a href="/en/blood-pressure/" class="calc-card"><h3>Blood Pressure Calculator - Check Your BP Category</h3><p>Free blood pressure calculator. Enter your systolic and dias</p></a>
 <a href="/en/bmi/" class="calc-card"><h3>BMI Calculator - Body Mass Index</h3><p>Free online BMI calculator. Calculate your Body Mass Index i</p></a>
 <a href="/en/body-fat/" class="calc-card"><h3>Body Fat Percentage Calculator - Free Estimate</h3><p>Free body fat percentage calculator using the U.S. Navy meth</p></a>
 <a href="/en/calorie-deficit/" class="calc-card"><h3>Calorie Deficit Calculator - Weight Loss Planner</h3><p>Free calorie deficit calculator for weight loss. Calculate y</p></a>
 <a href="/en/car-loan/" class="calc-card"><h3>Car Loan Payment Calculator - Monthly Estimate</h3><p>Free car loan payment calculator. Estimate your monthly auto</p></a>
 <a href="/en/carbon-footprint/" class="calc-card"><h3>Carbon Footprint Calculator - Estimate Your CO2 Emissions</h3><p>Free carbon footprint calculator. Estimate your annual CO2 e</p></a>
+<a href="/en/circle-circumference/" class="calc-card"><h3>Circle Circumference Calculator - Calculate Perimeter</h3><p>Free circle circumference calculator. Calculate the circumfe</p></a>
 <a href="/en/compound-interest/" class="calc-card"><h3>Compound Interest Calculator Daily - Free Tool</h3><p>Free compound interest calculator with daily compounding. Se</p></a>
 <a href="/en/concrete-yards/" class="calc-card"><h3>Concrete Calculator Yards - How Much Do You Need</h3><p>Free concrete calculator in cubic yards. Calculate how much </p></a>
+<a href="/en/cooking-measurement/" class="calc-card"><h3>Cooking Measurement Converter - Kitchen Unit Conversion</h3><p>Free cooking measurement converter. Convert between cups, ta</p></a>
 <a href="/en/credit-card-payoff/" class="calc-card"><h3>Credit Card Payoff Calculator - Minimum Payment Trap</h3><p>Free credit card payoff calculator. See how long minimum pay</p></a>
 <a href="/en/currency-exchange/" class="calc-card"><h3>Currency Exchange Rate Calculator - Live Rates</h3><p>Free currency exchange rate calculator. Convert between majo</p></a>
 <a href="/en/debt-payoff/" class="calc-card"><h3>Debt Payoff Calculator - Free Repayment Planner</h3><p>Free debt payoff calculator. Find out how long it takes to p</p></a>
 <a href="/en/discount/" class="calc-card"><h3>Discount Calculator - Calculate Sale Price</h3><p>Free discount calculator. Calculate the sale price after dis</p></a>
 <a href="/en/down-payment/" class="calc-card"><h3>Down Payment Calculator - Home Purchase Planning</h3><p>Free down payment calculator. Calculate how much you need fo</p></a>
+<a href="/en/dpi/" class="calc-card"><h3>DPI Calculator - Dots Per Inch for Screens & Print</h3><p>Free DPI calculator. Calculate screen PPI from resolution an</p></a>
 <a href="/en/electricity-cost/" class="calc-card"><h3>Electricity Cost Calculator - Estimate Your Bill</h3><p>Free electricity cost calculator. Estimate your electricity </p></a>
 <a href="/en/ev-vs-gas-cost/" class="calc-card"><h3>EV vs Gas Cost Calculator - Compare Ownership Costs</h3><p>Free EV vs gas car cost calculator. Compare total ownership </p></a>
+<a href="/en/fabric-yards/" class="calc-card"><h3>Fabric Calculator - Yards Needed for Sewing Projects</h3><p>Free fabric yardage calculator. Calculate how much fabric yo</p></a>
+<a href="/en/fraction/" class="calc-card"><h3>Fraction Calculator - Add, Subtract, Multiply, Divide Fractions</h3><p>Free fraction calculator. Add, subtract, multiply, and divid</p></a>
 <a href="/en/fuel-consumption/" class="calc-card"><h3>Fuel Consumption Calculator - MPG & L/100km</h3><p>Free fuel consumption calculator. Calculate your vehicle's f</p></a>
+<a href="/en/gas-mileage/" class="calc-card"><h3>Gas Mileage Calculator - Calculate MPG & Fuel Efficiency</h3><p>Free gas mileage calculator. Calculate miles per gallon (MPG</p></a>
 <a href="/en/gpa/" class="calc-card"><h3>GPA Calculator - Grade Point Average</h3><p>Free GPA calculator. Calculate your cumulative grade point a</p></a>
+<a href="/en/gravel/" class="calc-card"><h3>Gravel Calculator - Estimate Gravel Needed</h3><p>Free gravel calculator. Calculate how much gravel you need i</p></a>
+<a href="/en/heart-rate-zone/" class="calc-card"><h3>Heart Rate Zone Calculator - Optimize Your Training</h3><p>Free heart rate zone calculator. Find your target heart rate</p></a>
+<a href="/en/hex-color/" class="calc-card"><h3>Hex Color Converter - RGB, HSL, HEX Conversion</h3><p>Free hex color converter. Convert between HEX, RGB, and HSL </p></a>
 <a href="/en/home-renovation/" class="calc-card"><h3>Home Renovation Calculator - Remodel Cost Estimator</h3><p>Free home renovation cost calculator. Estimate remodeling co</p></a>
 <a href="/en/hourly-to-salary/" class="calc-card"><h3>Hourly to Salary Calculator - Convert Hourly Wage to Annual</h3><p>Free hourly to salary calculator. Convert your hourly wage t</p></a>
+<a href="/en/ideal-weight/" class="calc-card"><h3>Ideal Weight Calculator - Healthy Weight Range</h3><p>Free ideal weight calculator. Find your healthy weight range</p></a>
 <a href="/en/inflation/" class="calc-card"><h3>Inflation Calculator - Purchasing Power Over Time</h3><p>Free inflation calculator. See how inflation affects purchas</p></a>
 <a href="/en/investment-return/" class="calc-card"><h3>Investment Return Calculator - ROI & Growth</h3><p>Free investment return calculator. Calculate your investment</p></a>
 <a href="/en/loan/" class="calc-card"><h3>Loan Calculator - Monthly Payment & Interest</h3><p>Free loan calculator. Calculate monthly payments, total inte</p></a>
+<a href="/en/macros/" class="calc-card"><h3>Macros Calculator - Daily Macronutrient Needs</h3><p>Free macros calculator. Calculate your daily protein, carbs,</p></a>
+<a href="/en/matrix/" class="calc-card"><h3>Matrix Calculator - Matrix Operations Online</h3><p>Free matrix calculator. Perform matrix addition, subtraction</p></a>
 <a href="/en/mortgage/" class="calc-card"><h3>Mortgage Payment Calculator Monthly - Free Estimate</h3><p>Free monthly mortgage payment calculator. Estimate your home</p></a>
 <a href="/en/moving-cost/" class="calc-card"><h3>Moving Cost Calculator - Estimate Your Move</h3><p>Free moving cost calculator. Estimate the total cost of your</p></a>
+<a href="/en/mulch/" class="calc-card"><h3>Mulch Calculator - Estimate Mulch Needed</h3><p>Free mulch calculator. Calculate how many bags or cubic yard</p></a>
+<a href="/en/ohms-law/" class="calc-card"><h3>Ohm's Law Calculator - Voltage, Current, Resistance</h3><p>Free Ohm's law calculator. Calculate voltage (V), current (I</p></a>
 <a href="/en/overtime-pay/" class="calc-card"><h3>Overtime Pay Calculator - Free Online Tool</h3><p>Free overtime pay calculator. Calculate your overtime earnin</p></a>
 <a href="/en/paint-room/" class="calc-card"><h3>Paint Calculator Room - How Much Paint Do You Need</h3><p>Free paint calculator for rooms. Calculate how many gallons </p></a>
 <a href="/en/paycheck/" class="calc-card"><h3>Paycheck Calculator - Free Salary to Take-Home Pay</h3><p>Free paycheck calculator. Estimate your take-home pay after </p></a>
 <a href="/en/percentage/" class="calc-card"><h3>Percentage Calculator - Calculate Percentages Easily</h3><p>Free percentage calculator. Calculate percentage of a number</p></a>
+<a href="/en/percentage-increase/" class="calc-card"><h3>Percentage Increase Calculator - Calculate % Increase</h3><p>Free percentage increase calculator. Calculate the percentag</p></a>
 <a href="/en/pet-cost/" class="calc-card"><h3>Pet Cost Calculator - Annual Pet Ownership Expenses</h3><p>Free pet cost calculator. Estimate the annual cost of owning</p></a>
+<a href="/en/pipe-flow/" class="calc-card"><h3>Pipe Flow Calculator - Calculate Flow Rate & Velocity</h3><p>Free pipe flow calculator. Calculate flow rate, velocity, an</p></a>
+<a href="/en/pixel-to-cm/" class="calc-card"><h3>Pixel to CM Converter - Screen Measurement Tool</h3><p>Free pixel to centimeter converter. Convert pixels to cm and</p></a>
+<a href="/en/pool-volume/" class="calc-card"><h3>Pool Volume Calculator - Calculate Swimming Pool Gallons</h3><p>Free pool volume calculator. Calculate the water volume of r</p></a>
+<a href="/en/power-consumption/" class="calc-card"><h3>Power Consumption Calculator - Electricity Cost Estimator</h3><p>Free power consumption calculator. Calculate electricity usa</p></a>
 <a href="/en/pregnancy-due-date/" class="calc-card"><h3>Pregnancy Due Date Calculator - Free Estimate</h3><p>Free pregnancy due date calculator. Estimate your baby's due</p></a>
+<a href="/en/probability/" class="calc-card"><h3>Probability Calculator - Calculate Event Probability</h3><p>Free probability calculator. Calculate single event probabil</p></a>
+<a href="/en/protein-intake/" class="calc-card"><h3>Protein Intake Calculator - Daily Protein Needs</h3><p>Free protein intake calculator. Find your optimal daily prot</p></a>
+<a href="/en/pythagorean-theorem/" class="calc-card"><h3>Pythagorean Theorem Calculator - Find Side Lengths</h3><p>Free Pythagorean theorem calculator. Find the missing side o</p></a>
+<a href="/en/quadratic-equation/" class="calc-card"><h3>Quadratic Equation Solver - Find Roots of ax²+bx+c=0</h3><p>Free quadratic equation solver. Find the roots of any quadra</p></a>
 <a href="/en/rent-vs-buy/" class="calc-card"><h3>Rent vs Buy Calculator - Should You Rent or Buy?</h3><p>Free rent vs buy calculator. Compare the total cost of renti</p></a>
 <a href="/en/retirement-savings/" class="calc-card"><h3>Retirement Savings Calculator - Plan Your Future</h3><p>Free retirement savings calculator. Estimate how much you ne</p></a>
+<a href="/en/ring-size/" class="calc-card"><h3>Ring Size Calculator - Find Your Ring Size</h3><p>Free ring size calculator. Find your ring size using finger </p></a>
 <a href="/en/roofing-squares/" class="calc-card"><h3>Roofing Calculator Squares - Materials Estimate</h3><p>Free roofing calculator in squares. Calculate how many roofi</p></a>
 <a href="/en/sales-tax/" class="calc-card"><h3>Sales Tax Calculator - Free Online Tool</h3><p>Free sales tax calculator. Quickly calculate sales tax amoun</p></a>
 <a href="/en/savings-goal/" class="calc-card"><h3>Savings Goal Calculator - How Much to Save Monthly</h3><p>Free savings goal calculator. Find out how much to save each</p></a>
+<a href="/en/scientific-notation/" class="calc-card"><h3>Scientific Notation Calculator - Convert Numbers</h3><p>Free scientific notation calculator. Convert numbers to and </p></a>
+<a href="/en/shoe-size/" class="calc-card"><h3>Shoe Size Converter - US, EU, UK Size Chart</h3><p>Free shoe size converter. Convert between US, EU, UK, and CM</p></a>
+<a href="/en/sleep-cycle/" class="calc-card"><h3>Sleep Cycle Calculator - Optimal Wake Up Time</h3><p>Free sleep cycle calculator. Find the best time to wake up o</p></a>
 <a href="/en/solar-panel-savings/" class="calc-card"><h3>Solar Panel Savings Calculator - ROI & Payback Period</h3><p>Free solar panel savings calculator. Estimate your solar ene</p></a>
 <a href="/en/speed-distance-time/" class="calc-card"><h3>Speed Distance Time Calculator - Free Tool</h3><p>Free speed distance time calculator. Calculate any one value</p></a>
 <a href="/en/square-footage/" class="calc-card"><h3>Square Footage Calculator - Room & Area</h3><p>Free square footage calculator. Calculate the area of rooms,</p></a>
+<a href="/en/standard-deviation/" class="calc-card"><h3>Standard Deviation Calculator - Calculate SD & Variance</h3><p>Free standard deviation calculator. Calculate standard devia</p></a>
 <a href="/en/temperature/" class="calc-card"><h3>Temperature Converter - Celsius, Fahrenheit, Kelvin</h3><p>Free temperature converter. Convert between Celsius, Fahrenh</p></a>
+<a href="/en/tile-square-feet/" class="calc-card"><h3>Tile Calculator - Square Feet & Tiles Needed</h3><p>Free tile calculator. Calculate how many tiles you need for </p></a>
+<a href="/en/time-zone/" class="calc-card"><h3>Time Zone Converter - World Clock & Time Difference</h3><p>Free time zone converter. Convert time between major world t</p></a>
 <a href="/en/tip/" class="calc-card"><h3>Tip Calculator - Calculate Tips & Split Bills</h3><p>Free tip calculator. Calculate tips for restaurants, split b</p></a>
 <a href="/en/tip-restaurant/" class="calc-card"><h3>Tip Calculator for Restaurant - Quick & Easy</h3><p>Free tip calculator for restaurants. Calculate tip amount an</p></a>
+<a href="/en/tire-size/" class="calc-card"><h3>Tire Size Calculator - Compare Tire Dimensions</h3><p>Free tire size calculator. Calculate tire diameter, sidewall</p></a>
+<a href="/en/trapezoid-area/" class="calc-card"><h3>Trapezoid Area Calculator - Calculate Trapezoid Area</h3><p>Free trapezoid area calculator. Calculate the area of a trap</p></a>
+<a href="/en/triangle-area/" class="calc-card"><h3>Triangle Area Calculator - Calculate Area of a Triangle</h3><p>Free triangle area calculator. Calculate area using base and</p></a>
 <a href="/en/unit-length/" class="calc-card"><h3>Length Unit Converter - Meters, Feet, Inches & More</h3><p>Free length unit converter. Convert between meters, feet, in</p></a>
 <a href="/en/unit-weight/" class="calc-card"><h3>Weight Converter - kg, lbs, oz, stones & More</h3><p>Free weight unit converter. Convert between kilograms, pound</p></a>
 <a href="/en/vacation-budget/" class="calc-card"><h3>Vacation Budget Calculator - Plan Your Trip Costs</h3><p>Free vacation budget calculator. Estimate total trip costs i</p></a>
+<a href="/en/voltage-drop/" class="calc-card"><h3>Voltage Drop Calculator - Calculate Wire Voltage Drop</h3><p>Free voltage drop calculator. Calculate voltage drop in elec</p></a>
 <a href="/en/volume-cylinder/" class="calc-card"><h3>Volume of Cylinder Calculator - Free Tool</h3><p>Free volume of cylinder calculator. Calculate cylinder volum</p></a>
+<a href="/en/waist-to-hip-ratio/" class="calc-card"><h3>Waist to Hip Ratio Calculator - Health Risk Assessment</h3><p>Free waist to hip ratio (WHR) calculator. Assess your health</p></a>
 <a href="/en/wallpaper/" class="calc-card"><h3>Wallpaper Calculator - Rolls Needed for Your Room</h3><p>Free wallpaper calculator. Calculate how many rolls of wallp</p></a>
+<a href="/en/water-intake/" class="calc-card"><h3>Water Intake Calculator - Daily Hydration Needs</h3><p>Free water intake calculator. Find out how much water you sh</p></a>
 <a href="/en/wedding-budget/" class="calc-card"><h3>Wedding Budget Calculator - Plan Your Wedding Costs</h3><p>Free wedding budget calculator. Break down your wedding budg</p></a>
+<a href="/en/wire-gauge/" class="calc-card"><h3>Wire Gauge Calculator - AWG Wire Size Chart</h3><p>Free wire gauge calculator. Find wire diameter, cross-sectio</p></a>
 </div>
         </div>
 

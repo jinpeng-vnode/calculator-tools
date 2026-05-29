@@ -12,7 +12,144 @@
     <meta property="og:description" content="免费在线计算器：数学、金融、健康、日常工具。">
     <meta property="og:type" content="website">
     <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/static/style.css">
+    <style>/* CalcTools - 全局样式 */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+
+/* 导航 */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; }
+.nav-links a:hover { color: var(--primary); }
+
+/* 主内容 */
+main { padding: 2rem 1rem; }
+h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.intro { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* 计算器卡片 */
+.calculator-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* 表单元素 */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+.btn:hover { background: var(--primary-dark); }
+
+.result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+    font-size: 1.125rem;
+    text-align: center;
+    display: none;
+}
+.result.show { display: block; }
+.result strong { color: var(--primary); font-size: 1.5rem; }
+
+/* 首页网格 */
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.calc-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.calc-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.calc-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.faq details { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; padding: 0.75rem 1rem; }
+.faq summary { cursor: pointer; font-weight: 500; }
+.faq details p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+
+/* 广告位 */
+.ad-slot { margin: 1.5rem auto; min-height: 90px; text-align: center; }
+
+/* Footer */
+footer { margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); text-align: center; }
+footer p { color: var(--text-muted); font-size: 0.8rem; }
+footer nav { margin-top: 0.5rem; }
+footer nav a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; margin: 0 0.5rem; }
+footer nav a:hover { color: var(--primary); }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.4rem; }
+    .calc-grid { grid-template-columns: 1fr; }
+}
+</style>
     <script type="application/ld+json">{}</script>
     <!-- Google AdSense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
@@ -40,53 +177,93 @@
         <div class="calculator-wrapper">
             <div class="calc-grid"><a href="/zh/age/" class="calc-card"><h3>年龄计算器 - 精确计算年龄</h3><p>免费年龄计算器。根据出生日期精确计算年龄（年、月、日）。</p></a>
 <a href="/zh/area-circle/" class="calc-card"><h3>圆面积计算器 - 免费即时计算</h3><p>免费圆面积计算器。根据半径计算圆的面积、周长和直径。包含公式详解。</p></a>
+<a href="/zh/aspect-ratio/" class="calc-card"><h3>宽高比计算器 - 屏幕和图像尺寸</h3><p>免费宽高比计算器。计算缺失尺寸，按比例调整图像大小，查找屏幕和视频的常见宽高比。</p></a>
 <a href="/zh/baby-cost/" class="calc-card"><h3>养娃费用计算器 - 第一年开支</h3><p>免费养娃费用计算器，估算宝宝第一年的费用，包括尿布、奶粉、托儿和婴儿用品。</p></a>
+<a href="/zh/binary-to-decimal/" class="calc-card"><h3>二进制转十进制转换器 - 进制转换</h3><p>免费二进制转十进制转换器。在二进制、十进制、八进制和十六进制数字系统之间即时转换。</p></a>
+<a href="/zh/blood-pressure/" class="calc-card"><h3>血压计算器 - 检查血压分类</h3><p>免费血压计算器。输入收缩压和舒张压读数，根据AHA指南检查您的血压分类。</p></a>
 <a href="/zh/bmi/" class="calc-card"><h3>BMI计算器 - 身体质量指数</h3><p>免费在线BMI计算器。即时计算您的身体质量指数，了解体重是否健康。</p></a>
 <a href="/zh/body-fat/" class="calc-card"><h3>体脂率计算器 - 免费估算</h3><p>免费体脂率计算器，使用美国海军公式。根据身体测量数据估算体脂百分比，追踪健身进度。</p></a>
 <a href="/zh/calorie-deficit/" class="calc-card"><h3>热量缺口计算器 - 减重规划</h3><p>免费热量缺口计算器。计算您的TDEE和每日热量目标，科学安全地减重。</p></a>
 <a href="/zh/car-loan/" class="calc-card"><h3>车贷计算器 - 月供估算</h3><p>免费车贷计算器。根据车价、首付、利率和贷款期限估算每月还款额。</p></a>
 <a href="/zh/carbon-footprint/" class="calc-card"><h3>碳足迹计算器 - 估算CO2排放</h3><p>免费碳足迹计算器，估算交通、家庭能源和生活方式产生的年度CO2排放量。</p></a>
+<a href="/zh/circle-circumference/" class="calc-card"><h3>圆周长计算器 - 计算圆的周长</h3><p>免费圆周长计算器。通过半径或直径计算圆的周长，同时显示面积。</p></a>
 <a href="/zh/compound-interest/" class="calc-card"><h3>复利计算器 - 按日计息</h3><p>免费复利计算器，支持按日计息。查看您的储蓄如何随时间增长，了解复利的力量。</p></a>
 <a href="/zh/concrete-yards/" class="calc-card"><h3>混凝土用量计算器 - 立方码</h3><p>免费混凝土用量计算器。计算板、基础、柱和墙所需的混凝土立方码数。包含损耗系数。</p></a>
+<a href="/zh/cooking-measurement/" class="calc-card"><h3>烹饪计量转换器 - 厨房单位换算</h3><p>免费烹饪计量转换器。在杯、汤匙、茶匙、毫升、升、盎司和克之间转换，适用于烘焙和烹饪。</p></a>
 <a href="/zh/credit-card-payoff/" class="calc-card"><h3>信用卡还款计算器 - 最低还款陷阱</h3><p>免费信用卡还款计算器，查看最低还款需要多长时间，额外还款能节省多少利息。</p></a>
 <a href="/zh/currency-exchange/" class="calc-card"><h3>汇率换算计算器 - 实时参考</h3><p>免费汇率换算计算器。在主要世界货币之间快速转换。简单易用的货币换算工具。</p></a>
 <a href="/zh/debt-payoff/" class="calc-card"><h3>债务还清计算器 - 免费还款规划</h3><p>免费债务还清计算器，计算还清债务所需时间和总利息。规划额外还款更快脱离债务。</p></a>
 <a href="/zh/discount/" class="calc-card"><h3>折扣计算器 - 计算打折后价格</h3><p>免费折扣计算器。计算打折后价格、节省金额。</p></a>
 <a href="/zh/down-payment/" class="calc-card"><h3>首付计算器 - 购房规划</h3><p>免费首付计算器，计算购房首付金额，查看不同首付比例对月供的影响。</p></a>
+<a href="/zh/dpi/" class="calc-card"><h3>DPI计算器 - 屏幕和打印每英寸点数</h3><p>免费DPI计算器。根据分辨率和尺寸计算屏幕PPI，或找到目标DPI所需的分辨率。设计师必备。</p></a>
 <a href="/zh/electricity-cost/" class="calc-card"><h3>电费计算器 - 估算电费账单</h3><p>免费电费计算器。根据电器功率、使用时间和电价估算电费。帮助您节省能源开支。</p></a>
 <a href="/zh/ev-vs-gas-cost/" class="calc-card"><h3>电车vs油车费用计算器 - 比较拥有成本</h3><p>免费电车vs油车费用计算器，比较包括燃料、维护和购买价格在内的总拥有成本。</p></a>
+<a href="/zh/fabric-yards/" class="calc-card"><h3>布料计算器 - 缝纫项目所需码数</h3><p>免费布料码数计算器。根据服装类型、尺寸和布料宽度，计算缝纫项目需要多少布料。</p></a>
+<a href="/zh/fraction/" class="calc-card"><h3>分数计算器 - 分数加减乘除运算</h3><p>免费分数计算器。支持分数加法、减法、乘法、除法运算，自动约分化简。</p></a>
 <a href="/zh/fuel-consumption/" class="calc-card"><h3>油耗计算器 - 百公里油耗</h3><p>免费油耗计算器。计算车辆百公里油耗和每次出行的燃油成本。追踪和比较车辆经济性。</p></a>
+<a href="/zh/gas-mileage/" class="calc-card"><h3>油耗计算器 - 计算百公里油耗</h3><p>免费油耗计算器。计算百公里油耗、每公里油费和行程燃油费用。</p></a>
 <a href="/zh/gpa/" class="calc-card"><h3>GPA计算器 - 绩点计算</h3><p>免费GPA计算器。计算累积绩点平均分，支持4.0制。适合大学生使用。</p></a>
+<a href="/zh/gravel/" class="calc-card"><h3>碎石用量计算器 - 估算碎石需求量</h3><p>免费碎石用量计算器。计算车道、小路和景观项目所需的碎石吨数和立方数。</p></a>
+<a href="/zh/heart-rate-zone/" class="calc-card"><h3>心率区间计算器 - 优化训练</h3><p>免费心率区间计算器。根据年龄和静息心率，找到燃脂、有氧和峰值表现的目标心率区间。</p></a>
+<a href="/zh/hex-color/" class="calc-card"><h3>十六进制颜色转换器 - RGB、HSL、HEX转换</h3><p>免费十六进制颜色转换器。在HEX、RGB和HSL颜色格式之间转换。实时颜色预览。</p></a>
 <a href="/zh/home-renovation/" class="calc-card"><h3>装修费用计算器 - 家装成本估算</h3><p>免费装修费用计算器，估算厨房、浴室、地板等家装项目的改造费用。</p></a>
 <a href="/zh/hourly-to-salary/" class="calc-card"><h3>时薪转年薪计算器 - 免费在线工具</h3><p>免费时薪转年薪计算器，将时薪转换为年薪、月薪和周薪。</p></a>
+<a href="/zh/ideal-weight/" class="calc-card"><h3>理想体重计算器 - 健康体重范围</h3><p>免费理想体重计算器。使用Devine、Robinson、Miller和Hamwi等多种公式计算健康体重范围。</p></a>
 <a href="/zh/inflation/" class="calc-card"><h3>通胀计算器 - 购买力变化</h3><p>免费通胀计算器，查看通货膨胀如何影响购买力。计算经通胀调整后的货币价值。</p></a>
 <a href="/zh/investment-return/" class="calc-card"><h3>投资回报计算器 - ROI与增长</h3><p>免费投资回报计算器，计算投资增长、ROI和年化收益率。</p></a>
 <a href="/zh/loan/" class="calc-card"><h3>贷款计算器 - 月供与利息</h3><p>免费贷款计算器。计算月供、总利息和还款明细。支持房贷、车贷等各类贷款。</p></a>
+<a href="/zh/macros/" class="calc-card"><h3>宏量营养素计算器 - 每日营养需求</h3><p>免费宏量营养素计算器。根据您的目标（减脂、维持或增肌），计算每日蛋白质、碳水和脂肪需求。</p></a>
+<a href="/zh/matrix/" class="calc-card"><h3>矩阵计算器 - 在线矩阵运算</h3><p>免费矩阵计算器。支持矩阵加法、减法、乘法、行列式、转置等运算。</p></a>
 <a href="/zh/mortgage/" class="calc-card"><h3>房贷月供计算器 - 免费估算</h3><p>免费房贷月供计算器。根据贷款金额、利率和期限估算每月还款额，包含本金和利息明细。</p></a>
 <a href="/zh/moving-cost/" class="calc-card"><h3>搬家费用计算器 - 估算搬家成本</h3><p>免费搬家费用计算器，根据距离、房屋大小和所需服务估算搬家总费用。</p></a>
+<a href="/zh/mulch/" class="calc-card"><h3>覆盖物用量计算器 - 估算园艺覆盖物需求</h3><p>免费覆盖物用量计算器。计算花园、景观和树圈所需的覆盖物袋数或立方数。</p></a>
+<a href="/zh/ohms-law/" class="calc-card"><h3>欧姆定律计算器 - 电压电流电阻计算</h3><p>免费欧姆定律计算器。使用V=IR计算电压、电流或电阻，同时显示功率。</p></a>
 <a href="/zh/overtime-pay/" class="calc-card"><h3>加班费计算器 - 免费在线工具</h3><p>免费加班费计算器，计算1.5倍或2倍加班工资。支持按周和按日加班计算。</p></a>
 <a href="/zh/paint-room/" class="calc-card"><h3>刷漆计算器 - 房间用漆量</h3><p>免费房间刷漆计算器。根据房间尺寸计算所需油漆量。考虑门窗和涂刷层数。</p></a>
 <a href="/zh/paycheck/" class="calc-card"><h3>工资计算器 - 税后实发工资</h3><p>免费工资计算器，估算扣除联邦税、州税、社保和医保后的实发工资。</p></a>
 <a href="/zh/percentage/" class="calc-card"><h3>百分比计算器 - 轻松计算百分比</h3><p>免费百分比计算器。计算百分比、百分比变化、百分比差异等。</p></a>
+<a href="/zh/percentage-increase/" class="calc-card"><h3>百分比增长计算器 - 计算增长百分比</h3><p>免费百分比增长计算器。计算两个值之间的百分比增长，或计算增长后的新值。</p></a>
 <a href="/zh/pet-cost/" class="calc-card"><h3>宠物费用计算器 - 年度养宠开支</h3><p>免费宠物费用计算器，估算养狗或养猫的年度费用，包括食物、兽医、美容和用品。</p></a>
+<a href="/zh/pipe-flow/" class="calc-card"><h3>管道流量计算器 - 计算流速和流量</h3><p>免费管道流量计算器。计算管道中的流量、流速和体积流量。</p></a>
+<a href="/zh/pixel-to-cm/" class="calc-card"><h3>像素转厘米转换器 - 屏幕测量工具</h3><p>免费像素转厘米转换器。根据屏幕DPI/PPI在像素和厘米之间转换，用于精确的打印和显示测量。</p></a>
+<a href="/zh/pool-volume/" class="calc-card"><h3>泳池容积计算器 - 计算泳池水量</h3><p>免费泳池容积计算器。计算矩形、圆形和椭圆形泳池的水量（升和加仑）。</p></a>
+<a href="/zh/power-consumption/" class="calc-card"><h3>功耗计算器 - 电费估算工具</h3><p>免费功耗计算器。根据设备功率、使用时间和电价计算用电量和电费。</p></a>
 <a href="/zh/pregnancy-due-date/" class="calc-card"><h3>预产期计算器 - 免费估算</h3><p>免费预产期计算器。根据末次月经或受孕日期估算宝宝的预产期，追踪孕期时间线。</p></a>
+<a href="/zh/probability/" class="calc-card"><h3>概率计算器 - 计算事件概率</h3><p>免费概率计算器。计算单事件概率、组合概率、排列组合数。</p></a>
+<a href="/zh/protein-intake/" class="calc-card"><h3>蛋白质摄入计算器 - 每日蛋白质需求</h3><p>免费蛋白质摄入计算器。根据体重、活动水平和健身目标，找到最佳每日蛋白质需求量。</p></a>
+<a href="/zh/pythagorean-theorem/" class="calc-card"><h3>勾股定理计算器 - 直角三角形边长计算</h3><p>免费勾股定理计算器。使用 a² + b² = c² 计算直角三角形的缺失边长。</p></a>
+<a href="/zh/quadratic-equation/" class="calc-card"><h3>一元二次方程求解器 - 求解ax²+bx+c=0</h3><p>免费一元二次方程求解器。使用求根公式求解任意一元二次方程，显示判别式和求解步骤。</p></a>
 <a href="/zh/rent-vs-buy/" class="calc-card"><h3>租房vs买房计算器 - 该租还是买？</h3><p>免费租房vs买房计算器，比较租房和买房的长期总成本，做出明智的住房决策。</p></a>
 <a href="/zh/retirement-savings/" class="calc-card"><h3>退休储蓄计算器 - 规划未来</h3><p>免费退休储蓄计算器。根据年龄、收入和目标估算退休所需储蓄金额。</p></a>
+<a href="/zh/ring-size/" class="calc-card"><h3>戒指尺寸计算器 - 找到您的戒指号</h3><p>免费戒指尺寸计算器。通过手指周长或直径找到戒指尺寸。在美码、欧码、英码和亚洲码之间转换。</p></a>
 <a href="/zh/roofing-squares/" class="calc-card"><h3>屋顶面积计算器 - 材料估算</h3><p>免费屋顶面积计算器。计算所需屋顶方数及瓦片、防水层等材料用量。</p></a>
 <a href="/zh/sales-tax/" class="calc-card"><h3>销售税计算器 - 免费在线工具</h3><p>免费销售税计算器，快速计算任何购买的税额和含税总价。支持自定义税率。</p></a>
 <a href="/zh/savings-goal/" class="calc-card"><h3>储蓄目标计算器 - 每月需存多少</h3><p>免费储蓄目标计算器，计算每月需要存多少钱才能在目标日期前达成财务目标。</p></a>
+<a href="/zh/scientific-notation/" class="calc-card"><h3>科学计数法计算器 - 数字转换</h3><p>免费科学计数法计算器。将数字转换为科学计数法或将科学计数法转换回标准形式。</p></a>
+<a href="/zh/shoe-size/" class="calc-card"><h3>鞋码转换器 - 美码、欧码、英码对照</h3><p>免费鞋码转换器。在美码、欧码、英码和厘米之间即时转换男女及儿童鞋码。</p></a>
+<a href="/zh/sleep-cycle/" class="calc-card"><h3>睡眠周期计算器 - 最佳起床时间</h3><p>免费睡眠周期计算器。根据90分钟睡眠周期，找到最佳起床或入睡时间，让早晨更精神。</p></a>
 <a href="/zh/solar-panel-savings/" class="calc-card"><h3>太阳能板节省计算器 - 投资回报与回本期</h3><p>免费太阳能板节省计算器，根据用电量估算太阳能节省、回本期和25年投资回报。</p></a>
 <a href="/zh/speed-distance-time/" class="calc-card"><h3>速度距离时间计算器 - 免费工具</h3><p>免费速度距离时间计算器。已知其中两个值即可计算第三个。支持多种单位。</p></a>
 <a href="/zh/square-footage/" class="calc-card"><h3>面积计算器 - 房间平方数</h3><p>免费面积计算器。计算房间、地板、墙壁的面积。适用于家装和房产评估。</p></a>
+<a href="/zh/standard-deviation/" class="calc-card"><h3>标准差计算器 - 计算标准差和方差</h3><p>免费标准差计算器。计算数据集的标准差、方差、均值等统计量。</p></a>
 <a href="/zh/temperature/" class="calc-card"><h3>温度换算器 - 摄氏度、华氏度、开尔文</h3><p>免费温度换算器。在摄氏度、华氏度和开尔文之间即时转换。</p></a>
+<a href="/zh/tile-square-feet/" class="calc-card"><h3>瓷砖计算器 - 平方英尺和所需瓷砖数</h3><p>免费瓷砖计算器。根据面积大小和瓷砖尺寸，计算地板或墙壁需要多少瓷砖。包含损耗系数。</p></a>
+<a href="/zh/time-zone/" class="calc-card"><h3>时区转换器 - 世界时钟和时差</h3><p>免费时区转换器。在主要世界时区之间即时转换时间。查找任意两个城市之间的时差。</p></a>
 <a href="/zh/tip/" class="calc-card"><h3>小费计算器 - 计算小费与分账</h3><p>免费小费计算器。计算餐厅小费金额，多人分账。</p></a>
 <a href="/zh/tip-restaurant/" class="calc-card"><h3>餐厅小费计算器 - 快速计算</h3><p>免费餐厅小费计算器。计算小费金额并在朋友间分摊账单。支持自定义小费比例和多人分账。</p></a>
+<a href="/zh/tire-size/" class="calc-card"><h3>轮胎尺寸计算器 - 轮胎规格对比</h3><p>免费轮胎尺寸计算器。计算轮胎直径、胎壁高度、周长，对比两种轮胎尺寸的差异。</p></a>
+<a href="/zh/trapezoid-area/" class="calc-card"><h3>梯形面积计算器 - 计算梯形面积</h3><p>免费梯形面积计算器。通过上底、下底和高计算梯形面积。</p></a>
+<a href="/zh/triangle-area/" class="calc-card"><h3>三角形面积计算器 - 计算三角形面积</h3><p>免费三角形面积计算器。支持底×高、海伦公式（三边）、两边夹角等多种计算方法。</p></a>
 <a href="/zh/unit-length/" class="calc-card"><h3>长度单位换算器 - 米、英尺、厘米等</h3><p>免费长度单位换算器。在米、英尺、英寸、厘米、公里、英里之间互相转换。</p></a>
 <a href="/zh/unit-weight/" class="calc-card"><h3>重量单位换算器 - 千克、磅、盎司等</h3><p>免费重量单位换算器。在千克、磅、盎司、克之间即时转换。</p></a>
 <a href="/zh/vacation-budget/" class="calc-card"><h3>度假预算计算器 - 规划旅行费用</h3><p>免费度假预算计算器，估算旅行总费用，包括机票、酒店、餐饮、活动和交通。</p></a>
+<a href="/zh/voltage-drop/" class="calc-card"><h3>电压降计算器 - 计算线路压降</h3><p>免费电压降计算器。根据线径、长度和电流计算电线中的电压降。</p></a>
 <a href="/zh/volume-cylinder/" class="calc-card"><h3>圆柱体积计算器 - 免费工具</h3><p>免费圆柱体积计算器。根据半径和高度计算圆柱的体积、表面积和侧面积。</p></a>
+<a href="/zh/waist-to-hip-ratio/" class="calc-card"><h3>腰臀比计算器 - 健康风险评估</h3><p>免费腰臀比（WHR）计算器。根据体脂分布评估健康风险。简单的基于测量的健康指标。</p></a>
 <a href="/zh/wallpaper/" class="calc-card"><h3>壁纸计算器 - 需要多少卷</h3><p>免费壁纸计算器。根据房间尺寸和花纹重复计算所需壁纸卷数。避免浪费和不足。</p></a>
+<a href="/zh/water-intake/" class="calc-card"><h3>每日饮水量计算器 - 水分需求</h3><p>免费每日饮水量计算器。根据体重、活动水平和气候，计算您每天应该喝多少水。</p></a>
 <a href="/zh/wedding-budget/" class="calc-card"><h3>婚礼预算计算器 - 规划婚礼费用</h3><p>免费婚礼预算计算器，按类别分解婚礼预算，查看场地、餐饮、摄影等推荐支出比例。</p></a>
+<a href="/zh/wire-gauge/" class="calc-card"><h3>线径计算器 - AWG线规对照表</h3><p>免费线径计算器。查询AWG线规的直径、截面积和载流量。支持AWG与毫米转换。</p></a>
 </div>
         </div>
 

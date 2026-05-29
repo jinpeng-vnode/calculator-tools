@@ -3,101 +3,181 @@
   <url><loc>https://calc.tools/en/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/age/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/area-circle/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/aspect-ratio/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/baby-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/binary-to-decimal/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/blood-pressure/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/bmi/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/body-fat/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/calorie-deficit/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/car-loan/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/carbon-footprint/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/circle-circumference/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/compound-interest/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/concrete-yards/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/cooking-measurement/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/credit-card-payoff/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/currency-exchange/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/debt-payoff/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/discount/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/down-payment/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/dpi/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/electricity-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/ev-vs-gas-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/fabric-yards/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/fraction/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/fuel-consumption/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/gas-mileage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/gpa/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/gravel/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/heart-rate-zone/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/hex-color/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/home-renovation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/hourly-to-salary/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/ideal-weight/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/inflation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/investment-return/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/loan/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/macros/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/matrix/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/mortgage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/moving-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/mulch/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/ohms-law/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/overtime-pay/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/paint-room/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/paycheck/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/percentage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/percentage-increase/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/pet-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/pipe-flow/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/pixel-to-cm/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/pool-volume/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/power-consumption/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/pregnancy-due-date/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/probability/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/protein-intake/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/pythagorean-theorem/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/quadratic-equation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/rent-vs-buy/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/retirement-savings/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/ring-size/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/roofing-squares/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/sales-tax/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/savings-goal/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/scientific-notation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/shoe-size/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/sleep-cycle/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/solar-panel-savings/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/speed-distance-time/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/square-footage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/standard-deviation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/temperature/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/tile-square-feet/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/time-zone/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/tip/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/tip-restaurant/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/tire-size/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/trapezoid-area/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/triangle-area/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/unit-length/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/unit-weight/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/vacation-budget/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/voltage-drop/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/volume-cylinder/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/waist-to-hip-ratio/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/wallpaper/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/water-intake/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/en/wedding-budget/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/en/wire-gauge/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/age/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/area-circle/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/aspect-ratio/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/baby-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/binary-to-decimal/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/blood-pressure/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/bmi/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/body-fat/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/calorie-deficit/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/car-loan/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/carbon-footprint/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/circle-circumference/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/compound-interest/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/concrete-yards/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/cooking-measurement/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/credit-card-payoff/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/currency-exchange/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/debt-payoff/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/discount/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/down-payment/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/dpi/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/electricity-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/ev-vs-gas-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/fabric-yards/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/fraction/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/fuel-consumption/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/gas-mileage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/gpa/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/gravel/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/heart-rate-zone/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/hex-color/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/home-renovation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/hourly-to-salary/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/ideal-weight/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/inflation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/investment-return/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/loan/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/macros/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/matrix/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/mortgage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/moving-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/mulch/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/ohms-law/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/overtime-pay/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/paint-room/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/paycheck/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/percentage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/percentage-increase/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/pet-cost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/pipe-flow/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/pixel-to-cm/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/pool-volume/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/power-consumption/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/pregnancy-due-date/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/probability/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/protein-intake/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/pythagorean-theorem/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/quadratic-equation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/rent-vs-buy/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/retirement-savings/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/ring-size/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/roofing-squares/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/sales-tax/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/savings-goal/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/scientific-notation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/shoe-size/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/sleep-cycle/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/solar-panel-savings/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/speed-distance-time/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/square-footage/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/standard-deviation/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/temperature/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/tile-square-feet/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/time-zone/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/tip/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/tip-restaurant/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/tire-size/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/trapezoid-area/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/triangle-area/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/unit-length/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/unit-weight/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/vacation-budget/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/voltage-drop/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/volume-cylinder/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/waist-to-hip-ratio/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/wallpaper/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/water-intake/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.tools/zh/wedding-budget/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.tools/zh/wire-gauge/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

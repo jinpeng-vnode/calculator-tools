@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPI Calculator - Dots Per Inch for Screens & Print</title>
+    <meta name="description" content="Free DPI calculator. Calculate screen PPI from resolution and size, or find required resolution for target DPI. Essential for designers.">
+    <meta name="keywords" content="DPI calculator, PPI calculator, screen resolution DPI, dots per inch, pixels per inch calculator">
+    <link rel="canonical" href="https://calc.tools/en/dpi/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="DPI Calculator - Dots Per Inch for Screens & Print">
+    <meta property="og:description" content="Free DPI calculator. Calculate screen PPI from resolution and size, or find required resolution for target DPI. Essential for designers.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <style>/* CalcTools - 全局样式 */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+
+/* 导航 */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+header nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; }
+.nav-links a:hover { color: var(--primary); }
+
+/* 主内容 */
+main { padding: 2rem 1rem; }
+h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.intro { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* 计算器卡片 */
+.calculator-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* 表单元素 */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.875rem; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+.btn:hover { background: var(--primary-dark); }
+
+.result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+    font-size: 1.125rem;
+    text-align: center;
+    display: none;
+}
+.result.show { display: block; }
+.result strong { color: var(--primary); font-size: 1.5rem; }
+
+/* 首页网格 */
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.calc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.calc-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.calc-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.calc-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.faq details { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; padding: 0.75rem 1rem; }
+.faq summary { cursor: pointer; font-weight: 500; }
+.faq details p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+
+/* 广告位 */
+.ad-slot { margin: 1.5rem auto; min-height: 90px; text-align: center; }
+
+/* Footer */
+footer { margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--border); text-align: center; }
+footer p { color: var(--text-muted); font-size: 0.8rem; }
+footer nav { margin-top: 0.5rem; }
+footer nav a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; margin: 0 0.5rem; }
+footer nav a:hover { color: var(--primary); }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.4rem; }
+    .calc-grid { grid-template-columns: 1fr; }
+}
+</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "DPI Calculator - Dots Per Inch for Screens & Print", "description": "Free DPI calculator. Calculate screen PPI from resolution and size, or find required resolution for target DPI. Essential for designers.", "url": "https://calc.tools/en/dpi/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>DPI Calculator</h1>
+        <p class="intro">Calculate DPI (dots per inch) or PPI (pixels per inch) from screen resolution and physical size. Find the right resolution for your needs.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="resW">Resolution Width (px)</label>
+        <input type="number" id="resW" placeholder="1920" min="1">
+    </div>
+    <div class="form-group">
+        <label for="resH">Resolution Height (px)</label>
+        <input type="number" id="resH" placeholder="1080" min="1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="diagonal">Screen Diagonal (inches)</label>
+        <input type="number" id="diagonal" placeholder="24" step="0.1" min="1">
+    </div>
+</div>
+<button class="btn" onclick="calcDPI()">Calculate DPI/PPI</button>
+<div class="result" id="result"></div>
+<script>
+function calcDPI() {
+    const w = parseInt(document.getElementById('resW').value);
+    const h = parseInt(document.getElementById('resH').value);
+    const diag = parseFloat(document.getElementById('diagonal').value);
+    if (!w || !h || !diag) return;
+    const diagPx = Math.sqrt(w*w + h*h);
+    const ppi = diagPx / diag;
+    const dotPitch = 25.4 / ppi;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>PPI: ${ppi.toFixed(1)}</strong><br>Dot pitch: ${dotPitch.toFixed(3)} mm<br>Diagonal pixels: ${Math.round(diagPx)} px<br><br>Screen size: ${(w/ppi*2.54).toFixed(1)} × ${(h/ppi*2.54).toFixed(1)} cm`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is the difference between DPI and PPI?</summary><p>PPI (pixels per inch) refers to screen display density. DPI (dots per inch) refers to print resolution. They're often used interchangeably.</p></details>
+<details><summary>What DPI is good for printing?</summary><p>300 DPI is the standard for high-quality printing. 150 DPI is acceptable for large format prints viewed from a distance.</p></details>
+<details><summary>How do I calculate my screen's PPI?</summary><p>PPI = √(width² + height²) / diagonal size in inches. For example, a 24" 1920×1080 monitor has about 92 PPI.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>
