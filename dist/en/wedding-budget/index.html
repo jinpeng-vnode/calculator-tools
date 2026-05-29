@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Budget Calculator - Plan Your Wedding Costs</title>
+    <meta name="description" content="Free wedding budget calculator. Break down your wedding budget by category and see recommended spending percentages for venue, catering, photography, and more.">
+    <meta name="keywords" content="wedding budget calculator, wedding cost calculator, wedding planning budget, how much does a wedding cost">
+    <link rel="canonical" href="https://calc.tools/en/wedding-budget/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Wedding Budget Calculator - Plan Your Wedding Costs">
+    <meta property="og:description" content="Free wedding budget calculator. Break down your wedding budget by category and see recommended spending percentages for venue, catering, photography, and more.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Wedding Budget Calculator - Plan Your Wedding Costs", "description": "Free wedding budget calculator. Break down your wedding budget by category and see recommended spending percentages for venue, catering, photography, and more.", "url": "https://calc.tools/en/wedding-budget/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Wedding Budget Calculator</h1>
+        <p class="intro">Plan your wedding budget with recommended spending percentages. Enter your total budget to see how much to allocate to each category.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="budget">Total Budget ($)</label>
+        <input type="number" id="budget" placeholder="30000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <input type="number" id="guests" placeholder="100" min="1">
+    </div>
+</div>
+<button class="btn" onclick="calcWedding()">Calculate Budget</button>
+<div class="result" id="result"></div>
+<script>
+function calcWedding() {
+    const budget = parseFloat(document.getElementById('budget').value);
+    const guests = parseInt(document.getElementById('guests').value) || 100;
+    if (!budget) return;
+    const items = [
+        {name: 'Venue & Catering', pct: 0.45},
+        {name: 'Photography & Video', pct: 0.12},
+        {name: 'Music & Entertainment', pct: 0.08},
+        {name: 'Flowers & Decor', pct: 0.08},
+        {name: 'Attire & Beauty', pct: 0.08},
+        {name: 'Invitations & Paper', pct: 0.03},
+        {name: 'Transportation', pct: 0.03},
+        {name: 'Favors & Gifts', pct: 0.03},
+        {name: 'Contingency', pct: 0.10}
+    ];
+    let html = `<strong>Budget Breakdown (${guests} guests):</strong><br>Cost per guest: $${(budget * 0.45 / guests).toFixed(0)}<br><br>`;
+    items.forEach(i => { html += `${i.name}: <strong>$${Math.round(budget * i.pct).toLocaleString()}</strong> (${(i.pct*100)}%)<br>`; });
+    const el = document.getElementById('result');
+    el.innerHTML = html;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How much does a wedding cost?</summary><p>The average US wedding costs $30,000-$35,000. Costs vary widely by location, guest count, and choices made.</p></details>
+<details><summary>What is the biggest wedding expense?</summary><p>The venue and catering typically account for 40-50% of the total budget, making it the largest single expense.</p></details>
+<details><summary>How many guests can I afford?</summary><p>Divide your catering budget by $100-$200 per person (average cost per guest) to estimate your guest count.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

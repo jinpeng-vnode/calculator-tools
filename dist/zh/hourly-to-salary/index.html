@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时薪转年薪计算器 - 免费在线工具</title>
+    <meta name="description" content="免费时薪转年薪计算器，将时薪转换为年薪、月薪和周薪。">
+    <meta name="keywords" content="时薪转年薪, 工资换算, 时薪计算器, 年薪计算">
+    <link rel="canonical" href="https://calc.tools/zh/hourly-to-salary/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="时薪转年薪计算器 - 免费在线工具">
+    <meta property="og:description" content="免费时薪转年薪计算器，将时薪转换为年薪、月薪和周薪。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "时薪转年薪计算器 - 免费在线工具", "description": "免费时薪转年薪计算器，将时薪转换为年薪、月薪和周薪。", "url": "https://calc.tools/zh/hourly-to-salary/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>时薪转年薪计算器</h1>
+        <p class="intro">将时薪转换为等效年薪。输入时薪和每周工作小时数，查看年、月、周收入。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="hourly">Hourly Rate ($)</label>
+        <input type="number" id="hourly" placeholder="25" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="hrsWeek">Hours Per Week</label>
+        <input type="number" id="hrsWeek" placeholder="40" min="1" max="168">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="weeksYear">Weeks Per Year</label>
+        <input type="number" id="weeksYear" placeholder="52" min="1" max="52">
+    </div>
+</div>
+<button class="btn" onclick="calcSalary()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcSalary() {
+    const rate = parseFloat(document.getElementById('hourly').value);
+    const hrs = parseFloat(document.getElementById('hrsWeek').value) || 40;
+    const weeks = parseFloat(document.getElementById('weeksYear').value) || 52;
+    if (!rate) return;
+    const annual = rate * hrs * weeks;
+    const monthly = annual / 12;
+    const weekly = rate * hrs;
+    const daily = weekly / 5;
+    const el = document.getElementById('result');
+    el.innerHTML = `Annual Salary: <strong>$${annual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>Monthly: $${monthly.toFixed(2)}<br>Weekly: $${weekly.toFixed(2)}<br>Daily (5-day): $${daily.toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>如何将时薪转换为年薪？</summary><p>时薪 × 每周工时 × 52周。例如 $20/小时 × 40小时 × 52 = $41,600 年薪。</p></details>
+<details><summary>一年有多少工作小时？</summary><p>标准全职年工时为2,080小时（40小时/周 × 52周）。扣除假期后实际约1,920-2,000小时。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

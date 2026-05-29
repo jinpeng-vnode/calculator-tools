@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Cost Calculator - First Year Expenses</title>
+    <meta name="description" content="Free baby cost calculator. Estimate the cost of having a baby in the first year including diapers, formula, childcare, and gear.">
+    <meta name="keywords" content="baby cost calculator, cost of having a baby, baby expenses, first year baby costs, newborn budget">
+    <link rel="canonical" href="https://calc.tools/en/baby-cost/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Baby Cost Calculator - First Year Expenses">
+    <meta property="og:description" content="Free baby cost calculator. Estimate the cost of having a baby in the first year including diapers, formula, childcare, and gear.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Baby Cost Calculator - First Year Expenses", "description": "Free baby cost calculator. Estimate the cost of having a baby in the first year including diapers, formula, childcare, and gear.", "url": "https://calc.tools/en/baby-cost/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Baby Cost Calculator</h1>
+        <p class="intro">Estimate first-year baby costs. Select your choices for feeding, childcare, and gear to see a personalized cost breakdown.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="feeding">Feeding Method</label>
+        <select id="feeding">
+            <option value="0">Breastfeeding</option>
+            <option value="1800">Formula ($150/mo)</option>
+            <option value="900">Combination ($75/mo)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="childcare">Childcare</label>
+        <select id="childcare">
+            <option value="0">Stay-at-home parent</option>
+            <option value="12000">Part-time daycare ($1,000/mo)</option>
+            <option value="24000">Full-time daycare ($2,000/mo)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="diapers">Diapers</label>
+        <select id="diapers">
+            <option value="900">Disposable ($75/mo)</option>
+            <option value="400">Cloth ($400 total)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="gear">Gear & Furniture</label>
+        <select id="gear">
+            <option value="2000">New (budget)</option>
+            <option value="4000">New (mid-range)</option>
+            <option value="1000">Mostly secondhand</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcBaby()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcBaby() {
+    const feeding = parseFloat(document.getElementById('feeding').value);
+    const childcare = parseFloat(document.getElementById('childcare').value);
+    const diapers = parseFloat(document.getElementById('diapers').value);
+    const gear = parseFloat(document.getElementById('gear').value);
+    const medical = 2000;
+    const clothing = 600;
+    const misc = 1200;
+    const total = feeding + childcare + diapers + gear + medical + clothing + misc;
+    const monthly = total / 12;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Estimated First-Year Cost: $${total.toLocaleString()}</strong><br>Monthly Average: $${Math.round(monthly).toLocaleString()}<br><br>Feeding: $${feeding.toLocaleString()}<br>Childcare: $${childcare.toLocaleString()}<br>Diapers: $${diapers.toLocaleString()}<br>Gear & Furniture: $${gear.toLocaleString()}<br>Medical/Insurance: $${medical.toLocaleString()}<br>Clothing: $${clothing.toLocaleString()}<br>Miscellaneous: $${misc.toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How much does a baby cost in the first year?</summary><p>The average first-year cost is $12,000-$15,000 without childcare, or $25,000-$35,000 with full-time daycare.</p></details>
+<details><summary>What is the biggest baby expense?</summary><p>Childcare is typically the largest expense ($800-$2,500/month). Without childcare, diapers and formula are the biggest recurring costs.</p></details>
+<details><summary>How can I reduce baby costs?</summary><p>Breastfeed if possible, buy secondhand gear, use cloth diapers, accept hand-me-downs, and compare daycare options.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

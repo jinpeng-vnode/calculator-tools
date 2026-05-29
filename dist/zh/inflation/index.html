@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通胀计算器 - 购买力变化</title>
+    <meta name="description" content="免费通胀计算器，查看通货膨胀如何影响购买力。计算经通胀调整后的货币价值。">
+    <meta name="keywords" content="通胀计算器, 购买力计算, 通货膨胀, 货币贬值计算">
+    <link rel="canonical" href="https://calc.tools/zh/inflation/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="通胀计算器 - 购买力变化">
+    <meta property="og:description" content="免费通胀计算器，查看通货膨胀如何影响购买力。计算经通胀调整后的货币价值。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "通胀计算器 - 购买力变化", "description": "免费通胀计算器，查看通货膨胀如何影响购买力。计算经通胀调整后的货币价值。", "url": "https://calc.tools/zh/inflation/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>通胀计算器</h1>
+        <p class="intro">计算通货膨胀如何影响货币价值。输入金额和时间段，查看等效购买力。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="amount">Amount ($)</label>
+        <input type="number" id="amount" placeholder="1000" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="inflRate">Annual Inflation Rate (%)</label>
+        <input type="number" id="inflRate" placeholder="3" min="0" step="0.1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="years">Number of Years</label>
+        <input type="number" id="years" placeholder="10" min="1" max="100">
+    </div>
+</div>
+<button class="btn" onclick="calcInflation()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcInflation() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const rate = parseFloat(document.getElementById('inflRate').value) / 100;
+    const years = parseFloat(document.getElementById('years').value);
+    if (!amount || !rate || !years) return;
+    const futureValue = amount * Math.pow(1 + rate, years);
+    const purchasingPower = amount / Math.pow(1 + rate, years);
+    const totalInflation = ((futureValue - amount) / amount * 100).toFixed(1);
+    const el = document.getElementById('result');
+    el.innerHTML = `$${amount.toFixed(2)} today will need <strong>$${futureValue.toFixed(2)}</strong> in ${years} years<br>$${amount.toFixed(2)} in ${years} years = <strong>$${purchasingPower.toFixed(2)}</strong> today<br>Total inflation over ${years} years: ${totalInflation}%`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>什么是通货膨胀？</summary><p>通货膨胀是物价总水平上升的速率，会随时间降低货币的购买力。</p></details>
+<details><summary>通胀如何影响储蓄？</summary><p>如果储蓄利率低于通胀率，您的资金实际购买力会随时间下降。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

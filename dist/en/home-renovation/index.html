@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Renovation Calculator - Remodel Cost Estimator</title>
+    <meta name="description" content="Free home renovation cost calculator. Estimate remodeling costs for kitchen, bathroom, flooring, and other home improvement projects.">
+    <meta name="keywords" content="home renovation calculator, remodel cost calculator, renovation estimate, home improvement cost, kitchen remodel cost">
+    <link rel="canonical" href="https://calc.tools/en/home-renovation/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Home Renovation Calculator - Remodel Cost Estimator">
+    <meta property="og:description" content="Free home renovation cost calculator. Estimate remodeling costs for kitchen, bathroom, flooring, and other home improvement projects.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Home Renovation Calculator - Remodel Cost Estimator", "description": "Free home renovation cost calculator. Estimate remodeling costs for kitchen, bathroom, flooring, and other home improvement projects.", "url": "https://calc.tools/en/home-renovation/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Home Renovation Cost Calculator</h1>
+        <p class="intro">Estimate your home renovation costs. Select project types and quality level to get a detailed cost breakdown.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="project">Project Type</label>
+        <select id="project">
+            <option value="kitchen">Kitchen Remodel</option>
+            <option value="bathroom">Bathroom Remodel</option>
+            <option value="flooring">Flooring (per sq ft)</option>
+            <option value="painting">Interior Painting</option>
+            <option value="roof">Roof Replacement</option>
+            <option value="deck">Deck Addition</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="quality">Quality Level</label>
+        <select id="quality">
+            <option value="0.7">Budget</option>
+            <option value="1" selected>Mid-range</option>
+            <option value="1.6">High-end</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="sqft">Area (sq ft)</label>
+        <input type="number" id="sqft" placeholder="200" min="1">
+    </div>
+</div>
+<button class="btn" onclick="calcReno()">Estimate Cost</button>
+<div class="result" id="result"></div>
+<script>
+function calcReno() {
+    const project = document.getElementById('project').value;
+    const quality = parseFloat(document.getElementById('quality').value);
+    const sqft = parseFloat(document.getElementById('sqft').value) || 200;
+    const costs = {
+        kitchen: {base: 25000, perSqft: 0, roi: 72},
+        bathroom: {base: 15000, perSqft: 0, roi: 64},
+        flooring: {base: 0, perSqft: 8, roi: 70},
+        painting: {base: 0, perSqft: 3, roi: 50},
+        roof: {base: 8000, perSqft: 4, roi: 60},
+        deck: {base: 5000, perSqft: 25, roi: 65}
+    }[project];
+    const total = (costs.base + costs.perSqft * sqft) * quality;
+    const materials = total * 0.4;
+    const labor = total * 0.5;
+    const permits = total * 0.1;
+    const valueAdded = total * costs.roi / 100;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Estimated Cost: $${Math.round(total).toLocaleString()}</strong><br><br>Materials: $${Math.round(materials).toLocaleString()}<br>Labor: $${Math.round(labor).toLocaleString()}<br>Permits & Fees: $${Math.round(permits).toLocaleString()}<br><br>Expected ROI: ${costs.roi}%<br>Value Added: ~$${Math.round(valueAdded).toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How much does a kitchen remodel cost?</summary><p>A minor kitchen remodel costs $15,000-$30,000. A major remodel runs $40,000-$80,000+. Average ROI is 60-80%.</p></details>
+<details><summary>How much does a bathroom remodel cost?</summary><p>A bathroom remodel typically costs $10,000-$30,000 depending on size and finishes. Average ROI is 60-70%.</p></details>
+<details><summary>What renovations add the most value?</summary><p>Kitchen and bathroom remodels, adding a deck, replacing the garage door, and new siding typically offer the best ROI.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

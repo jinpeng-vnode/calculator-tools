@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>养娃费用计算器 - 第一年开支</title>
+    <meta name="description" content="免费养娃费用计算器，估算宝宝第一年的费用，包括尿布、奶粉、托儿和婴儿用品。">
+    <meta name="keywords" content="养娃费用计算器, 生孩子费用, 婴儿开支, 新生儿预算">
+    <link rel="canonical" href="https://calc.tools/zh/baby-cost/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="养娃费用计算器 - 第一年开支">
+    <meta property="og:description" content="免费养娃费用计算器，估算宝宝第一年的费用，包括尿布、奶粉、托儿和婴儿用品。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "养娃费用计算器 - 第一年开支", "description": "免费养娃费用计算器，估算宝宝第一年的费用，包括尿布、奶粉、托儿和婴儿用品。", "url": "https://calc.tools/zh/baby-cost/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>养娃费用计算器</h1>
+        <p class="intro">估算宝宝第一年费用。选择喂养方式、托儿和用品选项，查看个性化费用明细。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="feeding">Feeding Method</label>
+        <select id="feeding">
+            <option value="0">Breastfeeding</option>
+            <option value="1800">Formula ($150/mo)</option>
+            <option value="900">Combination ($75/mo)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="childcare">Childcare</label>
+        <select id="childcare">
+            <option value="0">Stay-at-home parent</option>
+            <option value="12000">Part-time daycare ($1,000/mo)</option>
+            <option value="24000">Full-time daycare ($2,000/mo)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="diapers">Diapers</label>
+        <select id="diapers">
+            <option value="900">Disposable ($75/mo)</option>
+            <option value="400">Cloth ($400 total)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="gear">Gear & Furniture</label>
+        <select id="gear">
+            <option value="2000">New (budget)</option>
+            <option value="4000">New (mid-range)</option>
+            <option value="1000">Mostly secondhand</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcBaby()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcBaby() {
+    const feeding = parseFloat(document.getElementById('feeding').value);
+    const childcare = parseFloat(document.getElementById('childcare').value);
+    const diapers = parseFloat(document.getElementById('diapers').value);
+    const gear = parseFloat(document.getElementById('gear').value);
+    const medical = 2000;
+    const clothing = 600;
+    const misc = 1200;
+    const total = feeding + childcare + diapers + gear + medical + clothing + misc;
+    const monthly = total / 12;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Estimated First-Year Cost: $${total.toLocaleString()}</strong><br>Monthly Average: $${Math.round(monthly).toLocaleString()}<br><br>Feeding: $${feeding.toLocaleString()}<br>Childcare: $${childcare.toLocaleString()}<br>Diapers: $${diapers.toLocaleString()}<br>Gear & Furniture: $${gear.toLocaleString()}<br>Medical/Insurance: $${medical.toLocaleString()}<br>Clothing: $${clothing.toLocaleString()}<br>Miscellaneous: $${misc.toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>宝宝第一年要花多少钱？</summary><p>不含托儿平均$12,000-$15,000，含全日制托儿$25,000-$35,000。</p></details>
+<details><summary>最大的婴儿开支是什么？</summary><p>托儿通常是最大开支（$800-$2,500/月）。不含托儿时，尿布和奶粉是最大的经常性支出。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

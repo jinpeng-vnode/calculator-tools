@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly to Salary Calculator - Convert Hourly Wage to Annual</title>
+    <meta name="description" content="Free hourly to salary calculator. Convert your hourly wage to annual, monthly, and weekly salary. See what your hourly rate equals as a yearly salary.">
+    <meta name="keywords" content="hourly to salary calculator, hourly to annual salary, wage to salary converter, hourly rate to yearly">
+    <link rel="canonical" href="https://calc.tools/en/hourly-to-salary/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Hourly to Salary Calculator - Convert Hourly Wage to Annual">
+    <meta property="og:description" content="Free hourly to salary calculator. Convert your hourly wage to annual, monthly, and weekly salary. See what your hourly rate equals as a yearly salary.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Hourly to Salary Calculator - Convert Hourly Wage to Annual", "description": "Free hourly to salary calculator. Convert your hourly wage to annual, monthly, and weekly salary. See what your hourly rate equals as a yearly salary.", "url": "https://calc.tools/en/hourly-to-salary/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Hourly to Salary Calculator</h1>
+        <p class="intro">Convert your hourly wage to an equivalent annual salary. Enter your hourly rate and hours worked to see yearly, monthly, and weekly earnings.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="hourly">Hourly Rate ($)</label>
+        <input type="number" id="hourly" placeholder="25" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="hrsWeek">Hours Per Week</label>
+        <input type="number" id="hrsWeek" placeholder="40" min="1" max="168">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="weeksYear">Weeks Per Year</label>
+        <input type="number" id="weeksYear" placeholder="52" min="1" max="52">
+    </div>
+</div>
+<button class="btn" onclick="calcSalary()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcSalary() {
+    const rate = parseFloat(document.getElementById('hourly').value);
+    const hrs = parseFloat(document.getElementById('hrsWeek').value) || 40;
+    const weeks = parseFloat(document.getElementById('weeksYear').value) || 52;
+    if (!rate) return;
+    const annual = rate * hrs * weeks;
+    const monthly = annual / 12;
+    const weekly = rate * hrs;
+    const daily = weekly / 5;
+    const el = document.getElementById('result');
+    el.innerHTML = `Annual Salary: <strong>$${annual.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>Monthly: $${monthly.toFixed(2)}<br>Weekly: $${weekly.toFixed(2)}<br>Daily (5-day): $${daily.toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How do I convert hourly to salary?</summary><p>Multiply your hourly rate × hours per week × 52 weeks. For example, $20/hr × 40 hrs × 52 = $41,600 annual salary.</p></details>
+<details><summary>How many work hours in a year?</summary><p>A standard full-time year is 2,080 hours (40 hours/week × 52 weeks). Accounting for holidays and PTO, actual hours may be around 1,920-2,000.</p></details>
+<details><summary>Does this include benefits?</summary><p>This calculator shows gross pay only. Total compensation including benefits (health insurance, 401k, etc.) is typically 20-30% higher.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

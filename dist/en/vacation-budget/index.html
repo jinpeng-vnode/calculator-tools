@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Budget Calculator - Plan Your Trip Costs</title>
+    <meta name="description" content="Free vacation budget calculator. Estimate total trip costs including flights, hotel, food, activities, and transportation.">
+    <meta name="keywords" content="vacation budget calculator, trip cost calculator, travel budget planner, vacation cost estimator, holiday budget">
+    <link rel="canonical" href="https://calc.tools/en/vacation-budget/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Vacation Budget Calculator - Plan Your Trip Costs">
+    <meta property="og:description" content="Free vacation budget calculator. Estimate total trip costs including flights, hotel, food, activities, and transportation.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Vacation Budget Calculator - Plan Your Trip Costs", "description": "Free vacation budget calculator. Estimate total trip costs including flights, hotel, food, activities, and transportation.", "url": "https://calc.tools/en/vacation-budget/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Vacation Budget Calculator</h1>
+        <p class="intro">Plan your vacation budget. Enter trip details to get a cost estimate for flights, accommodation, food, and activities.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="travelers">Number of Travelers</label>
+        <input type="number" id="travelers" placeholder="2" min="1" max="20">
+    </div>
+    <div class="form-group">
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" placeholder="7" min="1" max="90">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="flights">Flights (per person, $)</label>
+        <input type="number" id="flights" placeholder="400" min="0">
+    </div>
+    <div class="form-group">
+        <label for="hotel">Hotel (per night, $)</label>
+        <input type="number" id="hotel" placeholder="150" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="food">Food (per person/day, $)</label>
+        <input type="number" id="food" placeholder="60" min="0">
+    </div>
+    <div class="form-group">
+        <label for="activities">Activities (per person/day, $)</label>
+        <input type="number" id="activities" placeholder="40" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcVacation()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcVacation() {
+    const ppl = parseInt(document.getElementById('travelers').value) || 2;
+    const days = parseInt(document.getElementById('days').value) || 7;
+    const flights = parseFloat(document.getElementById('flights').value) || 0;
+    const hotel = parseFloat(document.getElementById('hotel').value) || 0;
+    const food = parseFloat(document.getElementById('food').value) || 0;
+    const activities = parseFloat(document.getElementById('activities').value) || 0;
+    const flightTotal = flights * ppl;
+    const hotelTotal = hotel * days;
+    const foodTotal = food * ppl * days;
+    const actTotal = activities * ppl * days;
+    const transport = days * 30;
+    const total = flightTotal + hotelTotal + foodTotal + actTotal + transport;
+    const perPerson = total / ppl;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Total Trip Cost: $${Math.round(total).toLocaleString()}</strong><br>Per Person: $${Math.round(perPerson).toLocaleString()}<br><br>Flights: $${Math.round(flightTotal).toLocaleString()}<br>Accommodation: $${Math.round(hotelTotal).toLocaleString()}<br>Food: $${Math.round(foodTotal).toLocaleString()}<br>Activities: $${Math.round(actTotal).toLocaleString()}<br>Local Transport: $${Math.round(transport).toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How much should I budget for vacation?</summary><p>A typical domestic vacation costs $150-$300 per person per day. International trips average $200-$500 per person per day.</p></details>
+<details><summary>What percentage of income should go to vacations?</summary><p>Financial experts suggest budgeting 5-10% of annual net income for vacations and travel.</p></details>
+<details><summary>How can I save on vacation costs?</summary><p>Travel off-season, book flights 6-8 weeks ahead, use points/miles, cook some meals, and look for free activities.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paycheck Calculator - Free Salary to Take-Home Pay</title>
+    <meta name="description" content="Free paycheck calculator. Estimate your take-home pay after federal and state taxes, Social Security, and Medicare deductions.">
+    <meta name="keywords" content="paycheck calculator, take home pay calculator, salary after tax, net pay calculator, payroll calculator">
+    <link rel="canonical" href="https://calc.tools/en/paycheck/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Paycheck Calculator - Free Salary to Take-Home Pay">
+    <meta property="og:description" content="Free paycheck calculator. Estimate your take-home pay after federal and state taxes, Social Security, and Medicare deductions.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Paycheck Calculator - Free Salary to Take-Home Pay", "description": "Free paycheck calculator. Estimate your take-home pay after federal and state taxes, Social Security, and Medicare deductions.", "url": "https://calc.tools/en/paycheck/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Paycheck Calculator</h1>
+        <p class="intro">Estimate your take-home pay after taxes and deductions. Enter your gross salary and filing details to see your net pay.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="gross">Annual Gross Salary ($)</label>
+        <input type="number" id="gross" placeholder="75000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="payFreq">Pay Frequency</label>
+        <select id="payFreq">
+            <option value="26">Bi-weekly</option>
+            <option value="24">Semi-monthly</option>
+            <option value="12">Monthly</option>
+            <option value="52">Weekly</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="fedRate">Effective Federal Tax Rate (%)</label>
+        <input type="number" id="fedRate" placeholder="22" min="0" max="50" step="0.1">
+    </div>
+    <div class="form-group">
+        <label for="stateRate">State Tax Rate (%)</label>
+        <input type="number" id="stateRate" placeholder="5" min="0" max="15" step="0.1">
+    </div>
+</div>
+<button class="btn" onclick="calcPaycheck()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcPaycheck() {
+    const gross = parseFloat(document.getElementById('gross').value);
+    const freq = parseInt(document.getElementById('payFreq').value);
+    const fedRate = parseFloat(document.getElementById('fedRate').value) / 100 || 0;
+    const stateRate = parseFloat(document.getElementById('stateRate').value) / 100 || 0;
+    if (!gross) return;
+    const ss = Math.min(gross, 168600) * 0.062;
+    const medicare = gross * 0.0145;
+    const fedTax = gross * fedRate;
+    const stateTax = gross * stateRate;
+    const totalDeductions = ss + medicare + fedTax + stateTax;
+    const netAnnual = gross - totalDeductions;
+    const netPer = netAnnual / freq;
+    const el = document.getElementById('result');
+    el.innerHTML = `Net Pay Per Period: <strong>$${netPer.toFixed(2)}</strong><br>Annual Net Pay: $${netAnnual.toFixed(2)}<br>Federal Tax: $${fedTax.toFixed(2)}<br>State Tax: $${stateTax.toFixed(2)}<br>Social Security: $${ss.toFixed(2)}<br>Medicare: $${medicare.toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is take-home pay?</summary><p>Take-home pay is your gross salary minus all deductions including federal tax, state tax, Social Security (6.2%), and Medicare (1.45%).</p></details>
+<details><summary>How is federal tax calculated?</summary><p>Federal income tax uses progressive brackets. Your income is taxed at increasing rates as it moves through each bracket.</p></details>
+<details><summary>What is FICA?</summary><p>FICA includes Social Security (6.2% up to $168,600 in 2024) and Medicare (1.45% on all earnings) taxes.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

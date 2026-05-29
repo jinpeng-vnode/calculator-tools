@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overtime Pay Calculator - Free Online Tool</title>
+    <meta name="description" content="Free overtime pay calculator. Calculate your overtime earnings at 1.5x or 2x rates. Supports weekly and daily overtime calculations.">
+    <meta name="keywords" content="overtime pay calculator, overtime calculator, time and a half calculator, overtime rate, overtime earnings">
+    <link rel="canonical" href="https://calc.tools/en/overtime-pay/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Overtime Pay Calculator - Free Online Tool">
+    <meta property="og:description" content="Free overtime pay calculator. Calculate your overtime earnings at 1.5x or 2x rates. Supports weekly and daily overtime calculations.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Overtime Pay Calculator - Free Online Tool", "description": "Free overtime pay calculator. Calculate your overtime earnings at 1.5x or 2x rates. Supports weekly and daily overtime calculations.", "url": "https://calc.tools/en/overtime-pay/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Overtime Pay Calculator</h1>
+        <p class="intro">Calculate your overtime earnings. Enter your hourly rate and overtime hours to see your total pay including overtime premium.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="hourlyRate">Hourly Rate ($)</label>
+        <input type="number" id="hourlyRate" placeholder="25" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="regularHours">Regular Hours/Week</label>
+        <input type="number" id="regularHours" placeholder="40" min="0" max="168">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="otHours">Overtime Hours</label>
+        <input type="number" id="otHours" placeholder="10" min="0" max="128">
+    </div>
+    <div class="form-group">
+        <label for="otMultiplier">Overtime Multiplier</label>
+        <select id="otMultiplier">
+            <option value="1.5">1.5x (Time and a half)</option>
+            <option value="2">2x (Double time)</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcOvertime()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcOvertime() {
+    const rate = parseFloat(document.getElementById('hourlyRate').value);
+    const regHrs = parseFloat(document.getElementById('regularHours').value);
+    const otHrs = parseFloat(document.getElementById('otHours').value);
+    const mult = parseFloat(document.getElementById('otMultiplier').value);
+    if (!rate || !regHrs) return;
+    const regPay = rate * regHrs;
+    const otRate = rate * mult;
+    const otPay = otRate * (otHrs || 0);
+    const total = regPay + otPay;
+    const el = document.getElementById('result');
+    el.innerHTML = `Regular Pay: $${regPay.toFixed(2)}<br>Overtime Rate: $${otRate.toFixed(2)}/hr<br>Overtime Pay: $${otPay.toFixed(2)}<br>Total Weekly Pay: <strong>$${total.toFixed(2)}</strong>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is overtime pay?</summary><p>Overtime pay is additional compensation for hours worked beyond the standard 40-hour work week, typically at 1.5x your regular hourly rate.</p></details>
+<details><summary>When does double time apply?</summary><p>Double time (2x rate) typically applies after 12 hours in a single day or on the 7th consecutive day worked, depending on state law.</p></details>
+<details><summary>Is overtime mandatory?</summary><p>Under the FLSA, non-exempt employees must receive overtime pay for hours over 40 per week. Some states have additional daily overtime rules.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV vs Gas Cost Calculator - Compare Ownership Costs</title>
+    <meta name="description" content="Free EV vs gas car cost calculator. Compare total ownership costs including fuel, maintenance, and purchase price over time.">
+    <meta name="keywords" content="ev vs gas calculator, electric car cost comparison, EV savings calculator, electric vs gas car, EV total cost">
+    <link rel="canonical" href="https://calc.tools/en/ev-vs-gas-cost/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="EV vs Gas Cost Calculator - Compare Ownership Costs">
+    <meta property="og:description" content="Free EV vs gas car cost calculator. Compare total ownership costs including fuel, maintenance, and purchase price over time.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "EV vs Gas Cost Calculator - Compare Ownership Costs", "description": "Free EV vs gas car cost calculator. Compare total ownership costs including fuel, maintenance, and purchase price over time.", "url": "https://calc.tools/en/ev-vs-gas-cost/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>EV vs Gas Car Cost Calculator</h1>
+        <p class="intro">Compare the total cost of owning an electric vehicle versus a gas car. Enter your driving habits to see which saves more.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="miles">Annual Miles Driven</label>
+        <input type="number" id="miles" placeholder="12000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="years">Years of Ownership</label>
+        <input type="number" id="years" placeholder="7" min="1" max="20">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="gasPrice">Gas Price ($/gallon)</label>
+        <input type="number" id="gasPrice" placeholder="3.50" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="mpg">Gas Car MPG</label>
+        <input type="number" id="mpg" placeholder="30" min="1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="elecRate">Electricity Rate ($/kWh)</label>
+        <input type="number" id="elecRate" placeholder="0.13" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="evEff">EV Efficiency (mi/kWh)</label>
+        <input type="number" id="evEff" placeholder="3.5" min="0.1" step="0.1">
+    </div>
+</div>
+<button class="btn" onclick="calcEV()">Compare Costs</button>
+<div class="result" id="result"></div>
+<script>
+function calcEV() {
+    const miles = parseFloat(document.getElementById('miles').value);
+    const yrs = parseInt(document.getElementById('years').value);
+    const gas = parseFloat(document.getElementById('gasPrice').value);
+    const mpg = parseFloat(document.getElementById('mpg').value);
+    const elec = parseFloat(document.getElementById('elecRate').value);
+    const eff = parseFloat(document.getElementById('evEff').value);
+    if (!miles || !yrs || !gas || !mpg || !elec || !eff) return;
+    const gasFuelYear = (miles / mpg) * gas;
+    const evFuelYear = (miles / eff) * elec;
+    const gasMaintYear = 1200;
+    const evMaintYear = 600;
+    const gasTotalYear = gasFuelYear + gasMaintYear;
+    const evTotalYear = evFuelYear + evMaintYear;
+    const gasTotal = gasTotalYear * yrs;
+    const evTotal = evTotalYear * yrs;
+    const savings = gasTotal - evTotal;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${yrs}-Year Operating Cost Comparison:</strong><br><br>⛽ Gas Car: <strong>$${Math.round(gasTotal).toLocaleString()}</strong> ($${Math.round(gasTotalYear)}/yr)<br>  Fuel: $${Math.round(gasFuelYear)}/yr | Maintenance: $${gasMaintYear}/yr<br><br>⚡ EV: <strong>$${Math.round(evTotal).toLocaleString()}</strong> ($${Math.round(evTotalYear)}/yr)<br>  Electricity: $${Math.round(evFuelYear)}/yr | Maintenance: $${evMaintYear}/yr<br><br><strong>EV saves: $${Math.round(savings).toLocaleString()} over ${yrs} years</strong>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>Are electric cars cheaper to own?</summary><p>EVs typically cost less to operate ($0.03-0.05/mile vs $0.10-0.15/mile for gas), but have higher purchase prices. Break-even is usually 3-7 years.</p></details>
+<details><summary>How much do you save on fuel with an EV?</summary><p>The average EV driver saves $800-$1,500 per year on fuel costs compared to a gas car, depending on electricity rates and gas prices.</p></details>
+<details><summary>Are EVs cheaper to maintain?</summary><p>Yes, EVs have fewer moving parts, no oil changes, and regenerative braking reduces brake wear. Maintenance costs are 30-50% lower.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

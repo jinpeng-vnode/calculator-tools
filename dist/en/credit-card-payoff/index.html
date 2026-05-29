@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Payoff Calculator - Minimum Payment Trap</title>
+    <meta name="description" content="Free credit card payoff calculator. See how long minimum payments take and how much extra payments save. Escape the minimum payment trap.">
+    <meta name="keywords" content="credit card payoff calculator, credit card payment calculator, minimum payment calculator, credit card interest, pay off credit card">
+    <link rel="canonical" href="https://calc.tools/en/credit-card-payoff/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Credit Card Payoff Calculator - Minimum Payment Trap">
+    <meta property="og:description" content="Free credit card payoff calculator. See how long minimum payments take and how much extra payments save. Escape the minimum payment trap.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Credit Card Payoff Calculator - Minimum Payment Trap", "description": "Free credit card payoff calculator. See how long minimum payments take and how much extra payments save. Escape the minimum payment trap.", "url": "https://calc.tools/en/credit-card-payoff/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Credit Card Payoff Calculator</h1>
+        <p class="intro">Calculate how long it takes to pay off your credit card. Compare minimum payments vs. fixed payments to see potential savings.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="ccBalance">Card Balance ($)</label>
+        <input type="number" id="ccBalance" placeholder="5000" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="ccApr">APR (%)</label>
+        <input type="number" id="ccApr" placeholder="22.99" min="0" step="0.01">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="ccPayment">Monthly Payment ($)</label>
+        <input type="number" id="ccPayment" placeholder="200" min="0" step="0.01">
+    </div>
+</div>
+<button class="btn" onclick="calcCC()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcCC() {
+    const bal = parseFloat(document.getElementById('ccBalance').value);
+    const apr = parseFloat(document.getElementById('ccApr').value) / 100;
+    const pmt = parseFloat(document.getElementById('ccPayment').value);
+    if (!bal || !apr || !pmt) return;
+    const mr = apr / 12;
+    if (pmt <= bal * mr) { document.getElementById('result').innerHTML = '<strong style="color:red">Payment doesn\'t cover monthly interest!</strong>'; document.getElementById('result').classList.add('show'); return; }
+    const months = Math.ceil(-Math.log(1 - (bal * mr) / pmt) / Math.log(1 + mr));
+    const totalPaid = pmt * months;
+    const totalInterest = totalPaid - bal;
+    const minPmt = bal * 0.02;
+    let minMonths = 0, minBal = bal, minInterest = 0;
+    while (minBal > 0 && minMonths < 600) { const mi = minBal * mr; minInterest += mi; const mp = Math.max(minBal * 0.02, 25); minBal = minBal + mi - mp; minMonths++; if (minBal < 0) minBal = 0; }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Your Plan:</strong> ${Math.floor(months/12)} yrs ${months%12} mo | Interest: $${totalInterest.toFixed(2)}<br><strong>Minimum Payment (~$${minPmt.toFixed(0)}/mo):</strong> ${Math.floor(minMonths/12)} yrs ${minMonths%12} mo | Interest: $${minInterest.toFixed(2)}<br><strong>You save: $${(minInterest - totalInterest).toFixed(2)}</strong>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>Why are minimum payments a trap?</summary><p>Minimum payments (typically 1-3% of balance) mostly cover interest, meaning it can take 15-30 years to pay off a balance and cost 2-3x the original amount.</p></details>
+<details><summary>How is credit card interest calculated?</summary><p>Credit card interest is calculated daily on your average daily balance. The daily rate is your APR divided by 365.</p></details>
+<details><summary>Should I pay more than the minimum?</summary><p>Always pay more than the minimum if possible. Even small extra payments dramatically reduce total interest and payoff time.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

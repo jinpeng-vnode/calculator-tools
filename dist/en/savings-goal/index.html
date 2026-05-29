@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goal Calculator - How Much to Save Monthly</title>
+    <meta name="description" content="Free savings goal calculator. Find out how much to save each month to reach your financial goal by your target date.">
+    <meta name="keywords" content="savings goal calculator, how much to save, monthly savings calculator, savings plan, financial goal calculator">
+    <link rel="canonical" href="https://calc.tools/en/savings-goal/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Savings Goal Calculator - How Much to Save Monthly">
+    <meta property="og:description" content="Free savings goal calculator. Find out how much to save each month to reach your financial goal by your target date.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Savings Goal Calculator - How Much to Save Monthly", "description": "Free savings goal calculator. Find out how much to save each month to reach your financial goal by your target date.", "url": "https://calc.tools/en/savings-goal/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Savings Goal Calculator</h1>
+        <p class="intro">Calculate how much you need to save monthly to reach your goal. Enter your target amount, timeline, and expected interest rate.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="goal">Savings Goal ($)</label>
+        <input type="number" id="goal" placeholder="50000" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="current">Current Savings ($)</label>
+        <input type="number" id="current" placeholder="5000" min="0" step="0.01">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="months">Months to Goal</label>
+        <input type="number" id="months" placeholder="36" min="1" max="600">
+    </div>
+    <div class="form-group">
+        <label for="rate">Annual Interest Rate (%)</label>
+        <input type="number" id="rate" placeholder="4.5" min="0" step="0.1">
+    </div>
+</div>
+<button class="btn" onclick="calcGoal()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcGoal() {
+    const goal = parseFloat(document.getElementById('goal').value);
+    const current = parseFloat(document.getElementById('current').value) || 0;
+    const months = parseInt(document.getElementById('months').value);
+    const rate = parseFloat(document.getElementById('rate').value) / 100 / 12;
+    if (!goal || !months) return;
+    const needed = goal - current;
+    let monthly;
+    if (rate === 0) { monthly = needed / months; }
+    else { const fv = current * Math.pow(1 + rate, months); const remaining = goal - fv; monthly = remaining * rate / (Math.pow(1 + rate, months) - 1); }
+    const totalContrib = monthly * months;
+    const interestEarned = goal - current - totalContrib;
+    const el = document.getElementById('result');
+    el.innerHTML = `Monthly Savings Needed: <strong>$${monthly.toFixed(2)}</strong><br>Total Contributions: $${totalContrib.toFixed(2)}<br>Interest Earned: $${interestEarned.toFixed(2)}<br>Goal: $${goal.toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How do I calculate monthly savings needed?</summary><p>Divide your goal by the number of months, adjusted for expected interest. With interest, you need to save less each month.</p></details>
+<details><summary>What interest rate should I use?</summary><p>High-yield savings accounts offer 4-5% APY. For conservative planning, use 3-4%. For investment accounts, 6-8% is reasonable long-term.</p></details>
+<details><summary>Should I save or invest?</summary><p>For goals under 3 years, save in a high-yield account. For longer goals, investing typically provides better returns despite short-term volatility.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

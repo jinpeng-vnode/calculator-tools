@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碳足迹计算器 - 估算CO2排放</title>
+    <meta name="description" content="免费碳足迹计算器，估算交通、家庭能源和生活方式产生的年度CO2排放量。">
+    <meta name="keywords" content="碳足迹计算器, CO2计算, 碳排放, 环境影响计算">
+    <link rel="canonical" href="https://calc.tools/zh/carbon-footprint/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="碳足迹计算器 - 估算CO2排放">
+    <meta property="og:description" content="免费碳足迹计算器，估算交通、家庭能源和生活方式产生的年度CO2排放量。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "碳足迹计算器 - 估算CO2排放", "description": "免费碳足迹计算器，估算交通、家庭能源和生活方式产生的年度CO2排放量。", "url": "https://calc.tools/zh/carbon-footprint/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>碳足迹计算器</h1>
+        <p class="intro">估算您的年度碳足迹。输入交通、能源和生活方式详情，查看CO2排放量。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="carMiles">Car Miles/Year</label>
+        <input type="number" id="carMiles" placeholder="12000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="carType">Car Type</label>
+        <select id="carType">
+            <option value="0.41">Gas (avg)</option>
+            <option value="0.25">Hybrid</option>
+            <option value="0.1">Electric</option>
+            <option value="0">No car</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="flights">Round-trip Flights/Year</label>
+        <input type="number" id="flights" placeholder="2" min="0">
+    </div>
+    <div class="form-group">
+        <label for="elecKwh">Home Electricity (kWh/mo)</label>
+        <input type="number" id="elecKwh" placeholder="900" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="gasTherm">Natural Gas (therms/mo)</label>
+        <input type="number" id="gasTherm" placeholder="50" min="0">
+    </div>
+    <div class="form-group">
+        <label for="diet">Diet</label>
+        <select id="diet">
+            <option value="3.3">Meat-heavy</option>
+            <option value="2.5" selected>Average</option>
+            <option value="1.7">Vegetarian</option>
+            <option value="1.5">Vegan</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcCarbon()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcCarbon() {
+    const carMiles = parseFloat(document.getElementById('carMiles').value) || 0;
+    const carFactor = parseFloat(document.getElementById('carType').value);
+    const flights = parseInt(document.getElementById('flights').value) || 0;
+    const elec = parseFloat(document.getElementById('elecKwh').value) || 0;
+    const gas = parseFloat(document.getElementById('gasTherm').value) || 0;
+    const diet = parseFloat(document.getElementById('diet').value);
+    const carCO2 = carMiles * carFactor / 1000;
+    const flightCO2 = flights * 1.6;
+    const elecCO2 = elec * 12 * 0.42 / 1000;
+    const gasCO2 = gas * 12 * 5.3 / 1000;
+    const dietCO2 = diet;
+    const total = carCO2 + flightCO2 + elecCO2 + gasCO2 + dietCO2;
+    const el = document.getElementById('result');
+    const avg = 16;
+    const comparison = total < avg ? `${((1-total/avg)*100).toFixed(0)}% below` : `${((total/avg-1)*100).toFixed(0)}% above`;
+    el.innerHTML = `<strong>Annual Carbon Footprint: ${total.toFixed(1)} tons CO2</strong><br>(${comparison} US average of ${avg} tons)<br><br>🚗 Transportation: ${carCO2.toFixed(1)} tons<br>✈️ Air Travel: ${flightCO2.toFixed(1)} tons<br>⚡ Electricity: ${elecCO2.toFixed(1)} tons<br>🔥 Natural Gas: ${gasCO2.toFixed(1)} tons<br>🍽️ Diet: ${dietCO2.toFixed(1)} tons`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>什么是碳足迹？</summary><p>碳足迹是您的活动产生的温室气体总量（以CO2当量计），通常按年度衡量。</p></details>
+<details><summary>平均碳足迹是多少？</summary><p>美国人平均碳足迹约16吨CO2/年。全球平均约4吨。气候目标是低于2吨。</p></details>
+<details><summary>如何减少碳足迹？</summary><p>少开车或换电动车、减少飞行、改善家庭隔热、少吃肉、使用可再生能源。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>
