@@ -1,0 +1,13 @@
+{
+    "title": "Overtime Pay Calculator - Free Online Tool",
+    "description": "Free overtime pay calculator. Calculate your overtime earnings at 1.5x or 2x rates. Supports weekly and daily overtime calculations.",
+    "keywords": "overtime pay calculator, overtime calculator, time and a half calculator, overtime rate, overtime earnings",
+    "canonical": "https://calc.tools/en/overtime-pay/",
+    "h1": "Overtime Pay Calculator",
+    "intro": "Calculate your overtime earnings. Enter your hourly rate and overtime hours to see your total pay including overtime premium.",
+    "faq": [
+        {"q": "What is overtime pay?", "a": "Overtime pay is additional compensation for hours worked beyond the standard 40-hour work week, typically at 1.5x your regular hourly rate."},
+        {"q": "When does double time apply?", "a": "Double time (2x rate) typically applies after 12 hours in a single day or on the 7th consecutive day worked, depending on state law."},
+        {"q": "Is overtime mandatory?", "a": "Under the FLSA, non-exempt employees must receive overtime pay for hours over 40 per week. Some states have additional daily overtime rules."}
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Paycheck Calculator - Free Salary to Take-Home Pay",
+    "description": "Free paycheck calculator. Estimate your take-home pay after federal and state taxes, Social Security, and Medicare deductions.",
+    "keywords": "paycheck calculator, take home pay calculator, salary after tax, net pay calculator, payroll calculator",
+    "canonical": "https://calc.tools/en/paycheck/",
+    "h1": "Paycheck Calculator",
+    "intro": "Estimate your take-home pay after taxes and deductions. Enter your gross salary and filing details to see your net pay.",
+    "faq": [
+        {"q": "What is take-home pay?", "a": "Take-home pay is your gross salary minus all deductions including federal tax, state tax, Social Security (6.2%), and Medicare (1.45%)."},
+        {"q": "How is federal tax calculated?", "a": "Federal income tax uses progressive brackets. Your income is taxed at increasing rates as it moves through each bracket."},
+        {"q": "What is FICA?", "a": "FICA includes Social Security (6.2% up to $168,600 in 2024) and Medicare (1.45% on all earnings) taxes."}
+    ]
+}

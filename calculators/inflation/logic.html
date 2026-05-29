@@ -1,0 +1,32 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="amount">Amount ($)</label>
+        <input type="number" id="amount" placeholder="1000" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="inflRate">Annual Inflation Rate (%)</label>
+        <input type="number" id="inflRate" placeholder="3" min="0" step="0.1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="years">Number of Years</label>
+        <input type="number" id="years" placeholder="10" min="1" max="100">
+    </div>
+</div>
+<button class="btn" onclick="calcInflation()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcInflation() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const rate = parseFloat(document.getElementById('inflRate').value) / 100;
+    const years = parseFloat(document.getElementById('years').value);
+    if (!amount || !rate || !years) return;
+    const futureValue = amount * Math.pow(1 + rate, years);
+    const purchasingPower = amount / Math.pow(1 + rate, years);
+    const totalInflation = ((futureValue - amount) / amount * 100).toFixed(1);
+    const el = document.getElementById('result');
+    el.innerHTML = `$${amount.toFixed(2)} today will need <strong>$${futureValue.toFixed(2)}</strong> in ${years} years<br>$${amount.toFixed(2)} in ${years} years = <strong>$${purchasingPower.toFixed(2)}</strong> today<br>Total inflation over ${years} years: ${totalInflation}%`;
+    el.classList.add('show');
+}
+</script>

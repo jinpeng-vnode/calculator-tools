@@ -1,0 +1,13 @@
+{
+    "title": "Inflation Calculator - Purchasing Power Over Time",
+    "description": "Free inflation calculator. See how inflation affects purchasing power over time. Calculate the future or past value of money adjusted for inflation.",
+    "keywords": "inflation calculator, purchasing power calculator, inflation rate, cost of living calculator, money value over time",
+    "canonical": "https://calc.tools/en/inflation/",
+    "h1": "Inflation Calculator",
+    "intro": "Calculate how inflation affects the value of money over time. Enter an amount and time period to see its equivalent purchasing power.",
+    "faq": [
+        {"q": "What is inflation?", "a": "Inflation is the rate at which the general level of prices rises, reducing the purchasing power of money over time."},
+        {"q": "What is a good inflation rate?", "a": "Most central banks target around 2% annual inflation as healthy for economic growth. Higher rates erode savings faster."},
+        {"q": "How does inflation affect savings?", "a": "If your savings earn less interest than the inflation rate, your money loses real purchasing power over time."}
+    ]
+}

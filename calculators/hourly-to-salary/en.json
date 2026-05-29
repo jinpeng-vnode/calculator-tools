@@ -1,0 +1,13 @@
+{
+    "title": "Hourly to Salary Calculator - Convert Hourly Wage to Annual",
+    "description": "Free hourly to salary calculator. Convert your hourly wage to annual, monthly, and weekly salary. See what your hourly rate equals as a yearly salary.",
+    "keywords": "hourly to salary calculator, hourly to annual salary, wage to salary converter, hourly rate to yearly",
+    "canonical": "https://calc.tools/en/hourly-to-salary/",
+    "h1": "Hourly to Salary Calculator",
+    "intro": "Convert your hourly wage to an equivalent annual salary. Enter your hourly rate and hours worked to see yearly, monthly, and weekly earnings.",
+    "faq": [
+        {"q": "How do I convert hourly to salary?", "a": "Multiply your hourly rate × hours per week × 52 weeks. For example, $20/hr × 40 hrs × 52 = $41,600 annual salary."},
+        {"q": "How many work hours in a year?", "a": "A standard full-time year is 2,080 hours (40 hours/week × 52 weeks). Accounting for holidays and PTO, actual hours may be around 1,920-2,000."},
+        {"q": "Does this include benefits?", "a": "This calculator shows gross pay only. Total compensation including benefits (health insurance, 401k, etc.) is typically 20-30% higher."}
+    ]
+}

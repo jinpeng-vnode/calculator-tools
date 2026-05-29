@@ -1,0 +1,13 @@
+{
+    "title": "Sales Tax Calculator - Free Online Tool",
+    "description": "Free sales tax calculator. Quickly calculate sales tax amount and total price for any purchase. Works for all US states and custom tax rates.",
+    "keywords": "sales tax calculator, tax calculator, sales tax rate, calculate tax, state sales tax",
+    "canonical": "https://calc.tools/en/sales-tax/",
+    "h1": "Sales Tax Calculator",
+    "intro": "Calculate sales tax and total cost for any purchase. Enter the price and tax rate to get instant results.",
+    "faq": [
+        {"q": "How do I calculate sales tax?", "a": "Multiply the item price by the tax rate (as a decimal). For example, $100 × 0.08 = $8 tax, total = $108."},
+        {"q": "What is the average US sales tax rate?", "a": "The average combined state and local sales tax rate in the US is approximately 7.12%, but it varies by state from 0% to over 10%."},
+        {"q": "Can I calculate the pre-tax price from a total?", "a": "Yes, divide the total by (1 + tax rate). For example, $108 ÷ 1.08 = $100 pre-tax price."}
+    ]
+}
