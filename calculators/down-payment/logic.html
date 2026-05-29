@@ -1,0 +1,42 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="homePrice">Home Price ($)</label>
+        <input type="number" id="homePrice" placeholder="400000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="downPct">Down Payment (%)</label>
+        <input type="number" id="downPct" placeholder="20" min="0" max="100" step="0.5">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="mortRate">Mortgage Rate (%)</label>
+        <input type="number" id="mortRate" placeholder="6.5" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="loanTerm">Loan Term (years)</label>
+        <select id="loanTerm">
+            <option value="30">30 years</option>
+            <option value="15">15 years</option>
+            <option value="20">20 years</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcDown()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcDown() {
+    const price = parseFloat(document.getElementById('homePrice').value);
+    const pct = parseFloat(document.getElementById('downPct').value) / 100;
+    const rate = parseFloat(document.getElementById('mortRate').value) / 100 / 12;
+    const term = parseInt(document.getElementById('loanTerm').value) * 12;
+    if (!price || isNaN(pct)) return;
+    const down = price * pct;
+    const loan = price - down;
+    const monthly = rate > 0 ? loan * rate * Math.pow(1+rate,term) / (Math.pow(1+rate,term)-1) : loan / term;
+    const pmi = pct < 0.2 ? (loan * 0.007 / 12) : 0;
+    const el = document.getElementById('result');
+    el.innerHTML = `Down Payment: <strong>$${down.toLocaleString()}</strong><br>Loan Amount: $${loan.toLocaleString()}<br>Monthly Payment: <strong>$${monthly.toFixed(2)}</strong>${pmi > 0 ? '<br>Est. PMI: $' + pmi.toFixed(2) + '/mo' : '<br>No PMI required ✓'}<br>Total Monthly: $${(monthly + pmi).toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,13 @@
+{
+    "title": "Investment Return Calculator - ROI & Growth",
+    "description": "Free investment return calculator. Calculate your investment growth, ROI, and annualized returns over any time period.",
+    "keywords": "investment return calculator, ROI calculator, investment growth, annualized return, portfolio return",
+    "canonical": "https://calc.tools/en/investment-return/",
+    "h1": "Investment Return Calculator",
+    "intro": "Calculate your investment returns and growth. Enter your initial investment, final value, and time period to see ROI and annualized returns.",
+    "faq": [
+        {"q": "What is ROI?", "a": "Return on Investment (ROI) measures the gain or loss relative to the initial investment. ROI = (Final Value - Initial Investment) / Initial Investment × 100%."},
+        {"q": "What is annualized return?", "a": "Annualized return converts total return to a yearly rate, allowing comparison of investments held for different periods."},
+        {"q": "What is a good ROI?", "a": "The S&P 500 has historically returned about 10% annually before inflation. A 'good' ROI depends on risk level and investment type."}
+    ]
+}

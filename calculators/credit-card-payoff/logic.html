@@ -1,0 +1,37 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="ccBalance">Card Balance ($)</label>
+        <input type="number" id="ccBalance" placeholder="5000" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="ccApr">APR (%)</label>
+        <input type="number" id="ccApr" placeholder="22.99" min="0" step="0.01">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="ccPayment">Monthly Payment ($)</label>
+        <input type="number" id="ccPayment" placeholder="200" min="0" step="0.01">
+    </div>
+</div>
+<button class="btn" onclick="calcCC()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcCC() {
+    const bal = parseFloat(document.getElementById('ccBalance').value);
+    const apr = parseFloat(document.getElementById('ccApr').value) / 100;
+    const pmt = parseFloat(document.getElementById('ccPayment').value);
+    if (!bal || !apr || !pmt) return;
+    const mr = apr / 12;
+    if (pmt <= bal * mr) { document.getElementById('result').innerHTML = '<strong style="color:red">Payment doesn\'t cover monthly interest!</strong>'; document.getElementById('result').classList.add('show'); return; }
+    const months = Math.ceil(-Math.log(1 - (bal * mr) / pmt) / Math.log(1 + mr));
+    const totalPaid = pmt * months;
+    const totalInterest = totalPaid - bal;
+    const minPmt = bal * 0.02;
+    let minMonths = 0, minBal = bal, minInterest = 0;
+    while (minBal > 0 && minMonths < 600) { const mi = minBal * mr; minInterest += mi; const mp = Math.max(minBal * 0.02, 25); minBal = minBal + mi - mp; minMonths++; if (minBal < 0) minBal = 0; }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Your Plan:</strong> ${Math.floor(months/12)} yrs ${months%12} mo | Interest: $${totalInterest.toFixed(2)}<br><strong>Minimum Payment (~$${minPmt.toFixed(0)}/mo):</strong> ${Math.floor(minMonths/12)} yrs ${minMonths%12} mo | Interest: $${minInterest.toFixed(2)}<br><strong>You save: $${(minInterest - totalInterest).toFixed(2)}</strong>`;
+    el.classList.add('show');
+}
+</script>

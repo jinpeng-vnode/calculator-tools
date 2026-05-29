@@ -1,0 +1,13 @@
+{
+    "title": "Down Payment Calculator - Home Purchase Planning",
+    "description": "Free down payment calculator. Calculate how much you need for a home down payment and see how it affects your monthly mortgage payment.",
+    "keywords": "down payment calculator, home down payment, house down payment, mortgage down payment, how much down payment",
+    "canonical": "https://calc.tools/en/down-payment/",
+    "h1": "Down Payment Calculator",
+    "intro": "Calculate your home down payment amount and see how different percentages affect your mortgage. Plan your savings for homeownership.",
+    "faq": [
+        {"q": "How much down payment do I need?", "a": "Conventional loans typically require 5-20%. FHA loans require 3.5%. Putting 20% down avoids PMI (Private Mortgage Insurance)."},
+        {"q": "What is PMI?", "a": "Private Mortgage Insurance is required when your down payment is less than 20%. It typically costs 0.5-1% of the loan amount annually."},
+        {"q": "Is a bigger down payment always better?", "a": "A larger down payment means lower monthly payments and no PMI, but keeping an emergency fund is also important. Balance both goals."}
+    ]
+}

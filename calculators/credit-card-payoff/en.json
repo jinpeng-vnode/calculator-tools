@@ -1,0 +1,13 @@
+{
+    "title": "Credit Card Payoff Calculator - Minimum Payment Trap",
+    "description": "Free credit card payoff calculator. See how long minimum payments take and how much extra payments save. Escape the minimum payment trap.",
+    "keywords": "credit card payoff calculator, credit card payment calculator, minimum payment calculator, credit card interest, pay off credit card",
+    "canonical": "https://calc.tools/en/credit-card-payoff/",
+    "h1": "Credit Card Payoff Calculator",
+    "intro": "Calculate how long it takes to pay off your credit card. Compare minimum payments vs. fixed payments to see potential savings.",
+    "faq": [
+        {"q": "Why are minimum payments a trap?", "a": "Minimum payments (typically 1-3% of balance) mostly cover interest, meaning it can take 15-30 years to pay off a balance and cost 2-3x the original amount."},
+        {"q": "How is credit card interest calculated?", "a": "Credit card interest is calculated daily on your average daily balance. The daily rate is your APR divided by 365."},
+        {"q": "Should I pay more than the minimum?", "a": "Always pay more than the minimum if possible. Even small extra payments dramatically reduce total interest and payoff time."}
+    ]
+}

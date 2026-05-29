@@ -1,0 +1,13 @@
+{
+    "title": "Savings Goal Calculator - How Much to Save Monthly",
+    "description": "Free savings goal calculator. Find out how much to save each month to reach your financial goal by your target date.",
+    "keywords": "savings goal calculator, how much to save, monthly savings calculator, savings plan, financial goal calculator",
+    "canonical": "https://calc.tools/en/savings-goal/",
+    "h1": "Savings Goal Calculator",
+    "intro": "Calculate how much you need to save monthly to reach your goal. Enter your target amount, timeline, and expected interest rate.",
+    "faq": [
+        {"q": "How do I calculate monthly savings needed?", "a": "Divide your goal by the number of months, adjusted for expected interest. With interest, you need to save less each month."},
+        {"q": "What interest rate should I use?", "a": "High-yield savings accounts offer 4-5% APY. For conservative planning, use 3-4%. For investment accounts, 6-8% is reasonable long-term."},
+        {"q": "Should I save or invest?", "a": "For goals under 3 years, save in a high-yield account. For longer goals, investing typically provides better returns despite short-term volatility."}
+    ]
+}

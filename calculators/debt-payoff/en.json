@@ -1,0 +1,13 @@
+{
+    "title": "Debt Payoff Calculator - Free Repayment Planner",
+    "description": "Free debt payoff calculator. Find out how long it takes to pay off debt and how much interest you'll pay. Plan extra payments to become debt-free faster.",
+    "keywords": "debt payoff calculator, debt repayment calculator, pay off debt faster, debt free calculator, loan payoff",
+    "canonical": "https://calc.tools/en/debt-payoff/",
+    "h1": "Debt Payoff Calculator",
+    "intro": "Calculate how long it will take to pay off your debt. Enter your balance, interest rate, and monthly payment to see your payoff timeline.",
+    "faq": [
+        {"q": "How can I pay off debt faster?", "a": "Pay more than the minimum, use the debt avalanche (highest interest first) or snowball (smallest balance first) method, and avoid adding new debt."},
+        {"q": "What is the debt avalanche method?", "a": "Pay minimums on all debts, then put extra money toward the highest-interest debt first. This saves the most in interest."},
+        {"q": "How much interest will I pay?", "a": "Total interest depends on your balance, rate, and payment amount. Higher payments reduce total interest significantly."}
+    ]
+}
