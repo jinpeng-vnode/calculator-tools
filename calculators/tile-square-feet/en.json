@@ -1,0 +1,13 @@
+{
+    "title": "Tile Calculator - Square Feet & Tiles Needed",
+    "description": "Free tile calculator. Calculate how many tiles you need for floors or walls based on area size and tile dimensions. Includes waste factor.",
+    "keywords": "tile calculator square feet, how many tiles do I need, tile area calculator, flooring calculator, tile coverage",
+    "canonical": "https://calc.tools/en/tile-square-feet/",
+    "h1": "Tile Calculator (Square Feet)",
+    "intro": "Calculate how many tiles you need for your project. Enter room dimensions and tile size to get the total tiles required including waste allowance.",
+    "faq": [
+        {"q": "How do I calculate tiles needed?", "a": "Divide the total area (sq ft) by the area of one tile (sq ft). Add 10-15% for cuts and waste."},
+        {"q": "How much extra tile should I buy?", "a": "Buy 10% extra for simple layouts, 15% for diagonal patterns, and 20% for complex patterns or rooms with many cuts."},
+        {"q": "How do I calculate square footage?", "a": "Multiply length × width in feet. For irregular rooms, divide into rectangles, calculate each, and add them together."}
+    ]
+}

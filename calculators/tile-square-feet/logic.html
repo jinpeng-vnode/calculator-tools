@@ -1,0 +1,49 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="roomL">Room Length (ft)</label>
+        <input type="number" id="roomL" placeholder="12" step="0.1" min="0.1">
+    </div>
+    <div class="form-group">
+        <label for="roomW">Room Width (ft)</label>
+        <input type="number" id="roomW" placeholder="10" step="0.1" min="0.1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="tileL">Tile Length (inches)</label>
+        <input type="number" id="tileL" placeholder="12" step="0.1" min="0.1">
+    </div>
+    <div class="form-group">
+        <label for="tileW">Tile Width (inches)</label>
+        <input type="number" id="tileW" placeholder="12" step="0.1" min="0.1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="waste">Waste Factor (%)</label>
+        <select id="waste">
+            <option value="10" selected>10% (Standard)</option>
+            <option value="15">15% (Diagonal)</option>
+            <option value="20">20% (Complex pattern)</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcTile()">Calculate Tiles</button>
+<div class="result" id="result"></div>
+<script>
+function calcTile() {
+    const roomL = parseFloat(document.getElementById('roomL').value);
+    const roomW = parseFloat(document.getElementById('roomW').value);
+    const tileL = parseFloat(document.getElementById('tileL').value);
+    const tileW = parseFloat(document.getElementById('tileW').value);
+    const waste = parseInt(document.getElementById('waste').value);
+    if (!roomL || !roomW || !tileL || !tileW) return;
+    const areaSqFt = roomL * roomW;
+    const tileSqFt = (tileL * tileW) / 144;
+    const tilesNeeded = Math.ceil(areaSqFt / tileSqFt);
+    const tilesWithWaste = Math.ceil(tilesNeeded * (1 + waste / 100));
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Room area:</strong> ${areaSqFt.toFixed(1)} sq ft<br><strong>Tile area:</strong> ${tileSqFt.toFixed(3)} sq ft each<br><br><strong>Tiles needed:</strong> ${tilesNeeded}<br><strong>With ${waste}% waste:</strong> <strong>${tilesWithWaste} tiles</strong><br><br>Total coverage: ${(tilesWithWaste * tileSqFt).toFixed(1)} sq ft`;
+    el.classList.add('show');
+}
+</script>

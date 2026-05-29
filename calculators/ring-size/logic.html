@@ -1,0 +1,32 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="measurement">Measurement Type</label>
+        <select id="measurement">
+            <option value="circ">Circumference (mm)</option>
+            <option value="diam">Diameter (mm)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="value">Value (mm)</label>
+        <input type="number" id="value" placeholder="52" step="0.1" min="30" max="80">
+    </div>
+</div>
+<button class="btn" onclick="calcRing()">Find Ring Size</button>
+<div class="result" id="result"></div>
+<script>
+function calcRing() {
+    const type = document.getElementById('measurement').value;
+    let val = parseFloat(document.getElementById('value').value);
+    if (!val) return;
+    let circ = type === 'diam' ? val * Math.PI : val;
+    let diam = type === 'circ' ? val / Math.PI : val;
+    const us = (circ - 36.5) / 2.55;
+    const uk = Math.round((circ - 37.8) / 1.25);
+    const eu = Math.round(circ);
+    const asia = Math.round(circ - 38);
+    const ukLetter = String.fromCharCode(65 + Math.max(0, Math.min(25, uk)));
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Circumference:</strong> ${circ.toFixed(1)} mm<br><strong>Diameter:</strong> ${diam.toFixed(1)} mm<br><br><strong>US/Canada:</strong> ${Math.round(us*2)/2}<br><strong>UK/Australia:</strong> ${ukLetter}<br><strong>EU/France:</strong> ${eu}<br><strong>Asia (Japan/China):</strong> ${asia > 0 ? asia : 'N/A'}`;
+    el.classList.add('show');
+}
+</script>

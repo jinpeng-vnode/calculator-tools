@@ -1,0 +1,13 @@
+{
+    "title": "Shoe Size Converter - US, EU, UK Size Chart",
+    "description": "Free shoe size converter. Convert between US, EU, UK, and CM shoe sizes for men, women, and children instantly.",
+    "keywords": "shoe size converter, US to EU shoe size, UK shoe size chart, shoe size calculator, international shoe sizes",
+    "canonical": "https://calc.tools/en/shoe-size/",
+    "h1": "Shoe Size Converter",
+    "intro": "Convert shoe sizes between US, EU, UK, and centimeter measurements. Select gender and enter your size in any system.",
+    "faq": [
+        {"q": "How do US and EU shoe sizes compare?", "a": "US men's sizes are roughly EU size minus 33 (e.g., US 10 ≈ EU 43). Women's US sizes are EU minus 31 (e.g., US 8 ≈ EU 39)."},
+        {"q": "How do I measure my foot size?", "a": "Stand on paper, trace your foot, and measure from heel to longest toe in cm. Use the cm measurement for the most accurate conversion."},
+        {"q": "Do shoe sizes vary between brands?", "a": "Yes, sizes can vary by 0.5-1 size between brands. Always try shoes on or check brand-specific size charts when possible."}
+    ]
+}

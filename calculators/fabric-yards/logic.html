@@ -1,0 +1,44 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="projLength">Project Length (inches)</label>
+        <input type="number" id="projLength" placeholder="60" min="1">
+    </div>
+    <div class="form-group">
+        <label for="projWidth">Project Width (inches)</label>
+        <input type="number" id="projWidth" placeholder="45" min="1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="fabricWidth">Fabric Width (inches)</label>
+        <select id="fabricWidth">
+            <option value="44">44-45" (Quilting Cotton)</option>
+            <option value="54">54" (Apparel)</option>
+            <option value="60">60" (Wide Apparel)</option>
+            <option value="108">108" (Wide Backing)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="pieces">Number of Pieces</label>
+        <input type="number" id="pieces" placeholder="1" min="1" value="1">
+    </div>
+</div>
+<button class="btn" onclick="calcFabric()">Calculate Fabric</button>
+<div class="result" id="result"></div>
+<script>
+function calcFabric() {
+    const projL = parseFloat(document.getElementById('projLength').value);
+    const projW = parseFloat(document.getElementById('projWidth').value);
+    const fabW = parseInt(document.getElementById('fabricWidth').value);
+    const pieces = parseInt(document.getElementById('pieces').value) || 1;
+    if (!projL || !projW) return;
+    const acrossCount = Math.floor(fabW / projW) || 1;
+    const rows = Math.ceil(pieces / acrossCount);
+    const totalInches = rows * projL;
+    const yards = totalInches / 36;
+    const meters = yards * 0.9144;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Fabric needed: ${Math.ceil(yards * 8) / 8} yards</strong> (${meters.toFixed(2)} meters)<br><br>Pieces across fabric width: ${acrossCount}<br>Rows needed: ${rows}<br>Total length: ${totalInches}" (${(totalInches*2.54).toFixed(0)} cm)<br><br><em>Add 10-15% extra for seam allowances and pattern matching.</em>`;
+    el.classList.add('show');
+}
+</script>

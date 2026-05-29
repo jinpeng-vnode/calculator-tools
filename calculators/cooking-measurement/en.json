@@ -1,0 +1,13 @@
+{
+    "title": "Cooking Measurement Converter - Kitchen Unit Conversion",
+    "description": "Free cooking measurement converter. Convert between cups, tablespoons, teaspoons, ml, liters, ounces, and grams for baking and cooking.",
+    "keywords": "cooking measurement converter, kitchen unit conversion, cups to ml, tablespoons to teaspoons, baking converter",
+    "canonical": "https://calc.tools/en/cooking-measurement/",
+    "h1": "Cooking Measurement Converter",
+    "intro": "Convert between common cooking measurements. Switch between cups, tablespoons, teaspoons, milliliters, and fluid ounces instantly.",
+    "faq": [
+        {"q": "How many tablespoons in a cup?", "a": "There are 16 tablespoons in 1 US cup (236.6 ml). A half cup equals 8 tablespoons."},
+        {"q": "How many teaspoons in a tablespoon?", "a": "There are 3 teaspoons in 1 tablespoon. This is a universal standard measurement."},
+        {"q": "What is the difference between dry and liquid measurements?", "a": "Dry cups measure volume by weight settling, while liquid cups measure fluid volume. For accuracy, use a kitchen scale for dry ingredients."}
+    ]
+}

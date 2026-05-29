@@ -1,0 +1,35 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="male">Men</option>
+            <option value="female">Women</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="footCm">Foot Length (cm)</label>
+        <input type="number" id="footCm" placeholder="27" step="0.1" min="15" max="35">
+    </div>
+</div>
+<button class="btn" onclick="convertShoe()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+function convertShoe() {
+    const gender = document.getElementById('gender').value;
+    const cm = parseFloat(document.getElementById('footCm').value);
+    if (!cm) return;
+    let us, uk, eu;
+    if (gender === 'male') {
+        us = (cm - 18.64) / 0.847;
+        uk = us - 0.5;
+        eu = cm * 1.5 + 2;
+    } else {
+        us = (cm - 17.78) / 0.847;
+        uk = us - 2;
+        eu = cm * 1.5 + 2;
+    }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Foot length: ${cm} cm</strong><br><br>US: <strong>${Math.round(us*2)/2}</strong><br>UK: <strong>${Math.round(uk*2)/2}</strong><br>EU: <strong>${Math.round(eu)}</strong><br>CM (Mondopoint): <strong>${cm}</strong>`;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,13 @@
+{
+    "title": "Fabric Calculator - Yards Needed for Sewing Projects",
+    "description": "Free fabric yardage calculator. Calculate how much fabric you need for sewing projects based on garment type, size, and fabric width.",
+    "keywords": "fabric calculator yards, fabric yardage calculator, sewing fabric needed, how much fabric, fabric estimator",
+    "canonical": "https://calc.tools/en/fabric-yards/",
+    "h1": "Fabric Calculator (Yards)",
+    "intro": "Calculate how many yards of fabric you need for your sewing project. Enter your project dimensions and fabric width to get an accurate estimate.",
+    "faq": [
+        {"q": "How much fabric do I need for a dress?", "a": "A simple dress typically needs 3-5 yards depending on length, size, and style. Add 0.5 yards for pattern matching or mistakes."},
+        {"q": "What is standard fabric width?", "a": "Common fabric widths are 44-45 inches (quilting cotton), 54-60 inches (apparel/home decor), and 108 inches (wide backing)."},
+        {"q": "How do I convert yards to meters?", "a": "1 yard = 0.9144 meters. Multiply yards by 0.9144 to get meters, or divide meters by 0.9144 to get yards."}
+    ]
+}

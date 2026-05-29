@@ -1,0 +1,13 @@
+{
+    "title": "Ring Size Calculator - Find Your Ring Size",
+    "description": "Free ring size calculator. Find your ring size using finger circumference or diameter. Convert between US, EU, UK, and Asian ring sizes.",
+    "keywords": "ring size calculator, ring size chart, finger circumference, ring size converter, US to EU ring size",
+    "canonical": "https://calc.tools/en/ring-size/",
+    "h1": "Ring Size Calculator",
+    "intro": "Find your ring size by measuring your finger circumference or diameter. Convert between international ring size systems.",
+    "faq": [
+        {"q": "How do I measure my ring size at home?", "a": "Wrap a strip of paper around your finger, mark where it overlaps, and measure the length in mm. That's your circumference."},
+        {"q": "What is the average ring size?", "a": "Average women's ring size is US 6-7 (16.5-17.3mm diameter). Average men's is US 9-10 (19.0-19.8mm diameter)."},
+        {"q": "Should I measure at a specific time?", "a": "Measure in the evening when fingers are largest. Avoid measuring when cold (fingers shrink) or after exercise (fingers swell)."}
+    ]
+}
