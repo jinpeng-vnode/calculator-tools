@@ -1,0 +1,13 @@
+{
+    "title": "Volume of Cylinder Calculator - Free Tool",
+    "description": "Free volume of cylinder calculator. Calculate cylinder volume, surface area, and lateral area from radius and height. Step-by-step formula included.",
+    "keywords": "volume of cylinder calculator, cylinder volume formula, cylinder calculator, surface area cylinder, cylinder dimensions",
+    "canonical": "https://calc.tools/en/volume-cylinder/",
+    "h1": "Volume of Cylinder Calculator",
+    "intro": "Calculate the volume and surface area of a cylinder. Enter the radius and height to get instant results.",
+    "faq": [
+        {"q": "What is the formula for volume of a cylinder?", "a": "Volume = π × r² × h, where r is the radius and h is the height."},
+        {"q": "How do I calculate surface area of a cylinder?", "a": "Total surface area = 2πr² + 2πrh (two circular bases + lateral surface)."},
+        {"q": "What is lateral area?", "a": "Lateral area = 2πrh. It's the area of the curved surface only, excluding the top and bottom circles."}
+    ]
+}

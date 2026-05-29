@@ -1,0 +1,13 @@
+{
+    "title": "Currency Exchange Rate Calculator - Live Rates",
+    "description": "Free currency exchange rate calculator. Convert between major world currencies with approximate rates. Quick and easy currency conversion tool.",
+    "keywords": "currency exchange rate calculator, currency converter, exchange rate calculator, money converter, forex calculator",
+    "canonical": "https://calc.tools/en/currency-exchange/",
+    "h1": "Currency Exchange Rate Calculator",
+    "intro": "Convert between major world currencies. Enter an amount and select currencies to see the converted value.",
+    "faq": [
+        {"q": "How are exchange rates determined?", "a": "Exchange rates are determined by supply and demand in the foreign exchange market, influenced by interest rates, inflation, and economic stability."},
+        {"q": "What is the spread in currency exchange?", "a": "The spread is the difference between buy and sell rates. Banks and exchange services charge this as their fee."},
+        {"q": "Are these rates real-time?", "a": "These are approximate reference rates. For actual transactions, check with your bank or exchange service for current rates."}
+    ]
+}

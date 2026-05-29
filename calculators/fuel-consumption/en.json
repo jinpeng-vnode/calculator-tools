@@ -1,0 +1,13 @@
+{
+    "title": "Fuel Consumption Calculator - MPG & L/100km",
+    "description": "Free fuel consumption calculator. Calculate your vehicle's fuel efficiency in MPG or L/100km. Track fuel costs and compare vehicle economy.",
+    "keywords": "fuel consumption calculator, MPG calculator, gas mileage calculator, fuel efficiency, L/100km calculator",
+    "canonical": "https://calc.tools/en/fuel-consumption/",
+    "h1": "Fuel Consumption Calculator",
+    "intro": "Calculate your vehicle's fuel consumption and cost per trip. Enter distance traveled and fuel used.",
+    "faq": [
+        {"q": "How is fuel consumption calculated?", "a": "Fuel consumption (L/100km) = (Fuel used in liters / Distance in km) × 100. MPG = Distance in miles / Gallons used."},
+        {"q": "What is good fuel economy?", "a": "For cars: under 6 L/100km (over 40 MPG) is excellent, 6-8 L/100km (30-40 MPG) is good, over 10 L/100km (under 24 MPG) is poor."},
+        {"q": "How to convert MPG to L/100km?", "a": "L/100km = 235.215 / MPG. For example, 30 MPG = 235.215/30 = 7.84 L/100km."}
+    ]
+}

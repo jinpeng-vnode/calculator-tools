@@ -1,0 +1,13 @@
+{
+    "title": "Electricity Cost Calculator - Estimate Your Bill",
+    "description": "Free electricity cost calculator. Estimate your electricity bill based on appliance wattage, usage hours, and local rate. Save money on energy.",
+    "keywords": "electricity cost calculator, energy cost calculator, power bill calculator, watt to cost, electricity usage calculator",
+    "canonical": "https://calc.tools/en/electricity-cost/",
+    "h1": "Electricity Cost Calculator",
+    "intro": "Calculate how much an appliance costs to run. Enter wattage, daily usage hours, and your electricity rate.",
+    "faq": [
+        {"q": "How is electricity cost calculated?", "a": "Cost = (Watts × Hours per day × Days) / 1000 × Rate per kWh. Divide watts by 1000 to get kilowatts, then multiply by hours and rate."},
+        {"q": "What is a kWh?", "a": "A kilowatt-hour (kWh) is the energy used by a 1000-watt appliance running for 1 hour. It's the standard billing unit for electricity."},
+        {"q": "How can I reduce electricity costs?", "a": "Use energy-efficient appliances, turn off unused devices, use LED bulbs, and run heavy appliances during off-peak hours."}
+    ]
+}

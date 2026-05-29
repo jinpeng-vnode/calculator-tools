@@ -1,0 +1,13 @@
+{
+    "title": "Area of Circle Calculator - Free & Instant",
+    "description": "Free area of circle calculator. Calculate circle area, circumference, and diameter from radius. Includes step-by-step formula explanation.",
+    "keywords": "area of circle calculator, circle area formula, circumference calculator, circle calculator, pi r squared",
+    "canonical": "https://calc.tools/en/area-circle/",
+    "h1": "Area of Circle Calculator",
+    "intro": "Calculate the area, circumference, and diameter of a circle. Enter the radius to get instant results.",
+    "faq": [
+        {"q": "What is the formula for area of a circle?", "a": "Area = π × r², where r is the radius. For example, a circle with radius 5 has area = π × 25 ≈ 78.54 square units."},
+        {"q": "How do I find the radius from area?", "a": "Radius = √(Area / π). Divide the area by π, then take the square root."},
+        {"q": "What is the circumference formula?", "a": "Circumference = 2 × π × r, or equivalently π × d, where d is the diameter."}
+    ]
+}
