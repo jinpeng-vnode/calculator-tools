@@ -1,0 +1,45 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="carPrice">Vehicle Price ($)</label>
+        <input type="number" id="carPrice" placeholder="35000" min="1000">
+    </div>
+    <div class="form-group">
+        <label for="downPayment">Down Payment ($)</label>
+        <input type="number" id="downPayment" placeholder="5000" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="interestRate">Interest Rate (%)</label>
+        <input type="number" id="interestRate" placeholder="5.5" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="loanTerm">Loan Term (months)</label>
+        <select id="loanTerm">
+            <option value="36">36 months</option>
+            <option value="48">48 months</option>
+            <option value="60" selected>60 months</option>
+            <option value="72">72 months</option>
+            <option value="84">84 months</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcCarLoan()">Calculate Payment</button>
+<div class="result" id="result"></div>
+<script>
+function calcCarLoan() {
+    const price = parseFloat(document.getElementById('carPrice').value);
+    const down = parseFloat(document.getElementById('downPayment').value) || 0;
+    const rate = parseFloat(document.getElementById('interestRate').value);
+    const term = parseInt(document.getElementById('loanTerm').value);
+    if (!price || !rate) return;
+    const P = price - down;
+    const r = rate / 100 / 12;
+    const payment = P * (r * Math.pow(1 + r, term)) / (Math.pow(1 + r, term) - 1);
+    const totalPaid = payment * term;
+    const totalInterest = totalPaid - P;
+    const el = document.getElementById('result');
+    el.innerHTML = `Monthly Payment: <strong>$${payment.toFixed(2)}</strong><br>Loan Amount: $${P.toLocaleString()}<br>Total Interest: $${totalInterest.toFixed(2)}<br>Total Cost: $${(totalPaid + down).toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>

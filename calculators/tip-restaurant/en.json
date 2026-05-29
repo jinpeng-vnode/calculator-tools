@@ -1,0 +1,13 @@
+{
+    "title": "Tip Calculator for Restaurant - Quick & Easy",
+    "description": "Free tip calculator for restaurants. Calculate tip amount and split the bill among friends. Supports custom tip percentages and group splitting.",
+    "keywords": "tip calculator for restaurant, restaurant tip calculator, bill splitter, tip percentage calculator, gratuity calculator",
+    "canonical": "https://calc.tools/en/tip-restaurant/",
+    "h1": "Restaurant Tip Calculator",
+    "intro": "Quickly calculate the tip for your restaurant bill. Choose a tip percentage and split among your group.",
+    "faq": [
+        {"q": "How much should I tip at a restaurant?", "a": "In the US, 15-20% is standard for sit-down restaurants. 20%+ for excellent service. 10-15% for buffets or counter service."},
+        {"q": "Should I tip on the pre-tax or post-tax amount?", "a": "Etiquette experts suggest tipping on the pre-tax amount, though tipping on the total is also common and appreciated."},
+        {"q": "How do I split the tip among a group?", "a": "Calculate the total bill plus tip, then divide by the number of people. This calculator does it automatically."}
+    ]
+}

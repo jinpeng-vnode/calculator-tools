@@ -1,0 +1,47 @@
+<div id="courses">
+    <div class="form-row course-row">
+        <div class="form-group">
+            <label>Grade</label>
+            <select class="grade">
+                <option value="4.0">A</option><option value="3.7">A-</option>
+                <option value="3.3">B+</option><option value="3.0">B</option><option value="2.7">B-</option>
+                <option value="2.3">C+</option><option value="2.0">C</option><option value="1.7">C-</option>
+                <option value="1.3">D+</option><option value="1.0">D</option><option value="0">F</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Credits</label>
+            <input type="number" class="credits" placeholder="3" min="1" max="6" value="3">
+        </div>
+    </div>
+</div>
+<button class="btn" onclick="addCourse()" style="margin-right:8px;background:#6c757d">+ Add Course</button>
+<button class="btn" onclick="calcGPA()">Calculate GPA</button>
+<div class="result" id="result"></div>
+<script>
+function addCourse() {
+    const row = document.querySelector('.course-row').cloneNode(true);
+    document.getElementById('courses').appendChild(row);
+}
+function calcGPA() {
+    const grades = document.querySelectorAll('.grade');
+    const credits = document.querySelectorAll('.credits');
+    let totalPoints = 0, totalCredits = 0;
+    for (let i = 0; i < grades.length; i++) {
+        const g = parseFloat(grades[i].value);
+        const c = parseFloat(credits[i].value) || 0;
+        totalPoints += g * c;
+        totalCredits += c;
+    }
+    if (!totalCredits) return;
+    const gpa = totalPoints / totalCredits;
+    let standing = '';
+    if (gpa >= 3.5) standing = "Dean's List";
+    else if (gpa >= 3.0) standing = 'Good Standing';
+    else if (gpa >= 2.0) standing = 'Satisfactory';
+    else standing = 'Academic Probation';
+    const el = document.getElementById('result');
+    el.innerHTML = `Your GPA: <strong>${gpa.toFixed(2)}</strong> / 4.0<br>Total Credits: ${totalCredits}<br>Standing: ${standing}`;
+    el.classList.add('show');
+}
+</script>

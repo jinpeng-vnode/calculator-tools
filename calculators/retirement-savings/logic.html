@@ -1,0 +1,46 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" placeholder="30" min="18" max="80">
+    </div>
+    <div class="form-group">
+        <label for="retireAge">Retirement Age</label>
+        <input type="number" id="retireAge" placeholder="65" min="30" max="90">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="currentSavings">Current Savings ($)</label>
+        <input type="number" id="currentSavings" placeholder="50000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="monthlyContrib">Monthly Contribution ($)</label>
+        <input type="number" id="monthlyContrib" placeholder="500" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="returnRate">Expected Annual Return (%)</label>
+        <input type="number" id="returnRate" placeholder="7" step="0.1" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcRetirement()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcRetirement() {
+    const currentAge = parseInt(document.getElementById('currentAge').value);
+    const retireAge = parseInt(document.getElementById('retireAge').value);
+    const savings = parseFloat(document.getElementById('currentSavings').value) || 0;
+    const monthly = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+    const rate = parseFloat(document.getElementById('returnRate').value) / 100;
+    if (!currentAge || !retireAge || !rate) return;
+    const years = retireAge - currentAge;
+    const monthlyRate = rate / 12;
+    const months = years * 12;
+    const futureValue = savings * Math.pow(1 + monthlyRate, months) + monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+    const totalContrib = savings + monthly * months;
+    const el = document.getElementById('result');
+    el.innerHTML = `Estimated at Retirement: <strong>$${Math.round(futureValue).toLocaleString()}</strong><br>Total Contributions: $${Math.round(totalContrib).toLocaleString()}<br>Investment Growth: $${Math.round(futureValue - totalContrib).toLocaleString()}<br>Years to Retire: ${years}`;
+    el.classList.add('show');
+}
+</script>

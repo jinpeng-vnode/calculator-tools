@@ -1,0 +1,13 @@
+{
+    "title": "Retirement Savings Calculator - Plan Your Future",
+    "description": "Free retirement savings calculator. Estimate how much you need to save for retirement based on your age, income, and goals. Start planning today.",
+    "keywords": "retirement savings calculator, retirement planner, 401k calculator, retirement fund, savings goal calculator",
+    "canonical": "https://calc.tools/en/retirement-savings/",
+    "h1": "Retirement Savings Calculator",
+    "intro": "Plan your retirement by calculating how much you need to save monthly to reach your retirement goal.",
+    "faq": [
+        {"q": "How much do I need for retirement?", "a": "A common rule is to save 25x your annual expenses. If you spend $50,000/year, aim for $1.25 million in retirement savings."},
+        {"q": "When should I start saving?", "a": "The earlier the better. Starting at 25 vs 35 can mean hundreds of thousands more due to compound interest."},
+        {"q": "What is the 4% rule?", "a": "The 4% rule suggests you can withdraw 4% of your retirement savings annually without running out of money over 30 years."}
+    ]
+}

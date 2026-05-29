@@ -1,0 +1,57 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="calcFor">Solve For</label>
+        <select id="calcFor" onchange="toggleFields()">
+            <option value="distance">Distance</option>
+            <option value="speed">Speed</option>
+            <option value="time">Time</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group" id="speedGroup">
+        <label for="speed">Speed (km/h)</label>
+        <input type="number" id="speed" placeholder="60" step="0.1" min="0">
+    </div>
+    <div class="form-group" id="distanceGroup">
+        <label for="distance">Distance (km)</label>
+        <input type="number" id="distance" placeholder="120" step="0.1" min="0">
+    </div>
+    <div class="form-group" id="timeGroup">
+        <label for="time">Time (hours)</label>
+        <input type="number" id="time" placeholder="2" step="0.01" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcSDT()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function toggleFields() {
+    const f = document.getElementById('calcFor').value;
+    document.getElementById('speedGroup').style.display = f === 'speed' ? 'none' : '';
+    document.getElementById('distanceGroup').style.display = f === 'distance' ? 'none' : '';
+    document.getElementById('timeGroup').style.display = f === 'time' ? 'none' : '';
+}
+function calcSDT() {
+    const f = document.getElementById('calcFor').value;
+    const s = parseFloat(document.getElementById('speed').value);
+    const d = parseFloat(document.getElementById('distance').value);
+    const t = parseFloat(document.getElementById('time').value);
+    let result = '';
+    if (f === 'distance' && s && t) {
+        const dist = s * t;
+        result = `Distance: <strong>${dist.toFixed(2)} km</strong> (${(dist * 0.621371).toFixed(2)} miles)`;
+    } else if (f === 'speed' && d && t) {
+        const spd = d / t;
+        result = `Speed: <strong>${spd.toFixed(2)} km/h</strong> (${(spd * 0.621371).toFixed(2)} mph)`;
+    } else if (f === 'time' && d && s) {
+        const time = d / s;
+        const hrs = Math.floor(time);
+        const mins = Math.round((time - hrs) * 60);
+        result = `Time: <strong>${time.toFixed(2)} hours</strong> (${hrs}h ${mins}m)`;
+    } else return;
+    const el = document.getElementById('result');
+    el.innerHTML = result;
+    el.classList.add('show');
+}
+toggleFields();
+</script>

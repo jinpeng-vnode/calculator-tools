@@ -1,0 +1,13 @@
+{
+    "title": "Speed Distance Time Calculator - Free Tool",
+    "description": "Free speed distance time calculator. Calculate any one value when you know the other two. Supports multiple units (mph, km/h, m/s).",
+    "keywords": "speed distance time calculator, velocity calculator, distance calculator, travel time calculator, speed formula",
+    "canonical": "https://calc.tools/en/speed-distance-time/",
+    "h1": "Speed Distance Time Calculator",
+    "intro": "Calculate speed, distance, or time when you know two of the three values. Uses the formula: Distance = Speed × Time.",
+    "faq": [
+        {"q": "What is the speed distance time formula?", "a": "Speed = Distance ÷ Time, Distance = Speed × Time, Time = Distance ÷ Speed."},
+        {"q": "How do I convert between speed units?", "a": "1 mph = 1.609 km/h = 0.447 m/s. 1 km/h = 0.621 mph = 0.278 m/s."},
+        {"q": "What is average speed?", "a": "Average speed = Total distance traveled ÷ Total time taken, regardless of speed variations during the trip."}
+    ]
+}

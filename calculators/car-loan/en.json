@@ -1,0 +1,13 @@
+{
+    "title": "Car Loan Payment Calculator - Monthly Estimate",
+    "description": "Free car loan payment calculator. Estimate your monthly auto loan payment based on price, down payment, interest rate, and loan term.",
+    "keywords": "car loan payment calculator, auto loan calculator, car payment estimator, vehicle loan calculator, monthly car payment",
+    "canonical": "https://calc.tools/en/car-loan/",
+    "h1": "Car Loan Payment Calculator",
+    "intro": "Calculate your monthly car loan payment. Enter the vehicle price, down payment, interest rate, and loan term.",
+    "faq": [
+        {"q": "How is a car loan payment calculated?", "a": "Car loan payments use the same amortization formula as mortgages: M = P[r(1+r)^n]/[(1+r)^n-1], where P is the loan amount after down payment."},
+        {"q": "What is a good car loan interest rate?", "a": "As of 2024, good rates range from 4-7% for new cars and 5-10% for used cars, depending on credit score."},
+        {"q": "How long should a car loan be?", "a": "Most experts recommend 36-60 months. Longer terms mean lower payments but more total interest paid."}
+    ]
+}
