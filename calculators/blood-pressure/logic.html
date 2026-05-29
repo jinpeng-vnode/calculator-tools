@@ -1,0 +1,28 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="systolic">Systolic (mmHg)</label>
+        <input type="number" id="systolic" placeholder="120" min="60" max="250">
+    </div>
+    <div class="form-group">
+        <label for="diastolic">Diastolic (mmHg)</label>
+        <input type="number" id="diastolic" placeholder="80" min="40" max="150">
+    </div>
+</div>
+<button class="btn" onclick="calcBP()">Check Blood Pressure</button>
+<div class="result" id="result"></div>
+<script>
+function calcBP() {
+    const sys = parseInt(document.getElementById('systolic').value);
+    const dia = parseInt(document.getElementById('diastolic').value);
+    if (!sys || !dia) return;
+    let cat, color;
+    if (sys < 120 && dia < 80) { cat = 'Normal'; color = '#2ecc71'; }
+    else if (sys < 130 && dia < 80) { cat = 'Elevated'; color = '#f39c12'; }
+    else if (sys < 140 || dia < 90) { cat = 'High Blood Pressure Stage 1'; color = '#e67e22'; }
+    else if (sys >= 140 || dia >= 90) { cat = 'High Blood Pressure Stage 2'; color = '#e74c3c'; }
+    if (sys > 180 || dia > 120) { cat = 'Hypertensive Crisis - Seek Emergency Care'; color = '#c0392b'; }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${sys}/${dia} mmHg</strong><br><span style="color:${color}">${cat}</span>`;
+    el.classList.add('show');
+}
+</script>

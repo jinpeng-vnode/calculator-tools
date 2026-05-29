@@ -1,0 +1,13 @@
+{
+    "title": "Sleep Cycle Calculator - Optimal Wake Up Time",
+    "description": "Free sleep cycle calculator. Find the best time to wake up or go to sleep based on 90-minute sleep cycles for refreshed mornings.",
+    "keywords": "sleep cycle calculator, wake up time calculator, sleep schedule, REM cycle, optimal sleep time",
+    "canonical": "https://calc.tools/en/sleep-cycle/",
+    "h1": "Sleep Cycle Calculator",
+    "intro": "Calculate optimal wake-up times based on 90-minute sleep cycles. Waking between cycles helps you feel more refreshed.",
+    "faq": [
+        {"q": "How long is one sleep cycle?", "a": "One complete sleep cycle lasts approximately 90 minutes and includes light sleep, deep sleep, and REM stages."},
+        {"q": "How many sleep cycles do I need?", "a": "Most adults need 5-6 complete cycles (7.5-9 hours) per night for optimal health and cognitive function."},
+        {"q": "Why do I feel tired after 8 hours of sleep?", "a": "You may be waking in the middle of a deep sleep phase. Try adjusting your wake time by 15-30 minutes to align with cycle completion."}
+    ]
+}

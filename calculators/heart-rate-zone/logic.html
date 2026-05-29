@@ -1,0 +1,37 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="30" min="10" max="100">
+    </div>
+    <div class="form-group">
+        <label for="rhr">Resting Heart Rate (bpm)</label>
+        <input type="number" id="rhr" placeholder="70" min="30" max="120">
+    </div>
+</div>
+<button class="btn" onclick="calcZones()">Calculate Zones</button>
+<div class="result" id="result"></div>
+<script>
+function calcZones() {
+    const age = parseInt(document.getElementById('age').value);
+    const rhr = parseInt(document.getElementById('rhr').value);
+    if (!age || !rhr) return;
+    const maxHR = 220 - age;
+    const hrr = maxHR - rhr;
+    const zones = [
+        {name: 'Zone 1 - Recovery', min: 50, max: 60},
+        {name: 'Zone 2 - Fat Burn', min: 60, max: 70},
+        {name: 'Zone 3 - Aerobic', min: 70, max: 80},
+        {name: 'Zone 4 - Anaerobic', min: 80, max: 90},
+        {name: 'Zone 5 - VO2 Max', min: 90, max: 100}
+    ];
+    let html = `<strong>Max HR: ${maxHR} bpm</strong><br><br>`;
+    zones.forEach(z => {
+        const lo = Math.round(hrr * z.min / 100 + rhr);
+        const hi = Math.round(hrr * z.max / 100 + rhr);
+        html += `${z.name}: <strong>${lo}-${hi} bpm</strong><br>`;
+    });
+    const el = document.getElementById('result');
+    el.innerHTML = html;
+    el.classList.add('show');
+}
+</script>

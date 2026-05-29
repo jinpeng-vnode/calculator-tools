@@ -1,0 +1,13 @@
+{
+    "title": "Heart Rate Zone Calculator - Optimize Your Training",
+    "description": "Free heart rate zone calculator. Find your target heart rate zones for fat burn, cardio, and peak performance based on your age and resting heart rate.",
+    "keywords": "heart rate zone calculator, target heart rate, training zones, fat burn zone, cardio zone calculator",
+    "canonical": "https://calc.tools/en/heart-rate-zone/",
+    "h1": "Heart Rate Zone Calculator",
+    "intro": "Calculate your heart rate training zones using the Karvonen method. Enter your age and resting heart rate to find optimal training intensities.",
+    "faq": [
+        {"q": "How are heart rate zones calculated?", "a": "This uses the Karvonen formula: Target HR = ((Max HR - Resting HR) × Intensity%) + Resting HR. Max HR is estimated as 220 minus your age."},
+        {"q": "What is the fat burning zone?", "a": "The fat burning zone is typically 50-70% of your maximum heart rate. At this intensity, a higher percentage of calories burned comes from fat."},
+        {"q": "How do I find my resting heart rate?", "a": "Measure your pulse first thing in the morning before getting out of bed. Count beats for 60 seconds for the most accurate reading."}
+    ]
+}

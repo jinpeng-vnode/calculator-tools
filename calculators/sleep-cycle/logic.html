@@ -1,0 +1,55 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="mode">I want to...</label>
+        <select id="mode" onchange="toggleMode()">
+            <option value="wake">Calculate wake-up times (I plan to sleep at...)</option>
+            <option value="sleep">Calculate bedtime (I need to wake at...)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="hour">Hour</label>
+        <input type="number" id="hour" placeholder="23" min="0" max="23">
+    </div>
+    <div class="form-group">
+        <label for="minute">Minute</label>
+        <input type="number" id="minute" placeholder="0" min="0" max="59">
+    </div>
+</div>
+<button class="btn" onclick="calcSleep()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function toggleMode() {}
+function calcSleep() {
+    const mode = document.getElementById('mode').value;
+    const h = parseInt(document.getElementById('hour').value);
+    const m = parseInt(document.getElementById('minute').value) || 0;
+    if (isNaN(h)) return;
+    const fallAsleepMin = 15;
+    const cycleMin = 90;
+    let html = '';
+    if (mode === 'wake') {
+        html = '<strong>Wake up at:</strong><br>';
+        for (let c = 6; c >= 4; c--) {
+            const total = fallAsleepMin + c * cycleMin;
+            const wakeH = (h + Math.floor((m + total) / 60)) % 24;
+            const wakeM = (m + total) % 60;
+            html += `${c} cycles (${c*1.5}h): <strong>${String(wakeH).padStart(2,'0')}:${String(wakeM).padStart(2,'0')}</strong><br>`;
+        }
+    } else {
+        html = '<strong>Go to bed at:</strong><br>';
+        for (let c = 6; c >= 4; c--) {
+            const total = fallAsleepMin + c * cycleMin;
+            let bedM = m - (total % 60);
+            let bedH = h - Math.floor(total / 60);
+            if (bedM < 0) { bedM += 60; bedH--; }
+            if (bedH < 0) bedH += 24;
+            html += `${c} cycles (${c*1.5}h): <strong>${String(bedH).padStart(2,'0')}:${String(bedM).padStart(2,'0')}</strong><br>`;
+        }
+    }
+    const el = document.getElementById('result');
+    el.innerHTML = html;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,13 @@
+{
+    "title": "Water Intake Calculator - Daily Hydration Needs",
+    "description": "Free water intake calculator. Find out how much water you should drink daily based on your weight, activity level, and climate.",
+    "keywords": "water intake calculator, daily water needs, hydration calculator, how much water to drink, water consumption",
+    "canonical": "https://calc.tools/en/water-intake/",
+    "h1": "Water Intake Calculator",
+    "intro": "Calculate your recommended daily water intake based on your body weight, activity level, and environment.",
+    "faq": [
+        {"q": "How much water should I drink daily?", "a": "A general guideline is about 35ml per kg of body weight, adjusted for activity level and climate. This calculator provides a personalized recommendation."},
+        {"q": "Does coffee count toward water intake?", "a": "Yes, all beverages contribute to hydration, though water is the best choice. Caffeinated drinks have a mild diuretic effect but still provide net hydration."},
+        {"q": "What are signs of dehydration?", "a": "Common signs include dark yellow urine, thirst, dry mouth, fatigue, dizziness, and headaches."}
+    ]
+}

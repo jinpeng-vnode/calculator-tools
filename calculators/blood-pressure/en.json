@@ -1,0 +1,13 @@
+{
+    "title": "Blood Pressure Calculator - Check Your BP Category",
+    "description": "Free blood pressure calculator. Enter your systolic and diastolic readings to check your blood pressure category according to AHA guidelines.",
+    "keywords": "blood pressure calculator, BP checker, systolic diastolic, hypertension calculator, blood pressure category",
+    "canonical": "https://calc.tools/en/blood-pressure/",
+    "h1": "Blood Pressure Calculator",
+    "intro": "Enter your blood pressure readings to determine your category based on American Heart Association guidelines.",
+    "faq": [
+        {"q": "What is normal blood pressure?", "a": "Normal blood pressure is below 120/80 mmHg according to the American Heart Association."},
+        {"q": "What do systolic and diastolic mean?", "a": "Systolic (top number) measures pressure when your heart beats. Diastolic (bottom number) measures pressure between beats."},
+        {"q": "When should I see a doctor?", "a": "If your readings consistently show Stage 1 hypertension (130-139/80-89) or higher, consult a healthcare provider."}
+    ]
+}

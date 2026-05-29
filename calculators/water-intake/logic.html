@@ -1,0 +1,42 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="70" min="20" max="300">
+    </div>
+    <div class="form-group">
+        <label for="activity">Activity Level</label>
+        <select id="activity">
+            <option value="1.0">Sedentary (little exercise)</option>
+            <option value="1.2">Light (1-3 days/week)</option>
+            <option value="1.4">Moderate (3-5 days/week)</option>
+            <option value="1.6">Active (6-7 days/week)</option>
+            <option value="1.8">Very Active (intense daily)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="climate">Climate</label>
+        <select id="climate">
+            <option value="1.0">Temperate</option>
+            <option value="1.1">Warm</option>
+            <option value="1.2">Hot / Humid</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcWater()">Calculate Water Intake</button>
+<div class="result" id="result"></div>
+<script>
+function calcWater() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const activity = parseFloat(document.getElementById('activity').value);
+    const climate = parseFloat(document.getElementById('climate').value);
+    if (!weight) return;
+    const base = weight * 35;
+    const total = Math.round(base * activity * climate);
+    const glasses = Math.round(total / 250);
+    const el = document.getElementById('result');
+    el.innerHTML = `Daily Water Intake: <strong>${total} ml</strong> (${(total/1000).toFixed(1)} liters)<br>≈ <strong>${glasses} glasses</strong> (250ml each)`;
+    el.classList.add('show');
+}
+</script>

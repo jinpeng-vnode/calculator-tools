@@ -1,0 +1,13 @@
+{
+    "title": "Macros Calculator - Daily Macronutrient Needs",
+    "description": "Free macros calculator. Calculate your daily protein, carbs, and fat needs based on your goals - weight loss, maintenance, or muscle gain.",
+    "keywords": "macros calculator, macronutrient calculator, protein carbs fat, TDEE calculator, diet macros",
+    "canonical": "https://calc.tools/en/macros/",
+    "h1": "Macros Calculator",
+    "intro": "Calculate your daily macronutrient needs (protein, carbs, fat) based on your body stats and fitness goals.",
+    "faq": [
+        {"q": "What are macros?", "a": "Macros (macronutrients) are protein, carbohydrates, and fat - the three main nutrients that provide calories and fuel your body."},
+        {"q": "How are macros calculated?", "a": "First your TDEE (Total Daily Energy Expenditure) is calculated, then calories are distributed among protein, carbs, and fat based on your goal."},
+        {"q": "What macro ratio should I use?", "a": "For weight loss: higher protein (40/30/30). For maintenance: balanced (30/40/30). For muscle gain: higher carbs (30/45/25)."}
+    ]
+}
