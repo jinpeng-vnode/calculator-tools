@@ -1,0 +1,13 @@
+{
+    "title": "Scientific Notation Calculator - Convert Numbers",
+    "description": "Free scientific notation calculator. Convert numbers to and from scientific notation. Perform arithmetic operations with scientific notation.",
+    "keywords": "scientific notation calculator, scientific notation converter, standard form calculator, exponent notation, powers of ten",
+    "canonical": "https://calc.tools/en/scientific-notation/",
+    "h1": "Scientific Notation Calculator",
+    "intro": "Convert numbers to scientific notation or convert scientific notation back to standard form. Enter any number to get started.",
+    "faq": [
+        {"q": "What is scientific notation?", "a": "Scientific notation expresses numbers as a coefficient (1-10) multiplied by a power of 10. For example, 5,000 = 5 × 10³."},
+        {"q": "When is scientific notation used?", "a": "It's used for very large or very small numbers in science, engineering, and mathematics to make them easier to read and calculate."},
+        {"q": "How do I convert to scientific notation?", "a": "Move the decimal point until you have a number between 1 and 10. Count the moves - that's your exponent. Right moves = positive, left = negative."}
+    ]
+}

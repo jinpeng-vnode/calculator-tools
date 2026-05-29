@@ -1,0 +1,13 @@
+{
+    "title": "Waist to Hip Ratio Calculator - Health Risk Assessment",
+    "description": "Free waist to hip ratio (WHR) calculator. Assess your health risk based on body fat distribution. Simple measurement-based health indicator.",
+    "keywords": "waist to hip ratio calculator, WHR calculator, body fat distribution, health risk assessment, waist hip measurement",
+    "canonical": "https://calc.tools/en/waist-to-hip-ratio/",
+    "h1": "Waist to Hip Ratio Calculator",
+    "intro": "Calculate your waist-to-hip ratio to assess health risks related to body fat distribution. A simple but effective health indicator.",
+    "faq": [
+        {"q": "What is a healthy waist to hip ratio?", "a": "For men: below 0.90 is low risk. For women: below 0.80 is low risk. Higher ratios indicate increased cardiovascular risk."},
+        {"q": "How do I measure my waist and hips?", "a": "Measure waist at the narrowest point (usually at navel level). Measure hips at the widest point of your buttocks."},
+        {"q": "Why is WHR important?", "a": "WHR indicates where you store fat. Abdominal fat (apple shape) is linked to higher risk of heart disease, diabetes, and stroke."}
+    ]
+}

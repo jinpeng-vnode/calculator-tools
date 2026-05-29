@@ -1,0 +1,13 @@
+{
+    "title": "Protein Intake Calculator - Daily Protein Needs",
+    "description": "Free protein intake calculator. Find your optimal daily protein requirement based on weight, activity level, and fitness goals.",
+    "keywords": "protein intake calculator, daily protein needs, protein per day, protein requirement, muscle building protein",
+    "canonical": "https://calc.tools/en/protein-intake/",
+    "h1": "Protein Intake Calculator",
+    "intro": "Calculate your recommended daily protein intake based on your body weight, activity level, and goals.",
+    "faq": [
+        {"q": "How much protein do I need per day?", "a": "Sedentary adults need about 0.8g/kg. Active individuals need 1.2-1.7g/kg, and those building muscle may need up to 2.2g/kg."},
+        {"q": "Can I eat too much protein?", "a": "For healthy individuals, up to 2.2g/kg is generally safe. Those with kidney issues should consult a doctor about protein limits."},
+        {"q": "What are good protein sources?", "a": "Lean meats, fish, eggs, dairy, legumes, tofu, and protein supplements are all excellent sources."}
+    ]
+}

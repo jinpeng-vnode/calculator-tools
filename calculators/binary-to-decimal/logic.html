@@ -1,0 +1,30 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="inputBase">From Base</label>
+        <select id="inputBase" onchange="clearResult()">
+            <option value="2">Binary (2)</option>
+            <option value="8">Octal (8)</option>
+            <option value="10" selected>Decimal (10)</option>
+            <option value="16">Hexadecimal (16)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="inputNum">Number</label>
+        <input type="text" id="inputNum" placeholder="Enter number">
+    </div>
+</div>
+<button class="btn" onclick="convertBase()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+function clearResult() { document.getElementById('result').classList.remove('show'); }
+function convertBase() {
+    const base = parseInt(document.getElementById('inputBase').value);
+    const input = document.getElementById('inputNum').value.trim();
+    if (!input) return;
+    const decimal = parseInt(input, base);
+    if (isNaN(decimal)) return;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Binary:</strong> ${decimal.toString(2)}<br><strong>Octal:</strong> ${decimal.toString(8)}<br><strong>Decimal:</strong> ${decimal.toString(10)}<br><strong>Hexadecimal:</strong> ${decimal.toString(16).toUpperCase()}`;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,43 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="70" min="20" max="300">
+    </div>
+    <div class="form-group">
+        <label for="activity">Activity Level</label>
+        <select id="activity">
+            <option value="0.8">Sedentary</option>
+            <option value="1.2">Light exercise</option>
+            <option value="1.5">Moderate exercise</option>
+            <option value="1.7">Intense exercise</option>
+            <option value="2.0">Athlete / Bodybuilding</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="goal">Goal</label>
+        <select id="goal">
+            <option value="maintain">Maintain weight</option>
+            <option value="lose">Lose fat</option>
+            <option value="gain">Build muscle</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcProtein()">Calculate Protein</button>
+<div class="result" id="result"></div>
+<script>
+function calcProtein() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const activity = parseFloat(document.getElementById('activity').value);
+    const goal = document.getElementById('goal').value;
+    if (!weight) return;
+    let multiplier = activity;
+    if (goal === 'gain') multiplier += 0.3;
+    else if (goal === 'lose') multiplier += 0.2;
+    const protein = Math.round(weight * multiplier);
+    const el = document.getElementById('result');
+    el.innerHTML = `Daily Protein: <strong>${protein}g</strong><br>Per meal (3 meals): <strong>${Math.round(protein/3)}g</strong><br>Per meal (4 meals): <strong>${Math.round(protein/4)}g</strong>`;
+    el.classList.add('show');
+}
+</script>

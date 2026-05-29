@@ -1,0 +1,13 @@
+{
+    "title": "Binary to Decimal Converter - Number Base Conversion",
+    "description": "Free binary to decimal converter. Convert between binary, decimal, octal, and hexadecimal number systems instantly.",
+    "keywords": "binary to decimal converter, number base converter, binary calculator, hex converter, octal converter",
+    "canonical": "https://calc.tools/en/binary-to-decimal/",
+    "h1": "Binary to Decimal Converter",
+    "intro": "Convert numbers between binary (base 2), decimal (base 10), octal (base 8), and hexadecimal (base 16) systems.",
+    "faq": [
+        {"q": "How do I convert binary to decimal?", "a": "Multiply each binary digit by 2 raised to its position power (starting from 0 on the right), then sum all values. Example: 1010 = 8+0+2+0 = 10."},
+        {"q": "What is binary used for?", "a": "Binary is the fundamental number system for computers. All digital data is stored and processed as sequences of 0s and 1s."},
+        {"q": "What is hexadecimal?", "a": "Hexadecimal (base 16) uses digits 0-9 and letters A-F. It's commonly used in programming for colors, memory addresses, and compact binary representation."}
+    ]
+}

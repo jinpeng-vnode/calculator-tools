@@ -1,0 +1,23 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="number">Enter a number</label>
+        <input type="text" id="number" placeholder="e.g. 123456789 or 3.5e8">
+    </div>
+</div>
+<button class="btn" onclick="calcSci()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+function calcSci() {
+    const input = document.getElementById('number').value.trim();
+    if (!input) return;
+    const num = parseFloat(input);
+    if (isNaN(num)) return;
+    const sci = num.toExponential();
+    const parts = sci.split('e');
+    const coeff = parseFloat(parts[0]);
+    const exp = parseInt(parts[1]);
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Standard form:</strong> ${num.toLocaleString('en-US', {maximumFractionDigits: 20})}<br><strong>Scientific notation:</strong> ${coeff} × 10<sup>${exp}</sup><br><strong>E notation:</strong> ${coeff}e${exp}<br><strong>Engineering notation:</strong> ${(num / Math.pow(10, Math.floor(exp/3)*3)).toFixed(3)} × 10<sup>${Math.floor(exp/3)*3}</sup>`;
+    el.classList.add('show');
+}
+</script>

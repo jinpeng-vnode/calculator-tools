@@ -1,0 +1,13 @@
+{
+    "title": "Ideal Weight Calculator - Healthy Weight Range",
+    "description": "Free ideal weight calculator. Find your healthy weight range using multiple formulas including Devine, Robinson, Miller, and Hamwi methods.",
+    "keywords": "ideal weight calculator, healthy weight, ideal body weight, IBW calculator, target weight",
+    "canonical": "https://calc.tools/en/ideal-weight/",
+    "h1": "Ideal Weight Calculator",
+    "intro": "Calculate your ideal body weight using multiple scientific formulas. Results show a healthy weight range based on your height and gender.",
+    "faq": [
+        {"q": "How is ideal weight calculated?", "a": "This calculator uses four established formulas (Devine, Robinson, Miller, Hamwi) and averages them for a more reliable estimate."},
+        {"q": "Is ideal weight the same for everyone of the same height?", "a": "No, ideal weight varies by body frame, muscle mass, age, and other factors. These formulas provide general guidelines."},
+        {"q": "Should I aim for my ideal weight?", "a": "Use it as a reference, not an absolute goal. A healthy BMI range (18.5-24.9) with good body composition is more important."}
+    ]
+}

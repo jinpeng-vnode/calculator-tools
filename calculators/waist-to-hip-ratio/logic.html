@@ -1,0 +1,43 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="waist">Waist (cm)</label>
+        <input type="number" id="waist" placeholder="80" step="0.1" min="40" max="200">
+    </div>
+    <div class="form-group">
+        <label for="hip">Hip (cm)</label>
+        <input type="number" id="hip" placeholder="95" step="0.1" min="50" max="200">
+    </div>
+</div>
+<button class="btn" onclick="calcWHR()">Calculate WHR</button>
+<div class="result" id="result"></div>
+<script>
+function calcWHR() {
+    const gender = document.getElementById('gender').value;
+    const waist = parseFloat(document.getElementById('waist').value);
+    const hip = parseFloat(document.getElementById('hip').value);
+    if (!waist || !hip) return;
+    const whr = waist / hip;
+    let risk, color;
+    if (gender === 'male') {
+        if (whr < 0.90) { risk = 'Low Risk'; color = '#2ecc71'; }
+        else if (whr < 1.0) { risk = 'Moderate Risk'; color = '#f39c12'; }
+        else { risk = 'High Risk'; color = '#e74c3c'; }
+    } else {
+        if (whr < 0.80) { risk = 'Low Risk'; color = '#2ecc71'; }
+        else if (whr < 0.85) { risk = 'Moderate Risk'; color = '#f39c12'; }
+        else { risk = 'High Risk'; color = '#e74c3c'; }
+    }
+    const el = document.getElementById('result');
+    el.innerHTML = `WHR: <strong>${whr.toFixed(3)}</strong><br>Health Risk: <span style="color:${color}"><strong>${risk}</strong></span>`;
+    el.classList.add('show');
+}
+</script>
