@@ -1,0 +1,44 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="pixels">Pixels (px)</label>
+        <input type="number" id="pixels" placeholder="1920" min="0">
+    </div>
+    <div class="form-group">
+        <label for="cm">Centimeters (cm)</label>
+        <input type="number" id="cm" placeholder="" step="0.01" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="dpi">DPI (dots per inch)</label>
+        <select id="dpi">
+            <option value="72">72 DPI (Mac screen)</option>
+            <option value="96" selected>96 DPI (Windows screen)</option>
+            <option value="150">150 DPI (Low print)</option>
+            <option value="300">300 DPI (Print quality)</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="pxToCm()">Pixels → CM</button>
+<button class="btn" onclick="cmToPx()">CM → Pixels</button>
+<div class="result" id="result"></div>
+<script>
+function pxToCm() {
+    const px = parseFloat(document.getElementById('pixels').value);
+    const dpi = parseInt(document.getElementById('dpi').value);
+    if (!px) return;
+    const cm = (px / dpi) * 2.54;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${px} px</strong> = <strong>${cm.toFixed(3)} cm</strong> (at ${dpi} DPI)<br>= ${(cm*10).toFixed(2)} mm<br>= ${(cm/2.54).toFixed(3)} inches`;
+    el.classList.add('show');
+}
+function cmToPx() {
+    const cm = parseFloat(document.getElementById('cm').value);
+    const dpi = parseInt(document.getElementById('dpi').value);
+    if (!cm) return;
+    const px = Math.round((cm / 2.54) * dpi);
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${cm} cm</strong> = <strong>${px} px</strong> (at ${dpi} DPI)`;
+    el.classList.add('show');
+}
+</script>

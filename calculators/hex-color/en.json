@@ -1,0 +1,13 @@
+{
+    "title": "Hex Color Converter - RGB, HSL, HEX Conversion",
+    "description": "Free hex color converter. Convert between HEX, RGB, and HSL color formats. Preview colors instantly with live color picker.",
+    "keywords": "hex color converter, RGB to HEX, color code converter, HSL converter, color picker tool",
+    "canonical": "https://calc.tools/en/hex-color/",
+    "h1": "Hex Color Converter",
+    "intro": "Convert colors between HEX, RGB, and HSL formats. Enter any color value to see all conversions with a live preview.",
+    "faq": [
+        {"q": "What is a HEX color code?", "a": "A HEX color code is a 6-digit hexadecimal number preceded by #. It represents RGB values where each pair of digits is a channel (00-FF)."},
+        {"q": "How do I convert RGB to HEX?", "a": "Convert each RGB value (0-255) to hexadecimal (00-FF) and concatenate them. For example, RGB(255,128,0) = #FF8000."},
+        {"q": "What is HSL?", "a": "HSL stands for Hue (0-360°), Saturation (0-100%), and Lightness (0-100%). It's often more intuitive for selecting colors than RGB."}
+    ]
+}

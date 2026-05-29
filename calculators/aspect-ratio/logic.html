@@ -1,0 +1,35 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="w1">Width</label>
+        <input type="number" id="w1" placeholder="1920" min="1">
+    </div>
+    <div class="form-group">
+        <label for="h1">Height</label>
+        <input type="number" id="h1" placeholder="1080" min="1">
+    </div>
+</div>
+<button class="btn" onclick="calcRatio()">Calculate Ratio</button>
+<div class="result" id="result"></div>
+<script>
+function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+function calcRatio() {
+    const w = parseInt(document.getElementById('w1').value);
+    const h = parseInt(document.getElementById('h1').value);
+    if (!w || !h) return;
+    const d = gcd(w, h);
+    const rw = w / d, rh = h / d;
+    const common = [{n:'16:9',r:16/9},{n:'4:3',r:4/3},{n:'21:9',r:21/9},{n:'1:1',r:1},{n:'3:2',r:3/2},{n:'5:4',r:5/4}];
+    const actual = w/h;
+    let closest = common[0];
+    common.forEach(c => { if(Math.abs(c.r-actual)<Math.abs(closest.r-actual)) closest=c; });
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Aspect Ratio:</strong> ${rw}:${rh}<br><strong>Decimal:</strong> ${(w/h).toFixed(4)}<br><strong>Closest standard:</strong> ${closest.n}<br><br><strong>Common resolutions at ${rw}:${rh}:</strong><br>`;
+    const scales = [1,2,4,8];
+    scales.forEach(s => {
+        const sw = rw * s * (w > 1000 ? Math.round(w/(rw*8)) : 100);
+        const sh = rh * s * (h > 1000 ? Math.round(h/(rh*8)) : 100);
+        if (sw > 0 && sh > 0) el.innerHTML += `${sw} × ${sh}<br>`;
+    });
+    el.classList.add('show');
+}
+</script>

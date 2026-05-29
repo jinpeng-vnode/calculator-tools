@@ -1,0 +1,40 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="hexInput">HEX Color</label>
+        <input type="text" id="hexInput" placeholder="#FF5733" maxlength="7">
+    </div>
+    <div class="form-group">
+        <label for="colorPicker">Pick Color</label>
+        <input type="color" id="colorPicker" value="#FF5733" onchange="fromPicker()">
+    </div>
+</div>
+<button class="btn" onclick="convertColor()">Convert</button>
+<div class="result" id="result"></div>
+<script>
+function fromPicker() {
+    document.getElementById('hexInput').value = document.getElementById('colorPicker').value;
+    convertColor();
+}
+function convertColor() {
+    let hex = document.getElementById('hexInput').value.trim().replace('#','');
+    if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+    if (hex.length !== 6) return;
+    const r = parseInt(hex.substring(0,2),16);
+    const g = parseInt(hex.substring(2,4),16);
+    const b = parseInt(hex.substring(4,6),16);
+    if (isNaN(r)||isNaN(g)||isNaN(b)) return;
+    const rn=r/255, gn=g/255, bn=b/255;
+    const max=Math.max(rn,gn,bn), min=Math.min(rn,gn,bn);
+    let h,s,l=(max+min)/2;
+    if(max===min){h=s=0;}else{
+        const d=max-min; s=l>0.5?d/(2-max-min):d/(max+min);
+        if(max===rn)h=((gn-bn)/d+(gn<bn?6:0))/6;
+        else if(max===gn)h=((bn-rn)/d+2)/6;
+        else h=((rn-gn)/d+4)/6;
+    }
+    const el = document.getElementById('result');
+    el.innerHTML = `<div style="width:100%;height:50px;background:#${hex};border-radius:8px;margin-bottom:10px"></div><strong>HEX:</strong> #${hex.toUpperCase()}<br><strong>RGB:</strong> rgb(${r}, ${g}, ${b})<br><strong>HSL:</strong> hsl(${Math.round(h*360)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`;
+    el.classList.add('show');
+    document.getElementById('colorPicker').value = '#'+hex;
+}
+</script>

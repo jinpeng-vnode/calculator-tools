@@ -1,0 +1,13 @@
+{
+    "title": "Time Zone Converter - World Clock & Time Difference",
+    "description": "Free time zone converter. Convert time between major world time zones instantly. Find the time difference between any two cities.",
+    "keywords": "time zone converter, world clock, time difference calculator, UTC converter, international time zones",
+    "canonical": "https://calc.tools/en/time-zone/",
+    "h1": "Time Zone Converter",
+    "intro": "Convert time between world time zones. Select source and target zones, enter a time, and get the converted result instantly.",
+    "faq": [
+        {"q": "What is UTC?", "a": "UTC (Coordinated Universal Time) is the primary time standard. All time zones are defined as offsets from UTC (e.g., EST = UTC-5)."},
+        {"q": "How many time zones are there?", "a": "There are 24 standard time zones, but some regions use half-hour or quarter-hour offsets, resulting in about 38 practical time zones."},
+        {"q": "Does this account for daylight saving time?", "a": "This converter uses fixed UTC offsets. During DST periods, you may need to adjust by 1 hour for affected zones."}
+    ]
+}

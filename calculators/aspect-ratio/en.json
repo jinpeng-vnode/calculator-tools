@@ -1,0 +1,13 @@
+{
+    "title": "Aspect Ratio Calculator - Screen & Image Dimensions",
+    "description": "Free aspect ratio calculator. Calculate missing dimensions, resize images proportionally, and find common aspect ratios for screens and video.",
+    "keywords": "aspect ratio calculator, screen ratio, image resize calculator, 16:9 calculator, video dimensions",
+    "canonical": "https://calc.tools/en/aspect-ratio/",
+    "h1": "Aspect Ratio Calculator",
+    "intro": "Calculate aspect ratios and find missing dimensions. Enter width and height, or one dimension with a ratio to find the other.",
+    "faq": [
+        {"q": "What is aspect ratio?", "a": "Aspect ratio is the proportional relationship between width and height. Common ratios include 16:9 (widescreen), 4:3 (standard), and 1:1 (square)."},
+        {"q": "What aspect ratio is 1920x1080?", "a": "1920×1080 has a 16:9 aspect ratio, which is the standard for HD and Full HD displays and most video content."},
+        {"q": "How do I maintain aspect ratio when resizing?", "a": "Multiply or divide both dimensions by the same factor. This calculator does it automatically - enter one dimension and the ratio."}
+    ]
+}

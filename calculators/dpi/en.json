@@ -1,0 +1,13 @@
+{
+    "title": "DPI Calculator - Dots Per Inch for Screens & Print",
+    "description": "Free DPI calculator. Calculate screen PPI from resolution and size, or find required resolution for target DPI. Essential for designers.",
+    "keywords": "DPI calculator, PPI calculator, screen resolution DPI, dots per inch, pixels per inch calculator",
+    "canonical": "https://calc.tools/en/dpi/",
+    "h1": "DPI Calculator",
+    "intro": "Calculate DPI (dots per inch) or PPI (pixels per inch) from screen resolution and physical size. Find the right resolution for your needs.",
+    "faq": [
+        {"q": "What is the difference between DPI and PPI?", "a": "PPI (pixels per inch) refers to screen display density. DPI (dots per inch) refers to print resolution. They're often used interchangeably."},
+        {"q": "What DPI is good for printing?", "a": "300 DPI is the standard for high-quality printing. 150 DPI is acceptable for large format prints viewed from a distance."},
+        {"q": "How do I calculate my screen's PPI?", "a": "PPI = √(width² + height²) / diagonal size in inches. For example, a 24\" 1920×1080 monitor has about 92 PPI."}
+    ]
+}

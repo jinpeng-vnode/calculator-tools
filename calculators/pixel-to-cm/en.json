@@ -1,0 +1,13 @@
+{
+    "title": "Pixel to CM Converter - Screen Measurement Tool",
+    "description": "Free pixel to centimeter converter. Convert pixels to cm and vice versa based on screen DPI/PPI for accurate print and display measurements.",
+    "keywords": "pixel to cm converter, px to cm, pixels to centimeters, screen measurement, DPI converter",
+    "canonical": "https://calc.tools/en/pixel-to-cm/",
+    "h1": "Pixel to CM Converter",
+    "intro": "Convert between pixels and centimeters based on your screen's DPI (dots per inch). Essential for print design and accurate measurements.",
+    "faq": [
+        {"q": "How many pixels are in 1 cm?", "a": "At 96 DPI (standard screen), 1 cm ≈ 37.8 pixels. At 300 DPI (print), 1 cm ≈ 118.1 pixels. It depends on resolution."},
+        {"q": "What DPI should I use?", "a": "Use 96 DPI for standard screens, 72 DPI for Mac displays, and 300 DPI for print materials."},
+        {"q": "Why does DPI matter?", "a": "DPI determines how many pixels fit in a physical inch. Higher DPI means more pixels per inch, resulting in sharper images."}
+    ]
+}

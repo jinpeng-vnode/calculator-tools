@@ -1,0 +1,66 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="fromZone">From Time Zone</label>
+        <select id="fromZone">
+            <option value="-12">UTC-12 (Baker Island)</option>
+            <option value="-8">UTC-8 (PST - Los Angeles)</option>
+            <option value="-5">UTC-5 (EST - New York)</option>
+            <option value="0" selected>UTC+0 (London)</option>
+            <option value="1">UTC+1 (Paris, Berlin)</option>
+            <option value="3">UTC+3 (Moscow)</option>
+            <option value="5.5">UTC+5:30 (India)</option>
+            <option value="8">UTC+8 (Beijing, Singapore)</option>
+            <option value="9">UTC+9 (Tokyo, Seoul)</option>
+            <option value="10">UTC+10 (Sydney)</option>
+            <option value="12">UTC+12 (Auckland)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="toZone">To Time Zone</label>
+        <select id="toZone">
+            <option value="-12">UTC-12 (Baker Island)</option>
+            <option value="-8">UTC-8 (PST - Los Angeles)</option>
+            <option value="-5">UTC-5 (EST - New York)</option>
+            <option value="0">UTC+0 (London)</option>
+            <option value="1">UTC+1 (Paris, Berlin)</option>
+            <option value="3">UTC+3 (Moscow)</option>
+            <option value="5.5">UTC+5:30 (India)</option>
+            <option value="8" selected>UTC+8 (Beijing, Singapore)</option>
+            <option value="9">UTC+9 (Tokyo, Seoul)</option>
+            <option value="10">UTC+10 (Sydney)</option>
+            <option value="12">UTC+12 (Auckland)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="hour">Hour (0-23)</label>
+        <input type="number" id="hour" placeholder="12" min="0" max="23">
+    </div>
+    <div class="form-group">
+        <label for="minute">Minute</label>
+        <input type="number" id="minute" placeholder="0" min="0" max="59">
+    </div>
+</div>
+<button class="btn" onclick="convertTZ()">Convert Time</button>
+<div class="result" id="result"></div>
+<script>
+function convertTZ() {
+    const from = parseFloat(document.getElementById('fromZone').value);
+    const to = parseFloat(document.getElementById('toZone').value);
+    const h = parseInt(document.getElementById('hour').value);
+    const m = parseInt(document.getElementById('minute').value) || 0;
+    if (isNaN(h)) return;
+    const diff = to - from;
+    let newH = h + Math.floor(diff);
+    let newM = m + (diff % 1) * 60;
+    if (newM >= 60) { newM -= 60; newH++; }
+    if (newM < 0) { newM += 60; newH--; }
+    let day = 'same day';
+    if (newH >= 24) { newH -= 24; day = 'next day'; }
+    if (newH < 0) { newH += 24; day = 'previous day'; }
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${String(newH).padStart(2,'0')}:${String(newM).padStart(2,'0')}</strong> (${day})<br>Time difference: ${diff >= 0 ? '+' : ''}${diff} hours`;
+    el.classList.add('show');
+}
+</script>
