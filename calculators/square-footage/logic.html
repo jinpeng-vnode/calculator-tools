@@ -1,0 +1,40 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="length">Length</label>
+        <input type="number" id="length" placeholder="12" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="width">Width</label>
+        <input type="number" id="width" placeholder="15" step="0.01" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="unit">Unit</label>
+        <select id="unit">
+            <option value="ft">Feet</option>
+            <option value="m">Meters</option>
+            <option value="in">Inches</option>
+            <option value="yd">Yards</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcSqFt()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcSqFt() {
+    const l = parseFloat(document.getElementById('length').value);
+    const w = parseFloat(document.getElementById('width').value);
+    const unit = document.getElementById('unit').value;
+    if (!l || !w) return;
+    const area = l * w;
+    let sqft, sqm;
+    if (unit === 'ft') { sqft = area; sqm = area * 0.0929; }
+    else if (unit === 'm') { sqm = area; sqft = area * 10.7639; }
+    else if (unit === 'in') { sqft = area / 144; sqm = area * 0.000645; }
+    else { sqft = area * 9; sqm = area * 0.8361; }
+    const el = document.getElementById('result');
+    el.innerHTML = `Area: <strong>${area.toFixed(2)} ${unit}²</strong><br>Square Feet: ${sqft.toFixed(2)} ft²<br>Square Meters: ${sqm.toFixed(2)} m²`;
+    el.classList.add('show');
+}
+</script>

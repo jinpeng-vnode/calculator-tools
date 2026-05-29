@@ -1,0 +1,13 @@
+{
+    "title": "Paint Calculator Room - How Much Paint Do You Need",
+    "description": "Free paint calculator for rooms. Calculate how many gallons of paint you need based on room dimensions. Accounts for doors, windows, and coats.",
+    "keywords": "paint calculator room, how much paint do I need, paint coverage calculator, room paint estimator, wall paint calculator",
+    "canonical": "https://calc.tools/en/paint-room/",
+    "h1": "Room Paint Calculator",
+    "intro": "Calculate how much paint you need for a room. Enter room dimensions and the calculator accounts for doors and windows.",
+    "faq": [
+        {"q": "How much does a gallon of paint cover?", "a": "One gallon of paint typically covers 350-400 square feet with one coat on smooth surfaces."},
+        {"q": "How many coats of paint do I need?", "a": "Most jobs need 2 coats. Use 1 coat for touch-ups or same-color repaints. Use 3 coats when covering dark colors with light."},
+        {"q": "Should I subtract doors and windows?", "a": "Yes. A standard door is about 20 sq ft and a window about 15 sq ft. Subtracting these gives a more accurate estimate."}
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Wallpaper Calculator - Rolls Needed for Your Room",
+    "description": "Free wallpaper calculator. Calculate how many rolls of wallpaper you need based on room dimensions and pattern repeat. Avoid waste and shortages.",
+    "keywords": "wallpaper calculator, wallpaper rolls calculator, how much wallpaper, wallpaper estimator, wall covering calculator",
+    "canonical": "https://calc.tools/en/wallpaper/",
+    "h1": "Wallpaper Calculator",
+    "intro": "Calculate how many rolls of wallpaper you need. Enter your room dimensions and roll specifications for an accurate estimate.",
+    "faq": [
+        {"q": "How do I calculate wallpaper needed?", "a": "Measure wall area (perimeter × height), subtract openings, then divide by the usable area per roll (considering pattern repeat waste)."},
+        {"q": "What is pattern repeat?", "a": "Pattern repeat is the distance between identical points in the wallpaper design. Larger repeats mean more waste when matching patterns."},
+        {"q": "What is a standard wallpaper roll size?", "a": "US standard: 27\" wide × 27 ft long (≈57 sq ft). European standard: 53cm wide × 10m long (≈5.3 sq m)."}
+    ]
+}

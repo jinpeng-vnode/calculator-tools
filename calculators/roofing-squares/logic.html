@@ -1,0 +1,47 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="roofLength">Roof Length (feet)</label>
+        <input type="number" id="roofLength" placeholder="40" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="roofWidth">Roof Width (feet)</label>
+        <input type="number" id="roofWidth" placeholder="30" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="pitch">Roof Pitch</label>
+        <select id="pitch">
+            <option value="1.0">Flat (0/12)</option>
+            <option value="1.014">2/12</option>
+            <option value="1.054">4/12</option>
+            <option value="1.118" selected>6/12</option>
+            <option value="1.202">8/12</option>
+            <option value="1.302">10/12</option>
+            <option value="1.414">12/12</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="waste">Waste (%)</label>
+        <input type="number" id="waste" placeholder="15" min="0" max="30" value="15">
+    </div>
+</div>
+<button class="btn" onclick="calcRoofing()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcRoofing() {
+    const l = parseFloat(document.getElementById('roofLength').value);
+    const w = parseFloat(document.getElementById('roofWidth').value);
+    const pitch = parseFloat(document.getElementById('pitch').value);
+    const waste = parseFloat(document.getElementById('waste').value) || 0;
+    if (!l || !w) return;
+    const flatArea = l * w;
+    const actualArea = flatArea * pitch;
+    const withWaste = actualArea * (1 + waste / 100);
+    const squares = withWaste / 100;
+    const bundles = Math.ceil(squares * 3);
+    const el = document.getElementById('result');
+    el.innerHTML = `Roofing Squares: <strong>${squares.toFixed(1)} squares</strong><br>Total Area: ${withWaste.toFixed(0)} sq ft<br>Flat Area: ${flatArea.toFixed(0)} sq ft<br>Bundles (3-tab): ~${bundles}`;
+    el.classList.add('show');
+}
+</script>

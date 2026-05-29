@@ -1,0 +1,13 @@
+{
+    "title": "Square Footage Calculator - Room & Area",
+    "description": "Free square footage calculator. Calculate the area of rooms, floors, walls, and irregular shapes. Perfect for home improvement and real estate.",
+    "keywords": "square footage calculator, area calculator, room size calculator, floor area, square feet calculator",
+    "canonical": "https://calc.tools/en/square-footage/",
+    "h1": "Square Footage Calculator",
+    "intro": "Calculate the square footage of any rectangular space. Enter length and width to get the area in square feet or square meters.",
+    "faq": [
+        {"q": "How do I calculate square footage?", "a": "Square footage = Length × Width. For example, a 12ft × 15ft room = 180 square feet."},
+        {"q": "How do I convert square feet to square meters?", "a": "Multiply square feet by 0.0929. For example, 200 sq ft × 0.0929 = 18.58 sq m."},
+        {"q": "How do I calculate irregular shapes?", "a": "Break the area into rectangles, calculate each one separately, then add them together."}
+    ]
+}

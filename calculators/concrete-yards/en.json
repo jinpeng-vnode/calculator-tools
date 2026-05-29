@@ -1,0 +1,13 @@
+{
+    "title": "Concrete Calculator Yards - How Much Do You Need",
+    "description": "Free concrete calculator in cubic yards. Calculate how much concrete you need for slabs, footings, columns, and walls. Includes waste factor.",
+    "keywords": "concrete calculator yards, cubic yards concrete, concrete slab calculator, how much concrete, concrete volume calculator",
+    "canonical": "https://calc.tools/en/concrete-yards/",
+    "h1": "Concrete Calculator (Cubic Yards)",
+    "intro": "Calculate how many cubic yards of concrete you need for your project. Enter dimensions for slabs, footings, or columns.",
+    "faq": [
+        {"q": "How do I calculate cubic yards of concrete?", "a": "Cubic yards = (Length ft × Width ft × Depth ft) / 27. There are 27 cubic feet in one cubic yard."},
+        {"q": "How much does a yard of concrete cost?", "a": "Concrete typically costs $120-$150 per cubic yard for ready-mix delivery, varying by location and type."},
+        {"q": "Should I order extra concrete?", "a": "Yes, order 5-10% extra to account for waste, spillage, and uneven subgrade. It's better to have slightly too much than too little."}
+    ]
+}

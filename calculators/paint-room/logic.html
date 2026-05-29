@@ -1,0 +1,54 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="roomLength">Room Length (feet)</label>
+        <input type="number" id="roomLength" placeholder="15" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="roomWidth">Room Width (feet)</label>
+        <input type="number" id="roomWidth" placeholder="12" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="wallHeight">Wall Height (feet)</label>
+        <input type="number" id="wallHeight" placeholder="8" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="coats">Number of Coats</label>
+        <select id="coats">
+            <option value="1">1 coat</option>
+            <option value="2" selected>2 coats</option>
+            <option value="3">3 coats</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="doors">Number of Doors</label>
+        <input type="number" id="doors" placeholder="1" min="0" value="1">
+    </div>
+    <div class="form-group">
+        <label for="windows">Number of Windows</label>
+        <input type="number" id="windows" placeholder="2" min="0" value="2">
+    </div>
+</div>
+<button class="btn" onclick="calcPaint()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcPaint() {
+    const l = parseFloat(document.getElementById('roomLength').value);
+    const w = parseFloat(document.getElementById('roomWidth').value);
+    const h = parseFloat(document.getElementById('wallHeight').value);
+    const coats = parseInt(document.getElementById('coats').value);
+    const doors = parseInt(document.getElementById('doors').value) || 0;
+    const windows = parseInt(document.getElementById('windows').value) || 0;
+    if (!l || !w || !h) return;
+    const wallArea = 2 * (l + w) * h;
+    const openings = doors * 20 + windows * 15;
+    const paintableArea = (wallArea - openings) * coats;
+    const gallons = paintableArea / 375;
+    const el = document.getElementById('result');
+    el.innerHTML = `Paint Needed: <strong>${gallons.toFixed(1)} gallons</strong> (${Math.ceil(gallons)} to buy)<br>Wall Area: ${wallArea.toFixed(0)} sq ft<br>Paintable Area: ${(wallArea - openings).toFixed(0)} sq ft<br>With ${coats} coat(s): ${paintableArea.toFixed(0)} sq ft total`;
+    el.classList.add('show');
+}
+</script>

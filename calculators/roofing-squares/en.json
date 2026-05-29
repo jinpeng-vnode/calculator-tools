@@ -1,0 +1,13 @@
+{
+    "title": "Roofing Calculator Squares - Materials Estimate",
+    "description": "Free roofing calculator in squares. Calculate how many roofing squares you need, plus materials like shingles, underlayment, and nails.",
+    "keywords": "roofing calculator squares, roof area calculator, shingles calculator, roofing materials, roof square footage",
+    "canonical": "https://calc.tools/en/roofing-squares/",
+    "h1": "Roofing Calculator (Squares)",
+    "intro": "Calculate how many roofing squares your project needs. One roofing square = 100 square feet. Enter your roof dimensions.",
+    "faq": [
+        {"q": "What is a roofing square?", "a": "A roofing square is a unit of measurement equal to 100 square feet (10×10 area). It's the standard unit for ordering roofing materials."},
+        {"q": "How do I account for roof pitch?", "a": "Multiply the flat area by the pitch factor: 4/12=1.054, 6/12=1.118, 8/12=1.202, 10/12=1.302, 12/12=1.414."},
+        {"q": "How many shingles per square?", "a": "Standard 3-tab shingles: 3 bundles per square. Architectural shingles: 3-5 bundles per square depending on brand."}
+    ]
+}
