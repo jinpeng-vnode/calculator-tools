@@ -1,0 +1,53 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="rooms">Number of Rooms</label>
+        <select id="rooms">
+            <option value="1">Studio/1 Room</option>
+            <option value="2">2 Rooms</option>
+            <option value="3" selected>3 Rooms</option>
+            <option value="4">4 Rooms</option>
+            <option value="5">5+ Rooms</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="distance">Distance (miles)</label>
+        <input type="number" id="distance" placeholder="50" min="1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="packing">Packing Service</label>
+        <select id="packing">
+            <option value="0">Self-pack</option>
+            <option value="500">Partial ($500)</option>
+            <option value="1200">Full service ($1,200)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="season">Season</label>
+        <select id="season">
+            <option value="1">Summer (peak)</option>
+            <option value="0.8">Off-season (20% less)</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcMoving()">Estimate Cost</button>
+<div class="result" id="result"></div>
+<script>
+function calcMoving() {
+    const rooms = parseInt(document.getElementById('rooms').value);
+    const dist = parseFloat(document.getElementById('distance').value);
+    const packing = parseFloat(document.getElementById('packing').value);
+    const season = parseFloat(document.getElementById('season').value);
+    if (!dist) return;
+    const baseCost = rooms * 400;
+    const distCost = dist > 100 ? dist * 0.75 * rooms : 0;
+    const laborCost = rooms * 200;
+    const subtotal = (baseCost + distCost + laborCost + packing) * season;
+    const insurance = subtotal * 0.05;
+    const total = subtotal + insurance;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Estimated Moving Cost: $${Math.round(total).toLocaleString()}</strong><br>Base cost: $${Math.round(baseCost * season)}<br>Distance charge: $${Math.round(distCost * season)}<br>Labor: $${Math.round(laborCost * season)}<br>Packing: $${Math.round(packing * season)}<br>Insurance: $${Math.round(insurance)}`;
+    el.classList.add('show');
+}
+</script>

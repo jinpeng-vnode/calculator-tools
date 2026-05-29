@@ -1,0 +1,13 @@
+{
+    "title": "Baby Cost Calculator - First Year Expenses",
+    "description": "Free baby cost calculator. Estimate the cost of having a baby in the first year including diapers, formula, childcare, and gear.",
+    "keywords": "baby cost calculator, cost of having a baby, baby expenses, first year baby costs, newborn budget",
+    "canonical": "https://calc.tools/en/baby-cost/",
+    "h1": "Baby Cost Calculator",
+    "intro": "Estimate first-year baby costs. Select your choices for feeding, childcare, and gear to see a personalized cost breakdown.",
+    "faq": [
+        {"q": "How much does a baby cost in the first year?", "a": "The average first-year cost is $12,000-$15,000 without childcare, or $25,000-$35,000 with full-time daycare."},
+        {"q": "What is the biggest baby expense?", "a": "Childcare is typically the largest expense ($800-$2,500/month). Without childcare, diapers and formula are the biggest recurring costs."},
+        {"q": "How can I reduce baby costs?", "a": "Breastfeed if possible, buy secondhand gear, use cloth diapers, accept hand-me-downs, and compare daycare options."}
+    ]
+}

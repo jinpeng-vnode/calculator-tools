@@ -1,0 +1,13 @@
+{
+    "title": "Rent vs Buy Calculator - Should You Rent or Buy?",
+    "description": "Free rent vs buy calculator. Compare the total cost of renting versus buying a home over time. Make an informed housing decision.",
+    "keywords": "rent vs buy calculator, rent or buy, renting vs buying, housing cost comparison, should I buy a house",
+    "canonical": "https://calc.tools/en/rent-vs-buy/",
+    "h1": "Rent vs Buy Calculator",
+    "intro": "Compare the financial costs of renting versus buying. Enter your details to see which option is better for your situation.",
+    "faq": [
+        {"q": "Is it cheaper to rent or buy?", "a": "It depends on location, how long you stay, home appreciation, and interest rates. Generally, buying is better if you stay 5+ years."},
+        {"q": "What costs does buying include?", "a": "Buying costs include mortgage payments, property tax, insurance, maintenance (1-2% of home value/year), PMI, and closing costs."},
+        {"q": "What is the 5-year rule?", "a": "The 5-year rule suggests buying only if you plan to stay at least 5 years, allowing time to recoup closing costs and build equity."}
+    ]
+}

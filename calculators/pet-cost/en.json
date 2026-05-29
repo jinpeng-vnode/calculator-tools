@@ -1,0 +1,13 @@
+{
+    "title": "Pet Cost Calculator - Annual Pet Ownership Expenses",
+    "description": "Free pet cost calculator. Estimate the annual cost of owning a dog or cat including food, vet bills, grooming, and supplies.",
+    "keywords": "pet cost calculator, cost of owning a dog, cost of owning a cat, pet expenses, annual pet costs",
+    "canonical": "https://calc.tools/en/pet-cost/",
+    "h1": "Pet Cost Calculator",
+    "intro": "Estimate the annual cost of pet ownership. Select your pet type and care choices to see a detailed expense breakdown.",
+    "faq": [
+        {"q": "How much does a dog cost per year?", "a": "Dogs cost $1,500-$4,500 per year on average, depending on size, health, and lifestyle choices."},
+        {"q": "How much does a cat cost per year?", "a": "Cats cost $1,000-$2,500 per year on average, generally less than dogs due to lower food and grooming costs."},
+        {"q": "What are the hidden costs of pet ownership?", "a": "Emergency vet bills ($1,000-$5,000), pet deposits/rent ($200-$500/yr), boarding ($25-$75/day), and training classes."}
+    ]
+}

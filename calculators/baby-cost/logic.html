@@ -1,0 +1,53 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="feeding">Feeding Method</label>
+        <select id="feeding">
+            <option value="0">Breastfeeding</option>
+            <option value="1800">Formula ($150/mo)</option>
+            <option value="900">Combination ($75/mo)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="childcare">Childcare</label>
+        <select id="childcare">
+            <option value="0">Stay-at-home parent</option>
+            <option value="12000">Part-time daycare ($1,000/mo)</option>
+            <option value="24000">Full-time daycare ($2,000/mo)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="diapers">Diapers</label>
+        <select id="diapers">
+            <option value="900">Disposable ($75/mo)</option>
+            <option value="400">Cloth ($400 total)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="gear">Gear & Furniture</label>
+        <select id="gear">
+            <option value="2000">New (budget)</option>
+            <option value="4000">New (mid-range)</option>
+            <option value="1000">Mostly secondhand</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcBaby()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcBaby() {
+    const feeding = parseFloat(document.getElementById('feeding').value);
+    const childcare = parseFloat(document.getElementById('childcare').value);
+    const diapers = parseFloat(document.getElementById('diapers').value);
+    const gear = parseFloat(document.getElementById('gear').value);
+    const medical = 2000;
+    const clothing = 600;
+    const misc = 1200;
+    const total = feeding + childcare + diapers + gear + medical + clothing + misc;
+    const monthly = total / 12;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Estimated First-Year Cost: $${total.toLocaleString()}</strong><br>Monthly Average: $${Math.round(monthly).toLocaleString()}<br><br>Feeding: $${feeding.toLocaleString()}<br>Childcare: $${childcare.toLocaleString()}<br>Diapers: $${diapers.toLocaleString()}<br>Gear & Furniture: $${gear.toLocaleString()}<br>Medical/Insurance: $${medical.toLocaleString()}<br>Clothing: $${clothing.toLocaleString()}<br>Miscellaneous: $${misc.toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>

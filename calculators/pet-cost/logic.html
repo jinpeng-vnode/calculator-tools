@@ -1,0 +1,59 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="petType">Pet Type</label>
+        <select id="petType" onchange="updatePet()">
+            <option value="dog-small">Small Dog (&lt;25 lbs)</option>
+            <option value="dog-medium">Medium Dog (25-60 lbs)</option>
+            <option value="dog-large">Large Dog (60+ lbs)</option>
+            <option value="cat">Cat</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="foodQuality">Food Quality</label>
+        <select id="foodQuality">
+            <option value="1">Budget</option>
+            <option value="1.5" selected>Mid-range</option>
+            <option value="2.5">Premium</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="insurance">Pet Insurance</label>
+        <select id="insurance">
+            <option value="0">No</option>
+            <option value="600">Yes (~$50/mo)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="grooming">Grooming</label>
+        <select id="grooming">
+            <option value="0">DIY</option>
+            <option value="400">Professional (4x/yr)</option>
+            <option value="900">Professional (monthly)</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcPet()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcPet() {
+    const type = document.getElementById('petType').value;
+    const foodMult = parseFloat(document.getElementById('foodQuality').value);
+    const insurance = parseFloat(document.getElementById('insurance').value);
+    const grooming = parseFloat(document.getElementById('grooming').value);
+    const base = {
+        'dog-small': {food: 400, vet: 700, supplies: 200},
+        'dog-medium': {food: 600, vet: 800, supplies: 250},
+        'dog-large': {food: 900, vet: 900, supplies: 300},
+        'cat': {food: 350, vet: 600, supplies: 150}
+    }[type];
+    const food = base.food * foodMult;
+    const vet = base.vet;
+    const supplies = base.supplies;
+    const total = food + vet + supplies + insurance + grooming;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Annual Pet Cost: $${Math.round(total).toLocaleString()}</strong><br>Monthly: $${Math.round(total/12)}<br><br>Food: $${Math.round(food)}<br>Vet Care: $${vet}<br>Supplies: $${supplies}<br>Insurance: $${insurance}<br>Grooming: $${grooming}`;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,13 @@
+{
+    "title": "Wedding Budget Calculator - Plan Your Wedding Costs",
+    "description": "Free wedding budget calculator. Break down your wedding budget by category and see recommended spending percentages for venue, catering, photography, and more.",
+    "keywords": "wedding budget calculator, wedding cost calculator, wedding planning budget, how much does a wedding cost",
+    "canonical": "https://calc.tools/en/wedding-budget/",
+    "h1": "Wedding Budget Calculator",
+    "intro": "Plan your wedding budget with recommended spending percentages. Enter your total budget to see how much to allocate to each category.",
+    "faq": [
+        {"q": "How much does a wedding cost?", "a": "The average US wedding costs $30,000-$35,000. Costs vary widely by location, guest count, and choices made."},
+        {"q": "What is the biggest wedding expense?", "a": "The venue and catering typically account for 40-50% of the total budget, making it the largest single expense."},
+        {"q": "How many guests can I afford?", "a": "Divide your catering budget by $100-$200 per person (average cost per guest) to estimate your guest count."}
+    ]
+}

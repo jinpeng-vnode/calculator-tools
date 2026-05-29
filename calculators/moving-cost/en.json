@@ -1,0 +1,13 @@
+{
+    "title": "Moving Cost Calculator - Estimate Your Move",
+    "description": "Free moving cost calculator. Estimate the total cost of your move based on distance, home size, and services needed.",
+    "keywords": "moving cost calculator, moving estimate, cost to move, relocation calculator, moving expenses",
+    "canonical": "https://calc.tools/en/moving-cost/",
+    "h1": "Moving Cost Calculator",
+    "intro": "Estimate your total moving costs. Enter your move details to get a cost breakdown for local or long-distance moves.",
+    "faq": [
+        {"q": "How much does it cost to move?", "a": "Local moves average $1,400-$2,500. Long-distance moves (1,000+ miles) average $4,500-$7,500 depending on home size and distance."},
+        {"q": "What factors affect moving cost?", "a": "Distance, home size (number of rooms), weight of belongings, time of year, and additional services like packing or storage."},
+        {"q": "When is the cheapest time to move?", "a": "Moving in winter (October-April) and mid-month on weekdays is typically 20-30% cheaper than summer weekends."}
+    ]
+}
