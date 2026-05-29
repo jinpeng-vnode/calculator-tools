@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume of Cylinder Calculator - Free Tool</title>
+    <meta name="description" content="Free volume of cylinder calculator. Calculate cylinder volume, surface area, and lateral area from radius and height. Step-by-step formula included.">
+    <meta name="keywords" content="volume of cylinder calculator, cylinder volume formula, cylinder calculator, surface area cylinder, cylinder dimensions">
+    <link rel="canonical" href="https://calc.tools/en/volume-cylinder/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Volume of Cylinder Calculator - Free Tool">
+    <meta property="og:description" content="Free volume of cylinder calculator. Calculate cylinder volume, surface area, and lateral area from radius and height. Step-by-step formula included.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Volume of Cylinder Calculator - Free Tool", "description": "Free volume of cylinder calculator. Calculate cylinder volume, surface area, and lateral area from radius and height. Step-by-step formula included.", "url": "https://calc.tools/en/volume-cylinder/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Volume of Cylinder Calculator</h1>
+        <p class="intro">Calculate the volume and surface area of a cylinder. Enter the radius and height to get instant results.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="radius">Radius</label>
+        <input type="number" id="radius" placeholder="5" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="height">Height</label>
+        <input type="number" id="height" placeholder="10" step="0.01" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="unit">Unit</label>
+        <select id="unit">
+            <option value="cm">cm</option>
+            <option value="m">m</option>
+            <option value="in">inches</option>
+            <option value="ft">feet</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcCylinder()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcCylinder() {
+    const r = parseFloat(document.getElementById('radius').value);
+    const h = parseFloat(document.getElementById('height').value);
+    const unit = document.getElementById('unit').value;
+    if (!r || !h) return;
+    const volume = Math.PI * r * r * h;
+    const lateralArea = 2 * Math.PI * r * h;
+    const totalArea = 2 * Math.PI * r * r + lateralArea;
+    const el = document.getElementById('result');
+    el.innerHTML = `Volume: <strong>${volume.toFixed(4)} ${unit}³</strong><br>Surface Area: ${totalArea.toFixed(4)} ${unit}²<br>Lateral Area: ${lateralArea.toFixed(4)} ${unit}²`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is the formula for volume of a cylinder?</summary><p>Volume = π × r² × h, where r is the radius and h is the height.</p></details>
+<details><summary>How do I calculate surface area of a cylinder?</summary><p>Total surface area = 2πr² + 2πrh (two circular bases + lateral surface).</p></details>
+<details><summary>What is lateral area?</summary><p>Lateral area = 2πrh. It's the area of the curved surface only, excluding the top and bottom circles.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

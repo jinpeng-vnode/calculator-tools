@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>混凝土用量计算器 - 立方码</title>
+    <meta name="description" content="免费混凝土用量计算器。计算板、基础、柱和墙所需的混凝土立方码数。包含损耗系数。">
+    <meta name="keywords" content="混凝土计算器, 立方码, 混凝土用量, 水泥计算, 混凝土体积">
+    <link rel="canonical" href="https://calc.tools/zh/concrete-yards/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="混凝土用量计算器 - 立方码">
+    <meta property="og:description" content="免费混凝土用量计算器。计算板、基础、柱和墙所需的混凝土立方码数。包含损耗系数。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "混凝土用量计算器 - 立方码", "description": "免费混凝土用量计算器。计算板、基础、柱和墙所需的混凝土立方码数。包含损耗系数。", "url": "https://calc.tools/zh/concrete-yards/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>混凝土用量计算器</h1>
+        <p class="intro">计算项目所需的混凝土立方码数。输入板、基础或柱的尺寸。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="length">Length (feet)</label>
+        <input type="number" id="length" placeholder="20" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="width">Width (feet)</label>
+        <input type="number" id="width" placeholder="10" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="depth">Depth (inches)</label>
+        <input type="number" id="depth" placeholder="4" step="0.5" min="0">
+    </div>
+    <div class="form-group">
+        <label for="waste">Waste Factor (%)</label>
+        <input type="number" id="waste" placeholder="10" min="0" max="30" value="10">
+    </div>
+</div>
+<button class="btn" onclick="calcConcrete()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcConcrete() {
+    const l = parseFloat(document.getElementById('length').value);
+    const w = parseFloat(document.getElementById('width').value);
+    const d = parseFloat(document.getElementById('depth').value);
+    const waste = parseFloat(document.getElementById('waste').value) || 0;
+    if (!l || !w || !d) return;
+    const depthFt = d / 12;
+    const cubicFt = l * w * depthFt;
+    const cubicYards = cubicFt / 27;
+    const withWaste = cubicYards * (1 + waste / 100);
+    const bags60 = Math.ceil(cubicFt * (1 + waste / 100) / 0.45);
+    const bags80 = Math.ceil(cubicFt * (1 + waste / 100) / 0.6);
+    const el = document.getElementById('result');
+    el.innerHTML = `Concrete Needed: <strong>${withWaste.toFixed(2)} cubic yards</strong><br>Without waste: ${cubicYards.toFixed(2)} yd³<br>Volume: ${cubicFt.toFixed(1)} ft³<br>Or: ${bags60} bags (60lb) / ${bags80} bags (80lb)`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>如何计算混凝土立方码？</summary><p>立方码 = (长英尺 × 宽英尺 × 深英尺) / 27。1立方码 = 27立方英尺。</p></details>
+<details><summary>一立方码混凝土多少钱？</summary><p>预拌混凝土通常每立方码120-150美元，因地区和类型而异。</p></details>
+<details><summary>需要多订一些吗？</summary><p>是的，建议多订5-10%以应对浪费、溢出和不平整的地基。宁多勿少。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

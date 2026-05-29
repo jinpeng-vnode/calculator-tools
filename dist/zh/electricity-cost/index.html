@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电费计算器 - 估算电费账单</title>
+    <meta name="description" content="免费电费计算器。根据电器功率、使用时间和电价估算电费。帮助您节省能源开支。">
+    <meta name="keywords" content="电费计算器, 用电成本, 电费估算, 功率计算, 电量计算器">
+    <link rel="canonical" href="https://calc.tools/zh/electricity-cost/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="电费计算器 - 估算电费账单">
+    <meta property="og:description" content="免费电费计算器。根据电器功率、使用时间和电价估算电费。帮助您节省能源开支。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "电费计算器 - 估算电费账单", "description": "免费电费计算器。根据电器功率、使用时间和电价估算电费。帮助您节省能源开支。", "url": "https://calc.tools/zh/electricity-cost/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>电费计算器</h1>
+        <p class="intro">计算电器的运行成本。输入功率、每日使用时间和电价。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="watts">Power (Watts)</label>
+        <input type="number" id="watts" placeholder="1000" min="1">
+    </div>
+    <div class="form-group">
+        <label for="hours">Hours per Day</label>
+        <input type="number" id="hours" placeholder="8" step="0.5" min="0" max="24">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="days">Days</label>
+        <input type="number" id="days" placeholder="30" min="1" max="365">
+    </div>
+    <div class="form-group">
+        <label for="rate">Rate ($/kWh)</label>
+        <input type="number" id="rate" placeholder="0.12" step="0.01" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcElectricity()">Calculate Cost</button>
+<div class="result" id="result"></div>
+<script>
+function calcElectricity() {
+    const watts = parseFloat(document.getElementById('watts').value);
+    const hours = parseFloat(document.getElementById('hours').value);
+    const days = parseFloat(document.getElementById('days').value);
+    const rate = parseFloat(document.getElementById('rate').value);
+    if (!watts || !hours || !days || !rate) return;
+    const kWh = (watts * hours * days) / 1000;
+    const cost = kWh * rate;
+    const dailyCost = (watts * hours / 1000) * rate;
+    const el = document.getElementById('result');
+    el.innerHTML = `Total Energy: <strong>${kWh.toFixed(2)} kWh</strong><br>Total Cost: <strong>$${cost.toFixed(2)}</strong><br>Daily Cost: $${dailyCost.toFixed(2)}<br>Monthly Estimate: $${(dailyCost * 30).toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>电费如何计算？</summary><p>费用 = (瓦数 × 每日小时数 × 天数) / 1000 × 每度电价。瓦数除以1000得到千瓦，再乘以时间和电价。</p></details>
+<details><summary>什么是千瓦时(kWh)？</summary><p>千瓦时是1000瓦的电器运行1小时所消耗的电能。它是电费计费的标准单位（即1度电）。</p></details>
+<details><summary>如何降低电费？</summary><p>使用节能电器、关闭闲置设备、使用LED灯泡、在低谷时段使用大功率电器。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壁纸计算器 - 需要多少卷</title>
+    <meta name="description" content="免费壁纸计算器。根据房间尺寸和花纹重复计算所需壁纸卷数。避免浪费和不足。">
+    <meta name="keywords" content="壁纸计算器, 壁纸用量, 墙纸计算, 壁纸卷数, 墙面装饰计算">
+    <link rel="canonical" href="https://calc.tools/zh/wallpaper/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="壁纸计算器 - 需要多少卷">
+    <meta property="og:description" content="免费壁纸计算器。根据房间尺寸和花纹重复计算所需壁纸卷数。避免浪费和不足。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "壁纸计算器 - 需要多少卷", "description": "免费壁纸计算器。根据房间尺寸和花纹重复计算所需壁纸卷数。避免浪费和不足。", "url": "https://calc.tools/zh/wallpaper/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>壁纸用量计算器</h1>
+        <p class="intro">计算所需壁纸卷数。输入房间尺寸和壁纸规格获取准确估算。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="roomLength">Room Length (feet)</label>
+        <input type="number" id="roomLength" placeholder="15" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="roomWidth">Room Width (feet)</label>
+        <input type="number" id="roomWidth" placeholder="12" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="wallHeight">Wall Height (feet)</label>
+        <input type="number" id="wallHeight" placeholder="8" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="rollSize">Roll Coverage (sq ft)</label>
+        <select id="rollSize">
+            <option value="57">US Standard (57 sq ft)</option>
+            <option value="56">Euro Standard (56 sq ft)</option>
+            <option value="72">Double Roll (72 sq ft)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="doors">Doors</label>
+        <input type="number" id="doors" placeholder="1" min="0" value="1">
+    </div>
+    <div class="form-group">
+        <label for="windows">Windows</label>
+        <input type="number" id="windows" placeholder="2" min="0" value="2">
+    </div>
+</div>
+<button class="btn" onclick="calcWallpaper()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcWallpaper() {
+    const l = parseFloat(document.getElementById('roomLength').value);
+    const w = parseFloat(document.getElementById('roomWidth').value);
+    const h = parseFloat(document.getElementById('wallHeight').value);
+    const rollSqFt = parseFloat(document.getElementById('rollSize').value);
+    const doors = parseInt(document.getElementById('doors').value) || 0;
+    const windows = parseInt(document.getElementById('windows').value) || 0;
+    if (!l || !w || !h) return;
+    const perimeter = 2 * (l + w);
+    const wallArea = perimeter * h;
+    const openings = doors * 20 + windows * 15;
+    const netArea = wallArea - openings;
+    const usablePerRoll = rollSqFt * 0.85;
+    const rolls = Math.ceil(netArea / usablePerRoll);
+    const el = document.getElementById('result');
+    el.innerHTML = `Rolls Needed: <strong>${rolls} rolls</strong><br>Wall Area: ${wallArea.toFixed(0)} sq ft<br>Net Area (minus openings): ${netArea.toFixed(0)} sq ft<br>Includes 15% waste for pattern matching`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>如何计算壁纸用量？</summary><p>测量墙面面积（周长×高度），减去门窗面积，再除以每卷可用面积（考虑花纹对花损耗）。</p></details>
+<details><summary>什么是花纹重复？</summary><p>花纹重复是壁纸图案中相同点之间的距离。重复距离越大，对花时浪费越多。</p></details>
+<details><summary>标准壁纸尺寸是多少？</summary><p>国内标准：53cm宽 × 10m长（约5.3平方米）。美国标准：27英寸宽 × 27英尺长（约5.3平方米）。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

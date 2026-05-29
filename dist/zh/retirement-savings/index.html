@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>退休储蓄计算器 - 规划未来</title>
+    <meta name="description" content="免费退休储蓄计算器。根据年龄、收入和目标估算退休所需储蓄金额。">
+    <meta name="keywords" content="退休计算器, 养老金计算, 退休储蓄, 退休规划, 储蓄目标">
+    <link rel="canonical" href="https://calc.tools/zh/retirement-savings/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="退休储蓄计算器 - 规划未来">
+    <meta property="og:description" content="免费退休储蓄计算器。根据年龄、收入和目标估算退休所需储蓄金额。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "退休储蓄计算器 - 规划未来", "description": "免费退休储蓄计算器。根据年龄、收入和目标估算退休所需储蓄金额。", "url": "https://calc.tools/zh/retirement-savings/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>退休储蓄计算器</h1>
+        <p class="intro">计算每月需要储蓄多少才能达到退休目标。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" placeholder="30" min="18" max="80">
+    </div>
+    <div class="form-group">
+        <label for="retireAge">Retirement Age</label>
+        <input type="number" id="retireAge" placeholder="65" min="30" max="90">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="currentSavings">Current Savings ($)</label>
+        <input type="number" id="currentSavings" placeholder="50000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="monthlyContrib">Monthly Contribution ($)</label>
+        <input type="number" id="monthlyContrib" placeholder="500" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="returnRate">Expected Annual Return (%)</label>
+        <input type="number" id="returnRate" placeholder="7" step="0.1" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcRetirement()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcRetirement() {
+    const currentAge = parseInt(document.getElementById('currentAge').value);
+    const retireAge = parseInt(document.getElementById('retireAge').value);
+    const savings = parseFloat(document.getElementById('currentSavings').value) || 0;
+    const monthly = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+    const rate = parseFloat(document.getElementById('returnRate').value) / 100;
+    if (!currentAge || !retireAge || !rate) return;
+    const years = retireAge - currentAge;
+    const monthlyRate = rate / 12;
+    const months = years * 12;
+    const futureValue = savings * Math.pow(1 + monthlyRate, months) + monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+    const totalContrib = savings + monthly * months;
+    const el = document.getElementById('result');
+    el.innerHTML = `Estimated at Retirement: <strong>$${Math.round(futureValue).toLocaleString()}</strong><br>Total Contributions: $${Math.round(totalContrib).toLocaleString()}<br>Investment Growth: $${Math.round(futureValue - totalContrib).toLocaleString()}<br>Years to Retire: ${years}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>退休需要多少钱？</summary><p>常见规则是储蓄年支出的25倍。如果年支出30万，目标为750万退休储蓄。</p></details>
+<details><summary>什么时候开始储蓄？</summary><p>越早越好。25岁开始比35岁开始，由于复利效应可多积累数十万。</p></details>
+<details><summary>什么是4%法则？</summary><p>4%法则建议每年提取退休储蓄的4%，可确保30年内不会用完。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

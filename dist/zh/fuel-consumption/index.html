@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>油耗计算器 - 百公里油耗</title>
+    <meta name="description" content="免费油耗计算器。计算车辆百公里油耗和每次出行的燃油成本。追踪和比较车辆经济性。">
+    <meta name="keywords" content="油耗计算器, 百公里油耗, 燃油消耗, 加油计算, 油费计算器">
+    <link rel="canonical" href="https://calc.tools/zh/fuel-consumption/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="油耗计算器 - 百公里油耗">
+    <meta property="og:description" content="免费油耗计算器。计算车辆百公里油耗和每次出行的燃油成本。追踪和比较车辆经济性。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "油耗计算器 - 百公里油耗", "description": "免费油耗计算器。计算车辆百公里油耗和每次出行的燃油成本。追踪和比较车辆经济性。", "url": "https://calc.tools/zh/fuel-consumption/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>油耗计算器</h1>
+        <p class="intro">计算车辆的燃油消耗和出行成本。输入行驶距离和加油量。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="distance">Distance</label>
+        <input type="number" id="distance" placeholder="500" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="distUnit">Unit</label>
+        <select id="distUnit">
+            <option value="km">km</option>
+            <option value="miles">miles</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="fuel">Fuel Used</label>
+        <input type="number" id="fuel" placeholder="40" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="fuelUnit">Unit</label>
+        <select id="fuelUnit">
+            <option value="liters">Liters</option>
+            <option value="gallons">Gallons (US)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="fuelPrice">Fuel Price (per unit)</label>
+        <input type="number" id="fuelPrice" placeholder="1.50" step="0.01" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcFuel()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcFuel() {
+    let dist = parseFloat(document.getElementById('distance').value);
+    let fuel = parseFloat(document.getElementById('fuel').value);
+    const distUnit = document.getElementById('distUnit').value;
+    const fuelUnit = document.getElementById('fuelUnit').value;
+    const price = parseFloat(document.getElementById('fuelPrice').value) || 0;
+    if (!dist || !fuel) return;
+    const distKm = distUnit === 'miles' ? dist * 1.60934 : dist;
+    const fuelL = fuelUnit === 'gallons' ? fuel * 3.78541 : fuel;
+    const lPer100 = (fuelL / distKm) * 100;
+    const mpg = (distUnit === 'miles' ? dist : dist * 0.621371) / (fuelUnit === 'gallons' ? fuel : fuel / 3.78541);
+    const cost = fuel * price;
+    const costPerKm = cost / distKm;
+    const el = document.getElementById('result');
+    el.innerHTML = `Consumption: <strong>${lPer100.toFixed(2)} L/100km</strong><br>MPG: ${mpg.toFixed(1)} miles/gallon<br>Trip Cost: $${cost.toFixed(2)}<br>Cost per km: $${costPerKm.toFixed(3)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>油耗如何计算？</summary><p>百公里油耗(L/100km) = (加油升数 / 行驶公里数) × 100。</p></details>
+<details><summary>多少油耗算省油？</summary><p>轿车：6L/100km以下为优秀，6-8L/100km为良好，10L/100km以上为较高。</p></details>
+<details><summary>如何降低油耗？</summary><p>保持匀速驾驶、定期保养、检查胎压、减少急加速急刹车、避免怠速。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

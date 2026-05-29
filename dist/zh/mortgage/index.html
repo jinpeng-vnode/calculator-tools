@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房贷月供计算器 - 免费估算</title>
+    <meta name="description" content="免费房贷月供计算器。根据贷款金额、利率和期限估算每月还款额，包含本金和利息明细。">
+    <meta name="keywords" content="房贷计算器, 月供计算器, 贷款计算器, 房屋贷款, 按揭计算">
+    <link rel="canonical" href="https://calc.tools/zh/mortgage/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="房贷月供计算器 - 免费估算">
+    <meta property="og:description" content="免费房贷月供计算器。根据贷款金额、利率和期限估算每月还款额，包含本金和利息明细。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "房贷月供计算器 - 免费估算", "description": "免费房贷月供计算器。根据贷款金额、利率和期限估算每月还款额，包含本金和利息明细。", "url": "https://calc.tools/zh/mortgage/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>房贷月供计算器</h1>
+        <p class="intro">根据贷款金额、年利率和贷款期限，计算每月还款额及本息明细。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="loanAmount">Loan Amount ($)</label>
+        <input type="number" id="loanAmount" placeholder="300000" min="1000">
+    </div>
+    <div class="form-group">
+        <label for="interestRate">Annual Interest Rate (%)</label>
+        <input type="number" id="interestRate" placeholder="6.5" step="0.01" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="loanTerm">Loan Term (years)</label>
+        <input type="number" id="loanTerm" placeholder="30" min="1" max="50">
+    </div>
+</div>
+<button class="btn" onclick="calcMortgage()">Calculate Payment</button>
+<div class="result" id="result"></div>
+<script>
+function calcMortgage() {
+    const P = parseFloat(document.getElementById('loanAmount').value);
+    const annualRate = parseFloat(document.getElementById('interestRate').value);
+    const years = parseFloat(document.getElementById('loanTerm').value);
+    if (!P || !annualRate || !years) return;
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    const payment = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const totalPaid = payment * n;
+    const totalInterest = totalPaid - P;
+    const el = document.getElementById('result');
+    el.innerHTML = `Monthly Payment: <strong>$${payment.toFixed(2)}</strong><br>Total Interest: $${totalInterest.toFixed(2)}<br>Total Paid: $${totalPaid.toFixed(2)}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>月供是如何计算的？</summary><p>月供 = P[r(1+r)^n]/[(1+r)^n-1]，其中P为贷款本金，r为月利率，n为还款月数。</p></details>
+<details><summary>月供包含哪些费用？</summary><p>月供通常包含本金和利息。部分贷款还需额外缴纳房产税和保险。</p></details>
+<details><summary>我能负担多少房贷？</summary><p>一般建议月供不超过月收入的30%，以确保生活质量不受影响。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

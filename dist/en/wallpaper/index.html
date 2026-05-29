@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Calculator - Rolls Needed for Your Room</title>
+    <meta name="description" content="Free wallpaper calculator. Calculate how many rolls of wallpaper you need based on room dimensions and pattern repeat. Avoid waste and shortages.">
+    <meta name="keywords" content="wallpaper calculator, wallpaper rolls calculator, how much wallpaper, wallpaper estimator, wall covering calculator">
+    <link rel="canonical" href="https://calc.tools/en/wallpaper/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Wallpaper Calculator - Rolls Needed for Your Room">
+    <meta property="og:description" content="Free wallpaper calculator. Calculate how many rolls of wallpaper you need based on room dimensions and pattern repeat. Avoid waste and shortages.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Wallpaper Calculator - Rolls Needed for Your Room", "description": "Free wallpaper calculator. Calculate how many rolls of wallpaper you need based on room dimensions and pattern repeat. Avoid waste and shortages.", "url": "https://calc.tools/en/wallpaper/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Wallpaper Calculator</h1>
+        <p class="intro">Calculate how many rolls of wallpaper you need. Enter your room dimensions and roll specifications for an accurate estimate.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="roomLength">Room Length (feet)</label>
+        <input type="number" id="roomLength" placeholder="15" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="roomWidth">Room Width (feet)</label>
+        <input type="number" id="roomWidth" placeholder="12" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="wallHeight">Wall Height (feet)</label>
+        <input type="number" id="wallHeight" placeholder="8" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="rollSize">Roll Coverage (sq ft)</label>
+        <select id="rollSize">
+            <option value="57">US Standard (57 sq ft)</option>
+            <option value="56">Euro Standard (56 sq ft)</option>
+            <option value="72">Double Roll (72 sq ft)</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="doors">Doors</label>
+        <input type="number" id="doors" placeholder="1" min="0" value="1">
+    </div>
+    <div class="form-group">
+        <label for="windows">Windows</label>
+        <input type="number" id="windows" placeholder="2" min="0" value="2">
+    </div>
+</div>
+<button class="btn" onclick="calcWallpaper()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcWallpaper() {
+    const l = parseFloat(document.getElementById('roomLength').value);
+    const w = parseFloat(document.getElementById('roomWidth').value);
+    const h = parseFloat(document.getElementById('wallHeight').value);
+    const rollSqFt = parseFloat(document.getElementById('rollSize').value);
+    const doors = parseInt(document.getElementById('doors').value) || 0;
+    const windows = parseInt(document.getElementById('windows').value) || 0;
+    if (!l || !w || !h) return;
+    const perimeter = 2 * (l + w);
+    const wallArea = perimeter * h;
+    const openings = doors * 20 + windows * 15;
+    const netArea = wallArea - openings;
+    const usablePerRoll = rollSqFt * 0.85;
+    const rolls = Math.ceil(netArea / usablePerRoll);
+    const el = document.getElementById('result');
+    el.innerHTML = `Rolls Needed: <strong>${rolls} rolls</strong><br>Wall Area: ${wallArea.toFixed(0)} sq ft<br>Net Area (minus openings): ${netArea.toFixed(0)} sq ft<br>Includes 15% waste for pattern matching`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How do I calculate wallpaper needed?</summary><p>Measure wall area (perimeter × height), subtract openings, then divide by the usable area per roll (considering pattern repeat waste).</p></details>
+<details><summary>What is pattern repeat?</summary><p>Pattern repeat is the distance between identical points in the wallpaper design. Larger repeats mean more waste when matching patterns.</p></details>
+<details><summary>What is a standard wallpaper roll size?</summary><p>US standard: 27" wide × 27 ft long (≈57 sq ft). European standard: 53cm wide × 10m long (≈5.3 sq m).</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

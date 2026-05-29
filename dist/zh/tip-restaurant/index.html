@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐厅小费计算器 - 快速计算</title>
+    <meta name="description" content="免费餐厅小费计算器。计算小费金额并在朋友间分摊账单。支持自定义小费比例和多人分账。">
+    <meta name="keywords" content="小费计算器, 餐厅小费, 分账计算器, 小费百分比, 账单分摊">
+    <link rel="canonical" href="https://calc.tools/zh/tip-restaurant/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="餐厅小费计算器 - 快速计算">
+    <meta property="og:description" content="免费餐厅小费计算器。计算小费金额并在朋友间分摊账单。支持自定义小费比例和多人分账。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "餐厅小费计算器 - 快速计算", "description": "免费餐厅小费计算器。计算小费金额并在朋友间分摊账单。支持自定义小费比例和多人分账。", "url": "https://calc.tools/zh/tip-restaurant/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>餐厅小费计算器</h1>
+        <p class="intro">快速计算餐厅账单的小费。选择小费比例并在多人间分摊。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="billAmount">Bill Amount ($)</label>
+        <input type="number" id="billAmount" placeholder="85.50" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="tipPercent">Tip Percentage (%)</label>
+        <select id="tipPercent">
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="18">18%</option>
+            <option value="20" selected>20%</option>
+            <option value="25">25%</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="numPeople">Split Among (people)</label>
+        <input type="number" id="numPeople" placeholder="1" min="1" max="50" value="1">
+    </div>
+</div>
+<button class="btn" onclick="calcTip()">Calculate Tip</button>
+<div class="result" id="result"></div>
+<script>
+function calcTip() {
+    const bill = parseFloat(document.getElementById('billAmount').value);
+    const tipPct = parseFloat(document.getElementById('tipPercent').value);
+    const people = parseInt(document.getElementById('numPeople').value) || 1;
+    if (!bill) return;
+    const tip = bill * tipPct / 100;
+    const total = bill + tip;
+    const perPerson = total / people;
+    const el = document.getElementById('result');
+    el.innerHTML = `Tip Amount: <strong>$${tip.toFixed(2)}</strong><br>Total: $${total.toFixed(2)}<br>Per Person: <strong>$${perPerson.toFixed(2)}</strong>`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>餐厅应该给多少小费？</summary><p>在美国，正式餐厅通常给15-20%。优质服务给20%以上。自助餐或柜台服务给10-15%。</p></details>
+<details><summary>小费按税前还是税后金额计算？</summary><p>礼仪专家建议按税前金额计算小费，但按总额计算也很常见。</p></details>
+<details><summary>如何在多人间分摊小费？</summary><p>计算总账单加小费，然后除以人数。本计算器自动完成此计算。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

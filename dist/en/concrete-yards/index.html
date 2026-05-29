@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Calculator Yards - How Much Do You Need</title>
+    <meta name="description" content="Free concrete calculator in cubic yards. Calculate how much concrete you need for slabs, footings, columns, and walls. Includes waste factor.">
+    <meta name="keywords" content="concrete calculator yards, cubic yards concrete, concrete slab calculator, how much concrete, concrete volume calculator">
+    <link rel="canonical" href="https://calc.tools/en/concrete-yards/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Concrete Calculator Yards - How Much Do You Need">
+    <meta property="og:description" content="Free concrete calculator in cubic yards. Calculate how much concrete you need for slabs, footings, columns, and walls. Includes waste factor.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Concrete Calculator Yards - How Much Do You Need", "description": "Free concrete calculator in cubic yards. Calculate how much concrete you need for slabs, footings, columns, and walls. Includes waste factor.", "url": "https://calc.tools/en/concrete-yards/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Concrete Calculator (Cubic Yards)</h1>
+        <p class="intro">Calculate how many cubic yards of concrete you need for your project. Enter dimensions for slabs, footings, or columns.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="length">Length (feet)</label>
+        <input type="number" id="length" placeholder="20" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="width">Width (feet)</label>
+        <input type="number" id="width" placeholder="10" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="depth">Depth (inches)</label>
+        <input type="number" id="depth" placeholder="4" step="0.5" min="0">
+    </div>
+    <div class="form-group">
+        <label for="waste">Waste Factor (%)</label>
+        <input type="number" id="waste" placeholder="10" min="0" max="30" value="10">
+    </div>
+</div>
+<button class="btn" onclick="calcConcrete()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcConcrete() {
+    const l = parseFloat(document.getElementById('length').value);
+    const w = parseFloat(document.getElementById('width').value);
+    const d = parseFloat(document.getElementById('depth').value);
+    const waste = parseFloat(document.getElementById('waste').value) || 0;
+    if (!l || !w || !d) return;
+    const depthFt = d / 12;
+    const cubicFt = l * w * depthFt;
+    const cubicYards = cubicFt / 27;
+    const withWaste = cubicYards * (1 + waste / 100);
+    const bags60 = Math.ceil(cubicFt * (1 + waste / 100) / 0.45);
+    const bags80 = Math.ceil(cubicFt * (1 + waste / 100) / 0.6);
+    const el = document.getElementById('result');
+    el.innerHTML = `Concrete Needed: <strong>${withWaste.toFixed(2)} cubic yards</strong><br>Without waste: ${cubicYards.toFixed(2)} yd³<br>Volume: ${cubicFt.toFixed(1)} ft³<br>Or: ${bags60} bags (60lb) / ${bags80} bags (80lb)`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How do I calculate cubic yards of concrete?</summary><p>Cubic yards = (Length ft × Width ft × Depth ft) / 27. There are 27 cubic feet in one cubic yard.</p></details>
+<details><summary>How much does a yard of concrete cost?</summary><p>Concrete typically costs $120-$150 per cubic yard for ready-mix delivery, varying by location and type.</p></details>
+<details><summary>Should I order extra concrete?</summary><p>Yes, order 5-10% extra to account for waste, spillage, and uneven subgrade. It's better to have slightly too much than too little.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

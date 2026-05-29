@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热量缺口计算器 - 减重规划</title>
+    <meta name="description" content="免费热量缺口计算器。计算您的TDEE和每日热量目标，科学安全地减重。">
+    <meta name="keywords" content="热量缺口计算器, 减肥计算器, TDEE计算器, 卡路里计算, 减脂计算器">
+    <link rel="canonical" href="https://calc.tools/zh/calorie-deficit/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="热量缺口计算器 - 减重规划">
+    <meta property="og:description" content="免费热量缺口计算器。计算您的TDEE和每日热量目标，科学安全地减重。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "热量缺口计算器 - 减重规划", "description": "免费热量缺口计算器。计算您的TDEE和每日热量目标，科学安全地减重。", "url": "https://calc.tools/zh/calorie-deficit/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/zh/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>热量缺口计算器</h1>
+        <p class="intro">计算您的每日总能量消耗(TDEE)和安全减重所需的热量缺口。</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="30" min="15" max="100">
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="75" min="30">
+    </div>
+    <div class="form-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="175" min="100">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="activity">Activity Level</label>
+        <select id="activity">
+            <option value="1.2">Sedentary (office job)</option>
+            <option value="1.375">Light (1-3 days/week)</option>
+            <option value="1.55">Moderate (3-5 days/week)</option>
+            <option value="1.725">Active (6-7 days/week)</option>
+            <option value="1.9">Very Active (athlete)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="goal">Weekly Goal</label>
+        <select id="goal">
+            <option value="250">Lose 0.25 kg/week</option>
+            <option value="500">Lose 0.5 kg/week</option>
+            <option value="750">Lose 0.75 kg/week</option>
+            <option value="1000">Lose 1 kg/week</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcDeficit()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcDeficit() {
+    const age = parseFloat(document.getElementById('age').value);
+    const gender = document.getElementById('gender').value;
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const activity = parseFloat(document.getElementById('activity').value);
+    const deficit = parseFloat(document.getElementById('goal').value);
+    if (!age || !weight || !height) return;
+    let bmr;
+    if (gender === 'male') {
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+    const tdee = bmr * activity;
+    const target = tdee - deficit;
+    const el = document.getElementById('result');
+    el.innerHTML = `BMR: <strong>${Math.round(bmr)} cal/day</strong><br>TDEE: <strong>${Math.round(tdee)} cal/day</strong><br>Daily Target: <strong>${Math.round(target)} cal/day</strong><br>Daily Deficit: ${deficit} cal`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>什么是热量缺口？</summary><p>热量缺口是指摄入的热量少于身体消耗的热量。每天500卡的缺口约每周减少1磅脂肪。</p></details>
+<details><summary>多大的热量缺口是安全的？</summary><p>每天500-1000卡的缺口（每周减1-2磅）通常被认为是安全的。女性不应低于1200卡/天，男性不应低于1500卡/天。</p></details>
+<details><summary>什么是TDEE？</summary><p>TDEE（每日总能量消耗）是您每天燃烧的总热量，包括运动和日常活动。</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

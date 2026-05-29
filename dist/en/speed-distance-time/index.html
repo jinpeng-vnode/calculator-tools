@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Distance Time Calculator - Free Tool</title>
+    <meta name="description" content="Free speed distance time calculator. Calculate any one value when you know the other two. Supports multiple units (mph, km/h, m/s).">
+    <meta name="keywords" content="speed distance time calculator, velocity calculator, distance calculator, travel time calculator, speed formula">
+    <link rel="canonical" href="https://calc.tools/en/speed-distance-time/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Speed Distance Time Calculator - Free Tool">
+    <meta property="og:description" content="Free speed distance time calculator. Calculate any one value when you know the other two. Supports multiple units (mph, km/h, m/s).">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Speed Distance Time Calculator - Free Tool", "description": "Free speed distance time calculator. Calculate any one value when you know the other two. Supports multiple units (mph, km/h, m/s).", "url": "https://calc.tools/en/speed-distance-time/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Speed Distance Time Calculator</h1>
+        <p class="intro">Calculate speed, distance, or time when you know two of the three values. Uses the formula: Distance = Speed × Time.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="calcFor">Solve For</label>
+        <select id="calcFor" onchange="toggleFields()">
+            <option value="distance">Distance</option>
+            <option value="speed">Speed</option>
+            <option value="time">Time</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group" id="speedGroup">
+        <label for="speed">Speed (km/h)</label>
+        <input type="number" id="speed" placeholder="60" step="0.1" min="0">
+    </div>
+    <div class="form-group" id="distanceGroup">
+        <label for="distance">Distance (km)</label>
+        <input type="number" id="distance" placeholder="120" step="0.1" min="0">
+    </div>
+    <div class="form-group" id="timeGroup">
+        <label for="time">Time (hours)</label>
+        <input type="number" id="time" placeholder="2" step="0.01" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcSDT()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function toggleFields() {
+    const f = document.getElementById('calcFor').value;
+    document.getElementById('speedGroup').style.display = f === 'speed' ? 'none' : '';
+    document.getElementById('distanceGroup').style.display = f === 'distance' ? 'none' : '';
+    document.getElementById('timeGroup').style.display = f === 'time' ? 'none' : '';
+}
+function calcSDT() {
+    const f = document.getElementById('calcFor').value;
+    const s = parseFloat(document.getElementById('speed').value);
+    const d = parseFloat(document.getElementById('distance').value);
+    const t = parseFloat(document.getElementById('time').value);
+    let result = '';
+    if (f === 'distance' && s && t) {
+        const dist = s * t;
+        result = `Distance: <strong>${dist.toFixed(2)} km</strong> (${(dist * 0.621371).toFixed(2)} miles)`;
+    } else if (f === 'speed' && d && t) {
+        const spd = d / t;
+        result = `Speed: <strong>${spd.toFixed(2)} km/h</strong> (${(spd * 0.621371).toFixed(2)} mph)`;
+    } else if (f === 'time' && d && s) {
+        const time = d / s;
+        const hrs = Math.floor(time);
+        const mins = Math.round((time - hrs) * 60);
+        result = `Time: <strong>${time.toFixed(2)} hours</strong> (${hrs}h ${mins}m)`;
+    } else return;
+    const el = document.getElementById('result');
+    el.innerHTML = result;
+    el.classList.add('show');
+}
+toggleFields();
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is the speed distance time formula?</summary><p>Speed = Distance ÷ Time, Distance = Speed × Time, Time = Distance ÷ Speed.</p></details>
+<details><summary>How do I convert between speed units?</summary><p>1 mph = 1.609 km/h = 0.447 m/s. 1 km/h = 0.621 mph = 0.278 m/s.</p></details>
+<details><summary>What is average speed?</summary><p>Average speed = Total distance traveled ÷ Total time taken, regardless of speed variations during the trip.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

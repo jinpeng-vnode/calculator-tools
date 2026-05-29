@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roofing Calculator Squares - Materials Estimate</title>
+    <meta name="description" content="Free roofing calculator in squares. Calculate how many roofing squares you need, plus materials like shingles, underlayment, and nails.">
+    <meta name="keywords" content="roofing calculator squares, roof area calculator, shingles calculator, roofing materials, roof square footage">
+    <link rel="canonical" href="https://calc.tools/en/roofing-squares/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Roofing Calculator Squares - Materials Estimate">
+    <meta property="og:description" content="Free roofing calculator in squares. Calculate how many roofing squares you need, plus materials like shingles, underlayment, and nails.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Roofing Calculator Squares - Materials Estimate", "description": "Free roofing calculator in squares. Calculate how many roofing squares you need, plus materials like shingles, underlayment, and nails.", "url": "https://calc.tools/en/roofing-squares/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Roofing Calculator (Squares)</h1>
+        <p class="intro">Calculate how many roofing squares your project needs. One roofing square = 100 square feet. Enter your roof dimensions.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="roofLength">Roof Length (feet)</label>
+        <input type="number" id="roofLength" placeholder="40" step="0.1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="roofWidth">Roof Width (feet)</label>
+        <input type="number" id="roofWidth" placeholder="30" step="0.1" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="pitch">Roof Pitch</label>
+        <select id="pitch">
+            <option value="1.0">Flat (0/12)</option>
+            <option value="1.014">2/12</option>
+            <option value="1.054">4/12</option>
+            <option value="1.118" selected>6/12</option>
+            <option value="1.202">8/12</option>
+            <option value="1.302">10/12</option>
+            <option value="1.414">12/12</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="waste">Waste (%)</label>
+        <input type="number" id="waste" placeholder="15" min="0" max="30" value="15">
+    </div>
+</div>
+<button class="btn" onclick="calcRoofing()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcRoofing() {
+    const l = parseFloat(document.getElementById('roofLength').value);
+    const w = parseFloat(document.getElementById('roofWidth').value);
+    const pitch = parseFloat(document.getElementById('pitch').value);
+    const waste = parseFloat(document.getElementById('waste').value) || 0;
+    if (!l || !w) return;
+    const flatArea = l * w;
+    const actualArea = flatArea * pitch;
+    const withWaste = actualArea * (1 + waste / 100);
+    const squares = withWaste / 100;
+    const bundles = Math.ceil(squares * 3);
+    const el = document.getElementById('result');
+    el.innerHTML = `Roofing Squares: <strong>${squares.toFixed(1)} squares</strong><br>Total Area: ${withWaste.toFixed(0)} sq ft<br>Flat Area: ${flatArea.toFixed(0)} sq ft<br>Bundles (3-tab): ~${bundles}`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>What is a roofing square?</summary><p>A roofing square is a unit of measurement equal to 100 square feet (10×10 area). It's the standard unit for ordering roofing materials.</p></details>
+<details><summary>How do I account for roof pitch?</summary><p>Multiply the flat area by the pitch factor: 4/12=1.054, 6/12=1.118, 8/12=1.202, 10/12=1.302, 12/12=1.414.</p></details>
+<details><summary>How many shingles per square?</summary><p>Standard 3-tab shingles: 3 bundles per square. Architectural shingles: 3-5 bundles per square depending on brand.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>

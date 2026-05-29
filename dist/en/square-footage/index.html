@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Footage Calculator - Room & Area</title>
+    <meta name="description" content="Free square footage calculator. Calculate the area of rooms, floors, walls, and irregular shapes. Perfect for home improvement and real estate.">
+    <meta name="keywords" content="square footage calculator, area calculator, room size calculator, floor area, square feet calculator">
+    <link rel="canonical" href="https://calc.tools/en/square-footage/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Square Footage Calculator - Room & Area">
+    <meta property="og:description" content="Free square footage calculator. Calculate the area of rooms, floors, walls, and irregular shapes. Perfect for home improvement and real estate.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Square Footage Calculator - Room & Area", "description": "Free square footage calculator. Calculate the area of rooms, floors, walls, and irregular shapes. Perfect for home improvement and real estate.", "url": "https://calc.tools/en/square-footage/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/en/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> CalcTools</a>
+            <div class="nav-links">
+                <a href="/en/">EN</a>
+                <a href="/zh/">中文</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 顶部广告位 -->
+        <div class="ad-slot ad-top">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1234567890" data-ad-format="auto"></ins> -->
+        </div>
+
+        <h1>Square Footage Calculator</h1>
+        <p class="intro">Calculate the square footage of any rectangular space. Enter length and width to get the area in square feet or square meters.</p>
+
+        <div class="calculator-wrapper">
+            <div class="form-row">
+    <div class="form-group">
+        <label for="length">Length</label>
+        <input type="number" id="length" placeholder="12" step="0.01" min="0">
+    </div>
+    <div class="form-group">
+        <label for="width">Width</label>
+        <input type="number" id="width" placeholder="15" step="0.01" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="unit">Unit</label>
+        <select id="unit">
+            <option value="ft">Feet</option>
+            <option value="m">Meters</option>
+            <option value="in">Inches</option>
+            <option value="yd">Yards</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcSqFt()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcSqFt() {
+    const l = parseFloat(document.getElementById('length').value);
+    const w = parseFloat(document.getElementById('width').value);
+    const unit = document.getElementById('unit').value;
+    if (!l || !w) return;
+    const area = l * w;
+    let sqft, sqm;
+    if (unit === 'ft') { sqft = area; sqm = area * 0.0929; }
+    else if (unit === 'm') { sqm = area; sqft = area * 10.7639; }
+    else if (unit === 'in') { sqft = area / 144; sqm = area * 0.000645; }
+    else { sqft = area * 9; sqm = area * 0.8361; }
+    const el = document.getElementById('result');
+    el.innerHTML = `Area: <strong>${area.toFixed(2)} ${unit}²</strong><br>Square Feet: ${sqft.toFixed(2)} ft²<br>Square Meters: ${sqm.toFixed(2)} m²`;
+    el.classList.add('show');
+}
+</script>
+
+        </div>
+
+        <!-- 中部广告位 -->
+        <div class="ad-slot ad-mid">
+            <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="0987654321" data-ad-format="auto"></ins> -->
+        </div>
+
+        <section class="faq"><h2>FAQ</h2>
+<details><summary>How do I calculate square footage?</summary><p>Square footage = Length × Width. For example, a 12ft × 15ft room = 180 square feet.</p></details>
+<details><summary>How do I convert square feet to square meters?</summary><p>Multiply square feet by 0.0929. For example, 200 sq ft × 0.0929 = 18.58 sq m.</p></details>
+<details><summary>How do I calculate irregular shapes?</summary><p>Break the area into rectangles, calculate each one separately, then add them together.</p></details>
+</section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CalcTools. Free online calculators for everyone.</p>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/bmi/">BMI</a>
+                <a href="/en/loan/">Loan</a>
+                <a href="/en/percentage/">Percentage</a>
+                <a href="/en/age/">Age</a>
+                <a href="/en/unit-length/">Length</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 底部广告位 -->
+    <div class="ad-slot ad-bottom container">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="1122334455" data-ad-format="auto"></ins> -->
+    </div>
+</body>
+</html>
