@@ -1,0 +1,13 @@
+{
+    "title": "Carbon Footprint Calculator - Estimate Your CO2 Emissions",
+    "description": "Free carbon footprint calculator. Estimate your annual CO2 emissions from transportation, home energy, and lifestyle choices.",
+    "keywords": "carbon footprint calculator, CO2 calculator, carbon emissions, environmental impact calculator, greenhouse gas",
+    "canonical": "https://calc.tools/en/carbon-footprint/",
+    "h1": "Carbon Footprint Calculator",
+    "intro": "Estimate your annual carbon footprint. Enter your transportation, energy, and lifestyle details to see your CO2 emissions.",
+    "faq": [
+        {"q": "What is a carbon footprint?", "a": "A carbon footprint is the total amount of greenhouse gases (measured in CO2 equivalent) produced by your activities, typically measured annually."},
+        {"q": "What is the average carbon footprint?", "a": "The average American has a carbon footprint of about 16 tons CO2/year. The global average is about 4 tons. The target for climate goals is under 2 tons."},
+        {"q": "How can I reduce my carbon footprint?", "a": "Drive less or switch to EV, reduce air travel, improve home insulation, eat less meat, and use renewable energy."}
+    ]
+}

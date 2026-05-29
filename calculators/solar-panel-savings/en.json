@@ -1,0 +1,13 @@
+{
+    "title": "Solar Panel Savings Calculator - ROI & Payback Period",
+    "description": "Free solar panel savings calculator. Estimate your solar energy savings, payback period, and 25-year ROI based on your electricity usage.",
+    "keywords": "solar panel calculator, solar savings calculator, solar ROI, solar payback period, solar panel cost",
+    "canonical": "https://calc.tools/en/solar-panel-savings/",
+    "h1": "Solar Panel Savings Calculator",
+    "intro": "Calculate your potential solar panel savings. Enter your electricity bill and system details to see payback period and long-term savings.",
+    "faq": [
+        {"q": "How much do solar panels save?", "a": "Average US homeowners save $1,500-$2,500 per year on electricity with solar panels, or $37,500-$62,500 over 25 years."},
+        {"q": "What is the payback period for solar?", "a": "The average solar payback period is 6-10 years, after which electricity is essentially free for the remaining 15-20 years."},
+        {"q": "What tax credits are available?", "a": "The federal solar Investment Tax Credit (ITC) provides a 30% tax credit on the total system cost through 2032."}
+    ]
+}

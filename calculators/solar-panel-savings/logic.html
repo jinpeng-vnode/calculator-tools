@@ -1,0 +1,38 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="elecBill">Monthly Electric Bill ($)</label>
+        <input type="number" id="elecBill" placeholder="150" min="0">
+    </div>
+    <div class="form-group">
+        <label for="systemCost">System Cost ($)</label>
+        <input type="number" id="systemCost" placeholder="20000" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="offset">Solar Offset (%)</label>
+        <input type="number" id="offset" placeholder="85" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="taxCredit">Federal Tax Credit (%)</label>
+        <input type="number" id="taxCredit" placeholder="30" min="0" max="50">
+    </div>
+</div>
+<button class="btn" onclick="calcSolar()">Calculate Savings</button>
+<div class="result" id="result"></div>
+<script>
+function calcSolar() {
+    const bill = parseFloat(document.getElementById('elecBill').value);
+    const cost = parseFloat(document.getElementById('systemCost').value);
+    const offset = parseFloat(document.getElementById('offset').value) / 100 || 0.85;
+    const credit = parseFloat(document.getElementById('taxCredit').value) / 100 || 0.30;
+    if (!bill || !cost) return;
+    const netCost = cost * (1 - credit);
+    const annualSavings = bill * 12 * offset;
+    const payback = netCost / annualSavings;
+    const savings25 = annualSavings * 25 - netCost;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Net System Cost: $${Math.round(netCost).toLocaleString()}</strong> (after ${credit*100}% tax credit)<br>Annual Savings: <strong>$${Math.round(annualSavings).toLocaleString()}</strong><br>Payback Period: <strong>${payback.toFixed(1)} years</strong><br>25-Year Net Savings: <strong>$${Math.round(savings25).toLocaleString()}</strong>`;
+    el.classList.add('show');
+}
+</script>

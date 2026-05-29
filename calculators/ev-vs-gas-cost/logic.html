@@ -1,0 +1,55 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="miles">Annual Miles Driven</label>
+        <input type="number" id="miles" placeholder="12000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="years">Years of Ownership</label>
+        <input type="number" id="years" placeholder="7" min="1" max="20">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="gasPrice">Gas Price ($/gallon)</label>
+        <input type="number" id="gasPrice" placeholder="3.50" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="mpg">Gas Car MPG</label>
+        <input type="number" id="mpg" placeholder="30" min="1">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="elecRate">Electricity Rate ($/kWh)</label>
+        <input type="number" id="elecRate" placeholder="0.13" min="0" step="0.01">
+    </div>
+    <div class="form-group">
+        <label for="evEff">EV Efficiency (mi/kWh)</label>
+        <input type="number" id="evEff" placeholder="3.5" min="0.1" step="0.1">
+    </div>
+</div>
+<button class="btn" onclick="calcEV()">Compare Costs</button>
+<div class="result" id="result"></div>
+<script>
+function calcEV() {
+    const miles = parseFloat(document.getElementById('miles').value);
+    const yrs = parseInt(document.getElementById('years').value);
+    const gas = parseFloat(document.getElementById('gasPrice').value);
+    const mpg = parseFloat(document.getElementById('mpg').value);
+    const elec = parseFloat(document.getElementById('elecRate').value);
+    const eff = parseFloat(document.getElementById('evEff').value);
+    if (!miles || !yrs || !gas || !mpg || !elec || !eff) return;
+    const gasFuelYear = (miles / mpg) * gas;
+    const evFuelYear = (miles / eff) * elec;
+    const gasMaintYear = 1200;
+    const evMaintYear = 600;
+    const gasTotalYear = gasFuelYear + gasMaintYear;
+    const evTotalYear = evFuelYear + evMaintYear;
+    const gasTotal = gasTotalYear * yrs;
+    const evTotal = evTotalYear * yrs;
+    const savings = gasTotal - evTotal;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>${yrs}-Year Operating Cost Comparison:</strong><br><br>⛽ Gas Car: <strong>$${Math.round(gasTotal).toLocaleString()}</strong> ($${Math.round(gasTotalYear)}/yr)<br>  Fuel: $${Math.round(gasFuelYear)}/yr | Maintenance: $${gasMaintYear}/yr<br><br>⚡ EV: <strong>$${Math.round(evTotal).toLocaleString()}</strong> ($${Math.round(evTotalYear)}/yr)<br>  Electricity: $${Math.round(evFuelYear)}/yr | Maintenance: $${evMaintYear}/yr<br><br><strong>EV saves: $${Math.round(savings).toLocaleString()} over ${yrs} years</strong>`;
+    el.classList.add('show');
+}
+</script>

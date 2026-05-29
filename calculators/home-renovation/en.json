@@ -1,0 +1,13 @@
+{
+    "title": "Home Renovation Calculator - Remodel Cost Estimator",
+    "description": "Free home renovation cost calculator. Estimate remodeling costs for kitchen, bathroom, flooring, and other home improvement projects.",
+    "keywords": "home renovation calculator, remodel cost calculator, renovation estimate, home improvement cost, kitchen remodel cost",
+    "canonical": "https://calc.tools/en/home-renovation/",
+    "h1": "Home Renovation Cost Calculator",
+    "intro": "Estimate your home renovation costs. Select project types and quality level to get a detailed cost breakdown.",
+    "faq": [
+        {"q": "How much does a kitchen remodel cost?", "a": "A minor kitchen remodel costs $15,000-$30,000. A major remodel runs $40,000-$80,000+. Average ROI is 60-80%."},
+        {"q": "How much does a bathroom remodel cost?", "a": "A bathroom remodel typically costs $10,000-$30,000 depending on size and finishes. Average ROI is 60-70%."},
+        {"q": "What renovations add the most value?", "a": "Kitchen and bathroom remodels, adding a deck, replacing the garage door, and new siding typically offer the best ROI."}
+    ]
+}

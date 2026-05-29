@@ -1,0 +1,63 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="carMiles">Car Miles/Year</label>
+        <input type="number" id="carMiles" placeholder="12000" min="0">
+    </div>
+    <div class="form-group">
+        <label for="carType">Car Type</label>
+        <select id="carType">
+            <option value="0.41">Gas (avg)</option>
+            <option value="0.25">Hybrid</option>
+            <option value="0.1">Electric</option>
+            <option value="0">No car</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="flights">Round-trip Flights/Year</label>
+        <input type="number" id="flights" placeholder="2" min="0">
+    </div>
+    <div class="form-group">
+        <label for="elecKwh">Home Electricity (kWh/mo)</label>
+        <input type="number" id="elecKwh" placeholder="900" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="gasTherm">Natural Gas (therms/mo)</label>
+        <input type="number" id="gasTherm" placeholder="50" min="0">
+    </div>
+    <div class="form-group">
+        <label for="diet">Diet</label>
+        <select id="diet">
+            <option value="3.3">Meat-heavy</option>
+            <option value="2.5" selected>Average</option>
+            <option value="1.7">Vegetarian</option>
+            <option value="1.5">Vegan</option>
+        </select>
+    </div>
+</div>
+<button class="btn" onclick="calcCarbon()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcCarbon() {
+    const carMiles = parseFloat(document.getElementById('carMiles').value) || 0;
+    const carFactor = parseFloat(document.getElementById('carType').value);
+    const flights = parseInt(document.getElementById('flights').value) || 0;
+    const elec = parseFloat(document.getElementById('elecKwh').value) || 0;
+    const gas = parseFloat(document.getElementById('gasTherm').value) || 0;
+    const diet = parseFloat(document.getElementById('diet').value);
+    const carCO2 = carMiles * carFactor / 1000;
+    const flightCO2 = flights * 1.6;
+    const elecCO2 = elec * 12 * 0.42 / 1000;
+    const gasCO2 = gas * 12 * 5.3 / 1000;
+    const dietCO2 = diet;
+    const total = carCO2 + flightCO2 + elecCO2 + gasCO2 + dietCO2;
+    const el = document.getElementById('result');
+    const avg = 16;
+    const comparison = total < avg ? `${((1-total/avg)*100).toFixed(0)}% below` : `${((total/avg-1)*100).toFixed(0)}% above`;
+    el.innerHTML = `<strong>Annual Carbon Footprint: ${total.toFixed(1)} tons CO2</strong><br>(${comparison} US average of ${avg} tons)<br><br>🚗 Transportation: ${carCO2.toFixed(1)} tons<br>✈️ Air Travel: ${flightCO2.toFixed(1)} tons<br>⚡ Electricity: ${elecCO2.toFixed(1)} tons<br>🔥 Natural Gas: ${gasCO2.toFixed(1)} tons<br>🍽️ Diet: ${dietCO2.toFixed(1)} tons`;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,13 @@
+{
+    "title": "Vacation Budget Calculator - Plan Your Trip Costs",
+    "description": "Free vacation budget calculator. Estimate total trip costs including flights, hotel, food, activities, and transportation.",
+    "keywords": "vacation budget calculator, trip cost calculator, travel budget planner, vacation cost estimator, holiday budget",
+    "canonical": "https://calc.tools/en/vacation-budget/",
+    "h1": "Vacation Budget Calculator",
+    "intro": "Plan your vacation budget. Enter trip details to get a cost estimate for flights, accommodation, food, and activities.",
+    "faq": [
+        {"q": "How much should I budget for vacation?", "a": "A typical domestic vacation costs $150-$300 per person per day. International trips average $200-$500 per person per day."},
+        {"q": "What percentage of income should go to vacations?", "a": "Financial experts suggest budgeting 5-10% of annual net income for vacations and travel."},
+        {"q": "How can I save on vacation costs?", "a": "Travel off-season, book flights 6-8 weeks ahead, use points/miles, cook some meals, and look for free activities."}
+    ]
+}

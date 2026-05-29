@@ -1,0 +1,52 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="project">Project Type</label>
+        <select id="project">
+            <option value="kitchen">Kitchen Remodel</option>
+            <option value="bathroom">Bathroom Remodel</option>
+            <option value="flooring">Flooring (per sq ft)</option>
+            <option value="painting">Interior Painting</option>
+            <option value="roof">Roof Replacement</option>
+            <option value="deck">Deck Addition</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="quality">Quality Level</label>
+        <select id="quality">
+            <option value="0.7">Budget</option>
+            <option value="1" selected>Mid-range</option>
+            <option value="1.6">High-end</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="sqft">Area (sq ft)</label>
+        <input type="number" id="sqft" placeholder="200" min="1">
+    </div>
+</div>
+<button class="btn" onclick="calcReno()">Estimate Cost</button>
+<div class="result" id="result"></div>
+<script>
+function calcReno() {
+    const project = document.getElementById('project').value;
+    const quality = parseFloat(document.getElementById('quality').value);
+    const sqft = parseFloat(document.getElementById('sqft').value) || 200;
+    const costs = {
+        kitchen: {base: 25000, perSqft: 0, roi: 72},
+        bathroom: {base: 15000, perSqft: 0, roi: 64},
+        flooring: {base: 0, perSqft: 8, roi: 70},
+        painting: {base: 0, perSqft: 3, roi: 50},
+        roof: {base: 8000, perSqft: 4, roi: 60},
+        deck: {base: 5000, perSqft: 25, roi: 65}
+    }[project];
+    const total = (costs.base + costs.perSqft * sqft) * quality;
+    const materials = total * 0.4;
+    const labor = total * 0.5;
+    const permits = total * 0.1;
+    const valueAdded = total * costs.roi / 100;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Estimated Cost: $${Math.round(total).toLocaleString()}</strong><br><br>Materials: $${Math.round(materials).toLocaleString()}<br>Labor: $${Math.round(labor).toLocaleString()}<br>Permits & Fees: $${Math.round(permits).toLocaleString()}<br><br>Expected ROI: ${costs.roi}%<br>Value Added: ~$${Math.round(valueAdded).toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>

@@ -1,0 +1,52 @@
+<div class="form-row">
+    <div class="form-group">
+        <label for="travelers">Number of Travelers</label>
+        <input type="number" id="travelers" placeholder="2" min="1" max="20">
+    </div>
+    <div class="form-group">
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" placeholder="7" min="1" max="90">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="flights">Flights (per person, $)</label>
+        <input type="number" id="flights" placeholder="400" min="0">
+    </div>
+    <div class="form-group">
+        <label for="hotel">Hotel (per night, $)</label>
+        <input type="number" id="hotel" placeholder="150" min="0">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group">
+        <label for="food">Food (per person/day, $)</label>
+        <input type="number" id="food" placeholder="60" min="0">
+    </div>
+    <div class="form-group">
+        <label for="activities">Activities (per person/day, $)</label>
+        <input type="number" id="activities" placeholder="40" min="0">
+    </div>
+</div>
+<button class="btn" onclick="calcVacation()">Calculate</button>
+<div class="result" id="result"></div>
+<script>
+function calcVacation() {
+    const ppl = parseInt(document.getElementById('travelers').value) || 2;
+    const days = parseInt(document.getElementById('days').value) || 7;
+    const flights = parseFloat(document.getElementById('flights').value) || 0;
+    const hotel = parseFloat(document.getElementById('hotel').value) || 0;
+    const food = parseFloat(document.getElementById('food').value) || 0;
+    const activities = parseFloat(document.getElementById('activities').value) || 0;
+    const flightTotal = flights * ppl;
+    const hotelTotal = hotel * days;
+    const foodTotal = food * ppl * days;
+    const actTotal = activities * ppl * days;
+    const transport = days * 30;
+    const total = flightTotal + hotelTotal + foodTotal + actTotal + transport;
+    const perPerson = total / ppl;
+    const el = document.getElementById('result');
+    el.innerHTML = `<strong>Total Trip Cost: $${Math.round(total).toLocaleString()}</strong><br>Per Person: $${Math.round(perPerson).toLocaleString()}<br><br>Flights: $${Math.round(flightTotal).toLocaleString()}<br>Accommodation: $${Math.round(hotelTotal).toLocaleString()}<br>Food: $${Math.round(foodTotal).toLocaleString()}<br>Activities: $${Math.round(actTotal).toLocaleString()}<br>Local Transport: $${Math.round(transport).toLocaleString()}`;
+    el.classList.add('show');
+}
+</script>

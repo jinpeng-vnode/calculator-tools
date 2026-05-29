@@ -1,0 +1,13 @@
+{
+    "title": "EV vs Gas Cost Calculator - Compare Ownership Costs",
+    "description": "Free EV vs gas car cost calculator. Compare total ownership costs including fuel, maintenance, and purchase price over time.",
+    "keywords": "ev vs gas calculator, electric car cost comparison, EV savings calculator, electric vs gas car, EV total cost",
+    "canonical": "https://calc.tools/en/ev-vs-gas-cost/",
+    "h1": "EV vs Gas Car Cost Calculator",
+    "intro": "Compare the total cost of owning an electric vehicle versus a gas car. Enter your driving habits to see which saves more.",
+    "faq": [
+        {"q": "Are electric cars cheaper to own?", "a": "EVs typically cost less to operate ($0.03-0.05/mile vs $0.10-0.15/mile for gas), but have higher purchase prices. Break-even is usually 3-7 years."},
+        {"q": "How much do you save on fuel with an EV?", "a": "The average EV driver saves $800-$1,500 per year on fuel costs compared to a gas car, depending on electricity rates and gas prices."},
+        {"q": "Are EVs cheaper to maintain?", "a": "Yes, EVs have fewer moving parts, no oil changes, and regenerative braking reduces brake wear. Maintenance costs are 30-50% lower."}
+    ]
+}
