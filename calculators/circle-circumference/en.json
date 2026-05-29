@@ -1,0 +1,12 @@
+{
+    "title": "Circle Circumference Calculator - Calculate Perimeter",
+    "description": "Free circle circumference calculator. Calculate the circumference (perimeter) of a circle from radius or diameter. Also shows area.",
+    "keywords": "circle circumference calculator, perimeter of circle, circle calculator, circumference formula",
+    "canonical": "https://calc.tools/en/circle-circumference/",
+    "h1": "Circle Circumference Calculator",
+    "intro": "Calculate the circumference of a circle. Enter the radius or diameter to get the circumference and area.",
+    "faq": [
+        {"q": "What is the formula for circumference?", "a": "Circumference = 2πr = πd, where r is the radius and d is the diameter."},
+        {"q": "How to find circumference from diameter?", "a": "Multiply the diameter by π (≈3.14159). Example: diameter 10 → circumference = 10 × π ≈ 31.42."}
+    ]
+}

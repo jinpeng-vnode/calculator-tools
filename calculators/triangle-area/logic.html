@@ -1,0 +1,47 @@
+<div class="form-group">
+    <label>Method 1: Base & Height</label>
+    <div style="display:flex;gap:8px">
+        <input type="number" id="base" placeholder="Base" step="any">
+        <input type="number" id="height" placeholder="Height" step="any">
+    </div>
+</div>
+<button class="btn" onclick="calcBH()">Calculate (Base × Height)</button>
+<div class="result" id="result1"></div>
+
+<hr style="margin:1.5rem 0;border:none;border-top:1px solid var(--border)">
+
+<div class="form-group">
+    <label>Method 2: Three Sides (Heron's Formula)</label>
+    <div style="display:flex;gap:8px">
+        <input type="number" id="sa" placeholder="Side a" step="any">
+        <input type="number" id="sb" placeholder="Side b" step="any">
+        <input type="number" id="sc" placeholder="Side c" step="any">
+    </div>
+</div>
+<button class="btn" onclick="calcHeron()">Calculate (Heron's)</button>
+<div class="result" id="result2"></div>
+
+<script>
+function calcBH(){
+    const b=parseFloat(document.getElementById('base').value);
+    const h=parseFloat(document.getElementById('height').value);
+    if(isNaN(b)||isNaN(h))return;
+    const area=0.5*b*h;
+    const el=document.getElementById('result1');
+    el.innerHTML=`Area = ½ × ${b} × ${h} = <strong>${area.toFixed(4)}</strong>`;
+    el.classList.add('show');
+}
+function calcHeron(){
+    const a=parseFloat(document.getElementById('sa').value);
+    const b=parseFloat(document.getElementById('sb').value);
+    const c=parseFloat(document.getElementById('sc').value);
+    if(isNaN(a)||isNaN(b)||isNaN(c))return;
+    const s=(a+b+c)/2;
+    const val=s*(s-a)*(s-b)*(s-c);
+    if(val<0){document.getElementById('result2').innerHTML='Invalid triangle sides';return;}
+    const area=Math.sqrt(val);
+    const el=document.getElementById('result2');
+    el.innerHTML=`<p>Semi-perimeter s = ${s.toFixed(4)}</p><p>Area = √(s(s-a)(s-b)(s-c)) = <strong>${area.toFixed(4)}</strong></p>`;
+    el.classList.add('show');
+}
+</script>

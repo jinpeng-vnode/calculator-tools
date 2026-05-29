@@ -1,0 +1,35 @@
+<div class="form-group">
+    <label>ax² + bx + c = 0</label>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <input type="number" id="a" style="width:70px" placeholder="1">x² +
+        <input type="number" id="b" style="width:70px" placeholder="-5">x +
+        <input type="number" id="c" style="width:70px" placeholder="6"> = 0
+    </div>
+</div>
+<button class="btn" onclick="solve()">Solve</button>
+<div class="result" id="result"></div>
+
+<script>
+function solve(){
+    const a=parseFloat(document.getElementById('a').value);
+    const b=parseFloat(document.getElementById('b').value);
+    const c=parseFloat(document.getElementById('c').value);
+    if(isNaN(a)||isNaN(b)||isNaN(c)||a===0)return;
+    const disc=b*b-4*a*c;
+    const el=document.getElementById('result');
+    let html=`<p>Equation: ${a}x² + ${b}x + ${c} = 0</p><p>Discriminant (Δ): <strong>${disc.toFixed(4)}</strong></p>`;
+    if(disc>0){
+        const x1=(-b+Math.sqrt(disc))/(2*a);
+        const x2=(-b-Math.sqrt(disc))/(2*a);
+        html+=`<p>Two real roots:</p><p>x₁ = <strong>${x1.toFixed(6)}</strong></p><p>x₂ = <strong>${x2.toFixed(6)}</strong></p>`;
+    }else if(disc===0){
+        const x=-b/(2*a);
+        html+=`<p>One repeated root:</p><p>x = <strong>${x.toFixed(6)}</strong></p>`;
+    }else{
+        const real=(-b/(2*a)).toFixed(6);
+        const imag=(Math.sqrt(-disc)/(2*a)).toFixed(6);
+        html+=`<p>Two complex roots:</p><p>x₁ = <strong>${real} + ${imag}i</strong></p><p>x₂ = <strong>${real} − ${imag}i</strong></p>`;
+    }
+    el.innerHTML=html;el.classList.add('show');
+}
+</script>

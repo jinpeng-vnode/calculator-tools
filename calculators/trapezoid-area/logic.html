@@ -1,0 +1,28 @@
+<div class="form-group">
+    <label for="base1">Base 1 (top)</label>
+    <input type="number" id="base1" placeholder="5" step="any">
+</div>
+<div class="form-group">
+    <label for="base2">Base 2 (bottom)</label>
+    <input type="number" id="base2" placeholder="10" step="any">
+</div>
+<div class="form-group">
+    <label for="h">Height</label>
+    <input type="number" id="h" placeholder="4" step="any">
+</div>
+<button class="btn" onclick="calcTrap()">Calculate Area</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcTrap(){
+    const b1=parseFloat(document.getElementById('base1').value);
+    const b2=parseFloat(document.getElementById('base2').value);
+    const h=parseFloat(document.getElementById('h').value);
+    if(isNaN(b1)||isNaN(b2)||isNaN(h))return;
+    const area=0.5*(b1+b2)*h;
+    const perimeter=b1+b2+2*Math.sqrt(((b2-b1)/2)**2+h*h);
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>Area = ½ × (${b1} + ${b2}) × ${h} = <strong>${area.toFixed(4)}</strong></p><p>Estimated perimeter (isosceles): <strong>${perimeter.toFixed(4)}</strong></p>`;
+    el.classList.add('show');
+}
+</script>

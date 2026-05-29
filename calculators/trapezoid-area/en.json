@@ -1,0 +1,12 @@
+{
+    "title": "Trapezoid Area Calculator - Calculate Trapezoid Area",
+    "description": "Free trapezoid area calculator. Calculate the area of a trapezoid using parallel sides (bases) and height.",
+    "keywords": "trapezoid area calculator, area of trapezoid, trapezoid formula, trapezium calculator",
+    "canonical": "https://calc.tools/en/trapezoid-area/",
+    "h1": "Trapezoid Area Calculator",
+    "intro": "Calculate the area of a trapezoid. Enter the two parallel sides (bases) and the height.",
+    "faq": [
+        {"q": "What is the formula for trapezoid area?", "a": "Area = ½ × (base₁ + base₂) × height. The two bases are the parallel sides of the trapezoid."},
+        {"q": "What is the difference between a trapezoid and a parallelogram?", "a": "A trapezoid has exactly one pair of parallel sides. A parallelogram has two pairs of parallel sides (and is a special case of a trapezoid)."}
+    ]
+}

@@ -1,0 +1,24 @@
+<div class="form-group">
+    <label for="radius">Radius</label>
+    <input type="number" id="radius" placeholder="5" step="any">
+</div>
+<div class="form-group">
+    <label for="diameter">Or Diameter</label>
+    <input type="number" id="diameter" placeholder="" step="any">
+</div>
+<button class="btn" onclick="calcCirc()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcCirc(){
+    let r=parseFloat(document.getElementById('radius').value);
+    const d=parseFloat(document.getElementById('diameter').value);
+    if(isNaN(r)&&!isNaN(d))r=d/2;
+    if(isNaN(r)||r<=0)return;
+    const circ=2*Math.PI*r;
+    const area=Math.PI*r*r;
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>Radius: <strong>${r}</strong></p><p>Diameter: <strong>${(2*r).toFixed(4)}</strong></p><p>Circumference: <strong>${circ.toFixed(4)}</strong></p><p>Area: <strong>${area.toFixed(4)}</strong></p>`;
+    el.classList.add('show');
+}
+</script>

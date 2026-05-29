@@ -1,0 +1,12 @@
+{
+    "title": "Pythagorean Theorem Calculator - Find Side Lengths",
+    "description": "Free Pythagorean theorem calculator. Find the missing side of a right triangle using a² + b² = c². Calculate hypotenuse or leg length.",
+    "keywords": "pythagorean theorem calculator, right triangle calculator, hypotenuse calculator, a2+b2=c2",
+    "canonical": "https://calc.tools/en/pythagorean-theorem/",
+    "h1": "Pythagorean Theorem Calculator",
+    "intro": "Find the missing side of a right triangle. Enter any two sides to calculate the third using a² + b² = c².",
+    "faq": [
+        {"q": "What is the Pythagorean theorem?", "a": "In a right triangle, the square of the hypotenuse (c) equals the sum of squares of the other two sides: a² + b² = c²."},
+        {"q": "How to find the hypotenuse?", "a": "c = √(a² + b²). Enter the two legs (a and b) and calculate the square root of their squares' sum."}
+    ]
+}

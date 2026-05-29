@@ -1,0 +1,12 @@
+{
+    "title": "Quadratic Equation Solver - Find Roots of ax²+bx+c=0",
+    "description": "Free quadratic equation solver. Find the roots of any quadratic equation using the quadratic formula. Shows discriminant and step-by-step solution.",
+    "keywords": "quadratic equation solver, quadratic formula calculator, find roots, ax2+bx+c, discriminant",
+    "canonical": "https://calc.tools/en/quadratic-equation/",
+    "h1": "Quadratic Equation Solver",
+    "intro": "Solve quadratic equations of the form ax² + bx + c = 0. Enter coefficients a, b, and c to find the roots.",
+    "faq": [
+        {"q": "What is the quadratic formula?", "a": "x = (-b ± √(b²-4ac)) / 2a. It gives the solutions (roots) of any quadratic equation ax²+bx+c=0."},
+        {"q": "What does the discriminant tell us?", "a": "The discriminant (b²-4ac) determines the nature of roots: positive = 2 real roots, zero = 1 repeated root, negative = 2 complex roots."}
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Triangle Area Calculator - Calculate Area of a Triangle",
+    "description": "Free triangle area calculator. Calculate area using base and height, three sides (Heron's formula), or two sides and included angle.",
+    "keywords": "triangle area calculator, area of triangle, heron's formula, triangle calculator",
+    "canonical": "https://calc.tools/en/triangle-area/",
+    "h1": "Triangle Area Calculator",
+    "intro": "Calculate the area of a triangle using multiple methods: base × height, Heron's formula (3 sides), or SAS (two sides + angle).",
+    "faq": [
+        {"q": "How to calculate triangle area with base and height?", "a": "Area = ½ × base × height. Example: base 10, height 6 → Area = ½ × 10 × 6 = 30."},
+        {"q": "What is Heron's formula?", "a": "For a triangle with sides a, b, c: s = (a+b+c)/2, Area = √(s(s-a)(s-b)(s-c)). Works for any triangle when you know all three sides."}
+    ]
+}

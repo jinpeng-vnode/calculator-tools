@@ -1,0 +1,35 @@
+<div class="form-group">
+    <label for="sideA">Side a</label>
+    <input type="number" id="sideA" placeholder="3">
+</div>
+<div class="form-group">
+    <label for="sideB">Side b</label>
+    <input type="number" id="sideB" placeholder="4">
+</div>
+<div class="form-group">
+    <label for="sideC">Hypotenuse c (leave empty to calculate)</label>
+    <input type="number" id="sideC" placeholder="">
+</div>
+<button class="btn" onclick="calcPyth()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcPyth(){
+    const a=parseFloat(document.getElementById('sideA').value);
+    const b=parseFloat(document.getElementById('sideB').value);
+    const c=parseFloat(document.getElementById('sideC').value);
+    const el=document.getElementById('result');
+    let html='';
+    if(!isNaN(a)&&!isNaN(b)&&isNaN(c)){
+        const hyp=Math.sqrt(a*a+b*b);
+        html=`<p>a² + b² = c²</p><p>${a}² + ${b}² = ${hyp.toFixed(4)}²</p><p>Hypotenuse c = <strong>${hyp.toFixed(4)}</strong></p>`;
+    }else if(!isNaN(a)&&isNaN(b)&&!isNaN(c)){
+        if(c<=a){html='<p>Error: hypotenuse must be longer than side a</p>';}
+        else{const leg=Math.sqrt(c*c-a*a);html=`<p>b = √(c² - a²) = √(${c}² - ${a}²)</p><p>Side b = <strong>${leg.toFixed(4)}</strong></p>`;}
+    }else if(isNaN(a)&&!isNaN(b)&&!isNaN(c)){
+        if(c<=b){html='<p>Error: hypotenuse must be longer than side b</p>';}
+        else{const leg=Math.sqrt(c*c-b*b);html=`<p>a = √(c² - b²) = √(${c}² - ${b}²)</p><p>Side a = <strong>${leg.toFixed(4)}</strong></p>`;}
+    }else{html='<p>Enter exactly two sides to calculate the third.</p>';}
+    el.innerHTML=html;el.classList.add('show');
+}
+</script>
