@@ -1,0 +1,12 @@
+{
+    "title": "Voltage Drop Calculator - Calculate Wire Voltage Drop",
+    "description": "Free voltage drop calculator. Calculate voltage drop in electrical wiring based on wire gauge, length, and current load.",
+    "keywords": "voltage drop calculator, wire voltage drop, electrical calculator, cable voltage drop",
+    "canonical": "https://calc.tools/en/voltage-drop/",
+    "h1": "Voltage Drop Calculator",
+    "intro": "Calculate voltage drop in electrical wiring. Enter wire gauge, length, current, and voltage to determine if your wiring is adequate.",
+    "faq": [
+        {"q": "What is acceptable voltage drop?", "a": "NEC recommends no more than 3% voltage drop for branch circuits and 5% total (feeder + branch). For a 120V circuit, that's 3.6V max on a branch."},
+        {"q": "How to reduce voltage drop?", "a": "Use thicker wire (lower AWG), shorten the wire run, or reduce the current load. Doubling wire size cuts voltage drop in half."}
+    ]
+}

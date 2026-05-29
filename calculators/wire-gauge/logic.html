@@ -1,0 +1,28 @@
+<div class="form-group">
+    <label for="awg">AWG Gauge Number</label>
+    <select id="awg">
+        <option value="0000">0000 (4/0)</option><option value="000">000 (3/0)</option>
+        <option value="00">00 (2/0)</option><option value="0">0 (1/0)</option>
+        <option value="1">1</option><option value="2">2</option><option value="4">4</option>
+        <option value="6">6</option><option value="8">8</option><option value="10" selected>10</option>
+        <option value="12">12</option><option value="14">14</option><option value="16">16</option>
+        <option value="18">18</option><option value="20">20</option><option value="22">22</option>
+        <option value="24">24</option><option value="26">26</option>
+    </select>
+</div>
+<button class="btn" onclick="calcWire()">Look Up</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcWire(){
+    const awgData={'0000':{d:11.684,amp:230},'000':{d:10.405,amp:200},'00':{d:9.266,amp:175},'0':{d:8.251,amp:150},'1':{d:7.348,amp:130},'2':{d:6.544,amp:115},'4':{d:5.189,amp:85},'6':{d:4.115,amp:65},'8':{d:3.264,amp:50},'10':{d:2.588,amp:35},'12':{d:2.053,amp:25},'14':{d:1.628,amp:20},'16':{d:1.291,amp:13},'18':{d:1.024,amp:10},'20':{d:0.812,amp:7},'22':{d:0.644,amp:5},'24':{d:0.511,amp:3.5},'26':{d:0.405,amp:2.2}};
+    const g=document.getElementById('awg').value;
+    const w=awgData[g];if(!w)return;
+    const area=Math.PI*(w.d/2)**2;
+    const areaMM2=area;
+    const resistance=1.724e-2/(areaMM2)*1000;
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>AWG: <strong>${g}</strong></p><p>Diameter: <strong>${w.d.toFixed(3)} mm</strong> (${(w.d/25.4*1000).toFixed(1)} mils)</p><p>Cross-section: <strong>${areaMM2.toFixed(3)} mm²</strong></p><p>Resistance: <strong>${resistance.toFixed(3)} Ω/km</strong> (copper, 20°C)</p><p>Max current (chassis): <strong>~${w.amp} A</strong></p>`;
+    el.classList.add('show');
+}
+</script>

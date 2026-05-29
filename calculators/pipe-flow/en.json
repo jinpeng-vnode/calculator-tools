@@ -1,0 +1,12 @@
+{
+    "title": "Pipe Flow Calculator - Calculate Flow Rate & Velocity",
+    "description": "Free pipe flow calculator. Calculate flow rate, velocity, and pressure drop in pipes. Supports various pipe sizes and fluids.",
+    "keywords": "pipe flow calculator, flow rate calculator, pipe velocity, water flow rate, pipe sizing",
+    "canonical": "https://calc.tools/en/pipe-flow/",
+    "h1": "Pipe Flow Calculator",
+    "intro": "Calculate flow rate, velocity, and volume in pipes. Enter pipe diameter and flow velocity or flow rate.",
+    "faq": [
+        {"q": "How to calculate pipe flow rate?", "a": "Flow Rate (Q) = Area × Velocity = π × (d/2)² × v. For a 2-inch pipe at 5 ft/s: Q = π × 1² × 5 = 15.7 in²·ft/s."},
+        {"q": "What is the relationship between pipe size and flow?", "a": "Flow rate is proportional to the square of the diameter. Doubling pipe diameter quadruples the flow capacity at the same velocity."}
+    ]
+}

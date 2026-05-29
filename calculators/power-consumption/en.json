@@ -1,0 +1,12 @@
+{
+    "title": "Power Consumption Calculator - Electricity Cost Estimator",
+    "description": "Free power consumption calculator. Calculate electricity usage and cost for appliances based on wattage, hours of use, and electricity rate.",
+    "keywords": "power consumption calculator, electricity cost calculator, watt to kWh, energy usage calculator",
+    "canonical": "https://calc.tools/en/power-consumption/",
+    "h1": "Power Consumption Calculator",
+    "intro": "Calculate electricity consumption and cost. Enter device wattage, usage hours, and your electricity rate to estimate daily, monthly, and yearly costs.",
+    "faq": [
+        {"q": "How to calculate power consumption?", "a": "kWh = Watts × Hours / 1000. Then multiply by your electricity rate to get cost. Example: 100W × 8 hours = 0.8 kWh/day."},
+        {"q": "How many watts does a typical household use?", "a": "Average US household uses about 900 kWh/month (≈1.25 kW average). Major consumers: HVAC (46%), water heating (14%), appliances (13%)."}
+    ]
+}

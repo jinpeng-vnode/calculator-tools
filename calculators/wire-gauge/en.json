@@ -1,0 +1,12 @@
+{
+    "title": "Wire Gauge Calculator - AWG Wire Size Chart",
+    "description": "Free wire gauge calculator. Find wire diameter, cross-section area, and current capacity for AWG wire sizes. Includes AWG to mm conversion.",
+    "keywords": "wire gauge calculator, AWG calculator, wire size chart, wire diameter, wire ampacity",
+    "canonical": "https://calc.tools/en/wire-gauge/",
+    "h1": "Wire Gauge Calculator",
+    "intro": "Look up wire properties by AWG gauge number. Find diameter, cross-section area, resistance, and maximum current capacity.",
+    "faq": [
+        {"q": "What is AWG?", "a": "AWG (American Wire Gauge) is a standardized system for wire sizes. Lower numbers mean thicker wire. AWG 0000 is the thickest standard size."},
+        {"q": "How to choose the right wire gauge?", "a": "Select based on current load and distance. Higher current or longer runs need thicker wire (lower AWG number) to prevent overheating and voltage drop."}
+    ]
+}

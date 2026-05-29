@@ -1,0 +1,12 @@
+{
+    "title": "Ohm's Law Calculator - Voltage, Current, Resistance",
+    "description": "Free Ohm's law calculator. Calculate voltage (V), current (I), or resistance (R) using V=IR. Also shows power consumption.",
+    "keywords": "ohms law calculator, voltage current resistance, V=IR calculator, electrical calculator",
+    "canonical": "https://calc.tools/en/ohms-law/",
+    "h1": "Ohm's Law Calculator",
+    "intro": "Calculate voltage, current, or resistance using Ohm's Law (V = I × R). Enter any two values to find the third, plus power.",
+    "faq": [
+        {"q": "What is Ohm's Law?", "a": "Ohm's Law states V = I × R, where V is voltage (volts), I is current (amps), and R is resistance (ohms). It describes the relationship between these three electrical quantities."},
+        {"q": "How to calculate power from Ohm's Law?", "a": "Power P = V × I = I²R = V²/R. Once you know any two of V, I, R, you can calculate power in watts."}
+    ]
+}

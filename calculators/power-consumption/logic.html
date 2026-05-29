@@ -1,0 +1,38 @@
+<div class="form-group">
+    <label for="watts">Power per Device (Watts)</label>
+    <input type="number" id="watts" placeholder="100" step="any">
+</div>
+<div class="form-group">
+    <label for="qty">Number of Devices</label>
+    <input type="number" id="qty" placeholder="5" value="1">
+</div>
+<div class="form-group">
+    <label for="hours">Hours per Day</label>
+    <input type="number" id="hours" placeholder="8" step="any">
+</div>
+<div class="form-group">
+    <label for="rate">Electricity Rate ($/kWh)</label>
+    <input type="number" id="rate" placeholder="0.12" step="any" value="0.12">
+</div>
+<button class="btn" onclick="calcPower()">Calculate</button>
+<div class="result" id="result"></div>
+
+<script>
+function calcPower(){
+    const w=parseFloat(document.getElementById('watts').value);
+    const q=parseInt(document.getElementById('qty').value)||1;
+    const h=parseFloat(document.getElementById('hours').value);
+    const rate=parseFloat(document.getElementById('rate').value);
+    if(isNaN(w)||isNaN(h)||isNaN(rate))return;
+    const totalW=w*q;
+    const kWhDay=totalW*h/1000;
+    const kWhMonth=kWhDay*30;
+    const kWhYear=kWhDay*365;
+    const costDay=kWhDay*rate;
+    const costMonth=kWhMonth*rate;
+    const costYear=kWhYear*rate;
+    const el=document.getElementById('result');
+    el.innerHTML=`<p>Total power: <strong>${totalW} W</strong> (${(totalW/1000).toFixed(3)} kW)</p><p>Daily: <strong>${kWhDay.toFixed(2)} kWh</strong> — $${costDay.toFixed(2)}</p><p>Monthly: <strong>${kWhMonth.toFixed(1)} kWh</strong> — $${costMonth.toFixed(2)}</p><p>Yearly: <strong>${kWhYear.toFixed(0)} kWh</strong> — $${costYear.toFixed(2)}</p>`;
+    el.classList.add('show');
+}
+</script>
